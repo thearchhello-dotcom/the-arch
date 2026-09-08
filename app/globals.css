@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* Brand palette + type as design tokens — sampled straight from the logo
+   files, not guessed. Tailwind v4 turns each --color-* / --font-* / --radius-*
+   variable here into a matching utility class automatically (bg-terracotta,
+   font-display, rounded-pill, etc.) — no tailwind.config.ts needed. */
+@theme {
+  --color-cream: #f7f1e3;
+  --color-card: #fbf6ea;
+  --color-line: rgba(74, 55, 42, 0.1);
+  --color-ink: #4a372a;
+  --color-ink-soft: #6b5a47;
+  --color-ink-faint: #9c8b76;
+  --color-terracotta: #c96849;
+  --color-coral: #de8468;
+  --color-gold: #e3a83b;
+  --color-sage: #8fa383;
+  --color-taupe: #b7a695;
+  --color-tile1: #f3e4d6;
+  --color-tile2: #e7e1ce;
+  --color-footer: #f1e9d8;
+
+  --font-display: var(--font-fredoka), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-karla), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-pill: 999px;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink-soft);
+}
+
+/* A whisper of paper grain over the whole page. Flat cream reads as "template";
+   a little tooth reads as "printed". Inline SVG noise — no image to download,
+   and it sits above the background but below everything else. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  /* Behind the content but above the body's background colour. Using a negative
+     index here means we do NOT have to force a z-index onto every top-level
+     element to sit above it — doing that flattened the sticky header's
+     stacking context and let dropdowns open behind the page. */
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.32;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.22'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-ink);
+}
+
+a {
+  color: inherit;
+}
