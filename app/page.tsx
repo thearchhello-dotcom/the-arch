@@ -43,19 +43,22 @@ export default function HomePage() {
           </p>
           <div className="flex flex-wrap items-center gap-4 sm:gap-7">
             <Link
-              href={`/edits/${featured.slug}`}
+              href={featured ? `/edits/${featured.slug}` : "/edits"}
               className="font-display font-semibold text-[15px] sm:text-base px-6 py-3 sm:px-7 sm:py-3.5 rounded-pill bg-terracotta text-card shadow-lg shadow-terracotta/25 transition-transform hover:-translate-y-0.5 whitespace-nowrap"
             >
-              See this week&apos;s edit
+              {featured ? "See this week's edit" : "See what's coming"}
             </Link>
-            <Link href="/edits" className="font-semibold text-sm text-ink hover:text-terracotta transition-colors">
-              See all edits &rarr;
-            </Link>
+            {featured && (
+              <Link href="/edits" className="font-semibold text-sm text-ink hover:text-terracotta transition-colors">
+                See all edits &rarr;
+              </Link>
+            )}
           </div>
         </div>
       </section>
 
-      {/* Featured edit */}
+      {/* Featured edit — only once there's something to feature */}
+      {featured && (
       <section className="px-5 pb-14 sm:px-8 sm:pb-20 md:px-14">
         <div className="bg-card rounded-[28px] p-7 sm:p-10 md:p-14 flex items-center justify-between gap-8 sm:gap-12 flex-wrap">
           <div className="flex flex-col gap-4 max-w-md">
@@ -84,6 +87,7 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+      )}
 
       {/* The difference. The editorial kids'-style sites publish beautiful
           boards with no prices and nothing to click; this says plainly what

@@ -34,6 +34,8 @@ export const edits: Edit[] = [
     slug: "autumn-edit-26",
     title: "The Autumn Edit '26",
     season: "Autumn 2026",
+    plannedFor: "Needs real products — currently sample data",
+    draft: true,
     palette: ["#B7A695", "#8FA383", "#F7F1E3", "#4A372A"], // taupe, sage, cream, chocolate
     description:
       "Where it all starts — full autumn outfits in taupe, sage and chocolate, built from the shops most of us already use.",
