@@ -41,6 +41,9 @@ export const metadata: Metadata = {
     images: ["/logo-the-arch-square-dot.png"],
   },
   icons: { icon: "/logo-the-arch-square-dot.png", apple: "/logo-the-arch-square-dot.png" },
+  // robots.txt is a request; this tag is the instruction search engines
+  // actually honour. Both come off when site.isPublic goes true.
+  robots: site.isPublic ? undefined : { index: false, follow: false },
 };
 
 // Tells Google this is a real publication with a named author behind it —

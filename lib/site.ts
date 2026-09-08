@@ -13,11 +13,19 @@ export const site = {
   email: "thearchhello@gmail.com",
 
   /**
-   * PROVISIONAL — not registered yet. thearch.co.uk is parked by a broker, so
-   * this may end up being thearchedit.co.uk instead. Change it here and the
+   * The address the site currently answers on. Vercel gives every project a
+   * free one; swap this for your own domain once you've bought it and the
    * sitemap, robots.txt, page metadata and every social image follow.
    */
-  domain: "https://thearch.co.uk",
+  domain: "https://the-arch-weld.vercel.app",
+
+  /**
+   * FALSE until you're ready to be found. While it's false, robots.txt tells
+   * every search engine to stay away and the pages carry a "noindex" tag, so
+   * nothing gets picked up by Google or Pinterest — the link still works for
+   * anyone you send it to. Flip to true when you want the world to see it.
+   */
+  isPublic: false,
 
   /** When the legal pages were last reviewed. Bump it when you change them. */
   policiesUpdated: "7 September 2026",
