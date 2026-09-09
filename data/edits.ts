@@ -81,11 +81,13 @@ export const edits: Edit[] = [
     season: "Autumn 2026",
     plannedFor: "Now — alongside the Halloween edit",
     draft: true,
-    palette: ["#D08A5C", "#EFE4D4", "#3A342F", "#8B9682"],
+    palette: ["#E86A1C", "#201C19", "#F1E9D8", "#6B4A5A"],
     description:
-      "The gentler side of Halloween — muted pumpkin and oat rather than orange and black. Sweet rather than scary, and it still looks right in the family photographs.",
+      "Pumpkins, but the loud ones. Bold prints rather than sweet little motifs, so it works for a six-year-old boy as well as it does for a baby. Everyday clothes with a pumpkin on, not a costume.",
+    note:
+      "One pumpkin piece per outfit and keep everything else plain — that's the whole trick. Two prints in one outfit and it stops being clothes and starts being fancy dress.",
     looks: [
-      { label: "Baby", ages: "0–18 months", productIds: ["next-pumpkin-sleepsuit", "next-pumpkin-cardigan", "next-pumpkin-booties"] },
+      { label: "Baby", ages: "0–18 months", productIds: [] },
       { label: "Girls", ages: "2–7 years", productIds: [] },
       { label: "Boys", ages: "2–7 years", productIds: [] },
     ],
