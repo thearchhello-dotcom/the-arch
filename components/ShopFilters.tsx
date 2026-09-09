@@ -6,7 +6,13 @@ import type { Category, Retailer } from "@/lib/types";
 import ProductCard from "./ProductCard";
 
 const CATEGORIES: (Category | "All")[] = ["All", "Baby", "Girls", "Boys"];
-const RETAILERS: (Retailer | "All")[] = ["All", "H&M", "M&S", "Next"];
+/* Derived from the products themselves rather than hardcoded, so adding a new
+   shop to data/products.ts makes its chip appear, and a shop with nothing in it
+   never shows a chip that returns an empty grid. */
+const RETAILERS: (Retailer | "All")[] = [
+  "All",
+  ...([...new Set(products.map((p) => p.retailer))].sort() as Retailer[]),
+];
 
 function Chip({
   label,
