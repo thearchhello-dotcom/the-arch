@@ -25,8 +25,8 @@ export const products: Product[] = [
   // read as a "from" figure. affiliateUrl left blank until a network is live —
   // the buttons stay inert rather than pretending to work.
   { id: "next-pumpkin-cardigan", name: "Orange Little Pumpkin Slogan Baby Cardigan", category: "Baby", retailer: "Next", price: 16.00, type: "top" },
+  { id: "next-pumpkin-sleepsuit", name: "Orange Little Pumpkin Two Way Zip Baby Sleepsuit", category: "Baby", retailer: "Next", price: 9.00, type: "top" },
   { id: "next-ghost-sleepsuit", name: "Glow In The Dark Two Way Zip Baby Sleepsuit", category: "Baby", retailer: "Next", price: 9.00, type: "top" },
-  { id: "next-halloween-socks", name: "Multi Neutral Halloween Character Socks, 3 Pack", category: "Baby", retailer: "Next", price: 5.00, type: "foot" },
   // --- The Halloween Edit · Next · added 7 Sep ---
   { id: "next-ghost-tshirt", name: "Black Glow in the Dark Long Sleeve Halloween T-Shirt", category: "Boys", retailer: "Next", price: 7.50, type: "top" },
   { id: "next-black-cargos", name: "Black Denim Wide Leg Pull On Cargo Jeans", category: "Boys", retailer: "Next", price: 12.00, type: "bottom" },

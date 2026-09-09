@@ -62,15 +62,14 @@ export const edits: Edit[] = [
     title: "Halloween at Next",
     season: "Autumn 2026",
     plannedFor: "Now — the stock is already in shops",
-    draft: true,
-    boardImage: "/edits/halloween-at-next-26-board.png",
+    boardImage: "/edits/halloween-at-next-26-board-v2.png",
     palette: ["#C4622E", "#2E2A26", "#F1E9D8", "#6B4A5A"],
     description:
       "Halloween that isn't a costume — pumpkin tones and a bit of black, in pieces that carry on being worn right through November. Every piece is from Next, so it's one delivery and one returns slip rather than three.",
     note:
       "I started dressing mine in Halloween bits in early September, which tells you everything about how long the season really is now.",
     looks: [
-      { label: "Baby", ages: "0–18 months", productIds: ["next-pumpkin-cardigan", "next-pumpkin-booties", "next-halloween-socks"] },
+      { label: "Baby", ages: "0–18 months", productIds: ["next-pumpkin-sleepsuit", "next-pumpkin-cardigan", "next-pumpkin-booties"] },
       { label: "Girls", ages: "2–7 years", productIds: ["koko-pumpkin-sweatshirt", "next-pumpkin-pie-cardigan", "next-spot-barrel-jeans", "next-white-hightops"] },
       { label: "Boys", ages: "3–7 years", productIds: ["next-ghost-tshirt", "next-black-cargos", "next-ecru-fleece", "next-black-trainers"] },
     ],
@@ -86,7 +85,7 @@ export const edits: Edit[] = [
     description:
       "The gentler side of Halloween — muted pumpkin and oat rather than orange and black. Sweet rather than scary, and it still looks right in the family photographs.",
     looks: [
-      { label: "Baby", ages: "0–18 months", productIds: ["next-pumpkin-cardigan", "next-pumpkin-booties", "next-halloween-socks"] },
+      { label: "Baby", ages: "0–18 months", productIds: ["next-pumpkin-sleepsuit", "next-pumpkin-cardigan", "next-pumpkin-booties"] },
       { label: "Girls", ages: "2–7 years", productIds: [] },
       { label: "Boys", ages: "2–7 years", productIds: [] },
     ],
@@ -190,6 +189,24 @@ export const edits: Edit[] = [
     // outfit in it doesn't hold together. Everywhere else keeps all four.
     looks: [
       { label: "Baby", ages: "Newborn–6 months", productIds: [] },
+    ],
+  },
+
+  {
+    slug: "to-infinity-and-beyond-26",
+    title: "To Infinity and Beyond",
+    season: "Autumn 2026",
+    plannedFor: "Any time — the first of the character edits",
+    draft: true,
+    palette: ["#79A8C9", "#F1E9D8", "#C4452F", "#E3B23C"], // cloud blue, cloud white, Woody red, Buzz yellow
+    description:
+      "Toy Story, worn as clothes rather than costume. Cloud blue, Woody's red and a bit of yellow — character pieces mixed with plain ones, so the whole outfit still works on a Tuesday.",
+    note:
+      "Toy Story seems to be the one every child finds sooner or later. The trick is one character piece per outfit and plain everything else — otherwise it starts to look like a dressing-up box.",
+    looks: [
+      { label: "Baby", ages: "0–18 months", productIds: [] },
+      { label: "Girls", ages: "2–7 years", productIds: [] },
+      { label: "Boys", ages: "2–7 years", productIds: [] },
     ],
   },
 
