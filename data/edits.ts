@@ -213,6 +213,27 @@ export const edits: Edit[] = [
   },
 
   {
+    slug: "hot-wheels-26",
+    title: "The Hot Wheels Edit",
+    season: "Autumn 2026",
+    plannedFor: "Any time — the second character edit",
+    draft: true,
+    palette: ["#E5401C", "#1B4F8A", "#F1E9D8", "#F2B10A"], // flame orange, racing blue, cream, yellow
+    description:
+      "One for the car-obsessed. Three outfits across the ages rather than one, all built the same way: a Hot Wheels piece and plain everything else, so it reads as clothes rather than merchandise.",
+    note:
+      "Some children want one thing and only that thing, and there's no talking them out of it. This is for them — and it still looks decent in a photograph.",
+    // Boys only, and deliberately three ages rather than three genders. A single
+    // outfit leaves a board mostly empty; three gives the same shape as every
+    // other edit and answers "will it work for mine?" at the same time.
+    looks: [
+      { label: "Toddler", ages: "18 months–3 years", productIds: [] },
+      { label: "Little", ages: "3–5 years", productIds: [] },
+      { label: "Big", ages: "5–8 years", productIds: [] },
+    ],
+  },
+
+  {
     slug: "the-varsity-edit-26",
     title: "The Varsity Edit",
     season: "Autumn 2026",
