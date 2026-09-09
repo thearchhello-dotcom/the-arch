@@ -213,6 +213,24 @@ export const edits: Edit[] = [
   },
 
   {
+    slug: "the-varsity-edit-26",
+    title: "The Varsity Edit",
+    season: "Autumn 2026",
+    plannedFor: "Any time — autumn through spring",
+    draft: true,
+    palette: ["#24344D", "#F1E9D8", "#A6382C", "#C08A2E"], // navy, cream, varsity red, mustard
+    description:
+      "Baseball jackets, rugby stripes and cord — preppy without the school uniform. It suits a girl and a boy equally, and it carries on working long after the season it was bought for.",
+    note:
+      "This is the one they'll actually choose off the pile. A baseball jacket over almost anything looks put together, which is the entire reason I keep buying them.",
+    looks: [
+      { label: "Baby", ages: "0–18 months", productIds: [] },
+      { label: "Girls", ages: "2–7 years", productIds: [] },
+      { label: "Boys", ages: "2–7 years", productIds: [] },
+    ],
+  },
+
+  {
     slug: "sunday-best-26",
     title: "Sunday Best",
     season: "Autumn 2026",
