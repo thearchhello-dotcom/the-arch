@@ -128,21 +128,25 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
         <span className="font-body font-bold text-xs tracking-widest uppercase text-terracotta block mb-4">
           The Board
         </span>
-        <div className="max-w-[480px] rounded-[28px] overflow-hidden bg-card">
+        {/* A mount, not just an image. The boards are cream and so is the page,
+            so without a frame the artwork bleeds into the background and stops
+            reading as a thing you could pin. The deeper mount plus a hairline
+            and a soft shadow give it an edge to sit against. */}
+        <div className="max-w-[480px] rounded-[28px] bg-footer p-3 sm:p-4 border border-line shadow-[0_20px_44px_-26px_rgba(74,55,42,0.5)]">
           {edit.boardImage ? (
             <Image
               src={edit.boardImage}
               alt={`${edit.title} mood board`}
               width={1200}
-              height={1200}
-              className="w-full h-auto"
+              height={1800}
+              className="w-full h-auto rounded-[18px] border border-line"
             />
           ) : (
             <PaletteArt
               palette={edit.palette}
               seed={edit.slug}
               cream="#FBF6EA"
-              className="w-full h-auto aspect-[4/5]"
+              className="w-full h-auto aspect-[4/5] rounded-[18px] border border-line"
             />
           )}
         </div>
