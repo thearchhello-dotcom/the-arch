@@ -12,12 +12,11 @@ export const site = {
   location: "Cumbria, UK",
   email: "thearchhello@gmail.com",
 
-  /**
-   * The address the site currently answers on. Vercel gives every project a
-   * free one; swap this for your own domain once you've bought it and the
-   * sitemap, robots.txt, page metadata and every social image follow.
-   */
-  domain: "https://the-arch-weld.vercel.app",
+  /** Registered 8 Sep 2026 with 123-reg, two years, auto-renewing. */
+  domain: "https://thearchedits.co.uk",
+
+  /** The address printed on mood boards and social images. */
+  displayDomain: "thearchedits.co.uk",
 
   /**
    * FALSE until you're ready to be found. While it's false, robots.txt tells

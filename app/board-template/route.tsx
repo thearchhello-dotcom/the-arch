@@ -98,7 +98,7 @@ export async function GET(req: Request) {
   const cta =
     key === "post" || key === "story"
       ? "Shop every piece — link in bio"
-      : `Shop every piece — ${site.domain.replace("https://", "")}`;
+      : `Shop every piece — ${site.displayDomain}`;
 
   const logoW = fx(centred ? 0.217 : 0.3);
   const logoH = Math.round(logoW * 0.283);

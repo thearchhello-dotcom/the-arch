@@ -105,7 +105,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ slug: st
   const cta =
     key === "post" || key === "story"
       ? "Shop every piece — link in bio"
-      : `Shop every piece — ${site.domain.replace("https://", "")}`;
+      : `Shop every piece — ${site.displayDomain}`;
 
   const logoW = fx(0.217);
   const logoH = Math.round(logoW * 0.283);
