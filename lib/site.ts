@@ -24,7 +24,7 @@ export const site = {
    * nothing gets picked up by Google or Pinterest — the link still works for
    * anyone you send it to. Flip to true when you want the world to see it.
    */
-  isPublic: false,
+  isPublic: true,
 
   /** When the legal pages were last reviewed. Bump it when you change them. */
   policiesUpdated: "7 September 2026",
