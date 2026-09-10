@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import EditFilters, { type EditSummary } from "@/components/EditFilters";
 import { publishedEdits } from "@/data/edits";
-import { getProduct } from "@/data/products";
+import { getProduct, priceOf } from "@/data/products";
 import type { Edit } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -17,7 +17,12 @@ export const metadata: Metadata = {
  *  numbers rather than each computing their own. */
 function summarise(edit: Edit): EditSummary {
   const totals = edit.looks
-    .map((look) => look.productIds.reduce((sum, id) => sum + (getProduct(id)?.price ?? 0), 0))
+    .map((look) =>
+      look.productIds.reduce((sum, id) => {
+        const p = getProduct(id);
+        return sum + (p ? priceOf(p) : 0);
+      }, 0)
+    )
     .filter((t) => t > 0);
 
   return {

@@ -87,9 +87,9 @@ export const edits: Edit[] = [
     note:
       "One pumpkin piece per outfit and keep everything else plain — that's the whole trick. Two prints in one outfit and it stops being clothes and starts being fancy dress.",
     looks: [
-      { label: "Baby", ages: "0–18 months", productIds: [] },
-      { label: "Girls", ages: "2–7 years", productIds: [] },
-      { label: "Boys", ages: "2–7 years", productIds: [] },
+      { label: "Baby", ages: "0–3 years", productIds: ["ms-pumpkin-sweat-set", "ms-borg-jacket-ears", "ms-borg-pram-boots"] },
+      { label: "Girls", ages: "2–7 years", productIds: ["george-pumpkin-picker-knit", "hm-cord-skirt", "hm-overlock-socks", "ms-suede-ankle-boots"] },
+      { label: "Boys", ages: "3–7 years", productIds: ["matalan-skating-pumpkin-sweat", "tu-checkerboard-beanie", "next-black-wide-jeans", "next-neutral-trainers"] },
     ],
   },
 

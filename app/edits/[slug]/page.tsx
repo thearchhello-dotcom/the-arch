@@ -11,7 +11,7 @@ import Newsletter from "@/components/Newsletter";
 import PaletteArt from "@/components/PaletteArt";
 import EditNote from "@/components/EditNote";
 import { getEdit, publishedEdits } from "@/data/edits";
-import { getProduct } from "@/data/products";
+import { getProduct, priceOf } from "@/data/products";
 
 export function generateStaticParams() {
   return publishedEdits.map((e) => ({ slug: e.slug }));
@@ -156,7 +156,7 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
         const items = look.productIds.map(getProduct).filter(Boolean) as NonNullable<
           ReturnType<typeof getProduct>
         >[];
-        const total = items.reduce((sum, p) => sum + p.price, 0);
+        const total = items.reduce((sum, p) => sum + priceOf(p), 0);
         const pal = edit.palette.length ? edit.palette : ["#B7A695", "#8FA383", "#C96849"];
         const tint = (i: number) => soften(pal[i % pal.length], 0.74);
         const ink = (i: number) => deepen(pal[i % pal.length], 0.35);

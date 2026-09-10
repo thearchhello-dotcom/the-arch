@@ -38,7 +38,27 @@ export const products: Product[] = [
   { id: "next-pumpkin-pie-cardigan", name: "Orange Pumpkin Pie V-Neck Cardigan", category: "Girls", retailer: "Next", price: 18.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/su748375/w11245" },
   { id: "next-spot-barrel-jeans", name: "Blue Spot Pull-On Barrel Jeans", category: "Girls", retailer: "Next", price: 13.00, type: "bottom", affiliateUrl: "https://www.next.co.uk/style/su758609/h52075" },
   { id: "next-white-hightops", name: "White Canvas Lace Up High Top Trainers", category: "Girls", retailer: "Next", price: 22.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/su553893/h67070" },
+  // --- The Little Pumpkins Edit · added 10 Sep. Five shops, so no single-delivery
+  //     promise on this one — the thread is the pumpkin print, not the receipt. ---
+  { id: "ms-pumpkin-sweat-set", name: "Cotton Rich Halloween Pumpkin Sweat Set (0-3 Yrs)", category: "Baby", retailer: "M&S", price: 14.00, type: "top", affiliateUrl: "https://www.marksandspencer.com/cotton-rich-halloween-pumpkin-sweat-set-0-3-yrs-/p/clp61224966" },
+  { id: "ms-borg-jacket-ears", name: "Hooded Borg Jacket with Ears (0-4 Yrs)", category: "Baby", retailer: "M&S", price: 18.00, type: "top", affiliateUrl: "https://www.marksandspencer.com/hooded-borg-jacket-with-ears-0-4-yrs-/p/clp61217700" },
+  { id: "ms-borg-pram-boots", name: "Baby Borg Bear Pram Boots (0-18 Mths)", category: "Baby", retailer: "M&S", price: 10.00, type: "foot", affiliateUrl: "https://www.marksandspencer.com/baby-borg-bear-pram-boots-0-18-mths-/p/clp61223187" },
+  { id: "george-pumpkin-picker-knit", name: "Cream Pumpkin Picker Chunky Knitted Jumper", category: "Girls", retailer: "George", price: 10.00, type: "top", affiliateUrl: "https://direct.asda.com/george/kids/jumpers-cardigans/cream-pumpkin-picker-chunky-knitted-jumper/G008414638,default,pd.html" },
+  { id: "hm-cord-skirt", name: "Corduroy Skirt", category: "Girls", retailer: "H&M", price: 12.99, type: "bottom", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1350019003.html" },
+  { id: "hm-overlock-socks", name: "3 Pack Overlock Detail Socks", category: "Girls", retailer: "H&M", price: 5.99, type: "foot", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1235464011.html" },
+  { id: "ms-suede-ankle-boots", name: "Suede Pull-On Ankle Boots", category: "Girls", retailer: "M&S", price: 22.00, type: "foot", affiliateUrl: "https://www.marksandspencer.com/kids-suede-pull-on-ankle-boots-4-small-6-large-/p/clp60736203" },
+  { id: "matalan-skating-pumpkin-sweat", name: "Stone Skating Pumpkin Sweatshirt (1-8yrs)", category: "Boys", retailer: "Matalan", price: 7.00, type: "top", onSale: true, salePrice: 6.30, affiliateUrl: "https://www.matalan.co.uk/p/childrens-clothing/boys-stone-skating-pumpkin-sweatshirt-1-8yrs/17835939/" },
+  { id: "tu-checkerboard-beanie", name: "Mono Checkerboard Beanie Hat", category: "Boys", retailer: "Tu", price: 7.00, type: "head", affiliateUrl: "https://tuclothing.sainsburys.co.uk/product/tuc148238971" },
+  { id: "next-neutral-trainers", name: "Neutral and White Touch Fastening Trainers", category: "Boys", retailer: "Next", price: 18.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/su345525/w63356" },
+  { id: "next-black-wide-jeans", name: "Black Denim Wide Fit Jeans (3mths-7yrs)", category: "Boys", retailer: "Next", price: 15.00, type: "bottom", affiliateUrl: "https://www.next.co.uk/style/sv154520/g55829" },
 ];
+
+/** What a piece actually costs today — the sale price when there is one.
+ *  Outfit totals must agree with the price on the card, and with the figure
+ *  printed on the board. */
+export function priceOf(p: Product): number {
+  return p.onSale && p.salePrice ? p.salePrice : p.price;
+}
 
 export function getProduct(id: string): Product | undefined {
   return products.find((p) => p.id === id);
