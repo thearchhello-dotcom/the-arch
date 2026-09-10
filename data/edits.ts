@@ -93,6 +93,28 @@ export const edits: Edit[] = [
     ],
   },
 
+  {
+    slug: "baby-halloween-26",
+    title: "Baby's First Halloween",
+    season: "Autumn 2026",
+    plannedFor: "Now — the third and last of the Halloween run",
+    draft: true,
+    palette: ["#D4854E", "#F1E9D8", "#3A342F", "#A8907A"], // soft pumpkin, cream, near-black, oat
+    description:
+      "Halloween for babies, split by age rather than by boy and girl — because what fits a newborn doesn't fit a crawler, and baby clothes are neutral anyway. Nothing scratchy, nothing that has to come off for a nap.",
+    note:
+      "I've loved the Halloween clothes this year — so much that one board turned into three. This one's all baby, because that's the section I'm in every week anyway.",
+    // Baby only, three ages. Baby is the strongest category on the site —
+    // they outgrow everything, other people buy the presents, and nobody
+    // agonises over £9 — so it earns a board of its own rather than one
+    // outfit on a board shared with older children.
+    looks: [
+      { label: "Newborn", ages: "0–6 months", productIds: [] },
+      { label: "Baby", ages: "6–12 months", productIds: [] },
+      { label: "Toddling", ages: "12–18 months", productIds: [] },
+    ],
+  },
+
   // ---------------------------------------------------------------------------
   // THE REST OF THE RUN — two more dated, then the evergreen angles.
   // ---------------------------------------------------------------------------
