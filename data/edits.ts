@@ -77,7 +77,7 @@ export const edits: Edit[] = [
 
   {
     slug: "little-pumpkins-26",
-    title: "The Little Pumpkins Edit",
+    title: "The Little Pumpkin",
     season: "Autumn 2026",
     plannedFor: "Now — alongside the Halloween edit",
     draft: true,
