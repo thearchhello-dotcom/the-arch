@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fredoka, Karla } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import CookieBanner from "@/components/CookieBanner";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -69,6 +70,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-body bg-cream">
         {children}
         <CookieBanner />
+        {/* Counts page views. Cookieless and it stores nothing about the
+            visitor, so it sits outside the consent banner — there's nothing
+            for anyone to consent to. Needs Web Analytics switched on in the
+            Vercel dashboard before it records anything. */}
+        <Analytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
