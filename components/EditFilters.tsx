@@ -114,9 +114,10 @@ export default function EditFilters({ edits }: { edits: EditSummary[] }) {
                     className="absolute inset-0 w-full h-full"
                   />
                 )}
-                <span className="absolute top-4 left-4 text-[11px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-pill bg-cream/95 text-ink">
-                  {edit.season}
-                </span>
+                {/* Nothing sits on top of the board. Every board puts the
+                    wordmark in one corner and the web address in another, so a
+                    badge floated over the image will always land on something —
+                    the season and the draft flag live in the card below it. */}
                 {edit.draft && (
                   <span
                     className="absolute top-4 right-4 text-[11px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-pill bg-ink text-card"
@@ -128,6 +129,9 @@ export default function EditFilters({ edits }: { edits: EditSummary[] }) {
               </div>
 
               <div className="p-6 flex flex-col gap-2.5 flex-1">
+                <span className="text-[11px] font-bold tracking-widest uppercase text-terracotta">
+                  {edit.season}
+                </span>
                 <h2 className="font-display text-xl font-semibold text-ink group-hover:text-terracotta transition-colors">
                   {edit.title}
                 </h2>
