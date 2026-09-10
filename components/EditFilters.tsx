@@ -94,7 +94,11 @@ export default function EditFilters({ edits }: { edits: EditSummary[] }) {
               href={`/edits/${edit.slug}`}
               className="group bg-card rounded-[24px] overflow-hidden flex flex-col transition-transform hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5"
             >
-              <div className="aspect-[4/5] relative bg-tile1">
+              {/* 2:3, because that's the shape the boards are exported at for
+                  Pinterest. A 4:5 card cropped the logo and title off the top
+                  and the web address off the bottom, leaving the middle of the
+                  board looking like a jumble. */}
+              <div className="aspect-[2/3] relative bg-tile1">
                 {edit.boardImage ? (
                   <Image
                     src={edit.boardImage}
