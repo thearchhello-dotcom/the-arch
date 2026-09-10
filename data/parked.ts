@@ -7,6 +7,11 @@
  * but loses the link and the price — so this is where those two survive until
  * the edit that wants them gets built.
  *
+ * ONLY PARK THINGS THAT AREN'T TIED TO A DATE. A cord pinafore or a teddy coat
+ * will still be around in six weeks; anything with a pumpkin or a snowflake on
+ * it has to be used in its own season or not at all. Supermarket stock doesn't
+ * survive a year either, so "save it for next autumn" never works.
+ *
  * Nothing here is imported by the site. It has no effect on anything until a
  * piece is moved into `data/products.ts` with a real id and listed in a look.
  *
@@ -26,15 +31,4 @@ export interface ParkedPiece {
   note?: string;
 }
 
-export const parked: ParkedPiece[] = [
-  {
-    name: "Boys Cream Pumpkin Knit Jumper (1–8yrs)",
-    retailer: "Matalan",
-    price: "£12.60, down from £14.00",
-    savedOn: "10 September 2026",
-    url: "https://www.matalan.co.uk/p/childrens-clothing/boys-cream-pumpkin-knit-jumper-1-8yrs/",
-    forEdit: "the-knitwear-edit-26",
-    note:
-      "Too close to the girls' Pumpkin Picker knit to sit on the same board as it — cream chunky knit, script, embroidered pumpkin, near enough the same garment. Lovely on its own though, and it carries a knitwear board easily.",
-  },
-];
+export const parked: ParkedPiece[] = [];
