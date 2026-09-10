@@ -46,7 +46,7 @@ export default function Newsletter() {
           One edit a week, straight to you.
         </h2>
         <p className="leading-relaxed text-ink-soft">
-          A new board every Sunday &mdash; the full outfit, what it costs, and what to know before
+          A new board every week &mdash; the full outfit, what it costs, and what to know before
           you buy. No daily emails, no cross-promotion, and you can leave whenever you like.
         </p>
 
