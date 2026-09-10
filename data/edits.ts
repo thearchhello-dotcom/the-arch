@@ -213,6 +213,27 @@ export const edits: Edit[] = [
   },
 
   {
+    slug: "the-britpop-edit-26",
+    title: "The Britpop Edit",
+    season: "Autumn 2026",
+    plannedFor: "While the tour talk is still going — it dates the moment it stops",
+    draft: true,
+    palette: ["#4A5240", "#1C2B4A", "#F1E9D8", "#A6382C"], // parka olive, navy, cream, red
+    description:
+      "Parkas, three stripes and bucket hats. The look that keeps coming back round, sized for people who weren't there the first time — and it works just as well on a girl as a boy.",
+    note:
+      "Half the appeal is that it matches what their dad is already wearing. Nothing here is fancy dress; it's a parka and a pair of trainers, which is what they'd want on anyway.",
+    // Named for the sound, not the band. A band's name in the title would read
+    // as though they were involved in it, and there's a clothing label called
+    // Oasis besides.
+    looks: [
+      { label: "Baby", ages: "0–18 months", productIds: [] },
+      { label: "Girls", ages: "2–7 years", productIds: [] },
+      { label: "Boys", ages: "2–7 years", productIds: [] },
+    ],
+  },
+
+  {
     slug: "hot-wheels-26",
     title: "The Hot Wheels Edit",
     season: "Autumn 2026",
