@@ -19,6 +19,10 @@ const karla = Karla({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
+  // A relative canonical resolves per route, so every page declares itself the
+  // original. Without it, /shop and /shop?category=Baby look like two pages
+  // with the same content and Google has to guess which one to rank.
+  alternates: { canonical: "./" },
   title: {
     default: "The Arch — little finds for little people",
     template: "%s — The Arch",
