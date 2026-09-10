@@ -80,7 +80,7 @@ export const edits: Edit[] = [
     title: "The Little Pumpkin",
     season: "Autumn 2026",
     plannedFor: "Now — alongside the Halloween edit",
-    draft: true,
+    boardImage: "/edits/little-pumpkins-26-board.png",
     palette: ["#C0703F", "#2F4A42", "#F1E9D8", "#B4835A"], // rust, forest cord, cream, tan
     description:
       "Pumpkins, but the loud ones. Bold prints rather than sweet little motifs, so it works for a six-year-old boy as well as it does for a baby. Everyday clothes with a pumpkin on, not a costume.",
