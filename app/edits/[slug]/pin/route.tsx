@@ -12,15 +12,18 @@ import { getProduct } from "@/data/products";
  *   /edits/<slug>/pin?format=post   Instagram feed — 1080 × 1350 (4:5)
  *   /edits/<slug>/pin?format=story  Instagram story — 1080 × 1920 (9:16)
  *
- * THE POINT OF THIS: you build the collage once in Canva — just the product
- * cut-outs on cream, no text — save it into /public/edits/ and set `boardImage`
- * on the edit. Everything else is drawn here from the edit's own data: the
- * title, the real outfit total, the branding and a call to action that changes
- * per platform. Three posts, one board, no retyping, and the prices can never
- * disagree with the website because they come from the same file.
+ * THE POINT OF THIS: your finished board is 2:3, which is right for Pinterest
+ * and wrong for everywhere else — Instagram crops a 2:3 image top and bottom,
+ * which is exactly where the title and the web address live. So for an edit
+ * that HAS a board, this reframes that board whole onto each canvas and draws
+ * nothing over it. One design in Canva, three sizes out, nothing lost.
  *
- * With no boardImage yet it falls back to the edit's palette drawn as arches,
- * so the pin still looks finished.
+ * It used to compose the title, total and branding on top, from a board that
+ * was meant to be bare cut-outs. Gemma's boards carry all of that themselves,
+ * so doing it here printed everything twice. If a board is present it is the
+ * whole design; the composed layout below is only for an edit that hasn't got
+ * one yet, where the palette is drawn as arches and needs the text to make
+ * sense of it.
  */
 
 export const runtime = "nodejs";
@@ -120,6 +123,29 @@ export async function GET(req: Request, { params }: { params: Promise<{ slug: st
   const artH = ctaY - artTop - Math.round(H * 0.03);
 
   const pal = edit.palette.length ? edit.palette : ["#B7A695", "#8FA383", "#C96849", "#4A372A"];
+
+  // A finished board already carries the wordmark, the title, every outfit
+  // total and the web address. Reframe it, add nothing.
+  if (board) {
+    return new ImageResponse(
+      (
+        <div
+          style={{
+            width: W,
+            height: H,
+            background: CREAM,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={board} alt="" style={{ width: W, height: H, objectFit: "contain" }} />
+        </div>
+      ),
+      { width: W, height: H }
+    );
+  }
 
   return new ImageResponse(
     (
