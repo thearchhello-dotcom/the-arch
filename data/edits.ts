@@ -235,6 +235,29 @@ export const edits: Edit[] = [
   },
 
   {
+    slug: "girl-power-26",
+    title: "Girl Power",
+    season: "Autumn 2026",
+    plannedFor: "While the reunion talk is live — same window as The 'R Kid' Edit",
+    draft: true,
+    palette: ["#C8102E", "#1A1A1A", "#E7A9BE", "#C9A227"], // union red, black, baby pink, gold
+    description:
+      "Five looks, one each: sporty, scary, baby, ginger and posh. Nineties girl group energy worn as actual clothes — a tracksuit, a leopard print, a pastel knit, a red dress, something black and sleek. Nothing dressing-up-box about any of it.",
+    // `note` deliberately left off — Gemma writes those.
+    //
+    // Five looks rather than three, which is the one edit that justifies a new
+    // board layout: you cannot do this with four. Girls-only, which balances
+    // the boys-only Hot Wheels edit, and Baby is a real baby rather than a
+    // fifth older girl.
+    looks: [
+      { label: "Sporty", ages: "4–8 years", productIds: [] },
+      { label: "Scary", ages: "4–8 years", productIds: [] },
+      { label: "Baby", ages: "0–18 months", productIds: [] },
+      { label: "Ginger", ages: "4–8 years", productIds: [] },
+      { label: "Posh", ages: "4–8 years", productIds: [] },
+    ],
+  },
+  {
     slug: "the-britpop-edit-26",
     title: "The 'R Kid' Edit",
     season: "Autumn 2026",
@@ -244,7 +267,7 @@ export const edits: Edit[] = [
     description:
       "Britpop, sized down. Parkas, three stripes and bucket hats — the look that keeps coming back round, for people who weren't there the first time. It works just as well on a girl as a boy.",
     note:
-      "'R kid is what a Manc calls their brother, and it's also just what this is — clothes for your kid. Half the appeal is that it matches what their dad is already wearing. Nothing here is fancy dress; it's a parka and a pair of trainers, which is what they'd want on anyway.",
+      "There's been a fair bit of hype about a certain Manchester band coming back, so this one's for all the Britpop parents wanting to revisit the adidas — only smaller this time. Half the appeal is that it matches what their dad is already wearing.",
     // Named for the sound, not the band. A band's name in the title would read
     // as though they were involved in it, and there's a clothing label called
     // Oasis besides.
