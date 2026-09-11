@@ -95,7 +95,7 @@ export const edits: Edit[] = [
 
   {
     slug: "baby-halloween-26",
-    title: "Baby's First Halloween",
+    title: "Little Boo",
     season: "Autumn 2026",
     plannedFor: "Now — the third and last of the Halloween run",
     draft: true,
