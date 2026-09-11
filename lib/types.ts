@@ -2,7 +2,16 @@
 // products live once, edits/looks reference them rather than duplicating them.
 
 export type Category = "Baby" | "Girls" | "Boys";
-export type Retailer = "George" | "H&M" | "M&S" | "Matalan" | "MandM Direct" | "Next" | "Tu" | "Zara";
+export type Retailer =
+  | "adidas"
+  | "George"
+  | "H&M"
+  | "M&S"
+  | "Matalan"
+  | "MandM Direct"
+  | "Next"
+  | "Tu"
+  | "Zara";
 
 /** Clothing first, then the non-clothing types — toys, gifts and nursery bits.
  *  Adding these now means expanding beyond outfits later is a data job, not a
