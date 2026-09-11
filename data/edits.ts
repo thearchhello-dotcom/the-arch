@@ -249,6 +249,14 @@ export const edits: Edit[] = [
     // board layout: you cannot do this with four. Girls-only, which balances
     // the boys-only Hot Wheels edit, and Baby is a real baby rather than a
     // fifth older girl.
+    //
+    // GEMMA'S DIRECTION, 11 Sep — one anchor piece each, everything else plain:
+    //   Sporty  three stripes, a tracksuit. MandM Direct is where adidas is
+    //           cheapest, and it is on Awin.
+    //   Scary   leopard print
+    //   Baby    pastel, soft, nothing loud
+    //   Ginger  union jack
+    //   Posh    a co-ord, black and sleek
     looks: [
       { label: "Sporty", ages: "4–8 years", productIds: [] },
       { label: "Scary", ages: "4–8 years", productIds: [] },
