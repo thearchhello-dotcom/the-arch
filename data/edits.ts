@@ -236,7 +236,7 @@ export const edits: Edit[] = [
 
   {
     slug: "the-britpop-edit-26",
-    title: "D'You Know What I Mean?",
+    title: "The 'R Kid' Edit",
     season: "Autumn 2026",
     plannedFor: "While the tour talk is still going — it dates the moment it stops",
     draft: true,
@@ -244,7 +244,7 @@ export const edits: Edit[] = [
     description:
       "Britpop, sized down. Parkas, three stripes and bucket hats — the look that keeps coming back round, for people who weren't there the first time. It works just as well on a girl as a boy.",
     note:
-      "Half the appeal is that it matches what their dad is already wearing. Nothing here is fancy dress; it's a parka and a pair of trainers, which is what they'd want on anyway.",
+      "'R kid is what a Manc calls their brother, and it's also just what this is — clothes for your kid. Half the appeal is that it matches what their dad is already wearing. Nothing here is fancy dress; it's a parka and a pair of trainers, which is what they'd want on anyway.",
     // Named for the sound, not the band. A band's name in the title would read
     // as though they were involved in it, and there's a clothing label called
     // Oasis besides.
