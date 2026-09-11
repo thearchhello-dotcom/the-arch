@@ -275,7 +275,7 @@ export const edits: Edit[] = [
     description:
       "Britpop, sized down. Parkas, three stripes and bucket hats — the look that keeps coming back round, for people who weren't there the first time. It works just as well on a girl as a boy.",
     note:
-      "There's been a fair bit of hype about a certain Manchester band coming back, so this one's for all the Britpop parents wanting to revisit the adidas — only smaller this time. Half the appeal is that it matches what their dad is already wearing.",
+      "There's been a fair bit of hype about a certain Manchester band coming again, so this one's for all the Britpop parents wanting to revisit the adidas — only smaller this time. Half the appeal is that it matches what their mam and dad are already wearing.",
     // Named for the sound, not the band. A band's name in the title would read
     // as though they were involved in it, and there's a clothing label called
     // Oasis besides.
