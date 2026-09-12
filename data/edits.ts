@@ -191,7 +191,7 @@ export const edits: Edit[] = [
     boardImage: "/edits/first-coats-26-board.png",
     palette: ["#5B7B7A", "#C96849", "#E7E1CE", "#2E2A26"],
     description:
-      "The coat sets the tone of everything underneath it from now until March, and it's the one thing worth taking a minute over. Three to choose from for each of them, cheap to lovely, with what each actually costs.",
+      "The coat sets the tone of everything underneath it from now until March, and it's the one thing worth taking a minute over. Three to choose from for each of them, at three different prices, with what each one actually costs.",
     // The first shortlist edit rather than an outfit one: three coats are
     // alternatives, not a set, so the page gives a range instead of a total.
     // Same format works later for wellies, school shoes, party dresses.
