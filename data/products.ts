@@ -73,6 +73,19 @@ export const products: Product[] = [
   // Zara has no open programme — this one earns through Skimlinks, with a
   // 24-hour cookie rather than Awin's 30 days.
   { id: "zara-checkerboard-jacket", name: "Faux Shearling and Suede Checkerboard Jacket", category: "Boys", retailer: "Zara", price: 27.99, type: "top", affiliateUrl: "https://www.zara.com/gb/en/suede-faux-shearling-checkerboard-jacket-p00874574.html" },
+  // --- The 'R Kid' Edit · added 12 Sep. The dearest board on the site by some
+  //     way, and deliberately so: real adidas is the point of it. ---
+  { id: "next-green-borg-parka", name: "Green Waterproof Borg Lined Parka", category: "Baby", retailer: "Next", price: 28.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/su939843/v41083" },
+  { id: "tu-red-beanie", name: "Red Knitted Beanie Hat", category: "Baby", retailer: "Tu", price: 5.00, type: "head", affiliateUrl: "https://tuclothing.sainsburys.co.uk/product/tuc146866552" },
+  { id: "adidas-denim-tee-set", name: "Denim Tee Set Kids", category: "Baby", retailer: "adidas", price: 33.00, type: "top", affiliateUrl: "https://www.adidas.co.uk/denim-tee-set-kids/JC7863.html" },
+  { id: "adidas-campus-00s-red", name: "Campus 00s Comfort Closure Shoes Kids", category: "Baby", retailer: "adidas", price: 50.00, type: "foot", onSale: true, salePrice: 35.00, affiliateUrl: "https://www.adidas.co.uk/campus-00s-comfort-closure-elastic-lace-shoes-kids/JI4336.html" },
+  { id: "next-stripe-rib-tshirt", name: "Black and White Stripe Cotton Rich Long Sleeve Rib T-Shirt", category: "Girls", retailer: "Next", price: 5.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/st463641/253907" },
+  { id: "zara-padded-jacket", name: "Water Repellent Padded Jacket", category: "Girls", retailer: "Zara", price: 25.99, type: "top", affiliateUrl: "https://www.zara.com/gb/en/water-repellent-padded-jacket-p01255550.html" },
+  { id: "ms-denim-mom-jeans", name: "Denim Mom Jeans (2-8 Yrs)", category: "Girls", retailer: "M&S", price: 12.00, type: "bottom", affiliateUrl: "https://www.marksandspencer.com/denim-mom-jeans-2-8-yrs-/p/clp60720221" },
+  { id: "adidas-gazelle-indoor-maroon", name: "Gazelle Indoor Shoes", category: "Girls", retailer: "adidas", price: 50.00, type: "foot", affiliateUrl: "https://www.adidas.co.uk/gazelle-indoor-shoes/KI7358.html" },
+  { id: "next-superdry-everest-parka", name: "Superdry Black Everest Parka Coat", category: "Boys", retailer: "Next", price: 68.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/su994494/g68932" },
+  { id: "adidas-sst-tracksuit-navy", name: "SST Tracksuit", category: "Boys", retailer: "adidas", price: 40.00, type: "top", affiliateUrl: "https://www.adidas.co.uk/sst-tracksuit/HZ6613.html" },
+  { id: "adidas-samba-og-white", name: "Samba OG Comfort Closure Shoes Kids", category: "Boys", retailer: "adidas", price: 50.00, type: "foot", affiliateUrl: "https://www.adidas.co.uk/samba-og-comfort-closure-elastic-lace-shoes-kids/JQ6391.html" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.

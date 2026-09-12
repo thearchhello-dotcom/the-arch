@@ -273,7 +273,7 @@ export const edits: Edit[] = [
     title: "The 'R Kid' Edit",
     season: "Autumn 2026",
     plannedFor: "While the tour talk is still going — it dates the moment it stops",
-    draft: true,
+    boardImage: "/edits/the-britpop-edit-26-board.png",
     palette: ["#4A5240", "#1C2B4A", "#F1E9D8", "#A6382C"], // parka olive, navy, cream, red
     description:
       "Britpop, sized down. Parkas, three stripes and bucket hats — the look that keeps coming back round, for people who weren't there the first time. It works just as well on a girl as a boy.",
@@ -283,9 +283,9 @@ export const edits: Edit[] = [
     // as though they were involved in it, and there's a clothing label called
     // Oasis besides.
     looks: [
-      { label: "Baby", ages: "0–18 months", productIds: [] },
-      { label: "Girls", ages: "2–7 years", productIds: [] },
-      { label: "Boys", ages: "2–7 years", productIds: [] },
+      { label: "Baby", ages: "3 months–3 years", productIds: ["next-green-borg-parka", "tu-red-beanie", "adidas-denim-tee-set", "adidas-campus-00s-red"] },
+      { label: "Girls", ages: "2–8 years", productIds: ["next-stripe-rib-tshirt", "zara-padded-jacket", "ms-denim-mom-jeans", "adidas-gazelle-indoor-maroon"] },
+      { label: "Boys", ages: "2–8 years", productIds: ["next-superdry-everest-parka", "adidas-sst-tracksuit-navy", "adidas-samba-og-white"] },
     ],
   },
 
