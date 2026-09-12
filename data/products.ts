@@ -60,6 +60,19 @@ export const products: Product[] = [
   { id: "ms-halloween-pumpkin-sweatshirt", name: "Cotton Rich Halloween Pumpkin Sweatshirt (0-5 Yrs)", category: "Baby", retailer: "M&S", price: 8.00, type: "top", affiliateUrl: "https://www.marksandspencer.com/cotton-rich-halloween-pumpkin-sweatshirt-0-5-yrs-/p/clp61224826" },
   { id: "ms-cord-trousers", name: "Pure Cotton Cord Trousers (0-5 Yrs)", category: "Baby", retailer: "M&S", price: 10.00, type: "bottom", affiliateUrl: "https://www.marksandspencer.com/pure-cotton-cord-trousers-0-5-yrs-/p/clp61232556" },
   { id: "ms-first-walker-trainers", name: "First Walker Suede Riptape Trainers", category: "Baby", retailer: "M&S", price: 24.00, type: "foot", affiliateUrl: "https://www.marksandspencer.com/kids-first-walker-suede-riptape-trainers-2-5-small-/p/clp60788363" },
+  // --- Get Cosy · added 12 Sep. A shortlist edit: these are alternatives to
+  //     each other, not an outfit, so the page shows a range not a total. ---
+  { id: "matalan-cream-bear-coat", name: "Baby Cream Bear Coat (0-23mths)", category: "Baby", retailer: "Matalan", price: 15.00, type: "top", onSale: true, salePrice: 13.50, affiliateUrl: "https://www.matalan.co.uk/p/childrens-clothing/baby-cream-bear-coat-0-23mths/17841668/" },
+  { id: "next-blue-stripe-fleece", name: "Blue Stripe Fleece Baby Zip Jacket", category: "Baby", retailer: "Next", price: 15.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/sv020239/g93087" },
+  { id: "next-brown-spot-borg-jacket", name: "Brown and Pink Borg Spot Hooded Baby Jacket", category: "Baby", retailer: "Next", price: 16.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/su982364/v39939" },
+  { id: "ms-borg-colourblock-jacket", name: "Borg Colour Block Jacket (0-5 Yrs)", category: "Girls", retailer: "M&S", price: 16.00, type: "top", affiliateUrl: "https://www.marksandspencer.com/borg-colour-block-jacket-0-5-yrs-/p/clp61217899" },
+  { id: "next-red-gingham-coat", name: "Red Gingham Shower Resistant Padded Coat", category: "Girls", retailer: "Next", price: 22.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/su967020/w18087" },
+  { id: "ms-gingham-puffer-coat", name: "Gingham Hooded Puffer Coat (2-8 Yrs)", category: "Girls", retailer: "M&S", price: 30.00, type: "top", affiliateUrl: "https://www.marksandspencer.com/gingham-hooded-puffer-coat-2-8-yrs-/p/clp61216778" },
+  { id: "matalan-cutsew-padded-coat", name: "Multicolour Cut and Sew Padded Coat (1-8yrs)", category: "Boys", retailer: "Matalan", price: 18.00, type: "top", onSale: true, salePrice: 16.20, affiliateUrl: "https://www.matalan.co.uk/p/childrens-clothing/boys-multicolour-cut-sew-padded-coat-1-8yrs/17835502/" },
+  { id: "next-colourblock-fleece", name: "Neutral and Tan Colourblock Hooded Fleece", category: "Boys", retailer: "Next", price: 20.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/su998740/w15719" },
+  // Zara has no open programme — this one earns through Skimlinks, with a
+  // 24-hour cookie rather than Awin's 30 days.
+  { id: "zara-checkerboard-jacket", name: "Faux Shearling and Suede Checkerboard Jacket", category: "Boys", retailer: "Zara", price: 27.99, type: "top", affiliateUrl: "https://www.zara.com/gb/en/suede-faux-shearling-checkerboard-jacket-p00874574.html" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.

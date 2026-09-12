@@ -196,9 +196,9 @@ export const edits: Edit[] = [
     // alternatives, not a set, so the page gives a range instead of a total.
     // Same format works later for wellies, school shoes, party dresses.
     looks: [
-      { label: "Baby", ages: "0–18 months", kind: "shortlist", productIds: [] },
-      { label: "Girls", ages: "2–7 years", kind: "shortlist", productIds: [] },
-      { label: "Boys", ages: "2–7 years", kind: "shortlist", productIds: [] },
+      { label: "Baby", ages: "0–2 years", kind: "shortlist", productIds: ["matalan-cream-bear-coat", "next-blue-stripe-fleece", "next-brown-spot-borg-jacket"] },
+      { label: "Girls", ages: "0–8 years", kind: "shortlist", productIds: ["ms-borg-colourblock-jacket", "next-red-gingham-coat", "ms-gingham-puffer-coat"] },
+      { label: "Boys", ages: "1–8 years", kind: "shortlist", productIds: ["matalan-cutsew-padded-coat", "next-colourblock-fleece", "zara-checkerboard-jacket"] },
     ],
   },
 
