@@ -68,7 +68,11 @@ export default function HomePage() {
           {featured && (
             <Link
               href={`/edits/${featured.slug}`}
-              className="group block w-full md:flex-1 max-w-[320px] sm:max-w-[380px] md:max-w-[420px] mx-auto md:mx-0"
+              /* Deliberately modest on a phone. A 2:3 board at the full column
+                 width is 480px tall before padding, which swallows the screen
+                 and pushes the headline out of sight — the board should be the
+                 first thing you see, not the only thing. */
+              className="group block w-full md:flex-1 max-w-[236px] sm:max-w-[320px] md:max-w-[400px] mx-auto md:mx-0"
             >
               <div className="rounded-[26px] bg-footer p-2.5 sm:p-3 border border-line shadow-[0_22px_50px_-28px_rgba(74,55,42,0.55)] transition-transform group-hover:-translate-y-1">
                 {featured.boardImage ? (
@@ -78,7 +82,7 @@ export default function HomePage() {
                     width={1200}
                     height={1800}
                     priority
-                    sizes="(max-width: 768px) 90vw, 420px"
+                    sizes="(max-width: 768px) 60vw, 400px"
                     className="w-full h-auto rounded-[18px] border border-line"
                   />
                 ) : (
@@ -117,7 +121,9 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Two across on a phone. One per row would be three full screens of
+              scrolling for three boards. */}
+          <div className="grid grid-cols-2 gap-5 sm:gap-6 lg:grid-cols-3">
             {rest.map((edit) => (
               <Link key={edit.slug} href={`/edits/${edit.slug}`} className="group flex flex-col gap-3">
                 <div className="rounded-[22px] bg-footer p-2 border border-line transition-transform group-hover:-translate-y-1">
@@ -127,7 +133,7 @@ export default function HomePage() {
                       alt={`${edit.title} mood board`}
                       width={1200}
                       height={1800}
-                      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
+                      sizes="(max-width: 640px) 45vw, (max-width: 1024px) 45vw, 30vw"
                       className="w-full h-auto rounded-[15px] border border-line"
                     />
                   ) : (
