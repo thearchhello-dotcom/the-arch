@@ -51,6 +51,15 @@ export const products: Product[] = [
   { id: "tu-checkerboard-beanie", name: "Mono Checkerboard Beanie Hat", category: "Boys", retailer: "Tu", price: 7.00, type: "head", affiliateUrl: "https://tuclothing.sainsburys.co.uk/product/tuc148238971" },
   { id: "next-neutral-trainers", name: "Neutral and White Touch Fastening Trainers", category: "Boys", retailer: "Next", price: 18.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/su345525/w63356" },
   { id: "next-black-wide-jeans", name: "Black Denim Wide Fit Jeans (3mths-7yrs)", category: "Boys", retailer: "Next", price: 15.00, type: "bottom", affiliateUrl: "https://www.next.co.uk/style/sv154520/g55829" },
+  // --- Little Boo · added 12 Sep. Each outfit is kept to one shop, so each
+  //     one is a single delivery and a single returns slip. ---
+  { id: "next-neutral-halloween-sleepsuit", name: "Neutral My First Halloween Two Way Zip Baby Sleepsuit", category: "Baby", retailer: "Next", price: 9.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/su949524/g57000" },
+  { id: "next-pumpkin-slip-on-shoes", name: "Orange Pumpkin Baby Slip-On Shoes", category: "Baby", retailer: "Next", price: 9.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/sv278078/g63089" },
+  { id: "next-blue-pumpkin-set", name: "Blue Pumpkin Top and Legging Baby Set", category: "Baby", retailer: "Next", price: 11.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/sv034457/g95284" },
+  { id: "next-neutral-baby-trainers", name: "Neutral Touch Fastening Baby Trainers", category: "Baby", retailer: "Next", price: 7.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/su807131/e70981" },
+  { id: "ms-halloween-pumpkin-sweatshirt", name: "Cotton Rich Halloween Pumpkin Sweatshirt (0-5 Yrs)", category: "Baby", retailer: "M&S", price: 8.00, type: "top", affiliateUrl: "https://www.marksandspencer.com/cotton-rich-halloween-pumpkin-sweatshirt-0-5-yrs-/p/clp61224826" },
+  { id: "ms-cord-trousers", name: "Pure Cotton Cord Trousers (0-5 Yrs)", category: "Baby", retailer: "M&S", price: 10.00, type: "bottom", affiliateUrl: "https://www.marksandspencer.com/pure-cotton-cord-trousers-0-5-yrs-/p/clp61232556" },
+  { id: "ms-first-walker-trainers", name: "First Walker Suede Riptape Trainers", category: "Baby", retailer: "M&S", price: 24.00, type: "foot", affiliateUrl: "https://www.marksandspencer.com/kids-first-walker-suede-riptape-trainers-2-5-small-/p/clp60788363" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.

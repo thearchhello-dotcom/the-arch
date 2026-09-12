@@ -109,9 +109,9 @@ export const edits: Edit[] = [
     // agonises over £9 — so it earns a board of its own rather than one
     // outfit on a board shared with older children.
     looks: [
-      { label: "Newborn", ages: "0–6 months", productIds: [] },
-      { label: "Baby", ages: "6–12 months", productIds: [] },
-      { label: "Toddler", ages: "12–18 months", productIds: [] },
+      { label: "Newborn", ages: "0–6 months", productIds: ["next-neutral-halloween-sleepsuit", "next-pumpkin-slip-on-shoes"] },
+      { label: "Baby", ages: "6–12 months", productIds: ["next-blue-pumpkin-set", "next-neutral-baby-trainers"] },
+      { label: "Toddler", ages: "12–18 months", productIds: ["ms-halloween-pumpkin-sweatshirt", "ms-cord-trousers", "ms-first-walker-trainers"] },
     ],
   },
 
