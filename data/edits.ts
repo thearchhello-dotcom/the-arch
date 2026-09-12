@@ -276,7 +276,7 @@ export const edits: Edit[] = [
     boardImage: "/edits/the-britpop-edit-26-board.png",
     palette: ["#4A5240", "#1C2B4A", "#F1E9D8", "#A6382C"], // parka olive, navy, cream, red
     description:
-      "Britpop, sized down. Parkas, three stripes and bucket hats — the look that keeps coming back round, for people who weren't there the first time. It works just as well on a girl as a boy.",
+      "Britpop, sized down. Parkas, three stripes and proper adidas — the Manchester look that never really went away, and is back now two brothers are speaking again. It works just as well on a girl as a boy.",
     note:
       "There's been a fair bit of hype about a certain Manchester band coming again, so this one's for all the Britpop parents wanting to revisit the adidas — only smaller this time. Half the appeal is that it matches what their mam and dad are already wearing.",
     // Named for the sound, not the band. A band's name in the title would read
