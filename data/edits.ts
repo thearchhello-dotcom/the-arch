@@ -111,7 +111,7 @@ export const edits: Edit[] = [
     looks: [
       { label: "Newborn", ages: "0–6 months", productIds: [] },
       { label: "Baby", ages: "6–12 months", productIds: [] },
-      { label: "Toddling", ages: "12–18 months", productIds: [] },
+      { label: "Toddler", ages: "12–18 months", productIds: [] },
     ],
   },
 
