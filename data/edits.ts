@@ -188,7 +188,7 @@ export const edits: Edit[] = [
     title: "Get Cosy",
     season: "Autumn 2026",
     plannedFor: "Any time — no date attached",
-    draft: true,
+    boardImage: "/edits/first-coats-26-board.png",
     palette: ["#5B7B7A", "#C96849", "#E7E1CE", "#2E2A26"],
     description:
       "The coat sets the tone of everything underneath it from now until March, and it's the one thing worth taking a minute over. Three to choose from for each of them, cheap to lovely, with what each actually costs.",
