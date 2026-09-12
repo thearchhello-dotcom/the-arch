@@ -69,6 +69,30 @@ export function priceOf(p: Product): number {
   return p.onSale && p.salePrice ? p.salePrice : p.price;
 }
 
+/** What a look costs, in the terms that make sense for what it is.
+ *
+ *  An outfit is bought whole, so it has a total. A shortlist is a choose-one,
+ *  so it has a cheapest and a dearest and no total at all. `from` is what both
+ *  have in common — the least you could spend — which is what the price filter
+ *  sorts on. */
+export function costOf(look: { kind?: "outfit" | "shortlist"; productIds: string[] }) {
+  const prices = look.productIds
+    .map(getProduct)
+    .filter(Boolean)
+    .map((p) => priceOf(p as Product));
+
+  if (!prices.length) return { kind: "outfit" as const, total: 0, from: 0, to: 0 };
+
+  if (look.kind === "shortlist") {
+    const from = Math.min(...prices);
+    const to = Math.max(...prices);
+    return { kind: "shortlist" as const, total: 0, from, to };
+  }
+
+  const total = prices.reduce((s, n) => s + n, 0);
+  return { kind: "outfit" as const, total, from: total, to: total };
+}
+
 export function getProduct(id: string): Product | undefined {
   return products.find((p) => p.id === id);
 }

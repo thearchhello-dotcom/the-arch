@@ -11,7 +11,7 @@ import Newsletter from "@/components/Newsletter";
 import PaletteArt from "@/components/PaletteArt";
 import EditNote from "@/components/EditNote";
 import { getEdit, publishedEdits } from "@/data/edits";
-import { getProduct, priceOf } from "@/data/products";
+import { costOf, getProduct } from "@/data/products";
 
 export function generateStaticParams() {
   return publishedEdits.map((e) => ({ slug: e.slug }));
@@ -156,15 +156,18 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
         const items = look.productIds.map(getProduct).filter(Boolean) as NonNullable<
           ReturnType<typeof getProduct>
         >[];
-        const total = items.reduce((sum, p) => sum + priceOf(p), 0);
+        const cost = costOf(look);
+        const shortlist = cost.kind === "shortlist";
 
         // When a whole outfit comes from one shop it's one delivery charge and
         // one returns slip if the sizing is off, which is the bit a parent
         // actually weighs up. Worked out from the products rather than typed,
         // so it can't drift — and it stays quiet when the outfit is mixed
         // rather than announcing the bad news.
+        // Only meaningful for an outfit. On a shortlist you're buying one
+        // thing, so "one delivery" says nothing.
         const shops = new Set(items.map((p) => p.retailer));
-        const oneShop = items.length > 1 && shops.size === 1 ? items[0].retailer : null;
+        const oneShop = !shortlist && items.length > 1 && shops.size === 1 ? items[0].retailer : null;
         const pal = edit.palette.length ? edit.palette : ["#B7A695", "#8FA383", "#C96849"];
         const tint = (i: number) => soften(pal[i % pal.length], 0.74);
         const ink = (i: number) => deepen(pal[i % pal.length], 0.35);
@@ -230,10 +233,12 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
               <div className="mt-5 bg-ink text-card rounded-[22px] px-7 py-5 flex items-center justify-between flex-wrap gap-3">
                 <div className="flex flex-col">
                   <span className="font-body font-bold text-[11px] tracking-widest uppercase opacity-70">
-                    The whole outfit
+                    {shortlist ? "Pick one" : "The whole outfit"}
                   </span>
                   <span className="text-sm opacity-80">
-                    {look.label} &middot; everything above, nothing missing
+                    {shortlist
+                      ? `${look.label} · ${items.length} to choose from`
+                      : `${look.label} · everything above, nothing missing`}
                   </span>
                   {oneShop && (
                     <span className="text-sm opacity-80">
@@ -241,7 +246,11 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
                     </span>
                   )}
                 </div>
-                <span className="font-display text-3xl font-semibold">£{total.toFixed(2)}</span>
+                <span className="font-display text-3xl font-semibold">
+                  {shortlist && cost.to !== cost.from
+                    ? `£${cost.from.toFixed(2)} – £${cost.to.toFixed(2)}`
+                    : `£${(shortlist ? cost.from : cost.total).toFixed(2)}`}
+                </span>
               </div>
             )}
           </section>

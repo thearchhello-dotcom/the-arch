@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import EditFilters, { type EditSummary } from "@/components/EditFilters";
 import { publishedEdits } from "@/data/edits";
-import { getProduct, priceOf } from "@/data/products";
+import { costOf } from "@/data/products";
 import type { Edit } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -16,14 +16,9 @@ export const metadata: Metadata = {
 /** Totals per look, so the cards and the price filter both work from the same
  *  numbers rather than each computing their own. */
 function summarise(edit: Edit): EditSummary {
-  const totals = edit.looks
-    .map((look) =>
-      look.productIds.reduce((sum, id) => {
-        const p = getProduct(id);
-        return sum + (p ? priceOf(p) : 0);
-      }, 0)
-    )
-    .filter((t) => t > 0);
+  // An outfit's figure is its total; a shortlist's is its cheapest option.
+  // Both answer "what's the least this costs me", which is what the bands ask.
+  const totals = edit.looks.map((look) => costOf(look).from).filter((t) => t > 0);
 
   return {
     slug: edit.slug,

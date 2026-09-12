@@ -44,6 +44,14 @@ export interface EditLook {
    *  Optional — the outfit just doesn't show a range if it's missing. */
   ages?: string;
 
+  /** What these pieces are to each other.
+   *
+   *  "outfit" (the default) — they're worn together, so they get a total.
+   *  "shortlist" — they're alternatives to each other, so they get a price
+   *  range instead. Three coats aren't an outfit and adding them up would be
+   *  a number nobody is ever going to pay. */
+  kind?: "outfit" | "shortlist";
+
   productIds: string[];
 }
 
