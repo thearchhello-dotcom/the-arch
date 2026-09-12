@@ -98,7 +98,7 @@ export const edits: Edit[] = [
     title: "Little Boo",
     season: "Autumn 2026",
     plannedFor: "Now — the third and last of the Halloween run",
-    draft: true,
+    boardImage: "/edits/baby-halloween-26-board.png",
     palette: ["#D4854E", "#F1E9D8", "#3A342F", "#A8907A"], // soft pumpkin, cream, near-black, oat
     description:
       "Halloween for babies, split by age rather than by boy and girl — because what fits a newborn doesn't fit a crawler, and baby clothes are neutral anyway. Nothing scratchy, nothing that has to come off for a nap.",
