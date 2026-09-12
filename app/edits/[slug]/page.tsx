@@ -157,6 +157,14 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
           ReturnType<typeof getProduct>
         >[];
         const total = items.reduce((sum, p) => sum + priceOf(p), 0);
+
+        // When a whole outfit comes from one shop it's one delivery charge and
+        // one returns slip if the sizing is off, which is the bit a parent
+        // actually weighs up. Worked out from the products rather than typed,
+        // so it can't drift — and it stays quiet when the outfit is mixed
+        // rather than announcing the bad news.
+        const shops = new Set(items.map((p) => p.retailer));
+        const oneShop = items.length > 1 && shops.size === 1 ? items[0].retailer : null;
         const pal = edit.palette.length ? edit.palette : ["#B7A695", "#8FA383", "#C96849"];
         const tint = (i: number) => soften(pal[i % pal.length], 0.74);
         const ink = (i: number) => deepen(pal[i % pal.length], 0.35);
@@ -227,6 +235,11 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
                   <span className="text-sm opacity-80">
                     {look.label} &middot; everything above, nothing missing
                   </span>
+                  {oneShop && (
+                    <span className="text-sm opacity-80">
+                      All from {oneShop} &middot; one delivery
+                    </span>
+                  )}
                 </div>
                 <span className="font-display text-3xl font-semibold">£{total.toFixed(2)}</span>
               </div>
