@@ -242,7 +242,7 @@ export const edits: Edit[] = [
     title: "Girl Power",
     season: "Autumn 2026",
     plannedFor: "While the reunion talk is live — same window as The 'R Kid' Edit",
-    draft: true,
+    boardImage: "/edits/girl-power-26-board.png",
     palette: ["#C8102E", "#1A1A1A", "#E7A9BE", "#C9A227"], // union red, black, baby pink, gold
     description:
       "Five looks, one each: sporty, scary, baby, ginger and posh. Nineties girl group energy worn as actual clothes — a tracksuit, a leopard print, a pastel knit, a red dress, something black and sleek. Nothing dressing-up-box about any of it.",
