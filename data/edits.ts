@@ -121,7 +121,7 @@ export const edits: Edit[] = [
 
   {
     slug: "puddles-and-wellies-26",
-    title: "Puddles & Wellies",
+    title: "The Muddy Puddle Edit",
     season: "Autumn 2026",
     plannedFor: "October half term",
     draft: true,
