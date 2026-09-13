@@ -86,6 +86,26 @@ export const products: Product[] = [
   { id: "next-superdry-everest-parka", name: "Superdry Black Everest Parka Coat", category: "Boys", retailer: "Next", price: 68.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/su994494/g68932" },
   { id: "adidas-sst-tracksuit-navy", name: "SST Tracksuit", category: "Boys", retailer: "adidas", price: 40.00, type: "top", affiliateUrl: "https://www.adidas.co.uk/sst-tracksuit/HZ6613.html" },
   { id: "adidas-samba-og-white", name: "Samba OG Comfort Closure Shoes Kids", category: "Boys", retailer: "adidas", price: 50.00, type: "foot", affiliateUrl: "https://www.adidas.co.uk/samba-og-comfort-closure-elastic-lace-shoes-kids/JQ6391.html" },
+  // --- The 'Girl Power' Edit · added 13 Sep. Five looks, one each. Nobody is
+  //     in a costume: each one is translated into clothes a child would wear. ---
+  { id: "adidas-denim-set", name: "Denim Set", category: "Girls", retailer: "adidas", price: 50.00, type: "top", affiliateUrl: "https://www.adidas.co.uk/denim-set/JC7871.html" },
+  { id: "adidas-liberty-spezial", name: "adidas Liberty Handball Spezial Lace Shoes", category: "Girls", retailer: "adidas", price: 50.00, type: "foot", affiliateUrl: "https://www.adidas.co.uk/adidas-liberty-handball-spezial-lace-shoes/KH9840.html" },
+  { id: "hm-flounce-cardigan-red", name: "Flounce Detail Cardigan", category: "Girls", retailer: "H&M", price: 17.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1349102002.html" },
+  { id: "hm-leopard-denim-dress", name: "Bow Detail Denim Dress", category: "Girls", retailer: "H&M", price: 12.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1336030003.html" },
+  { id: "hm-ribbed-cotton-top-white", name: "Ribbed Cotton Top", category: "Girls", retailer: "H&M", price: 4.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1344351001.html" },
+  { id: "schuh-spezial-burgundy", name: "adidas Handball Spezial Junior", category: "Girls", retailer: "schuh", price: 45.00, type: "foot", affiliateUrl: "https://www.schuh.co.uk/kids/junior-adidas-handball-spezial-burgundy-trainers/2601543250/" },
+  { id: "next-ecru-peplum-tshirt", name: "Ecru Short Sleeve Peplum T-Shirt", category: "Baby", retailer: "Next", price: 3.50, type: "top", affiliateUrl: "https://www.next.co.uk/style/su374709/e51285" },
+  { id: "zara-striped-culotte-jeans", name: "Striped Culotte Jeans with Bows", category: "Baby", retailer: "Zara", price: 14.99, type: "bottom", affiliateUrl: "https://www.zara.com/gb/en/striped-culotte-jeans-with-bows-p04575004.html" },
+  { id: "hm-quilted-jacket-mole", name: "Pile Lined Quilted Jacket", category: "Baby", retailer: "H&M", price: 19.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1360621002.html" },
+  { id: "hm-ballet-pumps-pink", name: "Ballet Pumps", category: "Baby", retailer: "H&M", price: 9.99, type: "foot", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1341175001.html" },
+  { id: "ms-bow-top-ivory", name: "Pure Cotton Bow Top (2-8 Yrs)", category: "Girls", retailer: "M&S", price: 12.00, type: "top", affiliateUrl: "https://www.marksandspencer.com/pure-cotton-bow-top-2-8-yrs-/p/clp61223495" },
+  { id: "tu-denim-pleat-skirt", name: "Blue Soft Pleat Denim Skirt", category: "Girls", retailer: "Tu", price: 11.00, type: "bottom", affiliateUrl: "https://tuclothing.sainsburys.co.uk/product/tuc148084466" },
+  { id: "tu-red-frill-cardigan", name: "Red Frill Hem Sweat Cardigan", category: "Girls", retailer: "Tu", price: 5.00, type: "top", affiliateUrl: "https://tuclothing.sainsburys.co.uk/product/tuc147962407" },
+  { id: "next-ri-patent-maryjane", name: "River Island Black Patent Platform Mary Jane School Shoes", category: "Girls", retailer: "Next", price: 26.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/sv001233/g84002" },
+  { id: "george-black-heart-pinafore", name: "Black Heart Button Pinafore", category: "Girls", retailer: "George", price: 10.00, type: "top", affiliateUrl: "https://direct.asda.com/george/kids/dresses/black-heart-button-pinafore/G008406123,default,pd.html" },
+  { id: "zara-peter-pan-tshirt", name: "Ribbed Peter Pan Collar T-Shirt", category: "Girls", retailer: "Zara", price: 8.99, type: "top", affiliateUrl: "https://www.zara.com/gb/en/ribbed-peter-pan-collar-t-shirt-p01716450.html" },
+  { id: "next-black-button-cardigan", name: "Black Button Up Cardigan", category: "Girls", retailer: "Next", price: 11.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/su385497/e29010" },
+  { id: "next-black-velvet-maryjane", name: "Black Velvet Mary Jane Occasion Shoes", category: "Girls", retailer: "Next", price: 17.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/su778272/g67500" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.

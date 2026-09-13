@@ -10,6 +10,7 @@ export type Retailer =
   | "Matalan"
   | "MandM Direct"
   | "Next"
+  | "schuh"
   | "Tu"
   | "Zara";
 

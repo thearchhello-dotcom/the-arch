@@ -261,11 +261,11 @@ export const edits: Edit[] = [
     //   Ginger  union jack
     //   Posh    a co-ord, black and sleek
     looks: [
-      { label: "Sporty", ages: "4–8 years", productIds: [] },
-      { label: "Scary", ages: "4–8 years", productIds: [] },
-      { label: "Baby", ages: "0–18 months", productIds: [] },
-      { label: "Ginger", ages: "4–8 years", productIds: [] },
-      { label: "Posh", ages: "4–8 years", productIds: [] },
+      { label: "Scary", ages: "2–8 years", productIds: ["hm-flounce-cardigan-red", "hm-leopard-denim-dress", "hm-ribbed-cotton-top-white", "schuh-spezial-burgundy"] },
+      { label: "Baby", ages: "0–2 years", productIds: ["next-ecru-peplum-tshirt", "zara-striped-culotte-jeans", "hm-quilted-jacket-mole", "hm-ballet-pumps-pink"] },
+      { label: "Ginger", ages: "2–8 years", productIds: ["ms-bow-top-ivory", "tu-denim-pleat-skirt", "tu-red-frill-cardigan", "next-ri-patent-maryjane"] },
+      { label: "Posh", ages: "2–8 years", productIds: ["george-black-heart-pinafore", "zara-peter-pan-tshirt", "next-black-button-cardigan", "next-black-velvet-maryjane"] },
+      { label: "Sporty", ages: "2–8 years", productIds: ["adidas-denim-set", "adidas-liberty-spezial"] },
     ],
   },
   {
