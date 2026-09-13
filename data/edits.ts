@@ -34,7 +34,7 @@ export const edits: Edit[] = [
     slug: "autumn-edit-26",
     title: "The Autumn Edit '26",
     season: "Autumn 2026",
-    plannedFor: "Needs real products — currently sample data",
+    plannedFor: "Empty — needs real pieces before it can be built",
     draft: true,
     palette: ["#B7A695", "#8FA383", "#F7F1E3", "#4A372A"], // taupe, sage, cream, chocolate
     description:
@@ -45,9 +45,9 @@ export const edits: Edit[] = [
     note:
       "This is the first edit I've put together, and I kept coming back to the same three colours all autumn. Nothing here is complicated, which is rather the point.",
     looks: [
-      { label: "Baby", ages: "0–18 months", productIds: ["bg-jumper", "bg-dungarees", "bg-bonnet"] },
-      { label: "Girls", ages: "2–7 years", productIds: ["g-cardigan", "g-skirt", "g-shoes"] },
-      { label: "Boys", ages: "2–7 years", productIds: ["b-jumper", "b-trousers", "b-beanie", "b-boots"] },
+      { label: "Baby", ages: "0–18 months", productIds: [] },
+      { label: "Girls", ages: "2–7 years", productIds: [] },
+      { label: "Boys", ages: "2–7 years", productIds: [] },
     ],
   },
 
