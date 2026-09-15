@@ -127,11 +127,13 @@ export const edits: Edit[] = [
     draft: true,
     palette: ["#5B7B7A", "#C96849", "#E7E1CE", "#3F3A33"],
     description:
-      "Half term, and the weather has made its decision. Bright wellies, layered colours, and outfits that look better muddy than clean.",
+      "Half term, and the weather has made its decision. Three pairs of wellies to choose from for each of them, at three different prices — the ones that go on without a fight and come off without one either.",
+    // The second shortlist edit. Wellies are a which-one decision rather than a
+    // what-goes-with-it one, so the page gives a range instead of a total.
     looks: [
-      { label: "Baby", ages: "0–18 months", productIds: [] },
-      { label: "Girls", ages: "2–7 years", productIds: [] },
-      { label: "Boys", ages: "2–7 years", productIds: [] },
+      { label: "Baby", ages: "0–18 months", kind: "shortlist", productIds: [] },
+      { label: "Girls", ages: "2–7 years", kind: "shortlist", productIds: [] },
+      { label: "Boys", ages: "2–7 years", kind: "shortlist", productIds: [] },
     ],
   },
 
