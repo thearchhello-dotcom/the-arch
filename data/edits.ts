@@ -168,6 +168,24 @@ export const edits: Edit[] = [
   },
 
   {
+    slug: "pramsuits-26",
+    title: "Wrapped Up",
+    season: "Autumn 2026",
+    plannedFor: "October onwards — pramsuits sell from the first cold week",
+    draft: true,
+    palette: ["#D9CDBB", "#7E93A3", "#F1E9D8", "#3A342F"], // oat, winter blue, cream, charcoal
+    description:
+      "Pramsuits, split by the size they'll actually be when it turns cold. Three to choose from for each, at three different prices, with what each one costs — because this is the buy everyone leaves until the first properly cold morning.",
+    // A shortlist edit, like Get Cosy. Sizing is the thing parents agonise over
+    // with a pramsuit — a newborn one is outgrown by January — so the bands do
+    // real work here rather than being a way to fill a board.
+    looks: [
+      { label: "Newborn", ages: "0–3 months", kind: "shortlist", productIds: [] },
+      { label: "Baby", ages: "3–9 months", kind: "shortlist", productIds: [] },
+      { label: "Toddler", ages: "9–24 months", kind: "shortlist", productIds: [] },
+    ],
+  },
+  {
     slug: "the-knitwear-edit-26",
     title: "The Knitwear Edit",
     season: "Autumn 2026",
