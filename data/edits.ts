@@ -124,14 +124,14 @@ export const edits: Edit[] = [
     title: "The 'Muddy Puddles' Edit",
     season: "Autumn 2026",
     plannedFor: "October half term",
-    draft: true,
+    boardImage: "/edits/puddles-and-wellies-26-board.png",
     palette: ["#5B7B7A", "#C96849", "#E7E1CE", "#3F3A33"],
     description:
       "Half term, and the weather has made its decision. A puddlesuit and a pair of wellies each — which is the whole outfit for a day like that, and nothing else needs thinking about.",
     looks: [
-      { label: "Baby", ages: "0–18 months", productIds: [] },
-      { label: "Girls", ages: "2–7 years", productIds: [] },
-      { label: "Boys", ages: "2–7 years", productIds: [] },
+      { label: "Baby", ages: "3 months–7 years", productIds: ["next-neutral-puddlesuit", "next-lion-ankle-wellies"] },
+      { label: "Girls", ages: "3 months–7 years", productIds: ["next-sage-puddlesuit", "mw-colour-changing-wellies"] },
+      { label: "Boys", ages: "3 months–7 years", productIds: ["next-cool-vibes-puddlesuit", "debenhams-shaun-wellies"] },
     ],
   },
 

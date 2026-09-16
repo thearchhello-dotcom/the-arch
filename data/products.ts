@@ -96,6 +96,16 @@ export const products: Product[] = [
   { id: "zara-peter-pan-tshirt", name: "Ribbed Peter Pan Collar T-Shirt", category: "Girls", retailer: "Zara", price: 8.99, type: "top", affiliateUrl: "https://www.zara.com/gb/en/ribbed-peter-pan-collar-t-shirt-p01716450.html" },
   { id: "next-black-button-cardigan", name: "Black Button Up Cardigan", category: "Girls", retailer: "Next", price: 11.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/su385497/e29010" },
   { id: "next-black-velvet-maryjane", name: "Black Velvet Mary Jane Occasion Shoes", category: "Girls", retailer: "Next", price: 17.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/su778272/g67500" },
+  // --- The 'Muddy Puddles' Edit · added 16 Sep. A puddlesuit and a pair of
+  //     wellies each, which is the whole outfit for a day like that. ---
+  { id: "next-neutral-puddlesuit", name: "Neutral Waterproof Fleece Lined Puddlesuit (3mths-7yrs)", category: "Baby", retailer: "Next", price: 22.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/su148815/h34912" },
+  { id: "next-lion-ankle-wellies", name: "Neutral Lion Warm Lined Ankle Wellies", category: "Baby", retailer: "Next", price: 15.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/st529486/g68171" },
+  { id: "next-sage-puddlesuit", name: "Sage Green Waterproof Fleece Lined Puddlesuit (3mths-7yrs)", category: "Girls", retailer: "Next", price: 20.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/su749685/h21330" },
+  // Mountain Warehouse isn't on Awin — this one earns through Skimlinks or
+  // Sovrn. Kept anyway: it's the right welly, which matters more.
+  { id: "mw-colour-changing-wellies", name: "Grass and Air Kids Colour Changing Winter Wellies", category: "Girls", retailer: "Mountain Warehouse", price: 28.00, type: "foot", affiliateUrl: "https://www.mountainwarehouse.com/p/m78858/grass-air/kids-colour-changing-winter-wellies/orchid-pink/" },
+  { id: "next-cool-vibes-puddlesuit", name: "Cool Vibes Grey and Blue Waterproof Fleece Lined Puddlesuit (3mths-7yrs)", category: "Boys", retailer: "Next", price: 22.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/su148815/y98860" },
+  { id: "debenhams-shaun-wellies", name: "TOG24 Border Shaun the Sheep Wellies", category: "Boys", retailer: "Debenhams", price: 38.00, type: "foot", onSale: true, salePrice: 15.00, affiliateUrl: "https://www.debenhams.com/product/tog24-border-shaun-the-sheep-wellies_p-89deb736-81a1-4677-9132-a0975803f811" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.

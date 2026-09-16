@@ -4,11 +4,13 @@
 export type Category = "Baby" | "Girls" | "Boys";
 export type Retailer =
   | "adidas"
+  | "Debenhams"
   | "George"
   | "H&M"
   | "M&S"
   | "Matalan"
   | "MandM Direct"
+  | "Mountain Warehouse"
   | "Next"
   | "schuh"
   | "Tu"
