@@ -172,7 +172,7 @@ export const edits: Edit[] = [
     title: "Wrapped Up",
     season: "Autumn 2026",
     plannedFor: "October onwards — pramsuits sell from the first cold week",
-    draft: true,
+    boardImage: "/edits/pramsuits-26-board.png",
     palette: ["#D9CDBB", "#7E93A3", "#F1E9D8", "#3A342F"], // oat, winter blue, cream, charcoal
     description:
       "Pramsuits for babies — three to choose from in each of girls, boys and unisex, at three different prices, with what each one costs. This is the buy everyone leaves until the first properly cold morning.",
@@ -181,9 +181,9 @@ export const edits: Edit[] = [
     // been the same cream suit three times over, and "unisex" is its own
     // search — for a gift, or before anyone knows.
     looks: [
-      { label: "Girls", ages: "0–24 months", kind: "shortlist", productIds: [] },
-      { label: "Boys", ages: "0–24 months", kind: "shortlist", productIds: [] },
-      { label: "Unisex", ages: "0–24 months", kind: "shortlist", productIds: [] },
+      { label: "Baby Girl", ages: "0–24 months", kind: "shortlist", productIds: ["george-pink-borg-snowsuit", "hm-padded-pramsuit-cherries", "next-checkerboard-allinone"] },
+      { label: "Baby Boy", ages: "0–24 months", kind: "shortlist", productIds: ["hm-padded-jersey-pramsuit", "next-blue-stripe-pramsuit", "ms-borg-double-zip-pramsuit"] },
+      { label: "Unisex", ages: "0–24 months", kind: "shortlist", productIds: ["hm-pile-pramsuit-ears", "next-little-one-pramsuit", "mp-faux-fur-pramsuit"] },
     ],
   },
   {

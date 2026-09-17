@@ -9,6 +9,7 @@ export type Retailer =
   | "H&M"
   | "M&S"
   | "Matalan"
+  | "Mamas & Papas"
   | "MandM Direct"
   | "Mountain Warehouse"
   | "Next"

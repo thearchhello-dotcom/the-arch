@@ -106,6 +106,17 @@ export const products: Product[] = [
   { id: "mw-colour-changing-wellies", name: "Grass and Air Kids Colour Changing Winter Wellies", category: "Girls", retailer: "Mountain Warehouse", price: 28.00, type: "foot", affiliateUrl: "https://www.mountainwarehouse.com/p/m78858/grass-air/kids-colour-changing-winter-wellies/orchid-pink/" },
   { id: "next-cool-vibes-puddlesuit", name: "Cool Vibes Grey and Blue Waterproof Fleece Lined Puddlesuit (3mths-7yrs)", category: "Boys", retailer: "Next", price: 22.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/su148815/y98860" },
   { id: "debenhams-shaun-wellies", name: "TOG24 Border Shaun the Sheep Wellies", category: "Boys", retailer: "Debenhams", price: 38.00, type: "foot", onSale: true, salePrice: 15.00, affiliateUrl: "https://www.debenhams.com/product/tog24-border-shaun-the-sheep-wellies_p-89deb736-81a1-4677-9132-a0975803f811" },
+  // --- Wrapped Up · added 17 Sep. Pramsuits, three to choose from in each of
+  //     girls, boys and unisex. A shortlist, so the page shows ranges. ---
+  { id: "hm-padded-pramsuit-cherries", name: "Padded Pramsuit", category: "Baby", retailer: "H&M", price: 19.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1354914001.html" },
+  { id: "next-checkerboard-allinone", name: "Pink and Red Checkerboard Borg Hooded Baby All-In-One", category: "Baby", retailer: "Next", price: 26.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/su989906/v42986" },
+  { id: "george-pink-borg-snowsuit", name: "Pink Embroidered Borg Snowsuit", category: "Baby", retailer: "George", price: 18.00, type: "top", affiliateUrl: "https://direct.asda.com/george/baby/coats-pramsuits/pink-embroidered-borg-snowsuit/G008390032,default,pd.html" },
+  { id: "ms-borg-double-zip-pramsuit", name: "Borg Double Zip Pramsuit (0-12 Mths)", category: "Baby", retailer: "M&S", price: 24.00, type: "top", affiliateUrl: "https://www.marksandspencer.com/borg-double-zip-pramsuit-0-12-mths-/p/clp61218141" },
+  { id: "hm-padded-jersey-pramsuit", name: "Padded Jersey Pramsuit", category: "Baby", retailer: "H&M", price: 19.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1239371005.html" },
+  { id: "next-blue-stripe-pramsuit", name: "Blue Stripe Borg Button Hooded Baby Pramsuit", category: "Baby", retailer: "Next", price: 22.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/sv020245/g93094" },
+  { id: "next-little-one-pramsuit", name: "Cream Little One Back Slogan Quilted Nylon Pramsuit", category: "Baby", retailer: "Next", price: 28.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/sv020281/g93117" },
+  { id: "hm-pile-pramsuit-ears", name: "Pile Pram Suit with Ears", category: "Baby", retailer: "H&M", price: 14.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1230866001.html" },
+  { id: "mp-faux-fur-pramsuit", name: "Faux Fur Pramsuit", category: "Baby", retailer: "Mamas & Papas", price: 45.00, type: "top", affiliateUrl: "https://www.mamasandpapas.com/products/faux-fur-pramsuit-nb-s07gn9kb0" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.
