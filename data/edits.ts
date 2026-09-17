@@ -175,15 +175,15 @@ export const edits: Edit[] = [
     draft: true,
     palette: ["#D9CDBB", "#7E93A3", "#F1E9D8", "#3A342F"], // oat, winter blue, cream, charcoal
     description:
-      "Pramsuits for babies — three to choose from in each of girls, boys and neutral, at three different prices, with what each one costs. This is the buy everyone leaves until the first properly cold morning.",
+      "Pramsuits for babies — three to choose from in each of girls, boys and unisex, at three different prices, with what each one costs. This is the buy everyone leaves until the first properly cold morning.",
     // A shortlist edit, like Get Cosy. Split by colour rather than by age:
     // most pramsuits span 0-24 months anyway, so three age bands would have
-    // been the same cream suit three times over, and "neutral" is its own
+    // been the same cream suit three times over, and "unisex" is its own
     // search — for a gift, or before anyone knows.
     looks: [
       { label: "Girls", ages: "0–24 months", kind: "shortlist", productIds: [] },
       { label: "Boys", ages: "0–24 months", kind: "shortlist", productIds: [] },
-      { label: "Neutral", ages: "0–24 months", kind: "shortlist", productIds: [] },
+      { label: "Unisex", ages: "0–24 months", kind: "shortlist", productIds: [] },
     ],
   },
   {
