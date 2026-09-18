@@ -26,6 +26,19 @@ export const site = {
    */
   isPublic: true,
 
+  /** Whether product cards show the retailer's own photograph.
+   *
+   *  OFF until the affiliate programmes are approved and their product feeds
+   *  are available. Neither network gives blanket permission to use images
+   *  taken from a retailer's website: Awin's terms licence material the
+   *  advertiser supplies through the network, and Skimlinks tell you to ask
+   *  the merchant. Feed images are the clean version of this.
+   *
+   *  The image addresses stay in data/products.ts, so this is a one word
+   *  change whenever that day comes. Until then the cards fall back to the
+   *  garment icons. */
+  showProductImages: false,
+
   /** When the legal pages were last reviewed. Bump it when you change them. */
   policiesUpdated: "7 September 2026",
 

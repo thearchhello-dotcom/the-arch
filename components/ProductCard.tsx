@@ -1,3 +1,4 @@
+import { site } from "@/lib/site";
 import type { Product } from "@/lib/types";
 import GarmentIcon from "./GarmentIcon";
 import AffiliateLink from "./AffiliateLink";
@@ -19,7 +20,7 @@ export default function ProductCard({ product }: { product: Product }) {
           at any time. The garment icon stays as the fallback for anything
           without a photo yet. */}
       <div className={`w-full h-[190px] rounded-xl ${iconBg} flex items-center justify-center relative overflow-hidden`}>
-        {product.imageUrl ? (
+        {site.showProductImages && product.imageUrl ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={product.imageUrl}
