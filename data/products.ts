@@ -10,6 +10,26 @@ import type { Product } from "@/lib/types";
 // Prices are the LOWEST size price where a shop charges more for bigger sizes,
 // so an outfit total reads as a "from" figure. Where something is reduced,
 // record both: price is the original, salePrice what it costs today.
+//
+// IMAGES: THE ARCH SHOWS CLOTHES, NOT CHILDREN.
+//
+// Every imageUrl here must be the garment on its own — a laydown, a flat shot,
+// a hanger. Never a photograph of a child wearing it.
+//
+// Two reasons, and the second is the one that settles it:
+//
+//  1. It is what the site already looks like. Every board Gemma has made is
+//     cut-outs on cream, with nobody in them. A shop page full of child models
+//     would not match the edits it sits beside.
+//
+//  2. A retailer's release from that child's parents covers the retailer's
+//     use of the photograph. It does not extend to us, and no affiliate
+//     approval changes that. Product feeds carry model shots too, so this
+//     stays true after the programmes come through: when picking from a feed,
+//     take the laydown image, never the model.
+//
+// If a product only exists as a model shot, use no image at all. The garment
+// icon is a perfectly good fallback and always will be.
 export const products: Product[] = [
   // --- The Little Pumpkins Edit · Next · added 7 Sep ---
   // Prices are Next's LOWEST size price (they rise with size), so outfit totals
@@ -74,11 +94,11 @@ export const products: Product[] = [
   { id: "ms-denim-mom-jeans", name: "Denim Mom Jeans (2-8 Yrs)", category: "Girls", retailer: "M&S", price: 12.00, type: "bottom", affiliateUrl: "https://www.marksandspencer.com/denim-mom-jeans-2-8-yrs-/p/clp60720221", imageUrl: "https://assets.digitalcontent.marksandspencer.app/image/upload/q_auto,f_auto/SD_04_T77_3003D_CE_X_EC_90" },
   { id: "adidas-gazelle-indoor-maroon", name: "Gazelle Indoor Shoes", category: "Girls", retailer: "adidas", price: 50.00, type: "foot", affiliateUrl: "https://www.adidas.co.uk/gazelle-indoor-shoes/KI7358.html", imageUrl: "https://assets.adidas.com/images/w_500,f_auto,q_auto/b09328df12834d7999b3b4ff96d282d3_9366/GAZELLE_INDOOR_SHOES_Burgundy_KI7358_01_00_standard.jpg" },
   { id: "next-superdry-everest-parka", name: "Superdry Black Everest Parka Coat", category: "Boys", retailer: "Next", price: 68.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/su994494/g68932", imageUrl: "https://xcdn.next.co.uk/common/items/default/default/itemimages/3_4Ratio/product/lge/G68932s.jpg?im=Resize,width=600" },
-  { id: "adidas-sst-tracksuit-navy", name: "SST Tracksuit", category: "Boys", retailer: "adidas", price: 40.00, type: "top", affiliateUrl: "https://www.adidas.co.uk/sst-tracksuit/HZ6613.html", imageUrl: "https://assets.adidas.com/images/w_500,f_auto,q_auto/809de9670e46441f879cee6989da29c4_9366/SST_Tracksuit_Blue_HZ6613_20_01_model.jpg" },
+  { id: "adidas-sst-tracksuit-navy", name: "SST Tracksuit", category: "Boys", retailer: "adidas", price: 40.00, type: "top", affiliateUrl: "https://www.adidas.co.uk/sst-tracksuit/HZ6613.html", imageUrl: "https://assets.adidas.com/images/w_500,f_auto,q_auto/809de9670e46441f879cee6989da29c4_9366/SST_Tracksuit_Blue_HZ6613_01_laydown.jpg" },
   { id: "adidas-samba-og-white", name: "Samba OG Comfort Closure Shoes Kids", category: "Boys", retailer: "adidas", price: 50.00, type: "foot", affiliateUrl: "https://www.adidas.co.uk/samba-og-comfort-closure-elastic-lace-shoes-kids/JQ6391.html", imageUrl: "https://assets.adidas.com/images/w_500,f_auto,q_auto/e09d4d60344d43038bef2bcdba27ece0_9366/Samba_OG_Comfort_Closure_Elastic_Lace_Shoes_Kids_White_JQ6391_01_00_standard.jpg" },
   // --- The 'Girl Power' Edit · added 13 Sep. Five looks, one each. Nobody is
   //     in a costume: each one is translated into clothes a child would wear. ---
-  { id: "adidas-denim-set", name: "Denim Set", category: "Girls", retailer: "adidas", price: 50.00, type: "top", affiliateUrl: "https://www.adidas.co.uk/denim-set/JC7871.html", imageUrl: "https://assets.adidas.com/images/w_500,f_auto,q_auto/c6bd48adde0e45b492b49b81c34b4111_9366/Denim_Set_Blue_JC7871_21_model.jpg" },
+  { id: "adidas-denim-set", name: "Denim Set", category: "Girls", retailer: "adidas", price: 50.00, type: "top", affiliateUrl: "https://www.adidas.co.uk/denim-set/JC7871.html", imageUrl: "https://assets.adidas.com/images/w_500,f_auto,q_auto/c6bd48adde0e45b492b49b81c34b4111_9366/Denim_Set_Blue_JC7871_01_laydown.jpg" },
   { id: "adidas-liberty-spezial", name: "adidas Liberty Handball Spezial Lace Shoes", category: "Girls", retailer: "adidas", price: 50.00, type: "foot", affiliateUrl: "https://www.adidas.co.uk/adidas-liberty-handball-spezial-lace-shoes/KH9840.html", imageUrl: "https://assets.adidas.com/images/w_500,f_auto,q_auto/e268858438dc4f3a9ebf8e20b1d695ca_9366/ADIDAS_LIBERTY_HANDBALL_SPEZIAL_LACE_SHOES_Red_KH9840_01_00_standard.jpg" },
   { id: "hm-flounce-cardigan-red", name: "Flounce Detail Cardigan", category: "Girls", retailer: "H&M", price: 17.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1349102002.html", imageUrl: "https://image.hm.com/assets/hm/ab/38/ab38273fdc291955ed81d8c58bd26520cb078bc7.jpg?imwidth=600" },
   { id: "hm-leopard-denim-dress", name: "Bow Detail Denim Dress", category: "Girls", retailer: "H&M", price: 12.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1336030003.html", imageUrl: "https://image.hm.com/assets/hm/84/95/8495b46a345bebca2902688fe68f8f217640c4fc.jpg?imwidth=600" },

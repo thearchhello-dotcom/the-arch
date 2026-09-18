@@ -36,7 +36,10 @@ export const site = {
    *
    *  The image addresses stay in data/products.ts, so this is a one word
    *  change whenever that day comes. Until then the cards fall back to the
-   *  garment icons. */
+   *  garment icons.
+   *
+   *  Before turning this on, read the images rule at the top of
+   *  data/products.ts. Clothes, never children. */
   showProductImages: false,
 
   /** When the legal pages were last reviewed. Bump it when you change them. */
