@@ -43,8 +43,8 @@ export default function Footer() {
             className="opacity-85"
           />
           <p className="text-sm leading-relaxed text-ink-soft">
-            Curated children&apos;s outfits from the shops parents already use &mdash; styled
-            properly, priced up in full. Written in {site.location}.
+            Styled edits for babies and children &mdash; from the shops parents already use,
+            with every piece priced up in full. Written in {site.location}.
           </p>
         </div>
 

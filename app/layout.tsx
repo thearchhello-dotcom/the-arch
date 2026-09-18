@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: "The Arch — little finds for little people",
     description:
-      "Complete children's outfits from the shops parents already use — styled properly and priced up in full.",
+      "Styled edits for babies and children — from the shops parents already use, with every piece linked and priced up in full.",
     images: ["/logo-the-arch-square-dot.png"],
   },
   twitter: {
     card: "summary",
     title: "The Arch — little finds for little people",
     description:
-      "Complete children's outfits from the shops parents already use — styled properly and priced up in full.",
+      "Styled edits for babies and children — from the shops parents already use, with every piece linked and priced up in full.",
     images: ["/logo-the-arch-square-dot.png"],
   },
   icons: { icon: "/logo-the-arch-square-dot.png", apple: "/logo-the-arch-square-dot.png" },
@@ -60,7 +60,7 @@ const jsonLd = {
   name: site.name,
   url: site.domain,
   description:
-    "Curated children's outfits from the shops parents already use — styled properly and priced up in full.",
+    "Styled edits for babies and children — from the shops parents already use, with every piece linked and priced up in full.",
   publisher: {
     "@type": "Person",
     name: site.owner,

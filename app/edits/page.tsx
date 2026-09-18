@@ -10,7 +10,7 @@ import type { Edit } from "@/lib/types";
 export const metadata: Metadata = {
   title: "The edits",
   description:
-    "Every edit — complete children's outfits from H&M, M&S and Next, styled together and priced up in full. Browse by what the whole outfit costs.",
+    "Every edit — children's clothes from H&M, M&S and Next, styled together and priced up in full. Browse by what a whole look costs.",
 };
 
 /** Totals per look, so the cards and the price filter both work from the same
@@ -51,9 +51,9 @@ export default function EditsIndexPage() {
           Every look, priced up in full.
         </h1>
         <p className="text-lg leading-relaxed text-ink-soft">
-          Each edit is a complete outfit &mdash; not a list of ideas &mdash; built from shops you
+          Each edit is a finished thing &mdash; not a list of ideas &mdash; built from shops you
           already buy from, with the total at the bottom so there are no surprises. Filter by what
-          the whole outfit costs.
+          a whole look costs.
         </p>
       </section>
 

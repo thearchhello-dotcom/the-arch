@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CategoryTiles from "@/components/CategoryTile";
 import Newsletter from "@/components/Newsletter";
 import PaletteArt from "@/components/PaletteArt";
+import RainbowRule from "@/components/RainbowRule";
 import { publishedEdits } from "@/data/edits";
 import { costOf } from "@/data/products";
 
@@ -48,6 +49,16 @@ export default function HomePage() {
             <h1 className="font-display font-semibold text-ink text-balance leading-[0.95] text-[clamp(44px,12vw,104px)] tracking-[-0.02em]">
               {featured ? featured.title : "Every look, ready to shop."}
             </h1>
+            {/* Kinfolk can open on a title alone because everyone already knows
+                what Kinfolk is. Nobody knows what this is yet, so one small
+                line has to say it before the board does. It is the quiet half
+                of the large/small pairing rather than a paragraph — and it
+                stays clear of the word "outfit", because the edits already run
+                wider than that. */}
+            <p className="max-w-sm text-[15px] leading-relaxed text-ink-soft text-balance">
+              Complete looks for babies and children, every piece linked and the whole thing
+              priced up.
+            </p>
           </div>
 
           {featured && (
@@ -111,6 +122,7 @@ export default function HomePage() {
             <br />
             Priced like a receipt.
           </p>
+          <RainbowRule />
           <p className="max-w-lg leading-relaxed text-cream/70">
             {/* Deliberately not "outfit". The edits already run wider than
                 that — coats, wellies, pramsuits — and there is no reason the
@@ -127,7 +139,8 @@ export default function HomePage() {
           are the only thing here that needs to be looked at. */}
       {rest.length > 0 && (
         <section className="px-5 py-16 sm:px-8 sm:py-20 md:px-14 md:py-24 flex flex-col gap-9">
-          <div className="flex items-baseline justify-between gap-4 border-b border-line pb-4">
+          <div className="relative flex items-baseline justify-between gap-4 border-b border-line pb-4">
+            <RainbowRule className="absolute left-0 -bottom-[2px]" />
             <h2 className="font-body font-bold text-[11px] tracking-[0.22em] uppercase text-ink-soft">
               Previously
             </h2>
@@ -177,9 +190,12 @@ export default function HomePage() {
 
       {/* Shop by category */}
       <section className="px-5 pb-16 sm:px-8 sm:pb-20 md:px-14 flex flex-col gap-7">
-        <h2 className="font-body font-bold text-[11px] tracking-[0.22em] uppercase text-ink-soft border-b border-line pb-4">
-          Shop by category
-        </h2>
+        <div className="relative border-b border-line pb-4">
+          <RainbowRule className="absolute left-0 -bottom-[2px]" />
+          <h2 className="font-body font-bold text-[11px] tracking-[0.22em] uppercase text-ink-soft">
+            Shop by category
+          </h2>
+        </div>
         <CategoryTiles />
       </section>
 
