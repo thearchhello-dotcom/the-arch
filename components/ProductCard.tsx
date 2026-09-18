@@ -12,8 +12,25 @@ export default function ProductCard({ product }: { product: Product }) {
 
   return (
     <div className="bg-card rounded-2xl p-5 flex flex-col gap-3.5 transition-transform hover:-translate-y-1 hover:shadow-lg">
-      <div className={`w-full h-[150px] rounded-xl ${iconBg} flex items-center justify-center relative`}>
-        <GarmentIcon type={product.type} color={iconColor} size={44} />
+      {/* The retailer's own photograph, served from the retailer's own server.
+          Deliberately a plain <img> rather than next/image: optimising it would
+          copy the file through our server, and the whole point is that we are
+          displaying their picture from where they host it, which they can stop
+          at any time. The garment icon stays as the fallback for anything
+          without a photo yet. */}
+      <div className={`w-full h-[190px] rounded-xl ${iconBg} flex items-center justify-center relative overflow-hidden`}>
+        {product.imageUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={product.imageUrl}
+            alt={product.name}
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-contain"
+          />
+        ) : (
+          <GarmentIcon type={product.type} color={iconColor} size={44} />
+        )}
         {product.onSale && (
           <span className="absolute top-3 right-3 text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-pill bg-terracotta text-card">
             Sale
