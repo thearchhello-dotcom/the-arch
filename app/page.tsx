@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import RainbowCorner from "@/components/RainbowCorner";
 import CategoryTiles from "@/components/CategoryTile";
 import Newsletter from "@/components/Newsletter";
 import PaletteArt from "@/components/PaletteArt";
@@ -21,60 +20,42 @@ function cheapestOutfitTotal(): number | null {
 
 export default function HomePage() {
   const featured = publishedEdits[0];
-  const rest = publishedEdits.slice(1, 4);
+  const rest = publishedEdits.slice(1, 5);
   const fromTotal = cheapestOutfitTotal();
+  const editNo = String(publishedEdits.length).padStart(2, "0");
 
   return (
     <>
       <Header />
 
-      {/* Hero.
-          The board goes here, not below the fold. This is a styling site, and
-          the first screen used to be a headline, a paragraph, two buttons and
-          a rainbow — not a single garment anywhere. The boards are the best
-          thing the site owns and they were being kept back for the second
-          screen, behind generated artwork at that. */}
-      <section className="relative overflow-hidden px-5 pt-10 pb-14 sm:px-8 sm:pt-14 md:px-14 md:pt-20 md:pb-16">
-        <RainbowCorner innerColor="#F7F1E3" />
-        <div className="relative z-10 flex flex-col-reverse md:flex-row md:items-center gap-8 md:gap-14">
-          <div className="flex flex-col gap-5 md:gap-6 md:max-w-md md:shrink-0">
-            <h1 className="font-display text-[34px] leading-[1.12] sm:text-5xl md:text-[52px] font-semibold md:leading-[1.08] text-ink text-balance">
-              Every look,
-              <br />
-              ready to shop.
+      {/* THE COVER.
+          Kinfolk put one object on the page — an issue number, a title, and a
+          single cover image — and nothing else. That is exactly the shape of
+          this site: an edit is an edition and a board is its cover.
+
+          Three rules taken from the sites worth copying, and they are all
+          subtractive. Type is either very large or very small, never the
+          medium weight that made this page feel polite. There is one thing to
+          look at per screen. And there is no decoration: the rainbow that used
+          to sit in this corner was competing with the board for attention, so
+          it has gone. */}
+      <section className="px-5 pt-10 pb-16 sm:px-8 sm:pt-14 md:px-14 md:pt-16 md:pb-24">
+        <div className="mx-auto max-w-5xl flex flex-col items-center gap-7 md:gap-10">
+          <div className="flex flex-col items-center gap-3 text-center">
+            <span className="font-body font-bold text-[11px] sm:text-xs tracking-[0.22em] uppercase text-terracotta">
+              Edit no. {editNo}
+            </span>
+            <h1 className="font-display font-semibold text-ink text-balance leading-[0.95] text-[clamp(44px,12vw,104px)] tracking-[-0.02em]">
+              {featured ? featured.title : "Every look, ready to shop."}
             </h1>
-            <p className="text-[15px] sm:text-lg leading-relaxed text-ink-soft">
-              Complete outfits for babies and children, from the shops you already use &mdash; with
-              every piece linked and the whole outfit priced up.
-            </p>
-            <div className="flex flex-wrap items-center gap-4 sm:gap-7">
-              <Link
-                href={featured ? `/edits/${featured.slug}` : "/edits"}
-                className="font-display font-semibold text-[15px] sm:text-base px-6 py-3 sm:px-7 sm:py-3.5 rounded-pill bg-terracotta text-card shadow-lg shadow-terracotta/25 transition-transform hover:-translate-y-0.5 whitespace-nowrap"
-              >
-                {featured ? "See the latest edit" : "See what's coming"}
-              </Link>
-              {featured && (
-                <Link
-                  href="/edits"
-                  className="font-semibold text-sm text-ink hover:text-terracotta transition-colors"
-                >
-                  See all edits &rarr;
-                </Link>
-              )}
-            </div>
           </div>
 
           {featured && (
             <Link
               href={`/edits/${featured.slug}`}
-              /* Deliberately modest on a phone. A 2:3 board at the full column
-                 width is 480px tall before padding, which swallows the screen
-                 and pushes the headline out of sight — the board should be the
-                 first thing you see, not the only thing. */
-              className="group block w-full md:flex-1 max-w-[236px] sm:max-w-[320px] md:max-w-[400px] mx-auto md:mx-0"
+              className="group block w-full max-w-[300px] sm:max-w-[380px] md:max-w-[440px]"
             >
-              <div className="rounded-[26px] bg-footer p-2.5 sm:p-3 border border-line shadow-[0_22px_50px_-28px_rgba(74,55,42,0.55)] transition-transform group-hover:-translate-y-1">
+              <div className="overflow-hidden rounded-[4px] shadow-[0_30px_70px_-34px_rgba(74,55,42,0.6)] transition-transform duration-300 group-hover:-translate-y-1.5">
                 {featured.boardImage ? (
                   <Image
                     src={featured.boardImage}
@@ -82,131 +63,123 @@ export default function HomePage() {
                     width={1200}
                     height={1800}
                     priority
-                    sizes="(max-width: 768px) 60vw, 400px"
-                    className="w-full h-auto rounded-[18px] border border-line"
+                    sizes="(max-width: 768px) 80vw, 440px"
+                    className="w-full h-auto"
                   />
                 ) : (
                   <PaletteArt
                     palette={featured.palette}
                     seed={featured.slug}
                     cream="#FBF6EA"
-                    className="w-full h-auto aspect-[2/3] rounded-[18px] border border-line"
+                    className="w-full h-auto aspect-[2/3]"
                   />
                 )}
               </div>
-              <span className="mt-3 block font-body font-bold text-xs tracking-widest uppercase text-terracotta">
-                The latest edit
-              </span>
-              <span className="block font-display text-xl font-semibold text-ink group-hover:text-terracotta transition-colors">
-                {featured.title}
-              </span>
             </Link>
           )}
+
+          <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-7">
+            <Link
+              href={featured ? `/edits/${featured.slug}` : "/edits"}
+              className="font-display font-semibold text-[15px] sm:text-base px-7 py-3.5 rounded-pill bg-ink text-cream transition-transform hover:-translate-y-0.5"
+            >
+              {featured ? "Shop this edit" : "See what's coming"}
+            </Link>
+            <Link
+              href="/edits"
+              className="font-body font-bold text-[11px] tracking-[0.18em] uppercase text-ink-soft hover:text-terracotta transition-colors"
+            >
+              All {publishedEdits.length} edits
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* The rest of the edits, still above the explaining. Someone who's
-          landed here wants to see what the site makes, not read about it. */}
+      {/* THE DARK BAND.
+          The single biggest thing wrong with this site was that it was cream
+          on cream on cream — and the boards are cream too, so the best thing
+          it owns sank into its own background. One deep section turns the rest
+          of the page into paper. It also gives the one claim nobody else in
+          this category makes somewhere to be said loudly. */}
+      <section className="bg-ink text-cream px-5 py-16 sm:px-8 sm:py-20 md:px-14 md:py-28">
+        <div className="mx-auto max-w-4xl flex flex-col items-center gap-6 text-center">
+          <span className="font-body font-bold text-[11px] tracking-[0.22em] uppercase text-cream/55">
+            What nobody else does
+          </span>
+          <p className="font-display font-semibold leading-[1.08] text-balance text-[clamp(28px,5.5vw,52px)]">
+            Styled like a lookbook.
+            <br />
+            Priced like a receipt.
+          </p>
+          <p className="max-w-lg leading-relaxed text-cream/70">
+            {/* Deliberately not "outfit". The edits already run wider than
+                that — coats, wellies, pramsuits — and there is no reason the
+                site cannot cover toys, gifts or nursery later. The promise is
+                that everything carries its price, whatever it is. */}
+            {fromTotal
+              ? `Every piece is linked and everything carries its price, so you know what you are spending — from £${fromTotal.toFixed(2)} — before you click, rather than at the checkout.`
+              : "Every piece is linked and everything carries its price, so you know what you are spending before you click, rather than at the checkout."}
+          </p>
+        </div>
+      </section>
+
+      {/* The rest of the editions. Plain, small labels, no cards — the boards
+          are the only thing here that needs to be looked at. */}
       {rest.length > 0 && (
-        <section className="px-5 pb-14 sm:px-8 sm:pb-20 md:px-14 flex flex-col gap-6">
-          <div className="flex items-baseline justify-between gap-4 flex-wrap">
-            <h2 className="font-display text-[23px] sm:text-[28px] font-semibold text-ink">
-              More edits
+        <section className="px-5 py-16 sm:px-8 sm:py-20 md:px-14 md:py-24 flex flex-col gap-9">
+          <div className="flex items-baseline justify-between gap-4 border-b border-line pb-4">
+            <h2 className="font-body font-bold text-[11px] tracking-[0.22em] uppercase text-ink-soft">
+              Previously
             </h2>
             <Link
               href="/edits"
-              className="font-semibold text-sm text-ink hover:text-terracotta transition-colors"
+              className="font-body font-bold text-[11px] tracking-[0.18em] uppercase text-ink-soft hover:text-terracotta transition-colors"
             >
-              See all &rarr;
+              See all
             </Link>
           </div>
 
-          {/* Two across on a phone. One per row would be three full screens of
-              scrolling for three boards. */}
-          <div className="grid grid-cols-2 gap-5 sm:gap-6 lg:grid-cols-3">
-            {rest.map((edit) => (
-              <Link key={edit.slug} href={`/edits/${edit.slug}`} className="group flex flex-col gap-3">
-                <div className="rounded-[22px] bg-footer p-2 border border-line transition-transform group-hover:-translate-y-1">
+          <div className="grid grid-cols-2 gap-x-5 gap-y-9 lg:grid-cols-4">
+            {rest.map((edit, i) => (
+              <Link key={edit.slug} href={`/edits/${edit.slug}`} className="group flex flex-col gap-3.5">
+                <div className="overflow-hidden rounded-[3px] shadow-[0_14px_34px_-22px_rgba(74,55,42,0.55)] transition-transform duration-300 group-hover:-translate-y-1">
                   {edit.boardImage ? (
                     <Image
                       src={edit.boardImage}
                       alt={`${edit.title} mood board`}
                       width={1200}
                       height={1800}
-                      sizes="(max-width: 640px) 45vw, (max-width: 1024px) 45vw, 30vw"
-                      className="w-full h-auto rounded-[15px] border border-line"
+                      sizes="(max-width: 640px) 45vw, (max-width: 1024px) 45vw, 23vw"
+                      className="w-full h-auto"
                     />
                   ) : (
                     <PaletteArt
                       palette={edit.palette}
                       seed={edit.slug}
                       cream="#FBF6EA"
-                      className="w-full h-auto aspect-[2/3] rounded-[15px] border border-line"
+                      className="w-full h-auto aspect-[2/3]"
                     />
                   )}
                 </div>
-                <span className="font-display text-lg font-semibold text-ink group-hover:text-terracotta transition-colors">
-                  {edit.title}
-                </span>
+                <div className="flex flex-col gap-1">
+                  <span className="font-body font-bold text-[10px] tracking-[0.2em] uppercase text-ink-faint">
+                    No. {String(publishedEdits.length - 1 - i).padStart(2, "0")}
+                  </span>
+                  <span className="font-display text-[17px] leading-tight font-semibold text-ink group-hover:text-terracotta transition-colors text-balance">
+                    {edit.title}
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
         </section>
       )}
 
-      {/* The difference. The editorial kids'-style sites publish beautiful
-          boards with no prices and nothing to click; this says plainly what
-          this one does instead. It sits below the work rather than in front
-          of it — nobody reads the pitch before they've seen the thing. */}
-      <section className="px-5 pb-14 sm:px-8 sm:pb-20 md:px-14">
-        <div className="flex flex-col gap-3 mb-8 max-w-xl">
-          <h2 className="font-display text-[23px] sm:text-[28px] font-semibold text-ink">
-            Styled like a lookbook. Priced like a receipt.
-          </h2>
-          <p className="text-ink-soft leading-relaxed">
-            Most children&apos;s style sites show you a beautiful board and leave you to find the
-            pieces. This one does the other half of the job.
-          </p>
-        </div>
-
-        <div className="grid gap-5 sm:grid-cols-3">
-          {[
-            {
-              title: "The whole outfit, totalled",
-              body: fromTotal
-                ? `Every look adds up to a real number — complete outfits from £${fromTotal.toFixed(2)} — so you know before you click, not at checkout.`
-                : "Every look adds up to a real number, so you know what an outfit costs before you click rather than at checkout.",
-            },
-            {
-              title: "Shops you already use",
-              body: "H&M, M&S, Next and similar — high street names that deliver across the UK, so an outfit is a few clicks rather than a hunt.",
-            },
-            {
-              title: "Nobody pays to be here",
-              body: "No sponsored edits, no paid placements. Pieces get in by working with the outfit, and nothing else.",
-            },
-          ].map((card) => (
-            <div key={card.title} className="bg-card rounded-[22px] p-7 flex flex-col gap-2.5">
-              <h3 className="font-display text-lg font-semibold text-ink">{card.title}</h3>
-              <p className="text-sm leading-relaxed text-ink-soft">{card.body}</p>
-            </div>
-          ))}
-        </div>
-
-        <p className="mt-6 text-sm text-ink-soft">
-          <Link
-            href="/how-we-choose"
-            className="font-semibold text-terracotta underline underline-offset-4"
-          >
-            How pieces get chosen
-          </Link>{" "}
-          &mdash; the rules every edit follows.
-        </p>
-      </section>
-
       {/* Shop by category */}
-      <section className="px-5 pb-14 sm:px-8 sm:pb-20 md:px-14 flex flex-col gap-6 sm:gap-8">
-        <h2 className="font-display text-[23px] sm:text-[28px] font-semibold text-ink">Shop by category</h2>
+      <section className="px-5 pb-16 sm:px-8 sm:pb-20 md:px-14 flex flex-col gap-7">
+        <h2 className="font-body font-bold text-[11px] tracking-[0.22em] uppercase text-ink-soft border-b border-line pb-4">
+          Shop by category
+        </h2>
         <CategoryTiles />
       </section>
 
