@@ -99,8 +99,8 @@ body::before {
   z-index: -1;
   pointer-events: none;
   opacity: 0.55;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2792%27%20height%3D%2792%27%3E%3Cg%20fill%3D%27none%27%20stroke-width%3D%272.6%27%20stroke-linecap%3D%27round%27%3E%3Cpath%20d%3D%27M10%2034a13%2013%200%200%201%2026%200%27%20stroke%3D%27%23ff6a45%27%2F%3E%3Cpath%20d%3D%27M58%2078a13%2013%200%200%201%2026%200%27%20stroke%3D%27%234fbe86%27%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%2770%27%20cy%3D%2726%27%20r%3D%272.8%27%20fill%3D%27%23ffc233%27%2F%3E%3Ccircle%20cx%3D%2726%27%20cy%3D%2768%27%20r%3D%272.8%27%20fill%3D%27%2362b4e8%27%2F%3E%3C%2Fsvg%3E");
-  background-size: 92px 92px;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2794%27%20height%3D%2794%27%3E%3Cg%20fill%3D%27none%27%20stroke-width%3D%272.4%27%20stroke-linecap%3D%27round%27%3E%3Cpath%20d%3D%27M10%2032a13%2013%200%200%201%2026%200%27%20stroke%3D%27%23ff6a45%27%2F%3E%3Cpath%20d%3D%27M14.5%2032a8.5%208.5%200%200%201%2017%200%27%20stroke%3D%27%23ffc233%27%2F%3E%3Cpath%20d%3D%27M19%2032a4%204%200%200%201%208%200%27%20stroke%3D%27%234fbe86%27%2F%3E%3Cpath%20d%3D%27M58%2080a13%2013%200%200%201%2026%200%27%20stroke%3D%27%23ff6a45%27%2F%3E%3Cpath%20d%3D%27M62.5%2080a8.5%208.5%200%200%201%2017%200%27%20stroke%3D%27%23ffc233%27%2F%3E%3Cpath%20d%3D%27M67%2080a4%204%200%200%201%208%200%27%20stroke%3D%27%234fbe86%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-size: 94px 94px;
   /* Thins out down the section so it never crowds the board or the buttons —
      the mistake the old RainbowCorner made in this exact spot. */
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
