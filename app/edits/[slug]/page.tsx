@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { popFor } from "@/lib/pops";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -132,7 +133,7 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
             so without a frame the artwork bleeds into the background and stops
             reading as a thing you could pin. The deeper mount plus a hairline
             and a soft shadow give it an edge to sit against. */}
-        <div className="max-w-[480px] rounded-[28px] bg-footer p-3 sm:p-4 border border-line shadow-[0_20px_44px_-26px_rgba(74,55,42,0.5)]">
+        <div className={`max-w-[480px] rounded-[28px] ${popFor(edit.slug)} p-3 sm:p-4 shadow-[0_20px_44px_-26px_rgba(74,55,42,0.5)]`}>
           {edit.boardImage ? (
             <Image
               src={edit.boardImage}

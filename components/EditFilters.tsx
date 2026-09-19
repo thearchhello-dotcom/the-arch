@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { popFor } from "@/lib/pops";
 import PaletteArt from "./PaletteArt";
 import type { Edit } from "@/lib/types";
 
@@ -69,7 +70,7 @@ export default function EditFilters({ edits }: { edits: EditSummary[] }) {
                 onClick={() => setBand(b.id)}
                 aria-pressed={active}
                 className={`font-body font-semibold text-sm px-5 py-2.5 rounded-pill transition-transform hover:-translate-y-0.5 ${
-                  active ? "bg-terracotta text-card" : "bg-card text-ink border border-line"
+                  active ? "bg-pop-sun text-ink font-bold" : "bg-card text-ink border border-line"
                 }`}
               >
                 {b.label}
@@ -98,7 +99,7 @@ export default function EditFilters({ edits }: { edits: EditSummary[] }) {
                   Pinterest. A 4:5 card cropped the logo and title off the top
                   and the web address off the bottom, leaving the middle of the
                   board looking like a jumble. */}
-              <div className="aspect-[2/3] relative bg-tile1">
+              <div className={`aspect-[2/3] relative ${popFor(edit.slug)}`}>
                 {edit.boardImage ? (
                   <Image
                     src={edit.boardImage}

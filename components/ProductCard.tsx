@@ -1,14 +1,16 @@
 import { site } from "@/lib/site";
+import { popFor } from "@/lib/pops";
 import type { Product } from "@/lib/types";
 import GarmentIcon from "./GarmentIcon";
 import AffiliateLink from "./AffiliateLink";
 
-const GIRL_SIDE: Product["category"][] = ["Baby", "Girls"];
-
 export default function ProductCard({ product }: { product: Product }) {
-  const isGirlSide = GIRL_SIDE.includes(product.category);
-  const iconBg = isGirlSide ? "bg-tile1" : "bg-tile2";
-  const iconColor = isGirlSide ? "#C96849" : "#8FA383";
+  // Was two oatmeal tints split by category, which made a shop page of thirty
+  // products read as one large beige rectangle. Now a bright per-product
+  // colour, and the icon goes ink on all of them — a tinted icon on a tinted
+  // tile was the other half of why these disappeared.
+  const iconBg = popFor(product.id);
+  const iconColor = "#4A372A";
   const price = product.onSale && product.salePrice ? product.salePrice : product.price;
 
   return (
@@ -33,7 +35,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <GarmentIcon type={product.type} color={iconColor} size={44} />
         )}
         {product.onSale && (
-          <span className="absolute top-3 right-3 text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-pill bg-terracotta text-card">
+          <span className="absolute top-3 right-3 text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-pill bg-ink text-cream">
             Sale
           </span>
         )}

@@ -38,24 +38,26 @@ export default function Newsletter() {
 
   return (
     <section className="px-5 py-10 sm:px-8 sm:py-14 md:px-14">
-      <div className="bg-card rounded-[28px] p-7 sm:p-10 md:p-14 flex flex-col gap-5 max-w-2xl">
-        <span className="font-body font-bold text-xs tracking-widest uppercase text-terracotta">
+      {/* Sun rather than cream. This is the one thing on the page worth
+          asking for, and it was the same colour as everything around it. */}
+      <div className="bg-pop-sun rounded-[28px] p-7 sm:p-10 md:p-14 flex flex-col gap-5 max-w-2xl">
+        <span className="font-body font-bold text-xs tracking-widest uppercase text-ink/70">
           The weekly edit
         </span>
         <h2 className="font-display text-[25px] sm:text-[30px] font-semibold leading-tight text-ink">
           One edit a week, straight to you.
         </h2>
-        <p className="leading-relaxed text-ink-soft">
+        <p className="leading-relaxed text-ink/80">
           A new board every week &mdash; the full outfit, what it costs, and what to know before
           you buy. No daily emails, no cross-promotion, and you can leave whenever you like.
         </p>
 
         {!endpoint ? (
-          <p className="text-sm text-ink-faint italic">
+          <p className="text-sm text-ink/70 italic">
             Signups open shortly &mdash; the list is being set up.
           </p>
         ) : status === "done" ? (
-          <p className="text-sm font-semibold text-sage">
+          <p className="text-sm font-semibold text-ink">
             Thank you &mdash; check your inbox to confirm.
           </p>
         ) : (
@@ -75,7 +77,7 @@ export default function Newsletter() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="font-display text-sm font-semibold px-6 py-3 rounded-pill bg-terracotta text-card disabled:opacity-60 transition hover:brightness-105"
+              className="font-display text-sm font-semibold px-6 py-3 rounded-pill bg-ink text-cream disabled:opacity-60 transition hover:brightness-110"
             >
               {status === "sending" ? "Sending…" : "Sign up"}
             </button>
