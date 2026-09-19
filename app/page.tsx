@@ -44,10 +44,10 @@ export default function HomePage() {
           look at per screen. And there is no decoration: the rainbow that used
           to sit in this corner was competing with the board for attention, so
           it has gone. */}
-      <section className="px-5 pt-10 pb-16 sm:px-8 sm:pt-14 md:px-14 md:pt-16 md:pb-24">
+      <section className="bg-pop-sun px-5 pt-10 pb-16 sm:px-8 sm:pt-14 md:px-14 md:pt-16 md:pb-24">
         <div className="mx-auto max-w-5xl flex flex-col items-center gap-7 md:gap-10">
           <div className="flex flex-col items-center gap-3 text-center">
-            <span className="font-body font-bold text-[11px] sm:text-xs tracking-[0.22em] uppercase text-terracotta">
+            <span className="font-body font-bold text-[11px] sm:text-xs tracking-[0.22em] uppercase text-ink/70">
               Edit no. {editNo}
             </span>
             <h1 className="font-display font-semibold text-ink text-balance leading-[0.95] text-[clamp(44px,12vw,104px)] tracking-[-0.02em]">
@@ -59,7 +59,7 @@ export default function HomePage() {
                 of the large/small pairing rather than a paragraph — and it
                 stays clear of the word "outfit", because the edits already run
                 wider than that. */}
-            <p className="max-w-sm text-[15px] leading-relaxed text-ink-soft text-balance">
+            <p className="max-w-sm text-[15px] leading-relaxed text-ink/80 text-balance">
               Complete looks for babies and children, every piece linked and the whole thing
               priced up.
             </p>
@@ -102,7 +102,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/edits"
-              className="font-body font-bold text-[11px] tracking-[0.18em] uppercase text-ink-soft hover:text-terracotta transition-colors"
+              className="font-body font-bold text-[11px] tracking-[0.18em] uppercase text-ink/70 hover:text-ink transition-colors"
             >
               All {publishedEdits.length} edits
             </Link>
