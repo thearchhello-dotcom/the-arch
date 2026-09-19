@@ -80,10 +80,11 @@ body::before {
    The motif is the logo's arch and the dot from the "the · arch" lockup, in
    the four brights — so the top of the page carries colour without becoming a
    yellow wall, which was the note.
-   It sits at low opacity on its own layer rather than being baked into the
-   image, so the strength is one number to change. The tile is deliberately not
-   a neat grid: two arches and two dots placed off-centre read as a scatter
-   instead of wallpaper. */
+
+   Everything about the strength is deliberately one number each: --pattern-ink
+   for how strongly it reads, and the tile size for how densely. The first pass
+   ran 0.5 at an 84px tile and was too loud; this is 0.22 at 118px, with
+   thinner strokes and smaller dots drawn into the tile itself. */
 .pattern-arches {
   position: relative;
   isolation: isolate;
@@ -95,13 +96,13 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.5;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2784%27%20height%3D%2784%27%20viewBox%3D%270%200%2084%2084%27%3E%3Cg%20fill%3D%27none%27%20stroke-width%3D%273.2%27%20stroke-linecap%3D%27round%27%3E%3Cpath%20d%3D%27M8%2032a13%2013%200%200%201%2026%200%27%20stroke%3D%27%23ff6a45%27%2F%3E%3Cpath%20d%3D%27M50%2070a13%2013%200%200%201%2026%200%27%20stroke%3D%27%234fbe86%27%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%2763%27%20cy%3D%2722%27%20r%3D%273.2%27%20fill%3D%27%23ffc233%27%2F%3E%3Ccircle%20cx%3D%2721%27%20cy%3D%2760%27%20r%3D%273.2%27%20fill%3D%27%2362b4e8%27%2F%3E%3C%2Fsvg%3E");
-  background-size: 84px 84px;
+  opacity: 0.22;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27118%27%20height%3D%27118%27%20viewBox%3D%270%200%20118%20118%27%3E%3Cg%20fill%3D%27none%27%20stroke-width%3D%272.2%27%20stroke-linecap%3D%27round%27%3E%3Cpath%20d%3D%27M12%2040a13%2013%200%200%201%2026%200%27%20stroke%3D%27%23ff6a45%27%2F%3E%3Cpath%20d%3D%27M74%2096a13%2013%200%200%201%2026%200%27%20stroke%3D%27%234fbe86%27%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%2788%27%20cy%3D%2730%27%20r%3D%272.4%27%20fill%3D%27%23ffc233%27%2F%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%2784%27%20r%3D%272.4%27%20fill%3D%27%2362b4e8%27%2F%3E%3C%2Fsvg%3E");
+  background-size: 118px 118px;
   /* Fades out towards the bottom so the pattern never competes with the board
      or crowds the buttons sitting at the end of the section. */
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 50%, transparent 100%);
 }
 
 @media (prefers-reduced-motion: reduce) {
