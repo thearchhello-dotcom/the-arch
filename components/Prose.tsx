@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import PatternBand from "./PatternBand";
 
 /** Shared layout for the text-heavy pages (disclosure, privacy, terms, contact)
  *  so they stay visually consistent without repeating Tailwind classes. */
@@ -17,6 +18,7 @@ export default function Prose({
 }) {
   return (
     <>
+      <PatternBand className="h-[300px]" />
       <section className="px-5 pt-12 pb-6 sm:px-8 sm:pt-20 md:px-14 flex flex-col gap-5 max-w-2xl">
         <span className="font-body font-bold text-xs tracking-widest uppercase text-terracotta">
           {eyebrow}

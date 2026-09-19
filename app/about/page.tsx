@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
+import PatternBand from "@/components/PatternBand";
 import Footer from "@/components/Footer";
 import RainbowCorner from "@/components/RainbowCorner";
 import Newsletter from "@/components/Newsletter";
@@ -16,6 +17,7 @@ export default function AboutPage() {
   return (
     <>
       <Header />
+      <PatternBand className="h-[340px]" />
 
       <section className="px-5 pt-12 pb-5 sm:px-8 sm:pt-20 md:px-14 flex flex-col gap-6 sm:gap-7 max-w-2xl">
         <span className="font-body font-bold text-xs tracking-widest uppercase text-terracotta">About</span>

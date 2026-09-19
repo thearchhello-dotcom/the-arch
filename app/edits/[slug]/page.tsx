@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
+import PatternBand from "@/components/PatternBand";
 import Footer from "@/components/Footer";
 import GarmentIcon from "@/components/GarmentIcon";
 import DisclosureNote from "@/components/DisclosureNote";
@@ -71,6 +72,7 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
   return (
     <div className="relative">
       <Header />
+      <PatternBand className="h-[320px]" />
 
       {/* Impossible to see on the live site — drafts 404 there. This is purely
           so you can't mistake a work-in-progress for a published edit. */}

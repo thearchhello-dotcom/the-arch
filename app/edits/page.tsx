@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
+import PatternBand from "@/components/PatternBand";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import EditFilters, { type EditSummary } from "@/components/EditFilters";
@@ -42,6 +43,7 @@ export default function EditsIndexPage() {
   return (
     <>
       <Header />
+      <PatternBand className="h-[340px]" />
 
       <section className="px-5 pt-12 pb-8 sm:px-8 sm:pt-20 sm:pb-10 md:px-14 flex flex-col gap-5 max-w-2xl">
         <span className="font-body font-bold text-xs tracking-widest uppercase text-terracotta">

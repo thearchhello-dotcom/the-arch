@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
+import PatternBand from "@/components/PatternBand";
 import Footer from "@/components/Footer";
 import ShopFilters from "@/components/ShopFilters";
 import DisclosureNote from "@/components/DisclosureNote";
@@ -25,6 +26,7 @@ export default async function ShopPage({
   return (
     <>
       <Header />
+      <PatternBand className="h-[300px]" />
       <section className="px-5 pt-10 pb-2 sm:px-8 sm:pt-14 md:px-14 flex flex-col gap-3">
         <h1 className="font-display text-[30px] sm:text-4xl font-semibold text-ink">Shop the catalogue</h1>
         <p className="text-ink-soft">
