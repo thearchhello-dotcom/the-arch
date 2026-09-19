@@ -2,10 +2,13 @@ import Link from "next/link";
 import GarmentIcon from "./GarmentIcon";
 import type { Category } from "@/lib/types";
 
+// Three flat, saturated tiles rather than three shades of oatmeal. The icon
+// is drawn in ink on all of them, because a tinted icon on a tinted tile was
+// half the reason these used to disappear.
 const TILES: { category: Category; bg: string; color: string; icon: "top" | "bottom" }[] = [
-  { category: "Baby", bg: "bg-tile1", color: "#C96849", icon: "top" },
-  { category: "Girls", bg: "bg-tile1", color: "#C96849", icon: "bottom" },
-  { category: "Boys", bg: "bg-tile2", color: "#8FA383", icon: "bottom" },
+  { category: "Baby", bg: "bg-pop-sun", color: "#4A372A", icon: "top" },
+  { category: "Girls", bg: "bg-pop-coral", color: "#4A372A", icon: "bottom" },
+  { category: "Boys", bg: "bg-pop-leaf", color: "#4A372A", icon: "bottom" },
 ];
 
 export default function CategoryTiles() {
@@ -18,7 +21,9 @@ export default function CategoryTiles() {
           className={`${tile.bg} rounded-3xl px-6 py-7 flex flex-col justify-between gap-4 h-[190px] transition-transform hover:-translate-y-1 hover:shadow-lg`}
         >
           <GarmentIcon type={tile.icon} color={tile.color} size={34} />
-          <span className="font-display text-lg font-semibold text-ink">{tile.category}</span>
+          {/* Bumped to 20px bold: coral clears the large-text contrast bar,
+              not the body-text one, and this label has to work on all three. */}
+          <span className="font-display text-xl font-bold text-ink">{tile.category}</span>
         </Link>
       ))}
     </div>

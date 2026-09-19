@@ -6,6 +6,7 @@ import CategoryTiles from "@/components/CategoryTile";
 import Newsletter from "@/components/Newsletter";
 import PaletteArt from "@/components/PaletteArt";
 import RainbowRule from "@/components/RainbowRule";
+import Marquee from "@/components/Marquee";
 import { publishedEdits } from "@/data/edits";
 import { costOf } from "@/data/products";
 
@@ -18,6 +19,9 @@ function cheapestOutfitTotal(): number | null {
     .filter((t) => t > 0);
   return totals.length ? Math.min(...totals) : null;
 }
+
+/** Colour behind each previous board, cycled so no two neighbours match. */
+const PADS = ["bg-pop-sun", "bg-pop-leaf", "bg-pop-coral", "bg-pop-sky"];
 
 export default function HomePage() {
   const featured = publishedEdits[0];
@@ -112,9 +116,11 @@ export default function HomePage() {
           it owns sank into its own background. One deep section turns the rest
           of the page into paper. It also gives the one claim nobody else in
           this category makes somewhere to be said loudly. */}
-      <section className="bg-ink text-cream px-5 py-16 sm:px-8 sm:py-20 md:px-14 md:py-28">
+      <Marquee />
+
+      <section className="bg-pop-sky text-ink px-5 py-16 sm:px-8 sm:py-20 md:px-14 md:py-28">
         <div className="mx-auto max-w-4xl flex flex-col items-center gap-6 text-center">
-          <span className="font-body font-bold text-[11px] tracking-[0.22em] uppercase text-cream/55">
+          <span className="font-body font-bold text-[11px] tracking-[0.22em] uppercase text-ink/60">
             What nobody else does
           </span>
           <p className="font-display font-semibold leading-[1.08] text-balance text-[clamp(28px,5.5vw,52px)]">
@@ -123,7 +129,7 @@ export default function HomePage() {
             Priced like a receipt.
           </p>
           <RainbowRule />
-          <p className="max-w-lg leading-relaxed text-cream/70">
+          <p className="max-w-lg leading-relaxed text-ink/80">
             {/* Deliberately not "outfit". The edits already run wider than
                 that — coats, wellies, pramsuits — and there is no reason the
                 site cannot cover toys, gifts or nursery later. The promise is
@@ -155,7 +161,10 @@ export default function HomePage() {
           <div className="grid grid-cols-2 gap-x-5 gap-y-9 lg:grid-cols-4">
             {rest.map((edit, i) => (
               <Link key={edit.slug} href={`/edits/${edit.slug}`} className="group flex flex-col gap-3.5">
-                <div className="overflow-hidden rounded-[3px] shadow-[0_14px_34px_-22px_rgba(74,55,42,0.55)] transition-transform duration-300 group-hover:-translate-y-1">
+                <div
+                  className={`${PADS[i % PADS.length]} rounded-[14px] p-2.5 sm:p-3.5 transition-transform duration-300 group-hover:-translate-y-1`}
+                >
+                  <div className="overflow-hidden rounded-[3px] shadow-[0_14px_34px_-22px_rgba(74,55,42,0.55)]">
                   {edit.boardImage ? (
                     <Image
                       src={edit.boardImage}
@@ -173,6 +182,7 @@ export default function HomePage() {
                       className="w-full h-auto aspect-[2/3]"
                     />
                   )}
+                  </div>
                 </div>
                 <div className="flex flex-col gap-1">
                   <span className="font-body font-bold text-[10px] tracking-[0.2em] uppercase text-ink-faint">

@@ -6,9 +6,10 @@
 // ornamental: it marks where a section starts, and it is the brand mark rather
 // than a graphic invented for the occasion.
 //
-// Same three colours, in the same order, as RainbowCorner and the printed
-// board template, so the arch stays one idea wherever it turns up.
-const BANDS = ["#DE8468", "#E3A83B", "#8FA383"]; // coral, gold, sage
+// The three colours are the logo's, turned up. The muted originals were the
+// reason the site read tasteful rather than fun, which is the note Gemma kept
+// giving and I kept missing.
+const BANDS = ["#ff6a45", "#ffc233", "#4fbe86"]; // coral, sun, leaf
 
 export default function RainbowRule({ className = "" }: { className?: string }) {
   return (
