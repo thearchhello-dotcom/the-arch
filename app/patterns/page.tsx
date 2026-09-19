@@ -25,6 +25,9 @@ const OPTIONS = [
   { key: "C", cls: "pat-dots", name: "Dots", note: "The quietest. Hardest to get wrong." },
   { key: "D", cls: "pat-ticking", name: "Ticking stripe", note: "Pyjama fabric. Vertical, so it works with the tall title." },
   { key: "E", cls: "pat-confetti", name: "Confetti", note: "All four brights as little dashes. The most playful." },
+  { key: "G", cls: "pat-arches", name: "Little arches", note: "What's on the site now, turned back up so you can see it." },
+  { key: "H", cls: "pat-rainbows", name: "Little rainbows", note: "Three bands each — your logo in miniature." },
+  { key: "I", cls: "pat-squiggle", name: "Squiggles", note: "Little waves, three colours." },
   { key: "F", cls: "", name: "Nothing at all", note: "Plain cream, for comparison." },
 ];
 

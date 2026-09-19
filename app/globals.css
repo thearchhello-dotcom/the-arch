@@ -169,6 +169,29 @@ body::before {
   background-size: 72px 72px;
 }
 
+/* G — the scattered arches currently on the live homepage, at a strength that
+   can actually be seen. Single stroke each, plus the lockup's dot. */
+.pat-arches::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2792%27%20height%3D%2792%27%3E%3Cg%20fill%3D%27none%27%20stroke-width%3D%272.6%27%20stroke-linecap%3D%27round%27%3E%3Cpath%20d%3D%27M10%2034a13%2013%200%200%201%2026%200%27%20stroke%3D%27%23ff6a45%27%2F%3E%3Cpath%20d%3D%27M58%2078a13%2013%200%200%201%2026%200%27%20stroke%3D%27%234fbe86%27%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%2770%27%20cy%3D%2726%27%20r%3D%272.8%27%20fill%3D%27%23ffc233%27%2F%3E%3Ccircle%20cx%3D%2726%27%20cy%3D%2768%27%20r%3D%272.8%27%20fill%3D%27%2362b4e8%27%2F%3E%3C%2Fsvg%3E");
+  background-size: 92px 92px;
+  opacity: 0.55;
+}
+
+/* H — little rainbows proper: three concentric bands, the logo in miniature
+   rather than one arc standing in for it. */
+.pat-rainbows::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2794%27%20height%3D%2794%27%3E%3Cg%20fill%3D%27none%27%20stroke-width%3D%272.4%27%20stroke-linecap%3D%27round%27%3E%3Cpath%20d%3D%27M10%2032a13%2013%200%200%201%2026%200%27%20stroke%3D%27%23ff6a45%27%2F%3E%3Cpath%20d%3D%27M14.5%2032a8.5%208.5%200%200%201%2017%200%27%20stroke%3D%27%23ffc233%27%2F%3E%3Cpath%20d%3D%27M19%2032a4%204%200%200%201%208%200%27%20stroke%3D%27%234fbe86%27%2F%3E%3Cpath%20d%3D%27M58%2080a13%2013%200%200%201%2026%200%27%20stroke%3D%27%23ff6a45%27%2F%3E%3Cpath%20d%3D%27M62.5%2080a8.5%208.5%200%200%201%2017%200%27%20stroke%3D%27%23ffc233%27%2F%3E%3Cpath%20d%3D%27M67%2080a4%204%200%200%201%208%200%27%20stroke%3D%27%234fbe86%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-size: 94px 94px;
+  opacity: 0.55;
+}
+
+/* I — squiggles. Three short waves a tile, one in each of three brights. */
+.pat-squiggle::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2796%27%20height%3D%2796%27%3E%3Cg%20fill%3D%27none%27%20stroke-width%3D%272.6%27%20stroke-linecap%3D%27round%27%3E%3Cpath%20d%3D%27M10%2022q5.5-8%2011%200t11%200%27%20stroke%3D%27%23ff6a45%27%2F%3E%3Cpath%20d%3D%27M58%2054q5.5-8%2011%200t11%200%27%20stroke%3D%27%2362b4e8%27%2F%3E%3Cpath%20d%3D%27M26%2082q5.5-8%2011%200t11%200%27%20stroke%3D%27%23ffc233%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-size: 96px 96px;
+  opacity: 0.55;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
