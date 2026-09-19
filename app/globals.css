@@ -76,15 +76,17 @@ body::before {
   }
 }
 
-/* A quiet pattern for the cream, in place of a solid colour block.
+/* The pattern on the cream at the top of the homepage.
    The motif is the logo's arch and the dot from the "the · arch" lockup, in
-   the four brights — so the top of the page carries colour without becoming a
-   yellow wall, which was the note.
+   the four brights, so the top carries colour without being a block of it.
 
-   Everything about the strength is deliberately one number each: --pattern-ink
-   for how strongly it reads, and the tile size for how densely. The first pass
-   ran 0.5 at an 84px tile and was too loud; this is 0.22 at 118px, with
-   thinner strokes and smaller dots drawn into the tile itself. */
+   The numbers here were settled by putting nine candidates on one page and
+   picking, after two guesses went to the live site and missed in opposite
+   directions — 0.5 at 84px read as wallpaper, 0.22 at 118px vanished. This is
+   the chosen one: 0.55 at 92px, with the tile's own strokes thinned so the
+   marks stay small as they spread out.
+
+   Strength and density are still one number each, so it stays cheap to tune. */
 .pattern-arches {
   position: relative;
   isolation: isolate;
@@ -96,100 +98,13 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.22;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27118%27%20height%3D%27118%27%20viewBox%3D%270%200%20118%20118%27%3E%3Cg%20fill%3D%27none%27%20stroke-width%3D%272.2%27%20stroke-linecap%3D%27round%27%3E%3Cpath%20d%3D%27M12%2040a13%2013%200%200%201%2026%200%27%20stroke%3D%27%23ff6a45%27%2F%3E%3Cpath%20d%3D%27M74%2096a13%2013%200%200%201%2026%200%27%20stroke%3D%27%234fbe86%27%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%2788%27%20cy%3D%2730%27%20r%3D%272.4%27%20fill%3D%27%23ffc233%27%2F%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%2784%27%20r%3D%272.4%27%20fill%3D%27%2362b4e8%27%2F%3E%3C%2Fsvg%3E");
-  background-size: 118px 118px;
-  /* Fades out towards the bottom so the pattern never competes with the board
-     or crowds the buttons sitting at the end of the section. */
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 50%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 50%, transparent 100%);
-}
-
-/* ---- Background patterns for the cream -----------------------------------
-   Candidates for the top of the homepage. All pure CSS gradients rather than
-   SVG tiles: smaller, and every one of them is tunable by two numbers — the
-   colour's alpha and the background-size — which is what this has turned into
-   a conversation about.
-
-   Each sits on its own layer behind the section's content, so the cream still
-   shows through and nothing has to be baked into an image. /patterns renders
-   them side by side. */
-.pat {
-  position: relative;
-  isolation: isolate;
-}
-
-.pat::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  /* Thins out down the section so nothing crowds the board or the buttons. */
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
-}
-
-/* A — gingham. The check every kidswear brand already uses, which is the
-   argument for it and possibly also against. */
-.pat-gingham::before {
-  background-image:
-    linear-gradient(to right, rgba(201, 104, 73, 0.3) 50%, transparent 50%),
-    linear-gradient(to bottom, rgba(201, 104, 73, 0.3) 50%, transparent 50%);
-  background-size: 30px 30px;
-}
-
-/* B — scallops. Rows of the logo's arch, touching, so it reads as a fabric
-   rather than as scattered logos. */
-.pat-scallop::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2744%27%20height%3D%2724%27%3E%3Cpath%20d%3D%27M0%2023a22%2022%200%200%201%2044%200%27%20fill%3D%27none%27%20stroke%3D%27%23c96849%27%20stroke-width%3D%272%27%20opacity%3D%270.42%27%2F%3E%3C%2Fsvg%3E");
-  background-size: 44px 24px;
-}
-
-/* C — dots. The quietest of the four and the hardest to get wrong. */
-.pat-dots::before {
-  background-image: radial-gradient(circle, rgba(201, 104, 73, 0.42) 2.1px, transparent 2.2px);
-  background-size: 26px 26px;
-}
-
-/* D — ticking stripe. Pyjama fabric. Vertical, so it works with the very tall
-   type in the hero rather than cutting across it. */
-.pat-ticking::before {
-  background-image: repeating-linear-gradient(
-    to right,
-    rgba(201, 104, 73, 0.34) 0 2px,
-    transparent 2px 15px
-  );
-}
-
-/* E — confetti. The four brights as short dashes on the diagonal. The only
-   candidate that is more than one colour. */
-.pat-confetti::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2772%27%20height%3D%2772%27%3E%3Cg%20stroke-width%3D%273%27%20stroke-linecap%3D%27round%27%20opacity%3D%270.5%27%3E%3Cpath%20d%3D%27M10%2014l6-8%27%20stroke%3D%27%23ff6a45%27%2F%3E%3Cpath%20d%3D%27M52%2030l6-8%27%20stroke%3D%27%234fbe86%27%2F%3E%3Cpath%20d%3D%27M28%2052l6-8%27%20stroke%3D%27%23ffc233%27%2F%3E%3Cpath%20d%3D%27M62%2064l6-8%27%20stroke%3D%27%2362b4e8%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-  background-size: 72px 72px;
-}
-
-/* G — the scattered arches currently on the live homepage, at a strength that
-   can actually be seen. Single stroke each, plus the lockup's dot. */
-.pat-arches::before {
+  opacity: 0.55;
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2792%27%20height%3D%2792%27%3E%3Cg%20fill%3D%27none%27%20stroke-width%3D%272.6%27%20stroke-linecap%3D%27round%27%3E%3Cpath%20d%3D%27M10%2034a13%2013%200%200%201%2026%200%27%20stroke%3D%27%23ff6a45%27%2F%3E%3Cpath%20d%3D%27M58%2078a13%2013%200%200%201%2026%200%27%20stroke%3D%27%234fbe86%27%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%2770%27%20cy%3D%2726%27%20r%3D%272.8%27%20fill%3D%27%23ffc233%27%2F%3E%3Ccircle%20cx%3D%2726%27%20cy%3D%2768%27%20r%3D%272.8%27%20fill%3D%27%2362b4e8%27%2F%3E%3C%2Fsvg%3E");
   background-size: 92px 92px;
-  opacity: 0.55;
-}
-
-/* H — little rainbows proper: three concentric bands, the logo in miniature
-   rather than one arc standing in for it. */
-.pat-rainbows::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2794%27%20height%3D%2794%27%3E%3Cg%20fill%3D%27none%27%20stroke-width%3D%272.4%27%20stroke-linecap%3D%27round%27%3E%3Cpath%20d%3D%27M10%2032a13%2013%200%200%201%2026%200%27%20stroke%3D%27%23ff6a45%27%2F%3E%3Cpath%20d%3D%27M14.5%2032a8.5%208.5%200%200%201%2017%200%27%20stroke%3D%27%23ffc233%27%2F%3E%3Cpath%20d%3D%27M19%2032a4%204%200%200%201%208%200%27%20stroke%3D%27%234fbe86%27%2F%3E%3Cpath%20d%3D%27M58%2080a13%2013%200%200%201%2026%200%27%20stroke%3D%27%23ff6a45%27%2F%3E%3Cpath%20d%3D%27M62.5%2080a8.5%208.5%200%200%201%2017%200%27%20stroke%3D%27%23ffc233%27%2F%3E%3Cpath%20d%3D%27M67%2080a4%204%200%200%201%208%200%27%20stroke%3D%27%234fbe86%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-  background-size: 94px 94px;
-  opacity: 0.55;
-}
-
-/* I — squiggles. Three short waves a tile, one in each of three brights. */
-.pat-squiggle::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2796%27%20height%3D%2796%27%3E%3Cg%20fill%3D%27none%27%20stroke-width%3D%272.6%27%20stroke-linecap%3D%27round%27%3E%3Cpath%20d%3D%27M10%2022q5.5-8%2011%200t11%200%27%20stroke%3D%27%23ff6a45%27%2F%3E%3Cpath%20d%3D%27M58%2054q5.5-8%2011%200t11%200%27%20stroke%3D%27%2362b4e8%27%2F%3E%3Cpath%20d%3D%27M26%2082q5.5-8%2011%200t11%200%27%20stroke%3D%27%23ffc233%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-  background-size: 96px 96px;
-  opacity: 0.55;
+  /* Thins out down the section so it never crowds the board or the buttons —
+     the mistake the old RainbowCorner made in this exact spot. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
 }
 
 @media (prefers-reduced-motion: reduce) {
