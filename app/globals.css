@@ -105,6 +105,70 @@ body::before {
   mask-image: linear-gradient(to bottom, #000 0%, #000 50%, transparent 100%);
 }
 
+/* ---- Background patterns for the cream -----------------------------------
+   Candidates for the top of the homepage. All pure CSS gradients rather than
+   SVG tiles: smaller, and every one of them is tunable by two numbers — the
+   colour's alpha and the background-size — which is what this has turned into
+   a conversation about.
+
+   Each sits on its own layer behind the section's content, so the cream still
+   shows through and nothing has to be baked into an image. /patterns renders
+   them side by side. */
+.pat {
+  position: relative;
+  isolation: isolate;
+}
+
+.pat::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  /* Thins out down the section so nothing crowds the board or the buttons. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+}
+
+/* A — gingham. The check every kidswear brand already uses, which is the
+   argument for it and possibly also against. */
+.pat-gingham::before {
+  background-image:
+    linear-gradient(to right, rgba(201, 104, 73, 0.3) 50%, transparent 50%),
+    linear-gradient(to bottom, rgba(201, 104, 73, 0.3) 50%, transparent 50%);
+  background-size: 30px 30px;
+}
+
+/* B — scallops. Rows of the logo's arch, touching, so it reads as a fabric
+   rather than as scattered logos. */
+.pat-scallop::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2744%27%20height%3D%2724%27%3E%3Cpath%20d%3D%27M0%2023a22%2022%200%200%201%2044%200%27%20fill%3D%27none%27%20stroke%3D%27%23c96849%27%20stroke-width%3D%272%27%20opacity%3D%270.42%27%2F%3E%3C%2Fsvg%3E");
+  background-size: 44px 24px;
+}
+
+/* C — dots. The quietest of the four and the hardest to get wrong. */
+.pat-dots::before {
+  background-image: radial-gradient(circle, rgba(201, 104, 73, 0.42) 2.1px, transparent 2.2px);
+  background-size: 26px 26px;
+}
+
+/* D — ticking stripe. Pyjama fabric. Vertical, so it works with the very tall
+   type in the hero rather than cutting across it. */
+.pat-ticking::before {
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(201, 104, 73, 0.34) 0 2px,
+    transparent 2px 15px
+  );
+}
+
+/* E — confetti. The four brights as short dashes on the diagonal. The only
+   candidate that is more than one colour. */
+.pat-confetti::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2772%27%20height%3D%2772%27%3E%3Cg%20stroke-width%3D%273%27%20stroke-linecap%3D%27round%27%20opacity%3D%270.5%27%3E%3Cpath%20d%3D%27M10%2014l6-8%27%20stroke%3D%27%23ff6a45%27%2F%3E%3Cpath%20d%3D%27M52%2030l6-8%27%20stroke%3D%27%234fbe86%27%2F%3E%3Cpath%20d%3D%27M28%2052l6-8%27%20stroke%3D%27%23ffc233%27%2F%3E%3Cpath%20d%3D%27M62%2064l6-8%27%20stroke%3D%27%2362b4e8%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-size: 72px 72px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
