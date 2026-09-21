@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { edits } from "@/data/edits";
 import { getProduct } from "@/data/products";
-import { pinCopy } from "@/lib/pinCopy";
+import { pinCopy, pinCopyForLook } from "@/lib/pinCopy";
 import CopyButton from "@/components/CopyButton";
 
 /**
@@ -117,6 +117,36 @@ export default function StudioPage() {
                   </div>
                 </div>
               </details>
+
+              {/* One pin per outfit. Pinterest rewards several distinct
+                  pins over one perfect one, and all four land on the same
+                  page — so an edit with four looks is four chances to be
+                  found for the price of one piece of work. */}
+              {edit.looks.some((l) => l.productIds.length > 0) && (
+                <details className="border-t border-line pt-3.5">
+                  <summary className="cursor-pointer font-body font-semibold text-sm text-ink-soft hover:text-terracotta transition-colors">
+                    One pin per outfit ({edit.looks.filter((l) => l.productIds.length > 0).length})
+                  </summary>
+                  <div className="flex flex-col gap-5 pt-4">
+                    {edit.looks
+                      .filter((l) => l.productIds.length > 0)
+                      .map((look) => {
+                        const lp = pinCopyForLook(edit, look);
+                        return (
+                          <div key={look.label} className="flex flex-col gap-2.5 border-l-2 border-line pl-4">
+                            <p className="text-sm font-semibold text-ink leading-snug">{lp.title}</p>
+                            <p className="text-sm text-ink-soft leading-relaxed">{lp.description}</p>
+                            <p className="text-sm text-ink-faint">{lp.tags}</p>
+                            <div className="flex flex-wrap gap-2.5">
+                              <CopyButton text={lp.title} label="Copy title" />
+                              <CopyButton text={lp.full} label="Copy the lot" />
+                            </div>
+                          </div>
+                        );
+                      })}
+                  </div>
+                </details>
+              )}
 
               {!edit.boardImage && (
                 <p className="text-xs text-ink-faint leading-relaxed">

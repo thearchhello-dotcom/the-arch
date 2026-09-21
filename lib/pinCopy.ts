@@ -56,3 +56,56 @@ export function pinCopy(edit: Edit) {
   // then hunting for the link separately is the fiddly bit on a phone.
   return { title, description, tags, url, full: `${title}\n\n${description}\n\n${tags}\n\n${url}` };
 }
+
+/**
+ * Pin copy for a single look, so one edit can be four pins rather than one.
+ *
+ * Pinterest rewards volume of distinct pins far more than it rewards one
+ * perfect one, and each of these lands on the same edit page — so four pins
+ * is four chances to be found for the price of one piece of work.
+ *
+ * The title leads with who it is for and what it costs, because that is what
+ * someone types. The description names the actual garments, which is what
+ * makes it findable for "checkerboard jumper" rather than only for "knitwear".
+ */
+export function pinCopyForLook(edit: Edit, look: Edit["looks"][number]) {
+  const url = `${site.domain}/edits/${edit.slug}`;
+  const items = look.productIds.map(getProduct).filter(Boolean) as ReturnType<
+    typeof getProduct
+  >[];
+  const cost = costOf(look);
+  const sized = cost.to !== cost.from;
+  const money = cost.from > 0 ? `${sized ? "from " : ""}£${cost.from.toFixed(2)}` : "";
+
+  const shops = [...new Set(items.map((p) => p!.retailer))];
+  const pieces = items.map((p) => p!.name.toLowerCase());
+  const ages = look.ages ? ` (${look.ages})` : "";
+
+  const title = money
+    ? `${look.label} — the whole outfit, ${money}`
+    : `${look.label} — ${edit.title}`;
+
+  const description = [
+    `${look.label}${ages}: ${listOf(pieces)}.`,
+    money && `The whole outfit${sized ? ", from" : ","} ${money.replace(/^from /, "")}.`,
+    shops.length === 1 ? `All from ${shops[0]} — one delivery.` : `From ${listOf(shops)}.`,
+    `Part of ${edit.title}. Every piece linked at thearchedits.co.uk`,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  const tags = [
+    "#kidsfashion",
+    "#kidsoutfits",
+    look.label.toLowerCase().includes("baby") ? "#babyclothes" : "#kidsstyle",
+    "#ukmum",
+  ].join(" ");
+
+  return { title, description, tags, url, full: `${title}\n\n${description}\n\n${tags}\n\n${url}` };
+}
+
+/** "a, b and c" — Pinterest descriptions read as prose, not as a list. */
+function listOf(xs: string[]): string {
+  if (xs.length <= 1) return xs[0] ?? "";
+  return `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`;
+}
