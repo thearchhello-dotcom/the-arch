@@ -105,9 +105,14 @@ export default function StudioPage() {
                   <p className="text-sm font-semibold text-ink leading-snug">{pin.title}</p>
                   <p className="text-sm text-ink-soft leading-relaxed">{pin.description}</p>
                   <p className="text-sm text-ink-faint">{pin.tags}</p>
+                  <p className="text-sm text-ink-soft break-all">
+                    <span className="font-semibold text-ink">Link: </span>
+                    {pin.url}
+                  </p>
                   <div className="flex flex-wrap gap-2.5">
                     <CopyButton text={pin.title} label="Copy title" />
                     <CopyButton text={pin.description} label="Copy description" />
+                    <CopyButton text={pin.url} label="Copy link" />
                     <CopyButton text={pin.full} label="Copy the lot" />
                   </div>
                 </div>

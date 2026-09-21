@@ -1,5 +1,6 @@
 import type { Edit } from "@/lib/types";
 import { costOf, getProduct } from "@/data/products";
+import { site } from "@/lib/site";
 
 /**
  * Pinterest copy for an edit, worked out from the edit itself.
@@ -14,6 +15,7 @@ import { costOf, getProduct } from "@/data/products";
  * front-loads what someone types: what it is, who it is for, what it costs.
  */
 export function pinCopy(edit: Edit) {
+  const url = `${site.domain}/edits/${edit.slug}`;
   const items = edit.looks.flatMap((l) => l.productIds.map(getProduct)).filter(Boolean);
   const shops = [...new Set(items.map((p) => p!.retailer))];
   const costs = edit.looks.map(costOf).filter((c) => c.from > 0);
@@ -34,7 +36,7 @@ export function pinCopy(edit: Edit) {
 
   const description = [
     edit.description,
-    money && `Every piece linked and the whole outfit added up — ${money}.`,
+    money && `The whole outfit, added up — ${money}.`,
     shops.length && `From ${shopList}.`,
     "Shop every piece at thearchedits.co.uk",
   ]
@@ -50,5 +52,7 @@ export function pinCopy(edit: Edit) {
     ...(edit.season?.toLowerCase().includes("autumn") ? ["#autumnoutfits"] : []),
   ].join(" ");
 
-  return { title, description, tags, full: `${title}\n\n${description}\n\n${tags}` };
+  // `full` ends with the URL as well, since pasting the lot into a pin and
+  // then hunting for the link separately is the fiddly bit on a phone.
+  return { title, description, tags, url, full: `${title}\n\n${description}\n\n${tags}\n\n${url}` };
 }
