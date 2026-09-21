@@ -31,6 +31,25 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "the-knitwear-edit-26",
+    title: "Knit Picks",
+    season: "Autumn 2026",
+    plannedFor: "Any time — no date attached",
+    palette: ["#6B4A38", "#E8D8CC", "#C9B7A4", "#F0E6D8"],
+    boardImage: "/edits/the-knitwear-edit-26-board-v2.webp",
+    description:
+      "One knitted piece per look, dressed around with what you would actually put on top — because nobody wears head to toe knitwear. Four outfits, every piece linked, and the shops sell most of them as sets so there is less to click than there is to see.",
+    // Several of these links cover more than one garment: both M&S knitted
+    // outfits include their booties, and the H&M set is the top and the skirt
+    // together. Ten pieces on the board, eight links to buy them.
+    looks: [
+      { label: "Baby Boy", ages: "0–12 months", productIds: ["ms-knit-3piece-brown", "ms-borg-jacket-mushroom"] },
+      { label: "Baby Girl", ages: "0–12 months", productIds: ["ms-knit-2piece-pink", "ms-borg-jacket-cream"] },
+      { label: "Girls", ages: "18 months–10 years", productIds: ["hm-rib-knit-set-brown", "next-western-boots-mink", "ms-ivory-bow"] },
+      { label: "Boys", ages: "3 months–7 years", productIds: ["next-checkerboard-jumper", "next-cord-barrel-trousers", "next-chelsea-boots-brown"] },
+    ],
+  },
+  {
     slug: "autumn-edit-26",
     title: "The Autumn Edit '26",
     season: "Autumn 2026",
@@ -184,21 +203,6 @@ export const edits: Edit[] = [
       { label: "Baby Girl", ages: "0–24 months", kind: "shortlist", productIds: ["george-pink-borg-snowsuit", "hm-padded-pramsuit-cherries", "next-checkerboard-allinone"] },
       { label: "Baby Boy", ages: "0–24 months", kind: "shortlist", productIds: ["hm-padded-jersey-pramsuit", "next-blue-stripe-pramsuit", "ms-borg-double-zip-pramsuit"] },
       { label: "Unisex", ages: "0–24 months", kind: "shortlist", productIds: ["hm-pile-pramsuit-ears", "next-little-one-pramsuit", "mp-faux-fur-pramsuit"] },
-    ],
-  },
-  {
-    slug: "the-knitwear-edit-26",
-    title: "The Knitwear Edit",
-    season: "Autumn 2026",
-    plannedFor: "Any time — no date attached",
-    draft: true,
-    palette: ["#B7A695", "#8FA383", "#E6DCCB", "#6B5A47"],
-    description:
-      "Four outfits built around the jumper. Texture, colour, and what to put underneath — because once the knit is right, the rest mostly decides itself.",
-    looks: [
-      { label: "Baby", ages: "0–18 months", productIds: [] },
-      { label: "Girls", ages: "2–7 years", productIds: [] },
-      { label: "Boys", ages: "2–7 years", productIds: [] },
     ],
   },
 

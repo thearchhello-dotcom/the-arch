@@ -137,6 +137,20 @@ export const products: Product[] = [
   { id: "next-little-one-pramsuit", name: "Cream Little One Back Slogan Quilted Nylon Pramsuit", category: "Baby", retailer: "Next", price: 28.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/sv020281/g93117", imageUrl: "https://xcdn.next.co.uk/common/items/default/default/itemimages/3_4Ratio/product/lge/G93117s.jpg?im=Resize,width=600" },
   { id: "hm-pile-pramsuit-ears", name: "Pile Pram Suit with Ears", category: "Baby", retailer: "H&M", price: 14.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1230866001.html", imageUrl: "https://image.hm.com/assets/hm/c8/02/c8028bb6d8e089766c395e3f4915a18f72eba448.jpg?imwidth=600" },
   { id: "mp-faux-fur-pramsuit", name: "Faux Fur Pramsuit", category: "Baby", retailer: "Mamas & Papas", price: 45.00, type: "top", affiliateUrl: "https://www.mamasandpapas.com/products/faux-fur-pramsuit-nb-s07gn9kb0", imageUrl: "http://www.mamasandpapas.com/cdn/shop/files/mamas-papas-pramsuits-faux-fur-pramsuit-1249087634_1200x1200.jpg?v=1784050811" },
+  // ---- Knit Picks (the-knitwear-edit-26) ----------------------------------
+  // Three of these are priced by size: Next steps the price up for bigger
+  // feet and bigger jumpers, so they carry a priceTo and the outfits they sit
+  // in read as "from" rather than pretending to a figure they cannot hold.
+  { id: "ms-knit-3piece-brown", name: "3 Piece Knitted Outfit with Booties", category: "Baby", retailer: "M&S", price: 18.00, type: "top", affiliateUrl: "https://www.marksandspencer.com/3-piece-knitted-outfit-with-booties-7lbs-12-mths-/p/clp61224290?color=Brown" },
+  { id: "ms-borg-jacket-mushroom", name: "Borg Jacket with Ears", category: "Baby", retailer: "M&S", price: 16.00, type: "top", affiliateUrl: "https://www.marksandspencer.com/borg-jacket-with-ears-0-12-mths-/p/clp61224317?color=Mushroom" },
+  { id: "ms-knit-2piece-pink", name: "2 Piece Knitted Outfit with Booties", category: "Baby", retailer: "M&S", price: 18.00, type: "top", affiliateUrl: "https://www.marksandspencer.com/2-piece-knitted-outfit-with-booties-7lbs-12-mths-/p/clp61224325?color=LightPink" },
+  { id: "ms-borg-jacket-cream", name: "Borg Jacket with Ears", category: "Baby", retailer: "M&S", price: 16.00, type: "top", affiliateUrl: "https://www.marksandspencer.com/borg-jacket-with-ears-0-12-mths-/p/clp61224317?color=Cream" },
+  { id: "hm-rib-knit-set-brown", name: "2-Piece Rib-Knit Cotton Set", category: "Girls", retailer: "H&M", price: 39.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1354894001.html" },
+  { id: "next-western-boots-mink", name: "Mink Brown Faux Suede Western Ankle Boots", category: "Girls", retailer: "Next", price: 36.00, priceTo: 43.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/SV021138/Y37690" },
+  { id: "ms-ivory-bow", name: "Ivory Bow", category: "Girls", retailer: "M&S", price: 7.00, type: "head", affiliateUrl: "https://www.marksandspencer.com/ivory-bow/p/hbp23083548?color=Beige" },
+  { id: "next-checkerboard-jumper", name: "Neutral Checkerboard Knitted Crew Neck Jumper", category: "Boys", retailer: "Next", price: 14.00, priceTo: 16.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/SU969871/G67174" },
+  { id: "next-cord-barrel-trousers", name: "Brown Barrel Leg Textured Corduroy Pull On Trousers", category: "Boys", retailer: "Next", price: 10.00, priceTo: 12.00, type: "bottom", affiliateUrl: "https://www.next.co.uk/style/SU540715/G55758" },
+  { id: "next-chelsea-boots-brown", name: "Neutral Brown Warm Lined Leather Chelsea Boots", category: "Boys", retailer: "Next", price: 30.00, priceTo: 34.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/ST018312/F27493" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.
@@ -153,10 +167,13 @@ export function priceOf(p: Product): number {
  *  have in common — the least you could spend — which is what the price filter
  *  sorts on. */
 export function costOf(look: { kind?: "outfit" | "shortlist"; productIds: string[] }) {
-  const prices = look.productIds
-    .map(getProduct)
-    .filter(Boolean)
-    .map((p) => priceOf(p as Product));
+  const items = look.productIds.map(getProduct).filter(Boolean) as Product[];
+  const prices = items.map(priceOf);
+  // A size-priced item contributes its top price to the upper figure. A sale
+  // price is already the real price, so it is never stretched by priceTo.
+  const topPrices = items.map((p) =>
+    p.onSale && p.salePrice ? p.salePrice : p.priceTo ?? p.price
+  );
 
   if (!prices.length) return { kind: "outfit" as const, total: 0, from: 0, to: 0 };
 
@@ -167,7 +184,11 @@ export function costOf(look: { kind?: "outfit" | "shortlist"; productIds: string
   }
 
   const total = prices.reduce((s, n) => s + n, 0);
-  return { kind: "outfit" as const, total, from: total, to: total };
+  const to = topPrices.reduce((s, n) => s + n, 0);
+  // `to` only differs from `total` when something in the outfit is size
+  // priced. Callers use that difference to decide between "£82.99" and
+  // "from £82.99", so the claim stays true either way.
+  return { kind: "outfit" as const, total, from: total, to };
 }
 
 export function getProduct(id: string): Product | undefined {

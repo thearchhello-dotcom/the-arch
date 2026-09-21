@@ -27,7 +27,13 @@ export interface Product {
   name: string;
   category: Category;
   retailer: Retailer;
-  price: number; // GBP
+  price: number; // GBP — the lowest price across sizes
+
+  /** Top of the range when a retailer charges more for bigger sizes, which
+   *  Next does on most children's shoes and knitwear. Left off when one price
+   *  covers every size, which is how M&S and H&M sell. Its presence is what
+   *  turns an outfit total into a "from" figure rather than a flat one. */
+  priceTo?: number;
   type: ItemType;
   affiliateUrl?: string; // stubbed until affiliate network feeds are wired in
   imageUrl?: string; // stubbed — use the network's product feed image once live

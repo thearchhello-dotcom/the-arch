@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { edits } from "@/data/edits";
 import { getProduct } from "@/data/products";
+import { pinCopy } from "@/lib/pinCopy";
+import CopyButton from "@/components/CopyButton";
 
 /**
  * Your own back room. Every edit, with its three ready-made social images one
@@ -48,7 +50,10 @@ export default function StudioPage() {
       </section>
 
       <section className="px-5 pb-16 sm:px-8 md:px-14 flex flex-col gap-4 max-w-3xl">
-        {edits.map((edit) => {
+        {[...edits]
+          .sort((a, b) => Number(a.draft ?? false) - Number(b.draft ?? false))
+          .map((edit) => {
+            const pin = pinCopy(edit);
           const totals = edit.looks
             .map((l) => l.productIds.reduce((s, id) => s + (getProduct(id)?.price ?? 0), 0))
             .filter((t) => t > 0);
@@ -89,6 +94,24 @@ export default function StudioPage() {
                   View the edit &rarr;
                 </Link>
               </div>
+
+              {/* The wording for the pin, generated from this edit so the
+                  price in it cannot drift from the price on the board. */}
+              <details className="border-t border-line pt-3.5">
+                <summary className="cursor-pointer font-body font-semibold text-sm text-ink-soft hover:text-terracotta transition-colors">
+                  Pinterest wording
+                </summary>
+                <div className="flex flex-col gap-3 pt-3.5">
+                  <p className="text-sm font-semibold text-ink leading-snug">{pin.title}</p>
+                  <p className="text-sm text-ink-soft leading-relaxed">{pin.description}</p>
+                  <p className="text-sm text-ink-faint">{pin.tags}</p>
+                  <div className="flex flex-wrap gap-2.5">
+                    <CopyButton text={pin.title} label="Copy title" />
+                    <CopyButton text={pin.description} label="Copy description" />
+                    <CopyButton text={pin.full} label="Copy the lot" />
+                  </div>
+                </div>
+              </details>
 
               {!edit.boardImage && (
                 <p className="text-xs text-ink-faint leading-relaxed">

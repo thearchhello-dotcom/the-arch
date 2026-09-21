@@ -243,6 +243,13 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
                       ? `${look.label} · ${items.length} to choose from`
                       : `${look.label} · everything above, nothing missing`}
                   </span>
+                  {/* Says why the number is a "from" rather than leaving a
+                      reader to wonder whether it is a hedge. */}
+                  {!shortlist && cost.to !== cost.from && (
+                    <span className="text-sm opacity-80">
+                      Shoes and knitwear priced by size &middot; up to £{cost.to.toFixed(2)}
+                    </span>
+                  )}
                   {oneShop && (
                     <span className="text-sm opacity-80">
                       All from {oneShop} &middot; one delivery
@@ -250,9 +257,11 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
                   )}
                 </div>
                 <span className="font-display text-3xl font-semibold">
-                  {shortlist && cost.to !== cost.from
-                    ? `£${cost.from.toFixed(2)} – £${cost.to.toFixed(2)}`
-                    : `£${(shortlist ? cost.from : cost.total).toFixed(2)}`}
+                  {cost.to !== cost.from
+                    ? shortlist
+                      ? `£${cost.from.toFixed(2)} – £${cost.to.toFixed(2)}`
+                      : `from £${cost.from.toFixed(2)}`
+                    : `£${cost.total.toFixed(2)}`}
                 </span>
               </div>
             )}
