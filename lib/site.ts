@@ -26,21 +26,21 @@ export const site = {
    */
   isPublic: true,
 
-  /** Whether product cards show the retailer's own photograph.
+  /** Master switch for retailer photographs. A kill switch, not the rule.
    *
-   *  OFF until the affiliate programmes are approved and their product feeds
-   *  are available. Neither network gives blanket permission to use images
-   *  taken from a retailer's website: Awin's terms licence material the
-   *  advertiser supplies through the network, and Skimlinks tell you to ask
-   *  the merchant. Feed images are the clean version of this.
+   *  The rule now lives per retailer, in canShowImage() in lib/affiliate.ts:
+   *  a shop's pictures appear once that shop has approved Gemma, and not
+   *  before, because approval is precisely what changes the licensing. It is
+   *  the same list that drives the tracked links, so a shop whose links earn
+   *  is a shop whose pictures show.
    *
-   *  The image addresses stay in data/products.ts, so this is a one word
-   *  change whenever that day comes. Until then the cards fall back to the
-   *  garment icons.
+   *  Setting this to false turns every photograph off everywhere at once,
+   *  whatever the programmes say — worth having if a retailer ever objects.
    *
-   *  Before turning this on, read the images rule at the top of
-   *  data/products.ts. Clothes, never children. */
-  showProductImages: false,
+   *  The other rule is not affected by any of this. Clothes, never children:
+   *  a photograph has to be a laydown before its address is stored at all.
+   *  The images rule at the top of data/products.ts has the full reasoning. */
+  showProductImages: true,
 
   /** When the legal pages were last reviewed. Bump it when you change them. */
   policiesUpdated: "7 September 2026",

@@ -63,3 +63,24 @@ export function affiliateHref(product: Product): string | undefined {
 export function isTracked(retailer: Retailer): boolean {
   return Boolean(AWIN_PUBLISHER_ID && PROGRAMMES[retailer]);
 }
+
+/**
+ * Whether this retailer's photographs may be shown.
+ *
+ * Gemma's rule, and it is a good one: the pictures go on for a shop at the
+ * moment that shop approves her, and not before. Approval is exactly what
+ * changes the licensing position — Awin's terms licence the advertiser's
+ * materials to publishers on the programme, and before approval there is no
+ * programme and no permission.
+ *
+ * Deliberately the same list that drives the tracked links, so the two can
+ * never disagree: a shop whose links earn is a shop whose pictures show, and
+ * when M&S is approved both switch on together from one line.
+ *
+ * This does not relax the other rule. Feeds and product pages both carry
+ * model shots, and The Arch shows clothes, never children — so a photograph
+ * still has to be a laydown before its address is stored at all.
+ */
+export function canShowImage(retailer: Retailer): boolean {
+  return isTracked(retailer);
+}
