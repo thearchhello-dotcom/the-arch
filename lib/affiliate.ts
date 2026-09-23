@@ -18,13 +18,19 @@ import type { Product, Retailer } from "@/lib/types";
  * after the page loads, which is why Next and H&M links are left alone here.
  */
 
-/** Gemma's Awin publisher id. Empty until read off a real generated link. */
-const AWIN_PUBLISHER_ID = "";
+/** Gemma's Awin publisher id, read off a link generated in Awin's own deep
+ *  link tool on 23 September 2026. Not a secret — it travels in the query
+ *  string of every outbound link, which is how the network knows the click
+ *  came from here. */
+const AWIN_PUBLISHER_ID = "3098383";
 
 /** Advertiser ids, per retailer, for programmes that are approved and live.
  *  A retailer missing from here links out plainly — which is the correct
  *  behaviour for one that is pending, rejected, or handled by Skimlinks. */
-const PROGRAMMES: Partial<Record<Retailer, { network: "awin"; merchantId: string }>> = {};
+const PROGRAMMES: Partial<Record<Retailer, { network: "awin"; merchantId: string }>> = {
+  "Mamas & Papas": { network: "awin", merchantId: "6526" },
+  // M&S, adidas and Debenhams go here as they are approved. schuh declined.
+};
 
 /**
  * The URL a product's button should point at.
