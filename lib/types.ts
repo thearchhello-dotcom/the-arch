@@ -1,7 +1,11 @@
 // Mirrors the data model in the technical foundation brief:
 // products live once, edits/looks reference them rather than duplicating them.
 
-export type Category = "Baby" | "Girls" | "Boys";
+/** Who or what a product is for. "Nursery" is the one that is not clothing:
+ *  prams, cots, changing, feeding, the room itself. Without it every product
+ *  had to be a garment for a child of a stated age, which quietly limited the
+ *  site to outfits no matter what the copy said. */
+export type Category = "Baby" | "Girls" | "Boys" | "Nursery";
 export type Retailer =
   | "adidas"
   | "Debenhams"
@@ -61,6 +65,12 @@ export interface EditLook {
    *  range instead. Three coats aren't an outfit and adding them up would be
    *  a number nobody is ever going to pay. */
   kind?: "outfit" | "shortlist";
+
+  /** What this look IS, for the line above its total — "outfit" by default,
+   *  but "set", "bundle" or "pram kit" for a look that is not clothing. The
+   *  total is the site's whole promise, so the word above it has to be true:
+   *  "The whole outfit" over a cot and a mobile reads as a mistake. */
+  noun?: string;
 
   productIds: string[];
 }

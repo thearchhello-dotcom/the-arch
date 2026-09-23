@@ -31,12 +31,12 @@ export function pinCopy(edit: Edit) {
       : `${shops.slice(0, 3).join(", ")} and ${shops.length - 3} more`;
 
   const title = money
-    ? `${edit.title} — ${edit.looks.length} complete kids' outfits ${money}`
-    : `${edit.title} — ${edit.looks.length} complete kids' outfits`;
+    ? `${edit.title} — ${edit.looks.length} for babies and children, ${money}`
+    : `${edit.title} — ${edit.looks.length} for babies and children`;
 
   const description = [
     edit.description,
-    money && `The whole outfit, added up — ${money}.`,
+    money && `The whole thing, added up — ${money}.`,
     shops.length && `From ${shopList}.`,
     "Shop every piece at thearchedits.co.uk",
   ]
@@ -82,12 +82,12 @@ export function pinCopyForLook(edit: Edit, look: Edit["looks"][number]) {
   const ages = look.ages ? ` (${look.ages})` : "";
 
   const title = money
-    ? `${look.label} — the whole outfit, ${money}`
+    ? `${look.label} — the whole ${look.noun ?? "outfit"}, ${money}`
     : `${look.label} — ${edit.title}`;
 
   const description = [
     `${look.label}${ages}: ${listOf(pieces)}.`,
-    money && `The whole outfit${sized ? ", from" : ","} ${money.replace(/^from /, "")}.`,
+    money && `The whole ${look.noun ?? "outfit"}${sized ? ", from" : ","} ${money.replace(/^from /, "")}.`,
     shops.length === 1 ? `All from ${shops[0]} — one delivery.` : `From ${listOf(shops)}.`,
     `Part of ${edit.title}. Every piece linked at thearchedits.co.uk`,
   ]

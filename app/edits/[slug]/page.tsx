@@ -237,7 +237,7 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
               <div className="mt-5 bg-ink text-card rounded-[22px] px-7 py-5 flex items-center justify-between flex-wrap gap-3">
                 <div className="flex flex-col">
                   <span className="font-body font-bold text-[11px] tracking-widest uppercase opacity-70">
-                    {shortlist ? "Pick one" : "The whole outfit"}
+                    {shortlist ? "Pick one" : `The whole ${look.noun ?? "outfit"}`}
                   </span>
                   <span className="text-sm opacity-80">
                     {shortlist

@@ -1,14 +1,15 @@
 import Link from "next/link";
 import GarmentIcon from "./GarmentIcon";
-import type { Category } from "@/lib/types";
+import type { Category, ItemType } from "@/lib/types";
 
 // Three flat, saturated tiles rather than three shades of oatmeal. The icon
 // is drawn in ink on all of them, because a tinted icon on a tinted tile was
 // half the reason these used to disappear.
-const TILES: { category: Category; bg: string; color: string; icon: "top" | "bottom" }[] = [
+const TILES: { category: Category; bg: string; color: string; icon: ItemType }[] = [
   { category: "Baby", bg: "bg-pop-sun", color: "#4A372A", icon: "top" },
   { category: "Girls", bg: "bg-pop-coral", color: "#4A372A", icon: "bottom" },
   { category: "Boys", bg: "bg-pop-leaf", color: "#4A372A", icon: "bottom" },
+  { category: "Nursery", bg: "bg-pop-sky", color: "#4A372A", icon: "nursery" },
 ];
 
 export default function CategoryTiles() {

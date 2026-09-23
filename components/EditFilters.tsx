@@ -60,7 +60,7 @@ export default function EditFilters({ edits }: { edits: EditSummary[] }) {
   return (
     <>
       {usable.length > 1 && (
-        <div className="flex flex-wrap gap-2.5 mb-9" role="group" aria-label="Filter edits by outfit price">
+        <div className="flex flex-wrap gap-2.5 mb-9" role="group" aria-label="Filter edits by price">
           {usable.map((b) => {
             const active = b.id === band;
             return (

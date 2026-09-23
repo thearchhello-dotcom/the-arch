@@ -5,7 +5,7 @@ import { products } from "@/data/products";
 import type { Category, Retailer } from "@/lib/types";
 import ProductCard from "./ProductCard";
 
-const CATEGORIES: (Category | "All")[] = ["All", "Baby", "Girls", "Boys"];
+const CATEGORIES: (Category | "All")[] = ["All", "Baby", "Girls", "Boys", "Nursery"];
 /* Derived from the products themselves rather than hardcoded, so adding a new
    shop to data/products.ts makes its chip appear, and a shop with nothing in it
    never shows a chip that returns an empty grid. */

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "Every piece featured in an edit, filterable by who it's for and which shop it's from.",
 };
 
-const VALID_CATEGORIES: Category[] = ["Baby", "Girls", "Boys"];
+const VALID_CATEGORIES: Category[] = ["Baby", "Girls", "Boys", "Nursery"];
 
 export default async function ShopPage({
   searchParams,
