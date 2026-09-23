@@ -31,6 +31,30 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "the-nursery-edit-26",
+    title: "The Nursery Edit",
+    section: "nursery",
+    season: "Autumn 2026",
+    plannedFor: "Any time — no date attached",
+    draft: true,
+    palette: ["#D9CDBB", "#E8E0D2", "#A89684", "#6B5A47"],
+    description:
+      "A whole nursery, priced up. The cot, the mattress, the changing unit, the chair, and what the lot actually comes to — because everyone tells you what to buy and nobody tells you what it costs.",
+    // The site's format applied to something far bigger than an outfit. Three
+    // complete nurseries at three budgets rather than a list of nice things,
+    // so the totals do the same work here that they do everywhere else.
+    //
+    // Labels and tier count are Gemma's to set once she has seen what Mamas &
+    // Papas, Tutti Bambini and Momcozy actually carry. The noun field is what
+    // prints above each total, so these say "The whole nursery" rather than
+    // "The whole outfit".
+    looks: [
+      { label: "The basics", noun: "nursery", productIds: [] },
+      { label: "The middle", noun: "nursery", productIds: [] },
+      { label: "The dream one", noun: "nursery", productIds: [] },
+    ],
+  },
+  {
     slug: "after-dark-26",
     title: "After Dark",
     section: "outfits",
