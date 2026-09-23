@@ -1,5 +1,6 @@
 import { site } from "@/lib/site";
 import { popFor } from "@/lib/pops";
+import { affiliateHref } from "@/lib/affiliate";
 import type { Product } from "@/lib/types";
 import GarmentIcon from "./GarmentIcon";
 import AffiliateLink from "./AffiliateLink";
@@ -54,7 +55,7 @@ export default function ProductCard({ product }: { product: Product }) {
           )}
         </span>
       </div>
-      <AffiliateLink href={product.affiliateUrl} retailer={product.retailer} />
+      <AffiliateLink href={affiliateHref(product)} retailer={product.retailer} />
     </div>
   );
 }

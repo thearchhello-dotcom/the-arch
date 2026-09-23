@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { popFor } from "@/lib/pops";
+import { affiliateHref } from "@/lib/affiliate";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -224,7 +225,7 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
                   </span>
                   <span className="text-sm font-semibold text-ink flex-1">{item.name}</span>
                   <span className="text-sm font-bold text-ink">£{item.price.toFixed(2)}</span>
-                  <AffiliateLink href={item.affiliateUrl} retailer={item.retailer} className="mt-1" />
+                  <AffiliateLink href={affiliateHref(item)} retailer={item.retailer} className="mt-1" />
                 </div>
               ))}
             </div>
