@@ -67,11 +67,27 @@ export function isTracked(retailer: Retailer): boolean {
 /**
  * Whether this retailer's photographs may be shown.
  *
- * Gemma's rule, and it is a good one: the pictures go on for a shop at the
- * moment that shop approves her, and not before. Approval is exactly what
- * changes the licensing position — Awin's terms licence the advertiser's
- * materials to publishers on the programme, and before approval there is no
- * programme and no permission.
+ * Gemma's rule: the pictures go on for a shop at the moment that shop
+ * approves her, and not before.
+ *
+ * Be straight about what that rests on. Approval plainly helps — before it
+ * there is no relationship at all — but it is NOT the same as an explicit
+ * licence to reuse a retailer's photography. Most affiliate terms do not
+ * spell downstream image reuse out, and where it is not spelled out the
+ * careful reading is that it has not been granted. I previously wrote here
+ * that Awin's terms licence advertiser materials to publishers on the
+ * programme; I had inferred that rather than read it, and it should not have
+ * been stated as settled.
+ *
+ * Gemma knows this and has decided to run with it for approved retailers
+ * while she asks them directly, which is hers to decide. The safeguards are
+ * that it is one retailer at a time, that site.showProductImages turns every
+ * photograph off everywhere in one word if anyone objects, and that a single
+ * product's imageUrl can be deleted on its own.
+ *
+ * The larger version of this question is the Canva boards, which composite
+ * several retailers' photographs into one branded graphic. Nothing here
+ * touches that.
  *
  * Deliberately the same list that drives the tracked links, so the two can
  * never disagree: a shop whose links earn is a shop whose pictures show, and
