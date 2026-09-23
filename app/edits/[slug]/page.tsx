@@ -14,7 +14,7 @@ import Newsletter from "@/components/Newsletter";
 import PaletteArt from "@/components/PaletteArt";
 import EditNote from "@/components/EditNote";
 import { getEdit, publishedEdits } from "@/data/edits";
-import { costOf, getProduct } from "@/data/products";
+import { costOf, getProduct, priceOf } from "@/data/products";
 
 export function generateStaticParams() {
   return publishedEdits.map((e) => ({ slug: e.slug }));
@@ -224,7 +224,19 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
                     {item.retailer}
                   </span>
                   <span className="text-sm font-semibold text-ink flex-1">{item.name}</span>
-                  <span className="text-sm font-bold text-ink">£{item.price.toFixed(2)}</span>
+                  {/* priceOf, not item.price. A sale item was printing the
+                      price it used to be while the total below used the price
+                      it is, so the pieces on screen did not add up to the
+                      figure underneath them — on the one site whose whole
+                      claim is that the figure is real. */}
+                  <span className="text-sm font-bold text-ink">
+                    £{priceOf(item).toFixed(2)}
+                    {item.onSale && item.salePrice && (
+                      <span className="ml-1.5 text-xs font-medium text-ink-faint line-through">
+                        £{item.price.toFixed(2)}
+                      </span>
+                    )}
+                  </span>
                   <AffiliateLink href={affiliateHref(item)} retailer={item.retailer} className="mt-1" />
                 </div>
               ))}
