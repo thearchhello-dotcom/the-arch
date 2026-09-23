@@ -24,6 +24,7 @@ function summarise(edit: Edit): EditSummary {
   return {
     slug: edit.slug,
     title: edit.title,
+    section: edit.section ?? "outfits",
     season: edit.season,
     description: edit.description,
     palette: edit.palette,

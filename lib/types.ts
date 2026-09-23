@@ -75,9 +75,19 @@ export interface EditLook {
   productIds: string[];
 }
 
+/** The part of the site an edit belongs to.
+ *
+ *  Outfits and prams are different shopping trips: someone buying a pramsuit
+ *  is not browsing for a party dress, and mixing them makes the index read as
+ *  a jumble. Optional, defaulting to "outfits", so every edit written before
+ *  this existed keeps its place without being touched. */
+export type EditSection = "outfits" | "nursery" | "gifts";
+
 export interface Edit {
   slug: string;
   title: string;
+  /** Defaults to "outfits" when not set. */
+  section?: EditSection;
   season: string;
   palette: string[]; // hex values
   description: string;

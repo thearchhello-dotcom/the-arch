@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import type { EditSection } from "@/lib/types";
 import Link from "next/link";
 import Image from "next/image";
 import { popFor } from "@/lib/pops";
@@ -18,6 +19,7 @@ import type { Edit } from "@/lib/types";
 export type EditSummary = {
   slug: string;
   title: string;
+  section: EditSection;
   season: string;
   description: string;
   palette: string[];
@@ -30,6 +32,12 @@ export type EditSummary = {
   looks: number;
   pieces: number;
 };
+
+const SECTIONS = [
+  { id: "outfits", label: "Outfits" },
+  { id: "nursery", label: "Prams & nursery" },
+  { id: "gifts", label: "Gifts" },
+] as const;
 
 const BANDS = [
   { id: "all", label: "All edits", test: () => true },
@@ -45,11 +53,16 @@ function money(n: number) {
 
 export default function EditFilters({ edits }: { edits: EditSummary[] }) {
   const [band, setBand] = useState<string>("all");
+  const [section, setSection] = useState<string>("all");
+
+  // Only worth showing the split once there is something to split. While every
+  // edit is an outfit a section switcher is just a button that does nothing.
+  const usableSections = SECTIONS.filter((s) => edits.some((e) => e.section === s.id));
 
   const shown = useMemo(() => {
     const b = BANDS.find((x) => x.id === band) ?? BANDS[0];
-    return edits.filter((e) => b.test(e));
-  }, [band, edits]);
+    return edits.filter((e) => b.test(e) && (section === "all" || e.section === section));
+  }, [band, section, edits]);
 
   // A band with nothing in it is a dead end, so hide the ones that would be
   // empty rather than letting someone click into nothing.
@@ -59,6 +72,26 @@ export default function EditFilters({ edits }: { edits: EditSummary[] }) {
 
   return (
     <>
+      {usableSections.length > 1 && (
+        <div className="flex flex-wrap gap-2.5 mb-5" role="group" aria-label="Filter edits by section">
+          {[{ id: "all", label: "Everything" }, ...usableSections].map((s) => {
+            const active = s.id === section;
+            return (
+              <button
+                key={s.id}
+                type="button"
+                onClick={() => setSection(s.id)}
+                className={`font-display text-sm font-semibold px-5 py-2.5 rounded-pill transition-colors ${
+                  active ? "bg-ink text-cream" : "bg-card text-ink border border-line"
+                }`}
+              >
+                {s.label}
+              </button>
+            );
+          })}
+        </div>
+      )}
+
       {usable.length > 1 && (
         <div className="flex flex-wrap gap-2.5 mb-9" role="group" aria-label="Filter edits by price">
           {usable.map((b) => {
