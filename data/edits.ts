@@ -31,6 +31,27 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "after-dark-26",
+    title: "After Dark",
+    section: "outfits",
+    season: "Autumn 2026",
+    plannedFor: "Bonfire night, 5 November",
+    palette: ["#8A9A7B", "#E8E0D2", "#5C6B54", "#A89684"],
+    boardImage: "/edits/after-dark-26-board.webp",
+    description:
+      "Warm, cosy layers for standing outside in the dark watching fireworks. Four outfits, every piece linked, and the shops sell several of them as sets so there is less to click than there is to see.",
+    // Ages follow the narrowest piece in each look, not the widest. The H&M
+    // knit sets stop at 6-9 months while the pramsuits run to two years, and
+    // quoting the wider range would send someone to a page where half the
+    // outfit cannot be bought in their size.
+    looks: [
+      { label: "Baby Girl", ages: "0–9 months", productIds: ["ms-floral-cord-pramsuit", "hm-knit-set-green-floral"] },
+      { label: "Baby Boy", ages: "0–9 months", productIds: ["mp-colour-block-pramsuit", "hm-knit-set-striped", "next-suede-pull-on-boots"] },
+      { label: "Girls", ages: "3–7 years", productIds: ["next-waterproof-fur-lined-coat", "next-cream-spot-set", "hm-chunky-chelsea-beige"] },
+      { label: "Boys", ages: "4–9 years", productIds: ["hm-teddy-jacket-navy-block", "hm-urban-kit-hoodie", "hm-brushed-cargo-joggers", "mm-levis-dereck-trainers"] },
+    ],
+  },
+  {
     slug: "the-knitwear-edit-26",
     title: "Knit Picks",
     season: "Autumn 2026",
@@ -154,21 +175,6 @@ export const edits: Edit[] = [
     ],
   },
 
-  {
-    slug: "after-dark-26",
-    title: "After Dark",
-    season: "Autumn 2026",
-    plannedFor: "Early November — bonfire night",
-    draft: true,
-    palette: ["#2E2A26", "#E3A83B", "#C96849", "#B7A695"],
-    description:
-      "Bonfire night, and standing still in a field for an hour. Layers, warm hands, and the small mercy of something reflective.",
-    looks: [
-      { label: "Baby", ages: "0–18 months", productIds: [] },
-      { label: "Girls", ages: "2–7 years", productIds: [] },
-      { label: "Boys", ages: "2–7 years", productIds: [] },
-    ],
-  },
 
   {
     slug: "under-forty-26",

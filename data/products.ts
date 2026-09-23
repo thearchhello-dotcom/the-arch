@@ -151,6 +151,24 @@ export const products: Product[] = [
   { id: "next-checkerboard-jumper", name: "Neutral Checkerboard Knitted Crew Neck Jumper", category: "Boys", retailer: "Next", price: 14.00, priceTo: 16.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/SU969871/G67174" },
   { id: "next-cord-barrel-trousers", name: "Brown Barrel Leg Textured Corduroy Pull On Trousers", category: "Boys", retailer: "Next", price: 10.00, priceTo: 12.00, type: "bottom", affiliateUrl: "https://www.next.co.uk/style/SU540715/G55758" },
   { id: "next-chelsea-boots-brown", name: "Neutral Brown Warm Lined Leather Chelsea Boots", category: "Boys", retailer: "Next", price: 30.00, priceTo: 34.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/ST018312/F27493" },
+  // ---- After Dark (after-dark-26) ----------------------------------------
+  // The Mamas & Papas pramsuit is the first product on the site that both
+  // earns and shows its photograph, M&P being the only approved programme.
+  // Everything else here links out untracked for now.
+  { id: "ms-floral-cord-pramsuit", name: "Pure Cotton Floral Cord Pramsuit", category: "Baby", retailer: "M&S", price: 26.00, type: "top", affiliateUrl: "https://www.marksandspencer.com/pure-cotton-floral-cord-pramsuit-0-12-mths-/p/clp61218132?color=Ivory" },
+  { id: "hm-knit-set-green-floral", name: "2-Piece Cotton-Knit Set", category: "Baby", retailer: "H&M", price: 18.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1302623004.html" },
+  { id: "mp-colour-block-pramsuit", name: "Colour Block Pramsuit", category: "Baby", retailer: "Mamas & Papas", price: 30.00, type: "top", affiliateUrl: "https://www.mamasandpapas.com/products/colour-block-pramsuit-up-to-1-month-s07gn7nb1", imageUrl: "https://www.mamasandpapas.com/cdn/shop/files/mamas-papas-pramsuits-colour-block-pramsuit-1249221507_1200x1200.jpg?v=1784140360" },
+  { id: "hm-knit-set-striped", name: "2-Piece Cotton-Knit Set", category: "Baby", retailer: "H&M", price: 18.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1302623009.html" },
+  { id: "next-suede-pull-on-boots", name: "Tan Brown Suede Baby Pull-On Boots", category: "Baby", retailer: "Next", price: 12.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/SU962250/W15705" },
+  { id: "next-waterproof-fur-lined-coat", name: "Khaki Green Waterproof Faux Fur Lined Padded Coat", category: "Girls", retailer: "Next", price: 44.00, priceTo: 54.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/SU964292/W13510" },
+  { id: "next-cream-spot-set", name: "Cream Spot Sweatshirt and Leggings Set", category: "Girls", retailer: "Next", price: 12.00, priceTo: 16.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/SV004113/H01905" },
+  { id: "hm-chunky-chelsea-beige", name: "Chunky Chelsea Boots", category: "Girls", retailer: "H&M", price: 19.99, type: "foot", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1341135001.html" },
+  { id: "hm-teddy-jacket-navy-block", name: "Teddy Jacket", category: "Boys", retailer: "H&M", price: 17.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1305893011.html" },
+  { id: "hm-urban-kit-hoodie", name: "Loose-Fit Motif-Detail Hoodie", category: "Boys", retailer: "H&M", price: 12.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1352502006.html" },
+  { id: "hm-brushed-cargo-joggers", name: "Brushed-Inside Cargo Joggers", category: "Boys", retailer: "H&M", price: 9.99, type: "bottom", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1343772004.html" },
+  // Half price at the time of building. onSale drives the sale badge and means
+  // the total uses 24.99, not the 56.99 it was.
+  { id: "mm-levis-dereck-trainers", name: "Levi's Dereck Mid Trainers", category: "Boys", retailer: "MandM Direct", price: 56.99, onSale: true, salePrice: 24.99, type: "foot", affiliateUrl: "https://www.mandmdirect.com/gb/en/product/lv33252/levis-boys-dereck-mid-trainers-navy-khaki-light-brown" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.
