@@ -78,7 +78,7 @@ export default function AboutPage() {
         <div className="relative overflow-hidden bg-card rounded-[28px] min-h-[200px] sm:min-h-[260px] p-7 sm:p-12 flex items-end">
           <RainbowCorner size="clamp(100px, 28vw, 230px)" innerColor="#FBF6EA" />
           <h2 className="relative z-10 font-display text-[26px] sm:text-[34px] font-semibold leading-tight max-w-sm">
-            Little finds for little people.
+            {site.tagline}
           </h2>
         </div>
       </section>

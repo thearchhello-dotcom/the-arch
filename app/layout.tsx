@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   // with the same content and Google has to guess which one to rank.
   alternates: { canonical: "./" },
   title: {
-    default: "The Arch — little finds for little people",
+    default: "The Arch — all the little things, under one arch",
     template: "%s — The Arch",
   },
   description:
@@ -33,14 +33,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GB",
     siteName: site.name,
-    title: "The Arch — little finds for little people",
+    title: "The Arch — all the little things, under one arch",
     description:
       "Styled edits for babies and children — from the shops parents already use, with every piece linked and priced up in full.",
     images: ["/logo-the-arch-square-dot.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Arch — little finds for little people",
+    title: "The Arch — all the little things, under one arch",
     description:
       "Styled edits for babies and children — from the shops parents already use, with every piece linked and priced up in full.",
     images: ["/logo-the-arch-square-dot.png"],

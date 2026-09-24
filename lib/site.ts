@@ -3,7 +3,13 @@
 
 export const site = {
   name: "The Arch",
-  tagline: "Little finds for little people.",
+  /** Changed 25 September 2026. The old line, "Little finds for little
+   *  people", was almost word for word the bio of an established Instagram
+   *  account (Little Finds Edit, "Little finds for your little ones") that
+   *  also uses a rainbow arch logo. This one uses The Arch's own name, plays
+   *  on "all under one roof" (pieces from many shops, in one place), and says
+   *  "things" rather than "looks" so it covers prams, nursery and gifts too. */
+  tagline: "All the little things, under one arch.",
 
   /** First name only, on purpose — this is the name shown publicly everywhere
    *  on the site. Your full name stays private: affiliate networks and the
