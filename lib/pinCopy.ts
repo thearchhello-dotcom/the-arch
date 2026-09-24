@@ -30,9 +30,12 @@ export function pinCopy(edit: Edit) {
       ? shops.join(", ")
       : `${shops.slice(0, 3).join(", ")} and ${shops.length - 3} more`;
 
+  // Pinterest is a search engine first, so the pin leads with what the edit is
+  // for when there is a search title, and keeps the edit's own name after it.
+  const lead = edit.searchTitle ?? `${edit.looks.length} for babies and children`;
   const title = money
-    ? `${edit.title} — ${edit.looks.length} for babies and children, ${money}`
-    : `${edit.title} — ${edit.looks.length} for babies and children`;
+    ? `${lead} — ${edit.title}, ${money}`
+    : `${lead} — ${edit.title}`;
 
   const description = [
     edit.description,

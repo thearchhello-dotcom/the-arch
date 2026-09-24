@@ -57,6 +57,7 @@ export const edits: Edit[] = [
   {
     slug: "after-dark-26",
     title: "After Dark",
+    searchTitle: "Bonfire night outfits for babies and kids",
     section: "outfits",
     season: "Autumn 2026",
     published: "2026-09-23",
@@ -80,6 +81,7 @@ export const edits: Edit[] = [
   {
     slug: "the-knitwear-edit-26",
     title: "Knit Picks",
+    searchTitle: "Autumn knitwear outfits for babies and kids",
     season: "Autumn 2026",
     published: "2026-09-21",
     updated: "2026-09-21",
@@ -128,6 +130,7 @@ export const edits: Edit[] = [
   {
     slug: "halloween-at-next-26",
     title: "Halloween at Next",
+    searchTitle: "Halloween clothes from Next for babies and kids",
     season: "Autumn 2026",
     published: "2026-09-09",
     updated: "2026-09-09",
@@ -148,6 +151,7 @@ export const edits: Edit[] = [
   {
     slug: "little-pumpkins-26",
     title: "The Little Pumpkin",
+    searchTitle: "Pumpkin print clothes for babies and kids",
     season: "Autumn 2026",
     published: "2026-09-10",
     updated: "2026-09-10",
@@ -168,6 +172,7 @@ export const edits: Edit[] = [
   {
     slug: "baby-halloween-26",
     title: "Little Boo",
+    searchTitle: "Baby's first Halloween outfits, newborn to toddler",
     season: "Autumn 2026",
     published: "2026-09-12",
     updated: "2026-09-12",
@@ -196,6 +201,7 @@ export const edits: Edit[] = [
   {
     slug: "puddles-and-wellies-26",
     title: "The 'Muddy Puddles' Edit",
+    searchTitle: "Puddlesuits and wellies for babies and kids",
     season: "Autumn 2026",
     published: "2026-09-16",
     updated: "2026-09-16",
@@ -231,6 +237,7 @@ export const edits: Edit[] = [
   {
     slug: "pramsuits-26",
     title: "Wrapped Up",
+    searchTitle: "Winter pramsuits for baby girls, boys and unisex",
     season: "Autumn 2026",
     published: "2026-09-17",
     updated: "2026-09-23",
@@ -253,6 +260,7 @@ export const edits: Edit[] = [
   {
     slug: "first-coats-26",
     title: "Get Cosy",
+    searchTitle: "Winter coats for babies and kids at three prices",
     season: "Autumn 2026",
     published: "2026-09-12",
     updated: "2026-09-12",
@@ -309,6 +317,7 @@ export const edits: Edit[] = [
   {
     slug: "girl-power-26",
     title: "Girl Power",
+    searchTitle: "90s girl group outfits for little girls",
     season: "Autumn 2026",
     published: "2026-09-13",
     updated: "2026-09-13",
@@ -342,6 +351,7 @@ export const edits: Edit[] = [
   {
     slug: "the-britpop-edit-26",
     title: "The 'R Kid' Edit",
+    searchTitle: "Britpop style outfits for kids: parkas and adidas",
     season: "Autumn 2026",
     published: "2026-09-12",
     updated: "2026-09-12",

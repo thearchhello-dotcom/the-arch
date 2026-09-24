@@ -51,6 +51,10 @@ priced item, a sale) is said out loud rather than smoothed over.
 
 ## Search (from Mark's playbook, applied 24 September 2026)
 
+- Every published edit needs a `searchTitle`: what it is for, in the words a
+  parent would search ("Bonfire night outfits for babies and kids"). It is the
+  search result title, shows under the edit name, and leads the Pinterest pin.
+  Keep each one distinct; never two that differ by a single word.
 - When an edit is published, set its `published` date. When its content
   changes, set `updated`. These drive the sitemap, the structured data and the
   date under the title. Never set them automatically from the build time.

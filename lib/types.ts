@@ -86,6 +86,19 @@ export type EditSection = "outfits" | "nursery" | "gifts";
 export interface Edit {
   slug: string;
   title: string;
+
+  /** What the edit is for, in the words a parent would type into Google or
+   *  Pinterest: "Bonfire night outfits for babies and kids". The title is a
+   *  brand name ("After Dark") that nobody searches for; this sits beside it.
+   *
+   *  It becomes the page's title in search results, is shown on the page
+   *  directly under the edit's name so the two match (search engines prefer a
+   *  title that says what the page visibly says), and leads the Pinterest
+   *  wording. Keep it true and specific, and never make two nearly the same —
+   *  near-identical pages swapping one word is the pattern Mark's playbook
+   *  warns gets a whole site marked down. */
+  searchTitle?: string;
+
   /** Defaults to "outfits" when not set. */
   section?: EditSection;
 

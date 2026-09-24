@@ -29,11 +29,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const edit = getEdit(slug);
   if (!edit) return { title: "Edit" };
+  // The search title leads in search results, because it is what a parent
+  // actually typed. The edit's own name still leads when the page is shared.
   return {
-    title: edit.title,
+    title: edit.searchTitle ?? edit.title,
     description: edit.description,
     openGraph: {
-      title: edit.title,
+      title: edit.searchTitle ? `${edit.title}: ${edit.searchTitle}` : edit.title,
       description: edit.description,
       images: edit.boardImage ? [edit.boardImage] : ["/logo-the-arch-square-dot.png"],
     },
@@ -104,6 +106,7 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
         "@type": "Article",
         "@id": `${url}#article`,
         headline: edit.title,
+        ...(edit.searchTitle ? { alternativeHeadline: edit.searchTitle } : {}),
         description: edit.description,
         url,
         mainEntityOfPage: url,
@@ -200,6 +203,9 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
           </ol>
         </nav>
         <h1 className="font-display text-[30px] sm:text-4xl md:text-[44px] font-semibold text-ink">{edit.title}</h1>
+        {edit.searchTitle && (
+          <p className="-mt-2 font-display text-lg sm:text-xl font-semibold text-ink-soft">{edit.searchTitle}</p>
+        )}
         <p className="text-ink-soft leading-relaxed">{edit.description}</p>
         {publishedOn && (
           <p className="text-sm text-ink-faint">
