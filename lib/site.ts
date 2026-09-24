@@ -25,7 +25,7 @@ export const site = {
    *  Only real, live profiles belong here; leave one empty rather than guess. */
   socials: {
     instagram: "https://www.instagram.com/thearch.edits/",
-    pinterest: "",
+    pinterest: "https://www.pinterest.com/thearchedits/",
   },
 
   /**
