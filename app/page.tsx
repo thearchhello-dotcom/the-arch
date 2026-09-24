@@ -148,7 +148,7 @@ export default function HomePage() {
           <div className="relative flex items-baseline justify-between gap-4 border-b border-line pb-4">
             <RainbowRule className="absolute left-0 -bottom-[2px]" />
             <h2 className="font-body font-bold text-[11px] tracking-[0.22em] uppercase text-ink-soft">
-              Previously
+              More edits
             </h2>
             <Link
               href="/edits"
