@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Fredoka, Karla } from "next/font/google";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import CookieBanner from "@/components/CookieBanner";
 import { site } from "@/lib/site";
@@ -108,23 +107,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             for anyone to consent to. Needs Web Analytics switched on in the
             Vercel dashboard before it records anything. */}
         <Analytics />
-        {/* Skimlinks. It rewrites outbound retailer links into tracked ones in
-            the browser, which is how Next, H&M, Tu, Matalan, Mountain Warehouse
-            and Zara earn — none of them are on Awin, and between them they are
-            more than half the products on the site.
-            
-            Nothing in data/products.ts changes: the links stay as the shop's
-            own address, and Skimlinks does the conversion on the way out. So
-            the site still works, and still reads honestly, if this ever goes
-            away.
-            
-            afterInteractive rather than beforeInteractive: it only needs to run
-            once the page is up, and it must not hold up the first paint. */}
-        <Script
-          id="skimlinks"
-          src="https://s.skimresources.com/js/309523X1797878.skimlinks.js"
-          strategy="afterInteractive"
-        />
+        {/* Skimlinks is switched off. Gemma's application was declined on
+            18 September 2026, so the script earned nothing while still loading
+            a third party's code on every page for every visitor. Their
+            guidance is to wait about three months before reapplying.
+
+            If they approve her later, put it back exactly here:
+              <Script id="skimlinks"
+                src="https://s.skimresources.com/js/309523X1797878.skimlinks.js"
+                strategy="afterInteractive" />
+            (and re-add: import Script from "next/script"). Nothing else needs
+            to change, because product links stay as the shops' own addresses
+            and Skimlinks converts them in the browser. */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

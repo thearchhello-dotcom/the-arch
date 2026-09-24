@@ -39,6 +39,14 @@ export async function generateMetadata({
       description: edit.description,
       images: edit.boardImage ? [edit.boardImage] : ["/logo-the-arch-square-dot.png"],
     },
+    // Without this, a link shared on X fell back to the site-wide card: the
+    // logo and the general tagline instead of this edit's board and name.
+    twitter: {
+      card: "summary_large_image",
+      title: edit.searchTitle ? `${edit.title}: ${edit.searchTitle}` : edit.title,
+      description: edit.description,
+      images: edit.boardImage ? [edit.boardImage] : ["/logo-the-arch-square-dot.png"],
+    },
   };
 }
 
