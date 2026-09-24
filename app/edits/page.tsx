@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { normalise, parseAgeRange } from "@/lib/editSearch";
 import Header from "@/components/Header";
 import PatternBand from "@/components/PatternBand";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import EditFilters, { type EditSummary } from "@/components/EditFilters";
 import { publishedEdits } from "@/data/edits";
-import { costOf } from "@/data/products";
+import { costOf, getProduct } from "@/data/products";
 import type { Edit } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -25,6 +26,26 @@ function summarise(edit: Edit): EditSummary {
     slug: edit.slug,
     title: edit.title,
     section: edit.section ?? "outfits",
+    // Everything a parent might type that this edit contains, worked out here
+    // on the server so the page only carries one short string per edit.
+    searchText: normalise(
+      [
+        edit.title,
+        edit.searchTitle,
+        edit.description,
+        edit.season,
+        edit.section ?? "outfits",
+        ...edit.looks.flatMap((l) => [l.label, l.ages, l.noun]),
+        ...edit.looks
+          .flatMap((l) => l.productIds.map(getProduct))
+          .flatMap((p) => (p ? [p.name, p.retailer, p.category, p.type] : [])),
+      ]
+        .filter(Boolean)
+        .join(" ")
+    ),
+    ages: edit.looks
+      .map((l) => (l.ages ? parseAgeRange(l.ages) : null))
+      .filter((r): r is [number, number] => r !== null),
     season: edit.season,
     description: edit.description,
     palette: edit.palette,
@@ -55,8 +76,8 @@ export default function EditsIndexPage() {
         </h1>
         <p className="text-lg leading-relaxed text-ink-soft">
           Each edit is a finished thing &mdash; not a list of ideas &mdash; built from shops you
-          already buy from, with the total at the bottom so there are no surprises. Filter by what
-          a whole look costs.
+          already buy from, with the total at the bottom so there are no surprises. Search for a
+          piece, an occasion or an age, or filter by what a whole look costs.
         </p>
       </section>
 

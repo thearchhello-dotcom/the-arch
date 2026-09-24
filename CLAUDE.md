@@ -27,6 +27,9 @@ priced item, a sale) is said out loud rather than smoothed over.
     here once, never in two places.
   - `lib/affiliate.ts` — tracked links and which shops' photos may show.
   - `lib/pinCopy.ts` — Pinterest wording, shown with copy buttons at `/studio`.
+  - `lib/editSearch.ts` — the search box on /edits. Everyday words that should
+    find each other (jumper/knitwear, shoes/boots) live in its ALSO list; add
+    to it when a parent's word doesn't find the right edit.
 - Node is at `C:\Program Files\nodejs\` and is not on PATH. Call `npm.cmd`
   and `npx.cmd` by full path.
 - Check a change on a local production build (`npm run build` then

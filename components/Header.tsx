@@ -17,6 +17,23 @@ const NAV = [
  * traffic will be phones, and a nav that silently dies whenever a script fails
  * to load is the worst possible thing to have at the top of every page.
  */
+/**
+ * The search icon. A plain link rather than next/link on purpose: it has to
+ * reload /edits so the page can put the cursor in the search box, and a
+ * client-side hop to the same page would skip that.
+ */
+function SearchLink() {
+  return (
+    <a
+      href="/edits#search"
+      aria-label="Search the edits"
+      className="p-2.5 rounded-full text-ink hover:bg-card hover:text-terracotta transition-colors flex items-center justify-center"
+    >
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" /></svg>
+    </a>
+  );
+}
+
 export default function Header() {
   return (
     <header className="sticky top-0 z-30 bg-cream border-b border-line">
@@ -42,10 +59,14 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
+          <SearchLink />
         </nav>
 
-        {/* Phones */}
-        <details className="group md:hidden relative -mr-1">
+        {/* Phones: search sits beside the menu rather than inside it, because
+            it is the first thing a parent who has landed from Pinterest wants. */}
+        <div className="flex items-center gap-1 md:hidden -mr-1">
+        <SearchLink />
+        <details className="group relative">
           <summary
             aria-label="Menu"
             className="list-none [&::-webkit-details-marker]:hidden cursor-pointer p-2.5 rounded-full text-ink hover:bg-card transition-colors flex items-center justify-center"
@@ -83,6 +104,7 @@ export default function Header() {
             ))}
           </nav>
         </details>
+        </div>
       </div>
     </header>
   );

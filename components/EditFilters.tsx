@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { matches, parseQuery } from "@/lib/editSearch";
 import type { EditSection } from "@/lib/types";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,6 +21,10 @@ export type EditSummary = {
   slug: string;
   title: string;
   section: EditSection;
+  /** normalise()d text of everything in the edit, for the search box. */
+  searchText: string;
+  /** Each look's age range in months. */
+  ages: [number, number][];
   season: string;
   description: string;
   palette: string[];
@@ -51,9 +56,41 @@ function money(n: number) {
   return `£${n.toFixed(2)}`;
 }
 
+/** Starting points under the box. Each only appears if it finds something,
+ *  so a suggestion is never a dead end, and they update themselves as edits
+ *  are added. */
+const SUGGESTIONS = ["Halloween", "Coats", "Pramsuits", "Wellies", "Knitwear", "Newborn", "2 year old", "Next", "M&S"];
+
 export default function EditFilters({ edits }: { edits: EditSummary[] }) {
   const [band, setBand] = useState<string>("all");
   const [section, setSection] = useState<string>("all");
+  const [query, setQuery] = useState("");
+  const box = useRef<HTMLInputElement>(null);
+
+  // Arriving from the search icon in the header (/edits#search) or from a
+  // shared link (/edits?q=pramsuit) puts the cursor straight in the box.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("q");
+    if (q) setQuery(q);
+    if (q || window.location.hash === "#search") box.current?.focus();
+  }, []);
+
+  // Keep the search in the address bar, so a result can be shared or come
+  // back to, without adding a history entry for every letter typed. The page
+  // itself never changes, and its canonical stays /edits, so these addresses
+  // don't become extra pages for Google.
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    if (query.trim()) url.searchParams.set("q", query.trim());
+    else url.searchParams.delete("q");
+    window.history.replaceState(null, "", url.pathname + url.search);
+  }, [query]);
+
+  const parsed = useMemo(() => parseQuery(query), [query]);
+  const suggestions = useMemo(
+    () => SUGGESTIONS.filter((s) => edits.some((e) => matches(parseQuery(s), e))),
+    [edits]
+  );
 
   // Only worth showing the split once there is something to split. While every
   // edit is an outfit a section switcher is just a button that does nothing.
@@ -61,8 +98,10 @@ export default function EditFilters({ edits }: { edits: EditSummary[] }) {
 
   const shown = useMemo(() => {
     const b = BANDS.find((x) => x.id === band) ?? BANDS[0];
-    return edits.filter((e) => b.test(e) && (section === "all" || e.section === section));
-  }, [band, section, edits]);
+    return edits.filter(
+      (e) => b.test(e) && (section === "all" || e.section === section) && matches(parsed, e)
+    );
+  }, [band, section, edits, parsed]);
 
   // A band with nothing in it is a dead end, so hide the ones that would be
   // empty rather than letting someone click into nothing.
@@ -72,6 +111,79 @@ export default function EditFilters({ edits }: { edits: EditSummary[] }) {
 
   return (
     <>
+      <div id="search" className="scroll-mt-28 mb-7 max-w-2xl">
+        <label htmlFor="edit-search" className="sr-only">
+          Search the edits
+        </label>
+        <div className="relative">
+          <svg
+            className="absolute left-5 top-1/2 -translate-y-1/2 text-ink-soft pointer-events-none"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            aria-hidden="true"
+          >
+            <circle cx="11" cy="11" r="7" />
+            <path d="M20 20l-3.5-3.5" />
+          </svg>
+          {/* 16px text on purpose: anything smaller and iPhones zoom the whole
+              page in when the box is tapped. */}
+          <input
+            ref={box}
+            id="edit-search"
+            type="search"
+            inputMode="search"
+            enterKeyHint="search"
+            autoComplete="off"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search: pramsuit, Halloween, 2 year old…"
+            className="w-full rounded-pill bg-card border border-line pl-13 pr-12 py-3.5 text-[16px] text-ink placeholder:text-ink-faint focus:outline-none focus:border-terracotta focus:ring-2 focus:ring-terracotta/20"
+          />
+          {query && (
+            <button
+              type="button"
+              onClick={() => {
+                setQuery("");
+                box.current?.focus();
+              }}
+              aria-label="Clear search"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-ink-soft hover:bg-footer"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18" />
+              </svg>
+            </button>
+          )}
+        </div>
+
+        {!query && suggestions.length > 0 && (
+          <div className="flex flex-wrap items-center gap-2 mt-3.5">
+            <span className="text-sm text-ink-faint mr-1">Try</span>
+            {suggestions.map((s) => (
+              <button
+                key={s}
+                type="button"
+                onClick={() => setQuery(s)}
+                className="text-sm font-semibold px-3.5 py-1.5 rounded-pill bg-footer text-ink-soft hover:text-ink transition-colors"
+              >
+                {s}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {query && !parsed.empty && shown.length > 0 && (
+          <p className="mt-3.5 text-sm text-ink-soft" aria-live="polite">
+            {shown.length} edit{shown.length === 1 ? "" : "s"} for &ldquo;{query.trim()}&rdquo;
+          </p>
+        )}
+      </div>
+
       {usableSections.length > 1 && (
         <div className="flex flex-wrap gap-2.5 mb-5" role="group" aria-label="Filter edits by section">
           {[{ id: "all", label: "Everything" }, ...usableSections].map((s) => {
@@ -115,10 +227,31 @@ export default function EditFilters({ edits }: { edits: EditSummary[] }) {
 
       {shown.length === 0 ? (
         <div className="max-w-xl rounded-[28px] border-2 border-dashed border-taupe/60 px-10 py-16 text-center">
-          <p className="font-display text-lg font-semibold text-ink mb-2">
-            Nothing in that range yet.
-          </p>
-          <p className="text-sm text-ink-soft">More edits are on the way.</p>
+          {query && !parsed.empty ? (
+            <>
+              <p className="font-display text-lg font-semibold text-ink mb-2">
+                Nothing for &ldquo;{query.trim()}&rdquo; yet.
+              </p>
+              <p className="text-sm text-ink-soft mb-5">
+                Try a piece like &ldquo;coat&rdquo;, an occasion like &ldquo;Halloween&rdquo;, or an age
+                like &ldquo;2 year old&rdquo;. New edits go up every week.
+              </p>
+              <button
+                type="button"
+                onClick={() => setQuery("")}
+                className="font-display text-sm font-semibold px-5 py-2.5 rounded-pill bg-ink text-cream"
+              >
+                Show all edits
+              </button>
+            </>
+          ) : (
+            <>
+              <p className="font-display text-lg font-semibold text-ink mb-2">
+                Nothing in that range yet.
+              </p>
+              <p className="text-sm text-ink-soft">More edits are on the way.</p>
+            </>
+          )}
         </div>
       ) : (
         <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
