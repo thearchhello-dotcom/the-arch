@@ -193,7 +193,7 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
         }}
       />
 
-      <section className="px-5 pt-10 pb-8 sm:px-8 sm:pt-16 md:px-14 flex flex-col gap-4 sm:gap-5 max-w-2xl">
+      <section className="over-pattern px-5 pt-10 pb-8 sm:px-8 sm:pt-16 md:px-14 flex flex-col gap-4 sm:gap-5 max-w-2xl">
         {/* A real breadcrumb, matching the BreadcrumbList above: where this
             page sits, and a way back up for anyone who arrived from Pinterest
             straight onto an edit. */}

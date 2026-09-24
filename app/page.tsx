@@ -46,7 +46,7 @@ export default function HomePage() {
           it has gone. */}
       <section className="pattern-arches px-5 pt-10 pb-16 sm:px-8 sm:pt-14 md:px-14 md:pt-16 md:pb-24">
         <div className="mx-auto max-w-5xl flex flex-col items-center gap-7 md:gap-10">
-          <div className="flex flex-col items-center gap-3 text-center">
+          <div className="hero-copy flex flex-col items-center gap-3 text-center">
             <span className="font-body font-bold text-[11px] sm:text-xs tracking-[0.22em] uppercase text-terracotta">
               Edit no. {editNo}
             </span>

@@ -19,7 +19,7 @@ export default function AboutPage() {
       <Header />
       <PatternBand className="h-[340px]" />
 
-      <section className="px-5 pt-12 pb-5 sm:px-8 sm:pt-20 md:px-14 flex flex-col gap-6 sm:gap-7 max-w-2xl">
+      <section className="over-pattern px-5 pt-12 pb-5 sm:px-8 sm:pt-20 md:px-14 flex flex-col gap-6 sm:gap-7 max-w-2xl">
         <span className="font-body font-bold text-xs tracking-widest uppercase text-terracotta">About</span>
         <p className="text-lg md:text-[19px] leading-relaxed text-ink font-medium">
           Getting your little one dressed shouldn&apos;t mean ten tabs open and an hour lost

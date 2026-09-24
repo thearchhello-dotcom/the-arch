@@ -125,6 +125,50 @@ body::before {
   position: absolute;
   left: 0;
   right: 0;
+  /* On inner pages the intro text starts barely a row below the header, so the
+     full-strength fade used on the homepage left arches running through the
+     title and the line under it. Here the pattern is one full row along the
+     top and has melted away before the text begins. Fixed distances rather
+     than percentages, because the bands differ in height from page to page
+     while the text always starts about the same distance down; the homepage, where the title
+     is huge and the pattern is the point, keeps the longer fade. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 48px, transparent 130px);
+  mask-image: linear-gradient(to bottom, #000 0, #000 48px, transparent 130px);
+}
+
+/* Text that sits over the rainbow pattern.
+   Gemma found the page titles and the lines under them hard to read where the
+   arches run behind them. Rather than fade the pattern, which she chose at
+   this strength, the words carry a soft cream halo: layered text shadows that
+   knock the pattern back only in the few pixels around each letter, so it
+   stays at full strength everywhere else.
+   Pills are excluded because their text sits on a solid colour already, and a
+   cream halo on cream text over a dark pill would blur it. */
+.over-pattern :is(h1, h2, p, li, span, a):not(.rounded-pill):not(.rounded-pill *),
+.pattern-arches :is(h1, h2, p, li, span, a):not(.rounded-pill):not(.rounded-pill *) {
+  /* Each shadow is repeated because shadows are translucent at their edges;
+     stacking the same one makes the halo solid right around the letters,
+     then the wider ones soften it out into the pattern. */
+  text-shadow:
+    0 0 3px var(--color-cream),
+    0 0 3px var(--color-cream),
+    0 0 6px var(--color-cream),
+    0 0 6px var(--color-cream),
+    0 0 10px var(--color-cream),
+    0 0 10px var(--color-cream),
+    0 0 16px var(--color-cream),
+    0 0 24px var(--color-cream);
+}
+
+/* The homepage keeps its full-strength pattern, so the words at the top get
+   a soft cream clearing behind them as a block: solid in the middle where
+   the text is, fading out at the edges so the rainbows still frame it.
+   The negative margin and padding let the fade extend past the text rather
+   than cutting off at its edges. */
+.hero-copy {
+  background: radial-gradient(ellipse closest-side, var(--color-cream) 62%, transparent 100%);
+  padding: 1.75rem 2.5rem;
+  margin: -1.75rem -2.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
