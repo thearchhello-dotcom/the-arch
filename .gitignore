@@ -23,3 +23,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Mark's SEO playbooks: his agency's internal documents, which name his
+# clients. Kept on this machine for Claude to read, never published.
+/docs/seo/

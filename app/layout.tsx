@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     images: ["/logo-the-arch-square-dot.png"],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "The Arch — little finds for little people",
     description:
       "Styled edits for babies and children — from the shops parents already use, with every piece linked and priced up in full.",
@@ -52,21 +52,49 @@ export const metadata: Metadata = {
   robots: site.isPublic ? undefined : { index: false, follow: false },
 };
 
-// Tells Google this is a real publication with a named author behind it —
-// which is exactly what both search and affiliate reviewers look for.
+// Who the site is, stated once for every page.
+//
+// Three linked entities with stable @ids, so the edit pages can point at them
+// rather than repeating them: the organisation (The Arch), the person behind
+// it (Gemma, the stylist) and the website. sameAs ties the organisation to its
+// real social profiles, which is how search engines and AI assistants tell this
+// "The Arch" from the many others — Mark's entity point, and the reason the
+// full domain is used alongside the name everywhere.
+const sameAs = Object.values(site.socials).filter(Boolean);
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: site.name,
-  url: site.domain,
-  description:
-    "Styled edits for babies and children — from the shops parents already use, with every piece linked and priced up in full.",
-  publisher: {
-    "@type": "Person",
-    name: site.owner,
-    address: { "@type": "PostalAddress", addressRegion: "Cumbria", addressCountry: "GB" },
-    email: site.email,
-  },
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${site.domain}/#organization`,
+      name: site.name,
+      alternateName: site.displayDomain,
+      url: site.domain,
+      logo: `${site.domain}/logo-the-arch-square-dot.png`,
+      description:
+        "Styled edits for babies and children, from the shops parents already use, with every piece linked and priced up in full.",
+      founder: { "@id": `${site.domain}/#gemma` },
+      address: { "@type": "PostalAddress", addressRegion: "Cumbria", addressCountry: "GB" },
+      email: site.email,
+      ...(sameAs.length ? { sameAs } : {}),
+    },
+    {
+      "@type": "Person",
+      "@id": `${site.domain}/#gemma`,
+      name: site.owner,
+      jobTitle: "Stylist",
+      url: `${site.domain}/about`,
+      worksFor: { "@id": `${site.domain}/#organization` },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${site.domain}/#website`,
+      name: site.name,
+      url: site.domain,
+      inLanguage: "en-GB",
+      publisher: { "@id": `${site.domain}/#organization` },
+    },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

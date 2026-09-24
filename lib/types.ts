@@ -88,6 +88,19 @@ export interface Edit {
   title: string;
   /** Defaults to "outfits" when not set. */
   section?: EditSection;
+
+  /** When the edit went live and when its content last changed, as ISO dates
+   *  ("2026-09-23"). These feed the sitemap, the Article structured data and
+   *  the line under the title, so all three always agree.
+   *
+   *  Set them by hand and only when something real changes. The sitemap used
+   *  to stamp every page with the build time, which Google learns to ignore —
+   *  a date that changes on every deploy says nothing, and Mark's playbook is
+   *  right that it is worse than no date at all. The dates for the first ten
+   *  edits were recovered from the git history: the first commit in which
+   *  each existed without draft: true. */
+  published?: string;
+  updated?: string;
   season: string;
   palette: string[]; // hex values
   description: string;

@@ -14,6 +14,7 @@ import Newsletter from "@/components/Newsletter";
 import PaletteArt from "@/components/PaletteArt";
 import EditNote from "@/components/EditNote";
 import { getEdit, publishedEdits } from "@/data/edits";
+import { site } from "@/lib/site";
 import { costOf, getProduct, priceOf } from "@/data/products";
 
 export function generateStaticParams() {
@@ -70,8 +71,90 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
   const edit = getEdit(slug);
   if (!edit) notFound();
 
+  const url = `${site.domain}/edits/${edit.slug}`;
+
+  // "23 September 2026". Shown under the title and used in the Article data,
+  // from the same field, so the visible date and the machine-readable one can
+  // never disagree.
+  const longDate = (iso?: string) =>
+    iso
+      ? new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
+      : null;
+  const publishedOn = longDate(edit.published);
+  const updatedOn = edit.updated && edit.updated !== edit.published ? longDate(edit.updated) : null;
+
+  // Every piece in the edit, once, for the ItemList. Named and linked to the
+  // shop's own page and nothing more: no price, no Offer, no rating. The Arch
+  // is not the seller, and marking it up as one is exactly what Mark's playbook
+  // warns against.
+  const pieces = [
+    ...new Map(
+      edit.looks
+        .flatMap((l) => l.productIds.map(getProduct))
+        .filter(Boolean)
+        .map((p) => [p!.id, p!] as const)
+    ).values(),
+  ];
+
+  const modified = edit.updated ?? edit.published;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `${url}#article`,
+        headline: edit.title,
+        description: edit.description,
+        url,
+        mainEntityOfPage: url,
+        inLanguage: "en-GB",
+        ...(edit.boardImage ? { image: `${site.domain}${edit.boardImage}` } : {}),
+        ...(edit.published ? { datePublished: edit.published } : {}),
+        ...(modified ? { dateModified: modified } : {}),
+        author: { "@id": `${site.domain}/#gemma` },
+        publisher: { "@id": `${site.domain}/#organization` },
+        isPartOf: { "@id": `${site.domain}/#website` },
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${url}#pieces`,
+        name: `The pieces in ${edit.title}`,
+        numberOfItems: pieces.length,
+        itemListElement: pieces.map((p, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: `${p.name} (${p.retailer})`,
+          ...(p.affiliateUrl ? { url: p.affiliateUrl } : {}),
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: site.domain },
+          { "@type": "ListItem", position: 2, name: "The edits", item: `${site.domain}/edits` },
+          { "@type": "ListItem", position: 3, name: edit.title, item: url },
+        ],
+      },
+    ],
+  };
+
+  // More edits, chosen by position rather than similarity. Each edit links to
+  // the next four in the list and the list wraps round, so every edit receives
+  // exactly four links from its neighbours. Mark's warning is the reason: a
+  // "most similar" module breaks ties the same way every time and ends up
+  // pointing every page at the same few favourites, leaving the rest with
+  // nothing linking to them, which is how pages go uncrawled.
+  const ring = publishedEdits.filter((e) => e.slug !== edit.slug);
+  const at = Math.max(0, publishedEdits.findIndex((e) => e.slug === edit.slug));
+  const related =
+    ring.length <= 4 ? ring : [0, 1, 2, 3].map((k) => ring[(at + k) % ring.length]);
+
   return (
     <div className="relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <PatternBand className="h-[320px]" />
 
@@ -100,14 +183,30 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
       />
 
       <section className="px-5 pt-10 pb-8 sm:px-8 sm:pt-16 md:px-14 flex flex-col gap-4 sm:gap-5 max-w-2xl">
-        <span className="font-body font-bold text-xs tracking-widest uppercase text-terracotta">
-          <Link href="/edits" className="hover:underline underline-offset-4">
-            The Edit
-          </Link>{" "}
-          &middot; {edit.season}
-        </span>
+        {/* A real breadcrumb, matching the BreadcrumbList above: where this
+            page sits, and a way back up for anyone who arrived from Pinterest
+            straight onto an edit. */}
+        <nav aria-label="Breadcrumb" className="font-body font-bold text-xs tracking-widest uppercase text-terracotta">
+          <ol className="flex flex-wrap items-center gap-x-2">
+            <li>
+              <Link href="/" className="hover:underline underline-offset-4">Home</Link>
+            </li>
+            <li aria-hidden="true">&rsaquo;</li>
+            <li>
+              <Link href="/edits" className="hover:underline underline-offset-4">The edits</Link>
+            </li>
+            <li aria-hidden="true">&middot;</li>
+            <li className="text-ink-faint">{edit.season}</li>
+          </ol>
+        </nav>
         <h1 className="font-display text-[30px] sm:text-4xl md:text-[44px] font-semibold text-ink">{edit.title}</h1>
         <p className="text-ink-soft leading-relaxed">{edit.description}</p>
+        {publishedOn && (
+          <p className="text-sm text-ink-faint">
+            Styled by {site.owner} in Cumbria &middot; {publishedOn}
+            {updatedOn && <> &middot; updated {updatedOn}</>}
+          </p>
+        )}
         <div className="flex items-center gap-3">
           {edit.palette.map((hex) => (
             <div
@@ -293,6 +392,49 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
       </p>
 
       {edit.note && <EditNote note={edit.note} />}
+
+      {related.length > 0 && (
+        <section className="px-5 pt-12 pb-4 sm:px-8 md:px-14 flex flex-col gap-7">
+          <div className="flex items-baseline justify-between gap-4 border-b border-line pb-4">
+            <h2 className="font-body font-bold text-[11px] tracking-[0.22em] uppercase text-ink-soft">
+              More edits
+            </h2>
+            <Link
+              href="/edits"
+              className="font-body font-bold text-[11px] tracking-[0.18em] uppercase text-ink-soft hover:text-terracotta transition-colors"
+            >
+              See all
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 gap-x-5 gap-y-8 lg:grid-cols-4">
+            {related.map((r) => (
+              <Link key={r.slug} href={`/edits/${r.slug}`} className="group flex flex-col gap-3">
+                <div
+                  className={`${popFor(r.slug)} rounded-[14px] p-2.5 sm:p-3 transition-transform duration-300 group-hover:-translate-y-1`}
+                >
+                  <div className="overflow-hidden rounded-[3px] shadow-[0_14px_34px_-22px_rgba(74,55,42,0.55)]">
+                    {r.boardImage ? (
+                      <Image
+                        src={r.boardImage}
+                        alt={`${r.title} mood board`}
+                        width={1200}
+                        height={1800}
+                        sizes="(max-width: 1024px) 45vw, 23vw"
+                        className="w-full h-auto"
+                      />
+                    ) : (
+                      <PaletteArt palette={r.palette} seed={r.slug} cream="#FBF6EA" className="w-full h-auto aspect-[2/3]" />
+                    )}
+                  </div>
+                </div>
+                <span className="font-display text-[17px] leading-tight font-semibold text-ink group-hover:text-terracotta transition-colors text-balance">
+                  {r.title}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <Newsletter />
       <Footer />

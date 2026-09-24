@@ -18,6 +18,16 @@ export const site = {
   /** The address printed on mood boards and social images. */
   displayDomain: "thearchedits.co.uk",
 
+  /** Profiles that are genuinely The Arch. They go into the structured data
+   *  as sameAs, which is how Google and the AI assistants tell this brand
+   *  apart from every bar, venue and church also called "The Arch" — Mark's
+   *  point that one consistent identity matters more than any single link.
+   *  Only real, live profiles belong here; leave one empty rather than guess. */
+  socials: {
+    instagram: "https://www.instagram.com/thearch.edits/",
+    pinterest: "",
+  },
+
   /**
    * FALSE until you're ready to be found. While it's false, robots.txt tells
    * every search engine to stay away and the pages carry a "noindex" tag, so
