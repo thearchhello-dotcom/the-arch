@@ -52,6 +52,8 @@ priced item, a sale) is said out loud rather than smoothed over.
 - Every new edit gets an `instagram` caption in data/edits.ts, written by hand
   in Gemma's voice: chatty, accurate to the looks, ending "Styled by me in
   Cumbria", five hashtags at most. It shows in /studio with a copy button.
+  A `tiktok` caption (shorter, hook first) and `tiktokHook` (the line for the
+  video itself) sit beside it when she wants one.
 - Themed edits use one hero piece per look, styled into a real outfit, never
   head to toe of the theme.
 

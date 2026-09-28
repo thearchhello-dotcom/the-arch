@@ -107,6 +107,13 @@ export interface Edit {
    *  copy button; never on the public site, so emoji are fine here. */
   instagram?: string;
 
+  /** The TikTok caption, also by hand. Shorter than Instagram, with the hook
+   *  in the first line, because TikTok shows so little before "more" and is
+   *  searched as much as scrolled. Same byline, five hashtags at most.
+   *  `tiktokHook` is the line to put on the video or photo itself. */
+  tiktok?: string;
+  tiktokHook?: string;
+
   /** Defaults to "outfits" when not set. */
   section?: EditSection;
 

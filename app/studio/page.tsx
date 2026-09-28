@@ -132,6 +132,27 @@ export default function StudioPage() {
                 </details>
               )}
 
+              {edit.tiktok && (
+                <details className="border-t border-line pt-3.5">
+                  <summary className="cursor-pointer font-body font-semibold text-sm text-ink-soft hover:text-terracotta transition-colors">
+                    TikTok caption
+                  </summary>
+                  <div className="flex flex-col gap-3 pt-3.5">
+                    {edit.tiktokHook && (
+                      <p className="text-sm text-ink">
+                        <span className="font-semibold">On the video: </span>
+                        {edit.tiktokHook}
+                      </p>
+                    )}
+                    <p className="text-sm text-ink-soft leading-relaxed whitespace-pre-line">{edit.tiktok}</p>
+                    <div className="flex flex-wrap gap-2.5">
+                      <CopyButton text={edit.tiktok} label="Copy caption" />
+                      {edit.tiktokHook && <CopyButton text={edit.tiktokHook} label="Copy video text" />}
+                    </div>
+                  </div>
+                </details>
+              )}
+
               {/* One pin per outfit. Pinterest rewards several distinct
                   pins over one perfect one, and all four land on the same
                   page — so an edit with four looks is four chances to be

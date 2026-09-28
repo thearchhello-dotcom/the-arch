@@ -372,6 +372,8 @@ export const edits: Edit[] = [
   {
     slug: "the-britpop-edit-26",
     title: "The 'R Kid' Edit",
+    tiktok: "Britpop, sized down 🎸\n\nParkas, three stripes and proper adidas trainers. The Manchester look that never really went away, and it works just as well on a girl as a boy.\n\nBaby £101 · Girls £92.99 · Boys £158, every piece linked and priced up.\n\nStyled by me in Cumbria 🌈 Link in bio\n\n#britpop #kidsfashion #kidsstyle #adidaskids #ukmum",
+    tiktokHook: "What the whole outfit actually costs 👀",
     searchTitle: "Britpop style outfits for kids: parkas and adidas",
     season: "Autumn 2026",
     published: "2026-09-12",
