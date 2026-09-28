@@ -169,6 +169,21 @@ export const products: Product[] = [
   // Half price at the time of building. onSale drives the sale badge and means
   // the total uses 24.99, not the 56.99 it was.
   { id: "mm-levis-dereck-trainers", name: "Levi's Dereck Mid Trainers", category: "Boys", retailer: "MandM Direct", price: 56.99, onSale: true, salePrice: 24.99, type: "foot", affiliateUrl: "https://www.mandmdirect.com/gb/en/product/lv33252/levis-boys-dereck-mid-trainers-navy-khaki-light-brown" },
+  // ---- The Spooky Edit (halloween-costumes-26) ----------------------------
+  // Costumes are alternatives, not an outfit: nobody buys the ghost AND the
+  // bat. Baby and Boys are pick-one shortlists. The two Girls costumes each
+  // come with a head piece bought separately, so each is its own look with
+  // its own total rather than a shortlist that would price the Alice band as
+  // if it were a costume.
+  { id: "hm-caterpillar-costume", name: "Fancy Dress Costume Set, Caterpillar", category: "Baby", retailer: "H&M", price: 17.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1203172007.html" },
+  { id: "ms-ghost-bodysuit-tights", name: "Halloween Ghost Bodysuit with Tights", category: "Baby", retailer: "M&S", price: 12.00, type: "top", affiliateUrl: "https://www.marksandspencer.com/halloween-ghost-bodysuit-with-tights-0-24-mths-/p/clp61232143?color=WhiteMix" },
+  { id: "hm-bat-costume", name: "Fancy Dress Costume, Bat", category: "Baby", retailer: "H&M", price: 12.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1239653004.html" },
+  { id: "hm-kpop-demon-hunters-costume", name: "2-Piece KPop Demon Hunters Fancy Dress Costume", category: "Girls", retailer: "H&M", price: 19.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1353519001.html" },
+  { id: "hm-kpop-braid-hair-claw", name: "KPop Demon Hunters Braid Hair Claw", category: "Girls", retailer: "H&M", price: 7.99, type: "head", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1355101001.html" },
+  { id: "hm-clown-costume", name: "Fancy Dress Costume, Striped Clown", category: "Girls", retailer: "H&M", price: 18.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1355058003.html" },
+  { id: "hm-clown-alice-band", name: "Appliqued Alice Band, Striped", category: "Girls", retailer: "H&M", price: 5.99, type: "head", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1360923001.html" },
+  { id: "hm-astronaut-costume", name: "Astronaut Fancy Dress Set", category: "Boys", retailer: "H&M", price: 19.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1313203001.html" },
+  { id: "hm-dragon-costume", name: "Fancy Dress Costume, How To Train Your Dragon", category: "Boys", retailer: "H&M", price: 17.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1300054001.html" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.

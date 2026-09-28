@@ -39,7 +39,10 @@ export function pinCopy(edit: Edit) {
 
   const description = [
     edit.description,
-    money && `The whole thing, added up — ${money}.`,
+    money &&
+      (edit.looks.some((l) => l.kind === "shortlist")
+        ? `Prices from £${low.toFixed(2)}, every piece linked.`
+        : `The whole thing, added up — ${money}.`),
     shops.length && `From ${shopList}.`,
     "Shop every piece at thearchedits.co.uk",
   ]
@@ -84,13 +87,23 @@ export function pinCopyForLook(edit: Edit, look: Edit["looks"][number]) {
   const pieces = items.map((p) => p!.name.toLowerCase());
   const ages = look.ages ? ` (${look.ages})` : "";
 
-  const title = money
-    ? `${look.label} — the whole ${look.noun ?? "outfit"}, ${money}`
-    : `${look.label} — ${edit.title}`;
+  // A shortlist is a choice, not an outfit: "3 to choose from, from £12.00",
+  // never "the whole outfit", which would claim they are bought together.
+  const shortlist = look.kind === "shortlist";
+  const title = !money
+    ? `${look.label} — ${edit.title}`
+    : shortlist
+      ? `${look.label} — ${items.length} to choose from, from £${cost.from.toFixed(2)}`
+      : `${look.label} — the whole ${look.noun ?? "outfit"}, ${money}`;
 
   const description = [
-    `${look.label}${ages}: ${listOf(pieces)}.`,
-    money && `The whole ${look.noun ?? "outfit"}${sized ? ", from" : ","} ${money.replace(/^from /, "")}.`,
+    shortlist
+      ? `${look.label}${ages}, choose one: ${listOf(pieces)}.`
+      : `${look.label}${ages}: ${listOf(pieces)}.`,
+    money &&
+      (shortlist
+        ? `From £${cost.from.toFixed(2)} to £${cost.to.toFixed(2)}.`
+        : `The whole ${look.noun ?? "outfit"}${sized ? ", from" : ","} ${money.replace(/^from /, "")}.`),
     shops.length === 1 ? `All from ${shops[0]} — one delivery.` : `From ${listOf(shops)}.`,
     `Part of ${edit.title}. Every piece linked at thearchedits.co.uk`,
   ]

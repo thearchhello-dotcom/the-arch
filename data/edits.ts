@@ -31,6 +31,26 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "halloween-costumes-26",
+    title: "The Spooky Edit",
+    searchTitle: "Halloween costumes for babies and kids",
+    section: "outfits",
+    season: "Autumn 2026",
+    plannedFor: "Halloween, 31 October",
+    published: "2026-09-28",
+    updated: "2026-09-28",
+    palette: ["#1F1B1D", "#F4EFE6", "#8E2F3A", "#B9D98A"],
+    boardImage: "/edits/halloween-costumes-26-board.webp",
+    description:
+      "Halloween costumes you would actually want them in: a soft little ghost, a bat in a tutu, and the characters everyone is asking for this year. Choose one for each of them, with what it comes to.",
+    looks: [
+      { label: "Baby", ages: "0–4 years", kind: "shortlist", productIds: ["ms-ghost-bodysuit-tights", "hm-bat-costume", "hm-caterpillar-costume"] },
+      { label: "Girls: the clown", ages: "3–10 years", noun: "costume", productIds: ["hm-clown-costume", "hm-clown-alice-band"] },
+      { label: "Girls: KPop Demon Hunters", ages: "4–10 years", noun: "costume", productIds: ["hm-kpop-demon-hunters-costume", "hm-kpop-braid-hair-claw"] },
+      { label: "Boys", ages: "3–10 years", kind: "shortlist", productIds: ["hm-dragon-costume", "hm-astronaut-costume"] },
+    ],
+  },
+  {
     slug: "the-nursery-edit-26",
     title: "The Nursery Edit",
     section: "nursery",
