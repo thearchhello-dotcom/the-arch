@@ -157,7 +157,38 @@ export default function StudioPage() {
                   pins over one perfect one, and all four land on the same
                   page — so an edit with four looks is four chances to be
                   found for the price of one piece of work. */}
-              {edit.looks.some((l) => l.productIds.length > 0) && (
+              {edit.pins && edit.pins.length > 0 && (
+                <details className="border-t border-line pt-3.5">
+                  <summary className="cursor-pointer font-body font-semibold text-sm text-ink-soft hover:text-terracotta transition-colors">
+                    Pinterest pins ({edit.pins.length})
+                  </summary>
+                  <div className="flex flex-col gap-5 pt-4">
+                    {edit.pins.map((pin) => {
+                      const url = `https://thearchedits.co.uk/edits/${edit.slug}`;
+                      return (
+                        <div key={pin.label} className="flex flex-col gap-2.5 border-l-2 border-line pl-4">
+                          <p className="text-xs font-bold tracking-widest uppercase text-terracotta">{pin.label}</p>
+                          <p className="text-sm font-semibold text-ink leading-snug">{pin.title}</p>
+                          <p className="text-sm text-ink-soft leading-relaxed">{pin.description}</p>
+                          <p className="text-sm text-ink-faint">{pin.tags}</p>
+                          <p className="text-sm text-ink-soft break-all">
+                            <span className="font-semibold text-ink">Link: </span>
+                            {url}
+                          </p>
+                          <div className="flex flex-wrap gap-2.5">
+                            <CopyButton text={pin.title} label="Copy title" />
+                            <CopyButton text={pin.description} label="Copy description" />
+                            <CopyButton text={url} label="Copy link" />
+                            <CopyButton text={`${pin.title}\n\n${pin.description}\n\n${pin.tags}\n\n${url}`} label="Copy the lot" />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </details>
+              )}
+
+              {!edit.pins && edit.looks.some((l) => l.productIds.length > 0) && (
                 <details className="border-t border-line pt-3.5">
                   <summary className="cursor-pointer font-body font-semibold text-sm text-ink-soft hover:text-terracotta transition-colors">
                     One pin per outfit ({edit.looks.filter((l) => l.productIds.length > 0).length})

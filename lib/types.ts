@@ -114,6 +114,12 @@ export interface Edit {
   tiktok?: string;
   tiktokHook?: string;
 
+  /** Hand-written Pinterest pins, when the automatic one-pin-per-look copy
+   *  isn't right: shop product names read awkwardly, or Gemma wants pins
+   *  grouped differently from the looks (one Girls pin covering two costumes).
+   *  When present, the studio shows these instead of the generated ones. */
+  pins?: { label: string; title: string; description: string; tags: string }[];
+
   /** Defaults to "outfits" when not set. */
   section?: EditSection;
 

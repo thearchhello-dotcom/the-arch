@@ -43,6 +43,26 @@ export const edits: Edit[] = [
     boardImage: "/edits/halloween-costumes-26-board.webp",
     description:
       "Halloween costumes you would actually want them in: a little ghost, a bat in a tutu, and the characters everyone is asking for this year. Choose one for each of them, with what it comes to.",
+    pins: [
+      {
+            "label": "Baby",
+            "title": "Baby Halloween costumes: ghost, bat or caterpillar, from £12",
+            "description": "Baby Halloween costumes for 0 to 4 years. Pick one: a ghost bodysuit with tights from M&S (£12), a bat with a tutu from H&M (£12.99) or a caterpillar from H&M (£17.99). Every piece linked at thearchedits.co.uk",
+            "tags": "#babyhalloween #babyhalloweencostume #firsthalloween #halloweencostume #ukmum"
+      },
+      {
+            "label": "Girls",
+            "title": "Girls' Halloween costumes: clown or KPop Demon Hunters, from £24.98",
+            "description": "Pick one: a striped clown dress with a starry tulle skirt and the matching party hat Alice band (£24.98 for the lot), or the KPop Demon Hunters costume with the purple braid hair claw (£27.98). All from H&M, ages 3 to 10. Every piece linked at thearchedits.co.uk",
+            "tags": "#girlshalloweencostume #kpopdemonhunters #clowncostume #halloweencostume #ukmum"
+      },
+      {
+            "label": "Boys",
+            "title": "Boys' Halloween costumes: dragon or astronaut, from £17.99",
+            "description": "Pick one: the How to Train Your Dragon costume (£17.99) or an astronaut suit (£19.99), both from H&M. Ages 3 to 10. Every piece linked at thearchedits.co.uk",
+            "tags": "#boyshalloweencostume #howtotrainyourdragon #astronautcostume #halloweencostume #ukmum"
+      }
+    ],
     instagram: "Halloween costumes you'd actually want them in 🦇\n\nI've gone for the sweet kind this year rather than full-on fancy dress. For the babies there's a little ghost bodysuit with tights included, a bat with a tutu, or a caterpillar with its antennae hat.\n\nFor the girls, a striped clown with a starry tulle skirt, or the KPop Demon Hunters costume everyone's asking for, purple plait and all. For the boys, How to Train Your Dragon or an astronaut.\n\nPick one for each of them. Baby costumes from £12, girls from £24.98 and boys from £17.99, with every piece linked on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#halloweencostume #kidshalloween #babyhalloween #halloweenkids #ukmum",
     looks: [
       { label: "Baby", ages: "0–4 years", kind: "shortlist", productIds: ["ms-ghost-bodysuit-tights", "hm-bat-costume", "hm-caterpillar-costume"] },
