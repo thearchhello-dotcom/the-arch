@@ -54,6 +54,8 @@ priced item, a sale) is said out loud rather than smoothed over.
   Cumbria", five hashtags at most. It shows in /studio with a copy button.
   A `tiktok` caption (shorter, hook first) and `tiktokHook` (the line for the
   video itself) sit beside it when she wants one.
+- Boards must be PNG, never WebP: the social image generator cannot read WebP
+  and produces a blank image. Convert with sharp (already installed).
 - Themed edits use one hero piece per look, styled into a real outfit, never
   head to toe of the theme.
 
