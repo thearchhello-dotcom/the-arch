@@ -118,6 +118,20 @@ export default function StudioPage() {
                 </div>
               </details>
 
+              {edit.instagram && (
+                <details className="border-t border-line pt-3.5">
+                  <summary className="cursor-pointer font-body font-semibold text-sm text-ink-soft hover:text-terracotta transition-colors">
+                    Instagram caption
+                  </summary>
+                  <div className="flex flex-col gap-3 pt-3.5">
+                    <p className="text-sm text-ink-soft leading-relaxed whitespace-pre-line">{edit.instagram}</p>
+                    <div>
+                      <CopyButton text={edit.instagram} label="Copy caption" />
+                    </div>
+                  </div>
+                </details>
+              )}
+
               {/* One pin per outfit. Pinterest rewards several distinct
                   pins over one perfect one, and all four land on the same
                   page — so an edit with four looks is four chances to be

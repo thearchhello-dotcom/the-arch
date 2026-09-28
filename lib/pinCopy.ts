@@ -49,14 +49,18 @@ export function pinCopy(edit: Edit) {
     .filter(Boolean)
     .join(" ");
 
-  const tags = [
-    "#kidsfashion",
-    "#kidsstyle",
-    "#babyclothes",
-    "#kidsoutfits",
-    "#ukmum",
-    ...(edit.season?.toLowerCase().includes("autumn") ? ["#autumnoutfits"] : []),
-  ].join(" ");
+  const about = `${edit.title} ${edit.searchTitle ?? ""}`.toLowerCase();
+  const seasonal = about.includes("halloween")
+    ? "#halloweenkids"
+    : about.includes("christmas")
+      ? "#christmasgifts"
+      : edit.season?.toLowerCase().includes("autumn")
+        ? "#autumnoutfits"
+        : "#kidsoutfits";
+  // Five at most: Gemma's rule for every post.
+  const tags = [...new Set([seasonal, "#kidsfashion", "#kidsstyle", "#babyclothes", "#ukmum"])]
+    .slice(0, 5)
+    .join(" ");
 
   // `full` ends with the URL as well, since pasting the lot into a pin and
   // then hunting for the link separately is the fiddly bit on a phone.
@@ -104,7 +108,11 @@ export function pinCopyForLook(edit: Edit, look: Edit["looks"][number]) {
       (shortlist
         ? `From £${cost.from.toFixed(2)} to £${cost.to.toFixed(2)}.`
         : `The whole ${look.noun ?? "outfit"}${sized ? ", from" : ","} ${money.replace(/^from /, "")}.`),
-    shops.length === 1 ? `All from ${shops[0]} — one delivery.` : `From ${listOf(shops)}.`,
+    shops.length === 1
+      ? shortlist
+        ? `All from ${shops[0]}.`
+        : `All from ${shops[0]} — one delivery.`
+      : `From ${listOf(shops)}.`,
     `Part of ${edit.title}. Every piece linked at thearchedits.co.uk`,
   ]
     .filter(Boolean)

@@ -49,6 +49,9 @@ priced item, a sale) is said out loud rather than smoothed over.
 - Building an edit: Gemma sends the board first for styling feedback, then the
   links, then gets the real totals back for Canva. The prices on a draft board
   are placeholders; never comment on them.
+- Every new edit gets an `instagram` caption in data/edits.ts, written by hand
+  in Gemma's voice: chatty, accurate to the looks, ending "Styled by me in
+  Cumbria", five hashtags at most. It shows in /studio with a copy button.
 - Themed edits use one hero piece per look, styled into a real outfit, never
   head to toe of the theme.
 

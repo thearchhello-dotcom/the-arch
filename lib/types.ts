@@ -100,6 +100,13 @@ export interface Edit {
    *  warns gets a whole site marked down. */
   searchTitle?: string;
 
+  /** The Instagram caption for this edit, written by hand rather than
+   *  generated, because Gemma's captions are chatty and in her own voice.
+   *  Her rules: accurate to the actual looks, ends with the byline "Styled by
+   *  me in Cumbria", no more than five hashtags. Shown in the studio with a
+   *  copy button; never on the public site, so emoji are fine here. */
+  instagram?: string;
+
   /** Defaults to "outfits" when not set. */
   section?: EditSection;
 

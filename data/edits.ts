@@ -42,7 +42,8 @@ export const edits: Edit[] = [
     palette: ["#1F1B1D", "#F4EFE6", "#8E2F3A", "#B9D98A"],
     boardImage: "/edits/halloween-costumes-26-board.webp",
     description:
-      "Halloween costumes you would actually want them in: a soft little ghost, a bat in a tutu, and the characters everyone is asking for this year. Choose one for each of them, with what it comes to.",
+      "Halloween costumes you would actually want them in: a little ghost, a bat in a tutu, and the characters everyone is asking for this year. Choose one for each of them, with what it comes to.",
+    instagram: "Halloween costumes you'd actually want them in 🦇\n\nI've gone for the sweet kind this year rather than full-on fancy dress. For the babies there's a little ghost bodysuit with tights included, a bat with a tutu, or a caterpillar with its antennae hat.\n\nFor the girls, a striped clown with a starry tulle skirt, or the KPop Demon Hunters costume everyone's asking for, purple plait and all. For the boys, How to Train Your Dragon or an astronaut.\n\nPick one for each of them. Baby costumes from £12, girls from £24.98 and boys from £17.99, with every piece linked on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#halloweencostume #kidshalloween #babyhalloween #halloweenkids #ukmum",
     looks: [
       { label: "Baby", ages: "0–4 years", kind: "shortlist", productIds: ["ms-ghost-bodysuit-tights", "hm-bat-costume", "hm-caterpillar-costume"] },
       { label: "Girls: the clown", ages: "3–10 years", noun: "costume", productIds: ["hm-clown-costume", "hm-clown-alice-band"] },
