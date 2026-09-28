@@ -29,6 +29,7 @@ const AWIN_PUBLISHER_ID = "3098383";
  *  behaviour for one that is pending, rejected, or handled by Skimlinks. */
 const PROGRAMMES: Partial<Record<Retailer, { network: "awin"; merchantId: string }>> = {
   "Mamas & Papas": { network: "awin", merchantId: "6526" },
+  Scandiborn: { network: "awin", merchantId: "85735" }, // approved 28 Sep 2026
   // M&S, adidas and Debenhams go here as they are approved. schuh declined.
 };
 

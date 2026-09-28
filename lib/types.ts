@@ -17,6 +17,7 @@ export type Retailer =
   | "MandM Direct"
   | "Mountain Warehouse"
   | "Next"
+  | "Scandiborn"
   | "schuh"
   | "Tu"
   | "Zara";
