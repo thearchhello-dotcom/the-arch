@@ -59,8 +59,11 @@ export default function PrivacyPage() {
             choice you made, so you&apos;re not asked on every page. Nothing else depends on it.
           </li>
           <li>
-            <strong>Analytics.</strong> Aggregated counts of which edits get read, used to decide
-            what to write next. These load only if you accept them.
+            <strong>Analytics.</strong> Aggregated counts of which edits get read and which
+            shops people click through to, used to decide what to write next. This is Google
+            Analytics, provided by Google. Its cookies are set only if you tap &ldquo;Accept
+            all&rdquo;; if you choose &ldquo;Essential only&rdquo;, it stores nothing on your
+            device. Google&apos;s own privacy policy explains how it handles that data.
           </li>
           <li>
             <strong>Affiliate tracking.</strong> If you click through to a retailer, that retailer

@@ -34,6 +34,12 @@ export default function CookieBanner() {
     } catch {
       /* nothing we can do if storage is blocked; just close the banner */
     }
+    // Tell Google Analytics straight away, so an accept starts counting on
+    // this page rather than the next. Ads are never granted: the site has none.
+    const w = window as unknown as { gtag?: (...args: unknown[]) => void };
+    w.gtag?.("consent", "update", {
+      analytics_storage: value === "accepted" ? "granted" : "denied",
+    });
     setVisible(false);
   }
 

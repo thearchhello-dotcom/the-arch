@@ -42,6 +42,11 @@ export const site = {
    */
   isPublic: true,
 
+  /** Google Analytics 4, set up by Gemma on 28 September 2026 in the
+   *  thearchhello@gmail.com account. Not a secret: it appears in the page
+   *  source of every site that uses GA. Empty string switches GA off. */
+  gaMeasurementId: "G-YLBQ42HXXP",
+
   /** Master switch for retailer photographs. A kill switch, not the rule.
    *
    *  The rule now lives per retailer, in canShowImage() in lib/affiliate.ts:
