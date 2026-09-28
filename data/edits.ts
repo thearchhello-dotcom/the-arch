@@ -40,7 +40,7 @@ export const edits: Edit[] = [
     published: "2026-09-28",
     updated: "2026-09-28",
     palette: ["#1F1B1D", "#F4EFE6", "#8E2F3A", "#B9D98A"],
-    boardImage: "/edits/halloween-costumes-26-board.webp",
+    boardImage: "/edits/halloween-costumes-26-board.png",
     description:
       "Halloween costumes you would actually want them in: a little ghost, a bat in a tutu, and the characters everyone is asking for this year. Choose one for each of them, with what it comes to.",
     pins: [
@@ -105,7 +105,7 @@ export const edits: Edit[] = [
     updated: "2026-09-23",
     plannedFor: "Bonfire night, 5 November",
     palette: ["#8A9A7B", "#E8E0D2", "#5C6B54", "#A89684"],
-    boardImage: "/edits/after-dark-26-board.webp",
+    boardImage: "/edits/after-dark-26-board.png",
     description:
       "Warm, cosy layers for standing outside in the dark watching fireworks. Four outfits, every piece linked, and the shops sell several of them as sets so there is less to click than there is to see.",
     // Ages follow the narrowest piece in each look, not the widest. The H&M
@@ -128,7 +128,7 @@ export const edits: Edit[] = [
     updated: "2026-09-21",
     plannedFor: "Any time — no date attached",
     palette: ["#6B4A38", "#E8D8CC", "#C9B7A4", "#F0E6D8"],
-    boardImage: "/edits/the-knitwear-edit-26-board-v2.webp",
+    boardImage: "/edits/the-knitwear-edit-26-board-v2.png",
     description:
       "One knitted piece per look, dressed around with what you would actually put on top — because nobody wears head to toe knitwear. Four outfits, every piece linked, and the shops sell most of them as sets so there is less to click than there is to see.",
     // Several of these links cover more than one garment: both M&S knitted

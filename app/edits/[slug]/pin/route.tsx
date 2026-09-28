@@ -38,6 +38,10 @@ const FORMATS = {
   pin: { w: 1200, h: 1800 },
   post: { w: 1080, h: 1350 },
   story: { w: 1080, h: 1920 },
+  // Gemma's Instagram grid: 3:4, the board on cream inside a thin solid
+  // border in her current grid row's colour, which rotates every three posts
+  // (terracotta, then mustard, then sage).
+  grid: { w: 1080, h: 1440 },
 } as const;
 
 type Font = { name: string; data: ArrayBuffer; weight: 400 | 600; style: "normal" };
@@ -124,6 +128,14 @@ export async function GET(req: Request, { params }: { params: Promise<{ slug: st
 
   const pal = edit.palette.length ? edit.palette : ["#B7A695", "#8FA383", "#C96849", "#4A372A"];
 
+  const BORDERS: Record<string, string> = {
+    terracotta: "#C96849",
+    mustard: "#E3A83B",
+    sage: "#8FA383",
+  };
+  const border = BORDERS[new URL(req.url).searchParams.get("border") ?? ""] ?? null;
+  const edge = key === "grid" && border ? 14 : 0;
+
   // A finished board already carries the wordmark, the title, every outfit
   // total and the web address. Reframe it, add nothing.
   if (board) {
@@ -137,10 +149,15 @@ export async function GET(req: Request, { params }: { params: Promise<{ slug: st
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            ...(edge ? { border: `${edge}px solid ${border}` } : {}),
           }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={board} alt="" style={{ width: W, height: H, objectFit: "contain" }} />
+          <img
+            src={board}
+            alt=""
+            style={{ width: W - edge * 2, height: H - edge * 2, objectFit: "contain" }}
+          />
         </div>
       ),
       { width: W, height: H }

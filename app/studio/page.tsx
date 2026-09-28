@@ -24,6 +24,9 @@ const SIZES = [
   { q: "", label: "Pinterest", note: "1200 × 1800" },
   { q: "?format=post", label: "Instagram post", note: "1080 × 1350" },
   { q: "?format=story", label: "Instagram story", note: "1080 × 1920" },
+  { q: "?format=grid&border=terracotta", label: "Instagram 3:4 terracotta", note: "1080 × 1440" },
+  { q: "?format=grid&border=mustard", label: "Instagram 3:4 mustard", note: "1080 × 1440" },
+  { q: "?format=grid&border=sage", label: "Instagram 3:4 sage", note: "1080 × 1440" },
 ];
 
 export default function StudioPage() {
