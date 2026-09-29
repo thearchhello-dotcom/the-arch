@@ -122,6 +122,16 @@ export interface Edit {
    *  When present, the studio shows these instead of the generated ones. */
   pins?: { label: string; title: string; description: string; tags: string }[];
 
+  /** A few words from Gemma about individual pieces, keyed by product id, shown
+   *  on that piece's tile. Personal to the edit, so it lives here rather than on
+   *  the product: the same pram can have a different line in a different edit.
+   *
+   *  Say what she did, never what the product is. "We used this every night from
+   *  about week two" is her experience; "safe", "best", "great for sleep" are
+   *  claims about the product, which the site never makes. That matters most for
+   *  sleep and safety items: cribs, sound machines, night lights, high chairs. */
+  pieceNotes?: Record<string, string>;
+
   /** Defaults to "outfits" when not set. */
   section?: EditSection;
 

@@ -56,6 +56,10 @@ priced item, a sale) is said out loud rather than smoothed over.
   video itself) sit beside it when she wants one.
 - Boards must be PNG, never WebP: the social image generator cannot read WebP
   and produces a blank image. Convert with sharp (already installed).
+- An edit can carry `pieceNotes`: a few words from Gemma per product, in her
+  voice. Keep them to what she did and used, never claims about the product
+  (safe, best, good for sleep), especially for cribs, high chairs, sound
+  machines and night lights.
 - Themed edits use one hero piece per look, styled into a real outfit, never
   head to toe of the theme.
 

@@ -352,7 +352,15 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
                   <span className="w-fit text-[11px] font-bold tracking-wide px-2.5 py-1 rounded-pill bg-footer text-ink-soft">
                     {item.retailer}
                   </span>
-                  <span className="text-sm font-semibold text-ink flex-1">{item.name}</span>
+                  <span className="text-sm font-semibold text-ink">{item.name}</span>
+                  {/* Gemma's own line about this piece, when the edit has one. */}
+                  {edit.pieceNotes?.[item.id] ? (
+                    <p className="text-sm leading-relaxed text-ink-soft flex-1">
+                      {edit.pieceNotes[item.id]}
+                    </p>
+                  ) : (
+                    <span className="flex-1" />
+                  )}
                   {/* priceOf, not item.price. A sale item was printing the
                       price it used to be while the total below used the price
                       it is, so the pieces on screen did not add up to the
