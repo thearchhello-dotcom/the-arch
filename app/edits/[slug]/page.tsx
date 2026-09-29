@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { popFor } from "@/lib/pops";
-import { affiliateHref } from "@/lib/affiliate";
+import { affiliateHref, canShowImage } from "@/lib/affiliate";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -327,12 +327,28 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
                   {/* Tinted from this edit's own palette, cycling through it, so
                       the row of pieces reads as one coordinated outfit rather
                       than a grid of identical grey boxes. */}
-                  <div
-                    className="h-36 flex items-end justify-center pb-5 transition-transform duration-300 group-hover/item:-translate-y-0.5"
-                    style={{ background: tint(i), borderRadius: "999px 999px 14px 14px" }}
-                  >
-                    <GarmentIcon type={item.type} color={ink(i)} size={38} />
-                  </div>
+                  {/* A real photograph when the shop has approved Gemma (the
+                      same rule as the shop page, in canShowImage) and one is
+                      stored; otherwise the icon on the palette arch. */}
+                  {site.showProductImages && canShowImage(item.retailer) && item.imageUrl ? (
+                    <div className="h-36 rounded-[14px] bg-white flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover/item:-translate-y-0.5">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={item.imageUrl}
+                        alt={item.name}
+                        loading="lazy"
+                        referrerPolicy="no-referrer"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="h-36 flex items-end justify-center pb-5 transition-transform duration-300 group-hover/item:-translate-y-0.5"
+                      style={{ background: tint(i), borderRadius: "999px 999px 14px 14px" }}
+                    >
+                      <GarmentIcon type={item.type} color={ink(i)} size={38} />
+                    </div>
+                  )}
                   <span className="w-fit text-[11px] font-bold tracking-wide px-2.5 py-1 rounded-pill bg-footer text-ink-soft">
                     {item.retailer}
                   </span>
