@@ -41,6 +41,24 @@ export const edits: Edit[] = [
             "title": "Big Christmas presents for babies and toddlers, all under £150",
             "description": "The one big present, sorted. A wooden dolls' house, play kitchen, checked rocking horse, trike, balance bike, activity centre and a Toniebox, all under £150 and all linked, from Scandiborn, Mamas & Papas and Argos. Prices from £63.99. Every piece linked at thearchedits.co.uk",
             "tags": "#christmasgifts #toddlergifts #babygifts #christmaspresents #ukmum"
+      },
+      {
+      "label": "Rocking horse",
+      "title": "Checked rocking horse: a big Christmas present for a toddler, £109.95",
+      "description": "The Kids Concept Miro rocking horse, a navy and cream checked horse on a wooden rocker, from Scandiborn at £109.95. One of eight big present ideas for babies and toddlers, all under £150. Every piece linked at thearchedits.co.uk",
+      "tags": "#rockinghorse #toddlergifts #christmasgifts #christmaspresents #ukmum"
+      },
+      {
+      "label": "Play kitchen",
+      "title": "Wooden play kitchen in mint: a big Christmas present, £134.95",
+      "description": "The Little Dutch wooden play kitchen in mint, from Scandiborn at £134.95. One of eight big present ideas for babies and toddlers, all under £150. Every piece linked at thearchedits.co.uk",
+      "tags": "#playkitchen #toddlergifts #christmasgifts #woodentoys #ukmum"
+      },
+      {
+      "label": "Dolls' house",
+      "title": "Wooden dolls' house: a big Christmas present for little ones, £149.95",
+      "description": "The Le Toy Van Bay Tree dolls' house, from Scandiborn at £149.95. One of eight big present ideas for babies and toddlers, all under £150. Every piece linked at thearchedits.co.uk",
+      "tags": "#dollshouse #toddlergifts #christmasgifts #woodentoys #ukmum"
       }
     ],
     note: "The workbench is out of stock at Scandiborn at the moment, but it says it is expected soon. If you click through, you can sign up on the page to be told the moment it is back in stock.",
