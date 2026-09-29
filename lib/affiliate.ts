@@ -30,6 +30,7 @@ const AWIN_PUBLISHER_ID = "3098383";
 const PROGRAMMES: Partial<Record<Retailer, { network: "awin"; merchantId: string }>> = {
   "Mamas & Papas": { network: "awin", merchantId: "6526" },
   Scandiborn: { network: "awin", merchantId: "85735" }, // approved 28 Sep 2026
+  Momcozy: { network: "awin", merchantId: "82545" }, // approved 30 Sep 2026
   // M&S, adidas and Debenhams go here as they are approved. schuh declined.
 };
 

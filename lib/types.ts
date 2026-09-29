@@ -15,6 +15,7 @@ export type Retailer =
   | "Matalan"
   | "Mamas & Papas"
   | "MandM Direct"
+  | "Momcozy"
   | "Mountain Warehouse"
   | "Next"
   | "Scandiborn"
