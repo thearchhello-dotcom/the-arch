@@ -31,6 +31,50 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "big-christmas-presents-26",
+    title: "The Big Christmas Present Edit",
+    searchTitle: "Big Christmas presents for babies and toddlers",
+    instagram: "The big present edit 🎄\n\nEight ideas for the one big present, all under £150: a wooden dolls' house, a play kitchen, a checked rocking horse, a pink trike, a workbench, an activity centre, a balance bike and a Toniebox.\n\nNobody needs all eight, so pick one. Prices start from £63.99, with every piece linked on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#christmasgifts #toddlergifts #babygifts #christmaspresents #ukmum",
+    pins: [
+      {
+            "label": "The whole edit",
+            "title": "Big Christmas presents for babies and toddlers, all under £150",
+            "description": "The one big present, sorted. A wooden dolls' house, play kitchen, checked rocking horse, trike, balance bike, activity centre and a Toniebox, all under £150 and all linked, from Scandiborn, Mamas & Papas and Argos. Prices from £63.99. Every piece linked at thearchedits.co.uk",
+            "tags": "#christmasgifts #toddlergifts #babygifts #christmaspresents #ukmum"
+      }
+    ],
+    note: "The workbench is out of stock at Scandiborn at the moment and is due back soon, so have a quick look at the page before you order.",
+    section: "gifts",
+    season: "Christmas 2026",
+    plannedFor: "Mid October, so it is found before the Christmas rush",
+    boardImage: "/edits/big-christmas-presents-26-board.png",
+    published: "2026-09-29",
+    updated: "2026-09-29",
+    palette: ["#F4EFE6", "#B9C7B0", "#D9A79A", "#C9B48F"],
+    description:
+      "The one big Christmas gift, for a baby or toddler. Eight presents to choose from, all under £150: a dolls' house, a play kitchen, a rocking horse, a trike and more. Pick one, with what each costs.",
+    // A shortlist: nobody buys all eight, so the page shows a price range
+    // rather than a total. The dolls' house is 5p under the £150 badge and
+    // the activity centre is 1p under £140, so re-check every price the
+    // day before publishing. The tool bench was out of stock on 29 Sept.
+    looks: [
+      {
+        label: "Baby & Toddler",
+        kind: "shortlist",
+        productIds: [
+          "sb-little-dutch-trike-pink",
+          "sb-le-toy-van-bay-tree",
+          "mp-tiny-love-activity-centre",
+          "sb-rocking-horse-miro",
+          "sb-little-dutch-play-kitchen",
+          "sb-kids-concept-tool-bench",
+          "argos-toniebox2-grey",
+          "mp-globber-go-bike-sage",
+        ],
+      },
+    ],
+  },
+  {
     slug: "halloween-costumes-26",
     title: "The Spooky Edit",
     searchTitle: "Halloween costumes for babies and kids",

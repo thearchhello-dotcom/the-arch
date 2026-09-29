@@ -184,6 +184,17 @@ export const products: Product[] = [
   { id: "hm-clown-alice-band", name: "Appliqued Alice Band, Striped", category: "Girls", retailer: "H&M", price: 5.99, type: "head", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1360923001.html" },
   { id: "hm-astronaut-costume", name: "Astronaut Fancy Dress Set", category: "Boys", retailer: "H&M", price: 19.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1313203001.html" },
   { id: "hm-dragon-costume", name: "Fancy Dress Costume, How To Train Your Dragon", category: "Boys", retailer: "H&M", price: 17.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1300054001.html" },
+  // ---- The Big Christmas Present Edit (big-christmas-presents-26) --------
+  // Gifts, so category is Baby (the site's baby and toddler bucket) and type
+  // is toy. Scandiborn, M&P and Momcozy are tracked; Argos is not.
+  { id: "mp-tiny-love-activity-centre", name: "Tiny Love 5-in-1 Here I Grow Activity Center", category: "Baby", retailer: "Mamas & Papas", price: 139.99, type: "toy", affiliateUrl: "https://www.mamasandpapas.com/products/tiny-love-5in1-activity-centre-ds-6737kg200" },
+  { id: "sb-rocking-horse-miro", name: "Kids Concept Rocking Horse, Miro", category: "Baby", retailer: "Scandiborn", price: 109.95, type: "toy", affiliateUrl: "https://www.scandiborn.co.uk/products/kids-concept-rocking-horse-miro" },
+  { id: "sb-kids-concept-tool-bench", name: "Kids Concept Wooden Tool Bench", category: "Baby", retailer: "Scandiborn", price: 120.95, type: "toy", affiliateUrl: "https://www.scandiborn.co.uk/products/kids-concept-tool-bench" },
+  { id: "sb-little-dutch-play-kitchen", name: "Little Dutch Wooden Play Kitchen, Mint", category: "Baby", retailer: "Scandiborn", price: 134.95, type: "toy", affiliateUrl: "https://www.scandiborn.co.uk/products/little-dutch-wooden-play-kitchen-mint" },
+  { id: "sb-le-toy-van-bay-tree", name: "Le Toy Van Bay Tree Dolls House", category: "Baby", retailer: "Scandiborn", price: 149.95, type: "toy", affiliateUrl: "https://www.scandiborn.co.uk/products/le-toy-van-bay-tree-wooden-dolls-house" },
+  { id: "argos-toniebox2-grey", name: "tonies Grey Toniebox2 Starter Set and Creative Tonie", category: "Baby", retailer: "Argos", price: 110.00, type: "toy", affiliateUrl: "https://www.argos.co.uk/product/7698666" },
+  { id: "mp-globber-go-bike-sage", name: "Globber Go Bike Elite, Sage", category: "Baby", retailer: "Mamas & Papas", price: 79.99, onSale: true, salePrice: 63.99, type: "toy", affiliateUrl: "https://www.mamasandpapas.com/products/globber-go-bike-elite-sage-7727tg300" },
+  { id: "sb-little-dutch-trike-pink", name: "Little Dutch 4-in-1 Trike, Pink", category: "Baby", retailer: "Scandiborn", price: 129.00, type: "toy", affiliateUrl: "https://www.scandiborn.co.uk/products/little-dutch-trike-pink" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.

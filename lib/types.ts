@@ -8,6 +8,7 @@
 export type Category = "Baby" | "Girls" | "Boys" | "Nursery";
 export type Retailer =
   | "adidas"
+  | "Argos"
   | "Debenhams"
   | "George"
   | "H&M"
