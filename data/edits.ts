@@ -43,7 +43,7 @@ export const edits: Edit[] = [
             "tags": "#christmasgifts #toddlergifts #babygifts #christmaspresents #ukmum"
       }
     ],
-    note: "The workbench is out of stock at Scandiborn at the moment and is due back soon, so have a quick look at the page before you order.",
+    note: "The workbench is out of stock at Scandiborn at the moment, but it says it is expected soon. If you click through, you can sign up on the page to be told the moment it is back in stock.",
     section: "gifts",
     season: "Christmas 2026",
     plannedFor: "Mid October, so it is found before the Christmas rush",
