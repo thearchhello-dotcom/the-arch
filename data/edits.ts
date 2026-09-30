@@ -31,6 +31,40 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "little-christmas-presents-26",
+    title: "The Little Christmas Present Edit",
+    searchTitle: "Christmas gifts under £40 for babies and toddlers",
+    instagram: "The little Christmas present edit 🎄\n\nEight presents for babies and toddlers, every one under £40: a Noah's ark, a wooden guitar, an activity cube, colourful building blocks, a baby doll in her carrycot, a stripy tent, a music set and a soft toy gift box.\n\nNobody needs all eight, so pick one. Prices start from £30.60, with every piece linked on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#christmasgifts #toddlergifts #babygifts #stockingfillers #ukmum",
+    pins: [
+      {
+            "label": "The whole edit",
+            "title": "Christmas gifts under £40 for babies and toddlers: 8 ideas",
+            "description": "Eight Christmas presents for babies and toddlers, all under £40: a Noah's ark, wooden guitar, activity cube, building blocks, baby doll with carrycot, tent, music set and a soft toy gift box. Pick one. From Scandiborn and Mamas & Papas, every piece linked at thearchedits.co.uk",
+            "tags": "#christmasgifts #toddlergifts #babygifts #stockingfillers #ukmum"
+      }
+    ],
+    note: "The building blocks are on pre-order at Mamas & Papas, with delivery from 28 October, so they will arrive in good time for Christmas.",
+    section: "gifts",
+    season: "Christmas 2026",
+    plannedFor: "Early October, alongside The Big Christmas Present Edit",
+    published: "2026-09-30",
+    updated: "2026-09-30",
+    boardImage: "/edits/little-christmas-presents-26-board.png",
+    palette: ["#F4EFE6", "#E8C4C0", "#B9C7B0", "#B7C9D9"],
+    description:
+      "Eight Christmas gifts for a baby or toddler, every one under £40: a Noah's ark, a wooden guitar, building blocks, a tent and more. Pick one, with what each costs.",
+    looks: [
+      {
+        label: "Baby & Toddler",
+        kind: "shortlist",
+        productIds: [
+          "sb-noahs-ark", "sb-little-dutch-guitar", "sb-activity-cube-fairy-garden", "mp-le-toy-van-blocks",
+          "sb-baby-doll-rosa", "sb-kids-concept-tent", "sb-music-set-green", "mp-babyplay-gift-box",
+        ],
+      },
+    ],
+  },
+  {
     slug: "big-christmas-presents-26",
     title: "The Big Christmas Present Edit",
     searchTitle: "Big Christmas presents for babies and toddlers",
