@@ -6,6 +6,7 @@ import { edits } from "@/data/edits";
 import { getProduct } from "@/data/products";
 import { pinCopy, pinCopyForLook } from "@/lib/pinCopy";
 import CopyButton from "@/components/CopyButton";
+import { adCaption, adPin } from "@/lib/disclosure";
 
 /**
  * Your own back room. Every edit, with its three ready-made social images one
@@ -106,7 +107,7 @@ export default function StudioPage() {
                 </summary>
                 <div className="flex flex-col gap-3 pt-3.5">
                   <p className="text-sm font-semibold text-ink leading-snug">{pin.title}</p>
-                  <p className="text-sm text-ink-soft leading-relaxed">{pin.description}</p>
+                  <p className="text-sm text-ink-soft leading-relaxed">{adPin(pin.description)}</p>
                   <p className="text-sm text-ink-faint">{pin.tags}</p>
                   <p className="text-sm text-ink-soft break-all">
                     <span className="font-semibold text-ink">Link: </span>
@@ -114,7 +115,7 @@ export default function StudioPage() {
                   </p>
                   <div className="flex flex-wrap gap-2.5">
                     <CopyButton text={pin.title} label="Copy title" />
-                    <CopyButton text={pin.description} label="Copy description" />
+                    <CopyButton text={adPin(pin.description)} label="Copy description" />
                     <CopyButton text={pin.url} label="Copy link" />
                     <CopyButton text={pin.full} label="Copy the lot" />
                   </div>
@@ -127,9 +128,9 @@ export default function StudioPage() {
                     Instagram caption
                   </summary>
                   <div className="flex flex-col gap-3 pt-3.5">
-                    <p className="text-sm text-ink-soft leading-relaxed whitespace-pre-line">{edit.instagram}</p>
+                    <p className="text-sm text-ink-soft leading-relaxed whitespace-pre-line">{adCaption(edit.instagram)}</p>
                     <div>
-                      <CopyButton text={edit.instagram} label="Copy caption" />
+                      <CopyButton text={adCaption(edit.instagram)} label="Copy caption" />
                     </div>
                   </div>
                 </details>
@@ -147,9 +148,9 @@ export default function StudioPage() {
                         {edit.tiktokHook}
                       </p>
                     )}
-                    <p className="text-sm text-ink-soft leading-relaxed whitespace-pre-line">{edit.tiktok}</p>
+                    <p className="text-sm text-ink-soft leading-relaxed whitespace-pre-line">{adCaption(edit.tiktok)}</p>
                     <div className="flex flex-wrap gap-2.5">
-                      <CopyButton text={edit.tiktok} label="Copy caption" />
+                      <CopyButton text={adCaption(edit.tiktok)} label="Copy caption" />
                       {edit.tiktokHook && <CopyButton text={edit.tiktokHook} label="Copy video text" />}
                     </div>
                   </div>
@@ -172,7 +173,7 @@ export default function StudioPage() {
                         <div key={pin.label} className="flex flex-col gap-2.5 border-l-2 border-line pl-4">
                           <p className="text-xs font-bold tracking-widest uppercase text-terracotta">{pin.label}</p>
                           <p className="text-sm font-semibold text-ink leading-snug">{pin.title}</p>
-                          <p className="text-sm text-ink-soft leading-relaxed">{pin.description}</p>
+                          <p className="text-sm text-ink-soft leading-relaxed">{adPin(pin.description)}</p>
                           <p className="text-sm text-ink-faint">{pin.tags}</p>
                           <p className="text-sm text-ink-soft break-all">
                             <span className="font-semibold text-ink">Link: </span>
@@ -180,9 +181,9 @@ export default function StudioPage() {
                           </p>
                           <div className="flex flex-wrap gap-2.5">
                             <CopyButton text={pin.title} label="Copy title" />
-                            <CopyButton text={pin.description} label="Copy description" />
+                            <CopyButton text={adPin(pin.description)} label="Copy description" />
                             <CopyButton text={url} label="Copy link" />
-                            <CopyButton text={`${pin.title}\n\n${pin.description}\n\n${pin.tags}\n\n${url}`} label="Copy the lot" />
+                            <CopyButton text={`${pin.title}\n\n${adPin(pin.description)}\n\n${pin.tags}\n\n${url}`} label="Copy the lot" />
                           </div>
                         </div>
                       );

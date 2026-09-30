@@ -1,6 +1,7 @@
 import type { Edit } from "@/lib/types";
 import { costOf, getProduct } from "@/data/products";
 import { site } from "@/lib/site";
+import { adPin } from "@/lib/disclosure";
 
 /**
  * Pinterest copy for an edit, worked out from the edit itself.
@@ -48,6 +49,7 @@ export function pinCopy(edit: Edit) {
   ]
     .filter(Boolean)
     .join(" ");
+  const adDescription = adPin(description);
 
   const about = `${edit.title} ${edit.searchTitle ?? ""}`.toLowerCase();
   const seasonal = about.includes("halloween")
@@ -64,7 +66,7 @@ export function pinCopy(edit: Edit) {
 
   // `full` ends with the URL as well, since pasting the lot into a pin and
   // then hunting for the link separately is the fiddly bit on a phone.
-  return { title, description, tags, url, full: `${title}\n\n${description}\n\n${tags}\n\n${url}` };
+  return { title, description: adDescription, tags, url, full: `${title}\n\n${adDescription}\n\n${tags}\n\n${url}` };
 }
 
 /**
@@ -117,6 +119,7 @@ export function pinCopyForLook(edit: Edit, look: Edit["looks"][number]) {
   ]
     .filter(Boolean)
     .join(" ");
+  const adDescription = adPin(description);
 
   const tags = [
     "#kidsfashion",
@@ -125,7 +128,7 @@ export function pinCopyForLook(edit: Edit, look: Edit["looks"][number]) {
     "#ukmum",
   ].join(" ");
 
-  return { title, description, tags, url, full: `${title}\n\n${description}\n\n${tags}\n\n${url}` };
+  return { title, description: adDescription, tags, url, full: `${title}\n\n${adDescription}\n\n${tags}\n\n${url}` };
 }
 
 /** "a, b and c" — Pinterest descriptions read as prose, not as a list. */
