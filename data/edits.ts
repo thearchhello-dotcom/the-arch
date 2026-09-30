@@ -41,6 +41,24 @@ export const edits: Edit[] = [
             "title": "Christmas gifts under £40 for babies and toddlers: 8 ideas",
             "description": "Eight Christmas presents for babies and toddlers, all under £40: a Noah's ark, wooden guitar, activity cube, building blocks, baby doll with carrycot, tent, music set and a soft toy gift box. Pick one. From Scandiborn and Mamas & Papas, every piece linked at thearchedits.co.uk",
             "tags": "#christmasgifts #toddlergifts #babygifts #stockingfillers #ukmum"
+      },
+      {
+      "label": "Noah's ark",
+      "title": "Wooden Noah's ark: a Christmas gift for babies and toddlers, £39.95",
+      "description": "The Little Dutch wooden Noah's ark, from Scandiborn at £39.95. One of eight Christmas gift ideas for babies and toddlers, all under £40. Every piece linked at thearchedits.co.uk",
+      "tags": "#noahsark #woodentoys #christmasgifts #toddlergifts #ukmum"
+      },
+      {
+      "label": "Stripy tent",
+      "title": "Stripy play tent: a cosy Christmas gift for toddlers, £32.95",
+      "description": "The Kids Concept play tent in stripe light blue, from Scandiborn at £32.95. One of eight Christmas gift ideas for babies and toddlers, all under £40. Every piece linked at thearchedits.co.uk",
+      "tags": "#playtent #toddlergifts #christmasgifts #kidsroom #ukmum"
+      },
+      {
+      "label": "Baby doll",
+      "title": "Baby doll with carrycot: a Christmas gift for little ones, £39.95",
+      "description": "The Little Dutch Baby Doll Rosa with her carrycot, bottle, dummy and blanket, from Scandiborn at £39.95. One of eight Christmas gift ideas for babies and toddlers, all under £40. Every piece linked at thearchedits.co.uk",
+      "tags": "#babydoll #toddlergifts #christmasgifts #firstdoll #ukmum"
       }
     ],
     note: "The building blocks are on pre-order at Mamas & Papas, with delivery from 28 October, so they will arrive in good time for Christmas.",
