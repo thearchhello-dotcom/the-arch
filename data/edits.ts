@@ -62,6 +62,9 @@ export const edits: Edit[] = [
       }
     ],
     note: "The building blocks are on pre-order at Mamas & Papas, with delivery from 28 October, so they will arrive in good time for Christmas.",
+    pieceNotes: {
+      "sb-noahs-ark": "My little boy has had this since his first birthday. He has just turned three and still loves playing with it.",
+    },
     section: "gifts",
     season: "Christmas 2026",
     plannedFor: "Early October, alongside The Big Christmas Present Edit",
