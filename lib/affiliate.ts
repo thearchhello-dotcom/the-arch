@@ -102,3 +102,15 @@ export function isTracked(retailer: Retailer): boolean {
 export function canShowImage(retailer: Retailer): boolean {
   return isTracked(retailer);
 }
+
+/** Pieces that will show a photograph first, the rest after, each group keeping
+ *  its catalogue order. A grid with the pictures at the top looks better and
+ *  reads as more finished. It does favour shops that have approved The Arch, and
+ *  the affiliate disclosure on the page already says some links earn. */
+export function picturedFirst<T extends { retailer: Retailer; imageUrl?: string }>(
+  items: T[],
+  showImages: boolean
+): T[] {
+  const has = (p: T) => (showImages && p.imageUrl && canShowImage(p.retailer) ? 0 : 1);
+  return [...items].sort((a, b) => has(a) - has(b));
+}

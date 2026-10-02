@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { products } from "@/data/products";
 import { normalise, parseQuery, pieceMatches } from "@/lib/editSearch";
+import { picturedFirst } from "@/lib/affiliate";
+import { site } from "@/lib/site";
 import type { Category, Retailer } from "@/lib/types";
 import ProductCard from "./ProductCard";
 
@@ -65,7 +67,7 @@ export default function ShopFilters({ initialCategory }: { initialCategory?: Cat
 
   const filtered = useMemo(
     () =>
-      products.filter((p) => {
+      picturedFirst(products, site.showProductImages).filter((p) => {
         if (!((category === "All" || p.category === category) && (retailer === "All" || p.retailer === retailer))) return false;
         if (parsed.words.length === 0 && parsed.maxPrice === null) return true;
         return pieceMatches(parsed, searchable.get(p.id) ?? [], p.onSale && p.salePrice ? p.salePrice : p.price);

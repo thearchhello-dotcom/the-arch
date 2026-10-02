@@ -4,6 +4,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { matches, normalise, parseQuery, pieceMatches } from "@/lib/editSearch";
 import { products } from "@/data/products";
 import ProductCard from "./ProductCard";
+import { picturedFirst } from "@/lib/affiliate";
+import { site } from "@/lib/site";
 import type { EditSection } from "@/lib/types";
 import Link from "next/link";
 import Image from "next/image";
@@ -114,8 +116,11 @@ export default function EditFilters({ edits }: { edits: EditSummary[] }) {
     () =>
       parsed.words.length === 0
         ? []
-        : products.filter((p) =>
-            pieceMatches(parsed, pieceWords.get(p.id) ?? [], p.onSale && p.salePrice ? p.salePrice : p.price)
+        : picturedFirst(
+            products.filter((p) =>
+              pieceMatches(parsed, pieceWords.get(p.id) ?? [], p.onSale && p.salePrice ? p.salePrice : p.price)
+            ),
+            site.showProductImages
           ),
     [parsed, pieceWords]
   );
