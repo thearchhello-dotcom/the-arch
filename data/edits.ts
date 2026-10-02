@@ -31,6 +31,28 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "autumn-winter-little-ones-26",
+    title: "Autumn Edit: Little Ones",
+    searchTitle: "Autumn and winter outfits for babies and toddlers",
+    instagram: "Autumn and winter outfits for little ones 🍂\n\nFour cosy looks for babies and toddlers, with stripes, hearts and teddy fleece running all the way through. Baby girl £85.25, baby boy £57.75, toddler girl £74.99 and toddler boy £66.75, with every piece linked and priced up on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#autumnoutfits #babyoutfits #toddleroutfits #winteroutfits #ukmum",
+    section: "outfits",
+    season: "Autumn 2026",
+    published: "2026-10-02",
+    updated: "2026-10-02",
+    boardImage: "/edits/autumn-winter-little-ones-26-board.png",
+    palette: ["#7A3B43", "#E8D8CC", "#B9B8A0", "#C9A87A"],
+    description:
+      "Cosy autumn and winter outfits for babies and toddlers, with stripes, hearts and teddy fleece running through all four. Every piece linked and the whole outfit priced up.",
+    // Five pieces are on sale or offer (embroidered and hooded jackets, booties,
+    // sweatshirt, Next trainers): re-check before relying on the totals.
+    looks: [
+      { label: "Baby Girl", ages: "3–12 months", productIds: ["mp-picot-bodysuit-cream", "mp-heart-dungarees", "mp-embroidered-borg-jacket", "mp-scallop-pram-shoes"] },
+      { label: "Baby Boy", ages: "0–12 months", productIds: ["mp-stripe-dungaree-set", "mp-hooded-borg-jacket", "mp-borg-moccasin-booties"] },
+      { label: "Toddler Girl", ages: "1–3 years", productIds: ["mp-picot-bodysuit-cream", "mp-red-gingham-jacket", "mp-heart-jeans", "hm-bow-mary-janes-red"] },
+      { label: "Toddler Boy", ages: "12–24 months", productIds: ["mp-borg-gilet", "mp-imagine-sweatshirt", "mp-clay-cream-stripe-trouser", "next-khaki-suede-trainers"] },
+    ],
+  },
+  {
     slug: "little-christmas-presents-26",
     title: "The Little Christmas Present Edit",
     searchTitle: "Christmas gifts under £40 for babies and toddlers",
