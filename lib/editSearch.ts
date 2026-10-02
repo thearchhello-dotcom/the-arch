@@ -37,6 +37,8 @@ export type SearchableEdit = {
   ages: [number, number][];
   /** Lowest outfit total in the edit; 0 or missing when nothing is priced. */
   low?: number;
+  /** Every piece in the edit: its normalise()d words and what it costs now. */
+  priced?: { words: string[]; price: number }[];
 };
 
 /** Lower case, accents and apostrophes gone, "M&S" → "ms", "H&M" → "hm",
@@ -197,10 +199,26 @@ export function parseQuery(raw: string): ParsedQuery {
   return { maxPrice, age, words, empty: maxPrice === null && age === null && words.length === 0 };
 }
 
+/** Does the edit fit the price asked for? When the query names a piece
+ *  ("pramsuits under £40") the price is that piece's, so an edit whose outfit
+ *  totals are higher still turns up if the pramsuit in it is cheap enough. When
+ *  no piece matches the words (a season, an occasion) or there are no words,
+ *  it falls back to the edit's lowest outfit total, as the price bands do. */
+function withinPrice(query: ParsedQuery, edit: SearchableEdit): boolean {
+  const max = query.maxPrice ?? 0;
+  if (query.words.length && edit.priced?.length) {
+    const named = edit.priced.filter((p) =>
+      query.words.every((alts) => alts.some((alt) => p.words.some((w) => w.startsWith(alt))))
+    );
+    if (named.length) return named.some((p) => p.price <= max);
+  }
+  return (edit.low ?? 0) > 0 && (edit.low ?? 0) <= max;
+}
+
 export function matches(query: ParsedQuery, edit: SearchableEdit): boolean {
   if (query.empty) return true;
 
-  if (query.maxPrice !== null && !((edit.low ?? 0) > 0 && (edit.low ?? 0) <= query.maxPrice)) return false;
+  if (query.maxPrice !== null && !withinPrice(query, edit)) return false;
 
   if (query.age !== null) {
     const a = query.age;

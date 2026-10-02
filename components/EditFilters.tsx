@@ -25,6 +25,8 @@ export type EditSummary = {
   searchText: string;
   /** Each look's age range in months. */
   ages: [number, number][];
+  /** Every piece's words and current price, for "pramsuits under £40". */
+  priced: { words: string[]; price: number }[];
   season: string;
   description: string;
   palette: string[];

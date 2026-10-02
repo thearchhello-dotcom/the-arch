@@ -46,6 +46,18 @@ function summarise(edit: Edit): EditSummary {
     ages: edit.looks
       .map((l) => (l.ages ? parseAgeRange(l.ages) : null))
       .filter((r): r is [number, number] => r !== null),
+    priced: edit.looks
+      .flatMap((l) => l.productIds.map(getProduct))
+      .flatMap((p) =>
+        p
+          ? [
+              {
+                words: normalise(`${p.name} ${p.retailer} ${p.category} ${p.type}`).split(" "),
+                price: p.onSale && p.salePrice ? p.salePrice : p.price,
+              },
+            ]
+          : []
+      ),
     season: edit.season,
     description: edit.description,
     palette: edit.palette,
