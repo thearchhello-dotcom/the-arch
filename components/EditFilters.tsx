@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { matches, parseQuery } from "@/lib/editSearch";
+import { matches, normalise, parseQuery, pieceMatches } from "@/lib/editSearch";
+import { products } from "@/data/products";
+import ProductCard from "./ProductCard";
 import type { EditSection } from "@/lib/types";
 import Link from "next/link";
 import Image from "next/image";
@@ -97,6 +99,26 @@ export default function EditFilters({ edits }: { edits: EditSummary[] }) {
   // Only worth showing the split once there is something to split. While every
   // edit is an outfit a section switcher is just a button that does nothing.
   const usableSections = SECTIONS.filter((s) => edits.some((e) => e.section === s.id));
+
+  // The single pieces behind the same words, so typing "pramsuit" shows every
+  // pramsuit as well as every edit that has one in it. Only when a word was
+  // typed: a bare price or age would list half the catalogue.
+  const pieceWords = useMemo(
+    () =>
+      new Map(
+        products.map((p) => [p.id, normalise(`${p.name} ${p.retailer} ${p.category} ${p.type}`).split(" ")])
+      ),
+    []
+  );
+  const pieceHits = useMemo(
+    () =>
+      parsed.words.length === 0
+        ? []
+        : products.filter((p) =>
+            pieceMatches(parsed, pieceWords.get(p.id) ?? [], p.onSale && p.salePrice ? p.salePrice : p.price)
+          ),
+    [parsed, pieceWords]
+  );
 
   const shown = useMemo(() => {
     const b = BANDS.find((x) => x.id === band) ?? BANDS[0];
@@ -227,7 +249,7 @@ export default function EditFilters({ edits }: { edits: EditSummary[] }) {
         </div>
       )}
 
-      {shown.length === 0 ? (
+      {shown.length === 0 && pieceHits.length > 0 ? null : shown.length === 0 ? (
         <div className="max-w-xl rounded-[28px] border-2 border-dashed border-taupe/60 px-10 py-16 text-center">
           {query && !parsed.empty ? (
             <>
@@ -323,6 +345,30 @@ export default function EditFilters({ edits }: { edits: EditSummary[] }) {
               </div>
             </Link>
           ))}
+        </div>
+      )}
+
+      {pieceHits.length > 0 && (
+        <div className="mt-12">
+          <h2 className="font-display text-2xl font-semibold text-ink mb-1">
+            {pieceHits.length} piece{pieceHits.length === 1 ? "" : "s"} for &ldquo;{query.trim()}&rdquo;
+          </h2>
+          <p className="text-sm text-ink-soft mb-5">
+            Each one is in an edit above or in the shop, priced as it is today.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {pieceHits.slice(0, 6).map((p) => (
+              <ProductCard key={p.id} product={p} />
+            ))}
+          </div>
+          {pieceHits.length > 6 && (
+            <Link
+              href={`/shop?q=${encodeURIComponent(query.trim())}`}
+              className="inline-block mt-6 font-display text-sm font-semibold px-6 py-3 rounded-pill bg-ink text-cream"
+            >
+              See all {pieceHits.length} in the shop
+            </Link>
+          )}
         </div>
       )}
     </>

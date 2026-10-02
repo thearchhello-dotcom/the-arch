@@ -215,6 +215,16 @@ function withinPrice(query: ParsedQuery, edit: SearchableEdit): boolean {
   return (edit.low ?? 0) > 0 && (edit.low ?? 0) <= max;
 }
 
+/** Does a single piece match? Every word must match the start of a word in its
+ *  name, shop or kind, and a price in the query is checked against what the piece
+ *  costs now. An age is ignored, as pieces have none. A query with no words and
+ *  no price matches nothing, so a bare age never lists every piece. */
+export function pieceMatches(query: ParsedQuery, words: string[], price: number): boolean {
+  if (query.words.length === 0 && query.maxPrice === null) return false;
+  if (query.maxPrice !== null && price > query.maxPrice) return false;
+  return query.words.every((alts) => alts.some((alt) => words.some((w) => w.startsWith(alt))));
+}
+
 export function matches(query: ParsedQuery, edit: SearchableEdit): boolean {
   if (query.empty) return true;
 

@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { products } from "@/data/products";
-import { normalise, parseQuery } from "@/lib/editSearch";
+import { normalise, parseQuery, pieceMatches } from "@/lib/editSearch";
 import type { Category, Retailer } from "@/lib/types";
 import ProductCard from "./ProductCard";
 
@@ -44,6 +44,12 @@ export default function ShopFilters({ initialCategory }: { initialCategory?: Cat
   const [retailer, setRetailer] = useState<Retailer | "All">("All");
   const [query, setQuery] = useState("");
 
+  // /shop?q=pramsuit, from "See all in the shop" on the edits page.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("q");
+    if (q) setQuery(q);
+  }, []);
+
   // The same rules as the search on /edits, applied to single pieces: every
   // word must match the start of a word in the piece's name, shop or kind, and
   // a price ("under £20") is checked against what the piece costs now, so a
@@ -61,12 +67,8 @@ export default function ShopFilters({ initialCategory }: { initialCategory?: Cat
     () =>
       products.filter((p) => {
         if (!((category === "All" || p.category === category) && (retailer === "All" || p.retailer === retailer))) return false;
-        if (parsed.maxPrice !== null) {
-          const now = p.onSale && p.salePrice ? p.salePrice : p.price;
-          if (now > parsed.maxPrice) return false;
-        }
-        const words = searchable.get(p.id) ?? [];
-        return parsed.words.every((alts) => alts.some((alt) => words.some((w) => w.startsWith(alt))));
+        if (parsed.words.length === 0 && parsed.maxPrice === null) return true;
+        return pieceMatches(parsed, searchable.get(p.id) ?? [], p.onSale && p.salePrice ? p.salePrice : p.price);
       }),
     [category, retailer, parsed, searchable]
   );
