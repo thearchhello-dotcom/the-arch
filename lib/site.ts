@@ -64,15 +64,14 @@ export const site = {
   showProductImages: true,
 
   /** When the legal pages were last reviewed. Bump it when you change them. */
-  policiesUpdated: "7 September 2026",
+  policiesUpdated: "2 October 2026",
 
   /**
-   * Newsletter form POST target. Empty until a provider is chosen — the signup
-   * block renders an honest "opening soon" state rather than a form that
-   * silently swallows addresses. Paste the form action URL from Buttondown,
-   * Kit/ConvertKit or Mailchimp here and it goes live.
+   * Newsletter form POST target: the Kit form "The Arch sign-up" (form 9994567).
+   * Kit sends the double opt-in confirmation email itself. If this is ever
+   * emptied the signup block goes back to an honest "opening soon" state.
    */
-  newsletterEndpoint: "",
+  newsletterEndpoint: "https://app.kit.com/forms/9994567/subscriptions",
 
   /**
    * The affiliate networks currently applied to or live. Named explicitly on

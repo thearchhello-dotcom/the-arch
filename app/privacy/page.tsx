@@ -40,8 +40,9 @@ export default function PrivacyPage() {
         </p>
         <h3>If you sign up to the newsletter</h3>
         <p>
-          Your email address is stored with the email provider used to send it, solely to send you
-          the weekly edit. There&apos;s an unsubscribe link on every email, and unsubscribing
+          Your email address is stored with Kit, the email service used to collect and send
+          emails, solely to let you know when there is a new edit. You confirm your address by
+          email first. There&apos;s an unsubscribe link on every email, and unsubscribing
           removes you. Your address is never sold, rented or passed to anyone else.
         </p>
         <h3>Hosting and server logs</h3>

@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
  * Neither of the closest competitors has one, and it's the only audience you
  * actually own — traffic from search or social can be taken away, a list can't.
  *
- * Until `site.newsletterEndpoint` is set this renders an honest "opening soon"
+ * Posts to Kit (site.newsletterEndpoint). If that is ever empty this renders an honest "opening soon"
  * state rather than a form that accepts an address and discards it.
  */
 export default function Newsletter() {
@@ -19,16 +19,21 @@ export default function Newsletter() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
-    const email = new FormData(form).get("email");
+    // Kit's form expects the field to be called email_address.
+    const body = new FormData();
+    body.set("email_address", String(new FormData(form).get("email") ?? ""));
 
     setStatus("sending");
     try {
       const res = await fetch(endpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        headers: { Accept: "application/json" },
+        body,
       });
       if (!res.ok) throw new Error(String(res.status));
+      // Kit answers 200 even when it refuses an address, so read the verdict.
+      const result = await res.json();
+      if (result.status === "failed") throw new Error("rejected");
       setStatus("done");
       form.reset();
     } catch {
@@ -42,14 +47,15 @@ export default function Newsletter() {
           asking for, and it was the same colour as everything around it. */}
       <div className="bg-pop-sun rounded-[28px] p-7 sm:p-10 md:p-14 flex flex-col gap-5 max-w-2xl">
         <span className="font-body font-bold text-xs tracking-widest uppercase text-ink/70">
-          The weekly edit
+          The email list
         </span>
         <h2 className="font-display text-[25px] sm:text-[30px] font-semibold leading-tight text-ink">
-          One edit a week, straight to you.
+          Hear when there is a new edit.
         </h2>
         <p className="leading-relaxed text-ink/80">
-          A new board every week &mdash; the full outfit, what it costs, and what to know before
-          you buy. No daily emails, no cross-promotion, and you can leave whenever you like.
+          Leave your email and I will let you know when a new edit goes up &mdash; the full outfit,
+          what it costs, and what to know before you buy. No daily emails, no cross-promotion, and
+          you can leave whenever you like.
         </p>
 
         {!endpoint ? (
@@ -58,7 +64,7 @@ export default function Newsletter() {
           </p>
         ) : status === "done" ? (
           <p className="text-sm font-semibold text-ink">
-            Thank you &mdash; check your inbox to confirm.
+            Thank you &mdash; check your inbox for an email to confirm. If it is not there, look in junk.
           </p>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md">
