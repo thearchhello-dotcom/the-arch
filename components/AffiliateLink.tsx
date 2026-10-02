@@ -43,9 +43,9 @@ export default function AffiliateLink({
       href={href}
       target="_blank"
       rel="sponsored nofollow noopener"
-      className={`block font-display text-sm font-semibold rounded-pill bg-ink text-card text-center py-2.5 transition-colors hover:bg-terracotta ${className}`}
+      className={`block font-display text-sm font-semibold rounded-pill bg-[#e5532d] text-white text-center py-2.5 shadow-sm transition-colors hover:bg-ink ${className}`}
     >
-      {label}
+      {label} <span aria-hidden="true">&rarr;</span>
       <span className="sr-only"> (affiliate link, opens in a new tab)</span>
     </a>
   );
