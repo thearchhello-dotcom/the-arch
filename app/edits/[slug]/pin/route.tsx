@@ -134,7 +134,9 @@ export async function GET(req: Request, { params }: { params: Promise<{ slug: st
     sage: "#8FA383",
   };
   const border = BORDERS[new URL(req.url).searchParams.get("border") ?? ""] ?? null;
-  const edge = key === "grid" && border ? 14 : 0;
+  // Medium: about 44px at 1080 wide. Gemma tried thin and chunky and settled on
+  // this (2 Oct 2026).
+  const edge = key === "grid" && border ? 44 : 0;
 
   // A finished board already carries the wordmark, the title, every outfit
   // total and the web address. Reframe it, add nothing.
