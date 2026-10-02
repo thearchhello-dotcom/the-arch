@@ -30,8 +30,7 @@ export default async function ShopPage({
       <section className="over-pattern px-5 pt-10 pb-2 sm:px-8 sm:pt-14 md:px-14 flex flex-col gap-3">
         <h1 className="font-display text-[30px] sm:text-4xl font-semibold text-ink">Shop the catalogue</h1>
         <p className="text-ink-soft">
-          Every piece, from the shops you already trust &mdash; filter by who it&apos;s for and where
-          it&apos;s from.
+          Every piece, from the shops you already trust &mdash; search by name or price, or filter by who it&apos;s for and where it&apos;s from.
         </p>
       </section>
       <section className="px-5 pt-6 pb-8 sm:px-8 md:px-14">
@@ -40,8 +39,8 @@ export default async function ShopPage({
       <section className="px-5 pb-16 sm:px-8 sm:pb-24 md:px-14">
         <ShopFilters initialCategory={initialCategory} />
         <p className="text-xs text-ink-faint mt-10">
-          Each piece shows an icon rather than a photograph for now. Product images come through
-          with the retailers&apos; own product feeds once the affiliate programmes are approved.
+          Pictures show for shops that have approved The Arch on their affiliate programme; every
+          other piece shows an icon. Prices are correct at the time of writing and change often.
         </p>
       </section>
       <Footer />

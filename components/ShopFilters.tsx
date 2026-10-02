@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { products } from "@/data/products";
+import { normalise, parseQuery } from "@/lib/editSearch";
 import type { Category, Retailer } from "@/lib/types";
 import ProductCard from "./ProductCard";
 
@@ -41,18 +42,52 @@ function Chip({
 export default function ShopFilters({ initialCategory }: { initialCategory?: Category | "All" }) {
   const [category, setCategory] = useState<Category | "All">(initialCategory ?? "All");
   const [retailer, setRetailer] = useState<Retailer | "All">("All");
+  const [query, setQuery] = useState("");
+
+  // The same rules as the search on /edits, applied to single pieces: every
+  // word must match the start of a word in the piece's name, shop or kind, and
+  // a price ("under £20") is checked against what the piece costs now, so a
+  // sale price counts. An age in the query is ignored, as pieces have none.
+  const parsed = useMemo(() => parseQuery(query), [query]);
+  const searchable = useMemo(
+    () =>
+      new Map(
+        products.map((p) => [p.id, normalise(`${p.name} ${p.retailer} ${p.category} ${p.type}`).split(" ")])
+      ),
+    []
+  );
 
   const filtered = useMemo(
     () =>
-      products.filter(
-        (p) => (category === "All" || p.category === category) && (retailer === "All" || p.retailer === retailer)
-      ),
-    [category, retailer]
+      products.filter((p) => {
+        if (!((category === "All" || p.category === category) && (retailer === "All" || p.retailer === retailer))) return false;
+        if (parsed.maxPrice !== null) {
+          const now = p.onSale && p.salePrice ? p.salePrice : p.price;
+          if (now > parsed.maxPrice) return false;
+        }
+        const words = searchable.get(p.id) ?? [];
+        return parsed.words.every((alts) => alts.some((alt) => words.some((w) => w.startsWith(alt))));
+      }),
+    [category, retailer, parsed, searchable]
   );
 
   return (
     <>
       <div className="flex flex-col gap-3.5 mb-6">
+        <div className="max-w-2xl">
+          <label htmlFor="shop-search" className="sr-only">
+            Search the pieces
+          </label>
+          {/* 16px text on purpose, so iPhones don't zoom in when it is tapped. */}
+          <input
+            id="shop-search"
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search pieces: wellies under £20, coat, Next…"
+            className="w-full rounded-pill bg-card border border-line px-5 py-3.5 text-[16px] text-ink placeholder:text-ink-faint focus:outline-none focus:border-terracotta focus:ring-2 focus:ring-terracotta/20"
+          />
+        </div>
         <div className="flex gap-2.5 flex-wrap">
           {CATEGORIES.map((c) => (
             <Chip key={c} label={c} active={c === category} onClick={() => setCategory(c)} variant="category" />
