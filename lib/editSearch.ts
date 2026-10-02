@@ -16,6 +16,8 @@
  *  - every word typed has to match (so "girls coat" narrows, never widens);
  *  - a word matches the start of a word in the edit, so "pram" finds
  *    "pramsuit" and "wellie" finds "wellies", and a trailing "s" is forgiven;
+ *  - a price ("under £40", "£40 or less", "below 30 pounds") is checked against
+ *    the edit's lowest outfit total, the same figure the price bands use;
  *  - an age ("2 year old", "18 months", "2yo") is checked against each look's
  *    actual age range, so "5 years" finds a look for 4 to 9 years even though
  *    the number 5 appears nowhere;
@@ -33,6 +35,8 @@ export type SearchableEdit = {
   searchText: string;
   /** Each look's age range in months, [from, to]. */
   ages: [number, number][];
+  /** Lowest outfit total in the edit; 0 or missing when nothing is priced. */
+  low?: number;
 };
 
 /** Lower case, accents and apostrophes gone, "M&S" → "ms", "H&M" → "hm",
@@ -67,7 +71,7 @@ const IGNORE = new Set([
   "a", "an", "and", "the", "for", "of", "my", "to", "with", "in", "on", "some",
   "what", "wear", "old", "outfit", "outfits", "edit", "edits", "look", "looks",
   "clothes", "clothing", "kids", "kid", "children", "childrens", "child",
-  "ideas", "idea", "uk", "best", "cute", "little", "things", "stuff",
+  "ideas", "idea", "uk", "best", "cute", "little", "things", "stuff", "under", "below",
   "months", "month", "mths", "years", "year", "yrs", "yr", "yo", "age", "aged",
 ]);
 
@@ -123,6 +127,8 @@ const NUMBER_WORDS: Record<string, number> = {
 };
 
 export type ParsedQuery = {
+  /** The most the parent wants to spend, in pounds, if the query said so. */
+  maxPrice: number | null;
   /** The age asked for, in months, if the query contained one. */
   age: number | null;
   /** Words still to match, each with the alternatives it may match. */
@@ -131,8 +137,34 @@ export type ParsedQuery = {
   empty: boolean;
 };
 
+/** "under £40", "below 30 pounds", "£40 or less", "up to 25". Without a £ or
+ *  "pounds", a bare number only counts as a price when it is over 12 and not
+ *  followed by a unit, so "under 2 years" stays an age. */
+const PRICE =
+  /(?:\b(?:under|below|less than|cheaper than|up to|max|maximum|within)\s*)?(£\s*\d+(?:\.\d+)?|\d+(?:\.\d+)?\s*(?:pounds|quid)\b|\d+(?:\.\d+)?)(?:\s*(?:or less|or under|and under|max|maximum)\b)?/;
+
+function takePrice(raw: string): { price: number | null; rest: string } {
+  const t = raw.toLowerCase();
+  const re = new RegExp(PRICE.source, "g");
+  for (const m of t.matchAll(re)) {
+    const tok = m[1];
+    const hasCue =
+      /£|pounds|quid/.test(tok) ||
+      /^(?:under|below|less than|cheaper than|up to|max|maximum|within)/.test(m[0]) ||
+      /(?:or less|or under|and under|max|maximum)$/.test(m[0]);
+    if (!hasCue) continue;
+    const n = parseFloat(tok.replace(/[^\d.]/g, ""));
+    const after = t.slice((m.index ?? 0) + m[0].length);
+    const plain = !/£|pounds|quid/.test(tok);
+    if (plain && (n <= 12 || /^\s*(?:years?|yrs?|months?|mths?|yo|m|y)\b/.test(after))) continue;
+    return { price: n, rest: (t.slice(0, m.index) + " " + after).trim() };
+  }
+  return { price: null, rest: raw };
+}
+
 export function parseQuery(raw: string): ParsedQuery {
-  let q = normalise(raw);
+  const { price: maxPrice, rest } = takePrice(raw);
+  let q = normalise(rest);
   for (const [w, n] of Object.entries(NUMBER_WORDS)) {
     q = q.replace(new RegExp(`\\b${w}\\b`, "g"), String(n));
   }
@@ -162,11 +194,13 @@ export function parseQuery(raw: string): ParsedQuery {
       return [...alts];
     });
 
-  return { age, words, empty: age === null && words.length === 0 };
+  return { maxPrice, age, words, empty: maxPrice === null && age === null && words.length === 0 };
 }
 
 export function matches(query: ParsedQuery, edit: SearchableEdit): boolean {
   if (query.empty) return true;
+
+  if (query.maxPrice !== null && !((edit.low ?? 0) > 0 && (edit.low ?? 0) <= query.maxPrice)) return false;
 
   if (query.age !== null) {
     const a = query.age;
