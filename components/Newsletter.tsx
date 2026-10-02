@@ -34,6 +34,12 @@ export default function Newsletter() {
       // Kit answers 200 even when it refuses an address, so read the verdict.
       const result = await res.json();
       if (result.status === "failed") throw new Error("rejected");
+      // "quarantined" means Kit wants a quick are-you-human check before it sends
+      // the confirmation email. Its own script shows that page; we send them to it.
+      if (result.status === "quarantined" && typeof result.url === "string") {
+        window.location.assign(result.url);
+        return;
+      }
       setStatus("done");
       form.reset();
     } catch {
