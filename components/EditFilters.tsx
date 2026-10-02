@@ -357,11 +357,11 @@ export default function EditFilters({ edits }: { edits: EditSummary[] }) {
             Each one is in an edit above or in the shop, priced as it is today.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {pieceHits.slice(0, 6).map((p) => (
+            {pieceHits.slice(0, 12).map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
-          {pieceHits.length > 6 && (
+          {pieceHits.length > 12 && (
             <Link
               href={`/shop?q=${encodeURIComponent(query.trim())}`}
               className="inline-block mt-6 font-display text-sm font-semibold px-6 py-3 rounded-pill bg-ink text-cream"
