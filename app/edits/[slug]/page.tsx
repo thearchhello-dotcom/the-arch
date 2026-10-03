@@ -17,6 +17,11 @@ import { getEdit, publishedEdits } from "@/data/edits";
 import { site } from "@/lib/site";
 import { costOf, getProduct, priceOf } from "@/data/products";
 
+/** "Baby Girl" becomes "baby-girl": the address of that look on the page. */
+function lookId(label: string): string {
+  return label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
 export function generateStaticParams() {
   return publishedEdits.map((e) => ({ slug: e.slug }));
 }
@@ -37,7 +42,7 @@ export async function generateMetadata({
     openGraph: {
       title: edit.searchTitle ? `${edit.title}: ${edit.searchTitle}` : edit.title,
       description: edit.description,
-      images: edit.boardImage ? [edit.boardImage] : ["/logo-the-arch-square-dot.png"],
+      images: edit.shareImage ?? edit.boardImage ? [(edit.shareImage ?? edit.boardImage) as string] : ["/logo-the-arch-square-dot.png"],
     },
     // Without this, a link shared on X fell back to the site-wide card: the
     // logo and the general tagline instead of this edit's board and name.
@@ -45,7 +50,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: edit.searchTitle ? `${edit.title}: ${edit.searchTitle}` : edit.title,
       description: edit.description,
-      images: edit.boardImage ? [edit.boardImage] : ["/logo-the-arch-square-dot.png"],
+      images: edit.shareImage ?? edit.boardImage ? [(edit.shareImage ?? edit.boardImage) as string] : ["/logo-the-arch-square-dot.png"],
     },
   };
 }
@@ -119,7 +124,7 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
         url,
         mainEntityOfPage: url,
         inLanguage: "en-GB",
-        ...(edit.boardImage ? { image: `${site.domain}${edit.boardImage}` } : {}),
+        ...((edit.shareImage ?? edit.boardImage) ? { image: `${site.domain}${edit.shareImage ?? edit.boardImage}` } : {}),
         ...(edit.published ? { datePublished: edit.published } : {}),
         ...(modified ? { dateModified: modified } : {}),
         author: { "@id": `${site.domain}/#gemma` },
@@ -238,6 +243,29 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
         <DisclosureNote className="max-w-2xl" />
       </section>
 
+      {/* Where each look is. An edit with two or more looks (baby and toddler,
+          or four outfits) puts the later ones a long way down the page, and
+          nobody should have to scroll to find out they exist. */}
+      {edit.looks.length > 1 && (
+        <nav aria-label="Jump to a look" className="px-5 pb-8 sm:px-8 md:px-14 flex flex-wrap items-center gap-2.5">
+          <span className="font-body font-bold text-xs tracking-widest uppercase text-terracotta mr-1">
+            Jump to
+          </span>
+          {edit.looks.map((look) => (
+            <a
+              key={look.label}
+              href={`#${lookId(look.label)}`}
+              className="font-display text-sm font-semibold px-5 py-2.5 rounded-pill bg-card text-ink border border-line hover:border-terracotta hover:text-terracotta transition-colors"
+            >
+              {look.label}
+              <span className="ml-2 font-body font-normal text-ink-faint">
+                {look.productIds.length} pieces
+              </span>
+            </a>
+          ))}
+        </nav>
+      )}
+
       {/* The board. A Canva mood board if one exists; otherwise the edit draws
           itself from its own palette — which is a finished look in its own
           right, not a placeholder waiting to be replaced. */}
@@ -294,7 +322,7 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
         const ink = (i: number) => deepen(pal[i % pal.length], 0.35);
 
         return (
-          <section key={look.label} className="px-5 pt-6 pb-10 sm:px-8 md:px-14">
+          <section key={look.label} id={lookId(look.label)} className="scroll-mt-24 px-5 pt-6 pb-10 sm:px-8 md:px-14">
             <div className="flex items-baseline justify-between flex-wrap gap-3 mb-5">
               <div className="flex items-baseline gap-3 flex-wrap">
                 <h2 className="font-display text-2xl font-semibold text-ink">{look.label}</h2>

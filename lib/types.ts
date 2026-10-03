@@ -168,6 +168,10 @@ export interface Edit {
    *  toddler edit looks like a baby-only edit. A transparent PNG showing every
    *  board. Falls back to boardImage. */
   cardImage?: string;
+  /** The picture for link previews (Facebook, WhatsApp, X) and Google, when the
+   *  first board alone would mislead. Opaque, 1200 x 630, every board side by
+   *  side. Falls back to boardImage. */
+  shareImage?: string;
 
   /** True while an edit is still being built. Drafts are hidden from the live
    *  site — off /edits, out of the sitemap, 404 in production — but ARE
