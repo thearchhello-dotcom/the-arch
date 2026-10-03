@@ -31,6 +31,35 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "stocking-fillers-26",
+    title: "The Stocking Filler Edit",
+    searchTitle: "Stocking fillers for babies under £15",
+    instagram: "Stocking fillers for babies, all under £15 🎄\n\nEight little things for a baby's stocking: a wiggly worm, a rain rattle, a flower rattle, a giraffe teether, a penguin handbell that can be personalised, a Peter Rabbit board book set, a soft Grateful Garden book and a mini activity cube.\n\nNobody needs all eight, so pick a few. Prices start from £3.95, with every piece linked on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#stockingfillers #babygifts #christmasgifts #firstchristmas #ukmum",
+    note: "The penguin handbell can be personalised with a name. Two of the Mamas & Papas pieces are on offer at the moment, so the price shown is the offer price.",
+    section: "gifts",
+    season: "Christmas 2026",
+    published: "2026-10-03",
+    updated: "2026-10-03",
+    boardImage: "/edits/stocking-fillers-26-board.png",
+    palette: ["#F4EFE6", "#E8C4C0", "#B9C7B0", "#B7C9D9"],
+    description:
+      "Eight stocking fillers for a baby, every one under £15: a wiggly worm, a rain rattle, a giraffe teether, a soft book and more. Choose a few, with what each costs.",
+    // Two Mamas & Papas pieces are on offer (book, activity cube): re-check
+    // about a week after publishing. The toddler group is to follow.
+    looks: [
+      {
+        label: "Baby",
+        ages: "0–12 months",
+        kind: "shortlist",
+        choose: "a few",
+        productIds: [
+          "sb-wiggly-worm-rainbow", "my1y-peter-rabbit-library", "sb-flower-rattle-fairy-garden", "sb-rain-rattle-forest-friends",
+          "mp-gigi-giraffe-teether", "mp-grateful-garden-book", "mp-mini-activity-cube", "my1y-penguin-handbell",
+        ],
+      },
+    ],
+  },
+  {
     slug: "autumn-winter-little-ones-26",
     title: "Autumn Edit: Little Ones",
     searchTitle: "Autumn and winter outfits for babies and toddlers",

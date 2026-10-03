@@ -13,6 +13,7 @@ export type Retailer =
   | "George"
   | "H&M"
   | "M&S"
+  | "My 1st Years"
   | "Matalan"
   | "Mamas & Papas"
   | "MandM Direct"
@@ -68,6 +69,8 @@ export interface EditLook {
    *  range instead. Three coats aren't an outfit and adding them up would be
    *  a number nobody is ever going to pay. */
   kind?: "outfit" | "shortlist";
+  /** What a shortlist asks for: "one" by default, "a few" for stocking fillers. */
+  choose?: string;
 
   /** What this look IS, for the line above its total — "outfit" by default,
    *  but "set", "bundle" or "pram kit" for a look that is not clothing. The
