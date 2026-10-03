@@ -41,7 +41,7 @@ export const edits: Edit[] = [
     published: "2026-10-03",
     updated: "2026-10-03",
     boardImage: "/edits/stocking-fillers-26-board.png",
-    moreBoards: ["/edits/stocking-fillers-26-toddler-board.png"],
+    moreBoards: ["/edits/stocking-fillers-26-toddler-board-2.png"],
     palette: ["#F4EFE6", "#E8C4C0", "#B9C7B0", "#B7C9D9"],
     description:
       "Sixteen stocking fillers for babies and toddlers, every one under £15: rattles, a teether and soft books for babies, finger paints, a hammer bench and a pull back plane for toddlers. Choose a few, with what each costs.",
