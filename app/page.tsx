@@ -71,9 +71,9 @@ export default function HomePage() {
               className="group block w-full max-w-[300px] sm:max-w-[380px] md:max-w-[440px]"
             >
               <div className="overflow-hidden rounded-[4px] shadow-[0_30px_70px_-34px_rgba(74,55,42,0.6)] transition-transform duration-300 group-hover:-translate-y-1.5">
-                {featured.boardImage ? (
+                {(featured.cardImage ?? featured.boardImage) ? (
                   <Image
-                    src={featured.boardImage}
+                    src={(featured.cardImage ?? featured.boardImage) as string}
                     alt={`${featured.title} mood board`}
                     width={1200}
                     height={1800}
@@ -165,9 +165,9 @@ export default function HomePage() {
                   className={`${PADS[i % PADS.length]} rounded-[14px] p-2.5 sm:p-3.5 transition-transform duration-300 group-hover:-translate-y-1`}
                 >
                   <div className="overflow-hidden rounded-[3px] shadow-[0_14px_34px_-22px_rgba(74,55,42,0.55)]">
-                  {edit.boardImage ? (
+                  {(edit.cardImage ?? edit.boardImage) ? (
                     <Image
-                      src={edit.boardImage}
+                      src={(edit.cardImage ?? edit.boardImage) as string}
                       alt={`${edit.title} mood board`}
                       width={1200}
                       height={1800}

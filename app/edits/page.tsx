@@ -61,7 +61,7 @@ function summarise(edit: Edit): EditSummary {
     season: edit.season,
     description: edit.description,
     palette: edit.palette,
-    boardImage: edit.boardImage,
+    boardImage: edit.cardImage ?? edit.boardImage,
     draft: edit.draft,
     plannedFor: edit.plannedFor,
     low: totals.length ? Math.min(...totals) : 0,

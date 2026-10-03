@@ -455,9 +455,9 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
                   className={`${popFor(r.slug)} rounded-[14px] p-2.5 sm:p-3 transition-transform duration-300 group-hover:-translate-y-1`}
                 >
                   <div className="overflow-hidden rounded-[3px] shadow-[0_14px_34px_-22px_rgba(74,55,42,0.55)]">
-                    {r.boardImage ? (
+                    {(r.cardImage ?? r.boardImage) ? (
                       <Image
-                        src={r.boardImage}
+                        src={(r.cardImage ?? r.boardImage) as string}
                         alt={`${r.title} mood board`}
                         width={1200}
                         height={1800}

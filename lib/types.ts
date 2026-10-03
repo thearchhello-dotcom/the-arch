@@ -163,6 +163,11 @@ export interface Edit {
    *  edit). Shown beside the first on the page, and available in the studio
    *  as board 2, 3 and so on. */
   moreBoards?: string[];
+  /** The picture used on the edit cards (home, the edits list, "more edits"),
+   *  when the first board alone would mislead: the baby board of a baby and
+   *  toddler edit looks like a baby-only edit. A transparent PNG showing every
+   *  board. Falls back to boardImage. */
+  cardImage?: string;
 
   /** True while an edit is still being built. Drafts are hidden from the live
    *  site — off /edits, out of the sitemap, 404 in production — but ARE
