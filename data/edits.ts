@@ -33,19 +33,20 @@ export const edits: Edit[] = [
   {
     slug: "stocking-fillers-26",
     title: "The Stocking Filler Edit",
-    searchTitle: "Stocking fillers for babies under £15",
-    instagram: "Stocking fillers for babies, all under £15 🎄\n\nEight little things for a baby's stocking: a wiggly worm, a rain rattle, a flower rattle, a giraffe teether, a penguin handbell that can be personalised, a Peter Rabbit board book set, a soft Grateful Garden book and a mini activity cube.\n\nNobody needs all eight, so pick a few. Prices start from £3.95, with every piece linked on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#stockingfillers #babygifts #christmasgifts #firstchristmas #ukmum",
-    note: "The penguin handbell can be personalised with a name. Two of the Mamas & Papas pieces are on offer at the moment, so the price shown is the offer price.",
+    searchTitle: "Stocking fillers for babies and toddlers under £15",
+    instagram: "Stocking fillers for babies and toddlers, all under £15 🎄\n\nSixteen little things for the stocking, in two groups. For babies: a wiggly worm, rattles, a giraffe teether, a penguin handbell that can be personalised, board books and an activity cube. For toddlers: finger paints, a pull back plane, a hammer bench, stacking animals, a mini doll, a Paddington puzzle that can be personalised, a Gruffalo book set and a bath time crab.\n\nNobody needs all of them, so pick a few. Baby pieces from £3.95 and toddler pieces from £4.50, with every piece linked on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#stockingfillers #babygifts #toddlergifts #christmasgifts #ukmum",
+    note: "The penguin handbell and the Paddington puzzle can be personalised with a name. The bath time crab is reduced to clear at John Lewis, so it may sell out, and two Mamas & Papas pieces are on offer. Where a piece is on offer, the price shown is the offer price.",
     section: "gifts",
     season: "Christmas 2026",
     published: "2026-10-03",
     updated: "2026-10-03",
     boardImage: "/edits/stocking-fillers-26-board.png",
+    moreBoards: ["/edits/stocking-fillers-26-toddler-board.png"],
     palette: ["#F4EFE6", "#E8C4C0", "#B9C7B0", "#B7C9D9"],
     description:
-      "Eight stocking fillers for a baby, every one under £15: a wiggly worm, a rain rattle, a giraffe teether, a soft book and more. Choose a few, with what each costs.",
+      "Sixteen stocking fillers for babies and toddlers, every one under £15: rattles, a teether and soft books for babies, finger paints, a hammer bench and a pull back plane for toddlers. Choose a few, with what each costs.",
     // Two Mamas & Papas pieces are on offer (book, activity cube): re-check
-    // about a week after publishing. The toddler group is to follow.
+    // about a week after publishing. John Lewis crab is reduced to clear.
     looks: [
       {
         label: "Baby",
@@ -55,6 +56,16 @@ export const edits: Edit[] = [
         productIds: [
           "sb-wiggly-worm-rainbow", "my1y-peter-rabbit-library", "sb-flower-rattle-fairy-garden", "sb-rain-rattle-forest-friends",
           "mp-gigi-giraffe-teether", "mp-grateful-garden-book", "mp-mini-activity-cube", "my1y-penguin-handbell",
+        ],
+      },
+      {
+        label: "Toddler",
+        ages: "1–3 years",
+        kind: "shortlist",
+        choose: "a few",
+        productIds: [
+          "sb-pull-back-plane", "my1y-paddington-puzzle", "sb-finger-paints-safari", "sb-mini-doll-rosa",
+          "my1y-gruffalo-library", "sb-woodland-stacking-animals", "sb-hammer-bench-forest-friends", "jl-bath-time-crab",
         ],
       },
     ],

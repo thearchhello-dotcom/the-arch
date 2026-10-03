@@ -20,6 +20,7 @@ export type Retailer =
   | "Momcozy"
   | "Mountain Warehouse"
   | "Next"
+  | "John Lewis"
   | "Scandiborn"
   | "schuh"
   | "Tu"
@@ -158,6 +159,10 @@ export interface Edit {
    *  in /public/edits/, point this at it). Undefined until one exists — the
    *  edit page shows a placeholder in that case rather than pretending. */
   boardImage?: string;
+  /** Further boards for the same edit (the toddler board of a baby and toddler
+   *  edit). Shown beside the first on the page, and available in the studio
+   *  as board 2, 3 and so on. */
+  moreBoards?: string[];
 
   /** True while an edit is still being built. Drafts are hidden from the live
    *  site — off /edits, out of the sitemap, 404 in production — but ARE

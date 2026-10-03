@@ -100,7 +100,10 @@ export async function GET(req: Request, { params }: { params: Promise<{ slug: st
 
   const fonts = await loadFonts();
   const logo = asDataUri("/logo-the-arch-horizontal-dot.png");
-  const board = edit.boardImage ? asDataUri(edit.boardImage) : "";
+  // ?board=2 picks the edit's second board, 3 the third, and so on.
+  const which = Number(new URL(req.url).searchParams.get("board") ?? "1");
+  const boardPath = which > 1 ? edit.moreBoards?.[which - 2] : edit.boardImage;
+  const board = boardPath ? asDataUri(boardPath) : "";
 
   // The hook comes from the real data, so it can never drift from the site.
   const totals = edit.looks

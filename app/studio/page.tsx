@@ -80,17 +80,19 @@ export default function StudioPage() {
               </div>
 
               <div className="flex flex-wrap gap-2.5">
-                {SIZES.map((s) => (
+                {[edit.boardImage, ...(edit.moreBoards ?? [])].flatMap((_, bi) =>
+                  SIZES.map((s) => (
                   <a
-                    key={s.label}
-                    href={`/edits/${edit.slug}/pin${s.q}`}
+                    key={`${bi}-${s.label}`}
+                    href={`/edits/${edit.slug}/pin${bi > 0 ? (s.q ? `${s.q}&board=${bi + 1}` : `?board=${bi + 1}`) : s.q}`}
                     target="_blank"
                     rel="noopener"
                     className="font-body font-semibold text-sm px-4 py-2.5 rounded-pill bg-cream border border-line text-ink hover:border-terracotta hover:text-terracotta transition-colors"
                   >
-                    {s.label} <span className="text-ink-faint font-normal">{s.note}</span>
+                    {bi > 0 ? `Board ${bi + 1}: ` : ""}{s.label} <span className="text-ink-faint font-normal">{s.note}</span>
                   </a>
-                ))}
+                  ))
+                )}
                 <Link
                   href={`/edits/${edit.slug}`}
                   className="font-body font-semibold text-sm px-4 py-2.5 rounded-pill text-ink-soft hover:text-terracotta transition-colors"

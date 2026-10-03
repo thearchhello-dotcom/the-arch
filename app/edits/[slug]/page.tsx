@@ -249,11 +249,13 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
             so without a frame the artwork bleeds into the background and stops
             reading as a thing you could pin. The deeper mount plus a hairline
             and a soft shadow give it an edge to sit against. */}
-        <div className={`max-w-[480px] rounded-[28px] ${popFor(edit.slug)} p-3 sm:p-4 shadow-[0_20px_44px_-26px_rgba(74,55,42,0.5)]`}>
-          {edit.boardImage ? (
+        <div className="flex flex-wrap gap-6">
+        {[edit.boardImage, ...(edit.moreBoards ?? [])].map((board, bi) => (
+        <div key={board ?? "palette"} className={`w-full max-w-[480px] rounded-[28px] ${popFor(edit.slug)} p-3 sm:p-4 shadow-[0_20px_44px_-26px_rgba(74,55,42,0.5)]`}>
+          {board ? (
             <Image
-              src={edit.boardImage}
-              alt={`${edit.title} mood board`}
+              src={board}
+              alt={`${edit.title} mood board${bi > 0 ? ` ${bi + 1}` : ""}`}
               width={1200}
               height={1800}
               className="w-full h-auto rounded-[18px] border border-line"
@@ -266,6 +268,8 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
               className="w-full h-auto aspect-[4/5] rounded-[18px] border border-line"
             />
           )}
+        </div>
+        ))}
         </div>
       </section>
 
