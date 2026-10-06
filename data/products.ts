@@ -250,6 +250,23 @@ export const products: Product[] = [
   { id: "jl-bath-time-crab", name: "John Lewis Bath Time Crab Toy", category: "Baby", retailer: "John Lewis", price: 12.00, onSale: true, salePrice: 8.40, type: "toy", affiliateUrl: "https://www.johnlewis.com/john-lewis-bath-time-crab-toy/p112356432" },
   { id: "my1y-gruffalo-library", name: "The Gruffalo: Little Library Book Set", category: "Baby", retailer: "My 1st Years", price: 7.00, type: "toy", affiliateUrl: "https://www.my1styears.com/products/the-gruffalo-little-library-book-set" },
   { id: "sb-finger-paints-safari", name: "Little Dutch Finger Paints, Safari Friends", category: "Baby", retailer: "Scandiborn", price: 11.95, type: "toy", affiliateUrl: "https://www.scandiborn.co.uk/products/little-dutch-finger-paints-safari-friends", imageUrl: "https://cdn.shopify.com/s/files/1/1257/2223/files/Little-Dutch-Finger-Paints-Safari-friends-Product-1.jpg?v=1781686012" },
+  // ---- The Christmas Arch: Merry and Bright (christmas-arch-merry-bright-26) ----
+  // Prices read by Gemma off the shops' pages on 6 Oct 2026 (Next and adidas block
+  // automated reads). Next prices are size priced. The baby sleepsuits are packs of
+  // four and three, so the baby totals include the whole pack. The two adidas Gazelles
+  // are on offer (green until 13 Oct): re-check both, the Girl and Boy totals move.
+  { id: "next-first-xmas-cardigan-pink", name: "Pink and Red My First Christmas Baby Cardigan (0-18mths)", category: "Baby", retailer: "Next", price: 16.00, priceTo: 18.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/SV116067/V93079" },
+  { id: "next-berry-bow-sleepsuits-4pack", name: "Berry Bow Two Way Zip Baby Sleepsuits 4 Pack (0mths-3yrs)", category: "Baby", retailer: "Next", price: 26.00, priceTo: 28.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/SU817360/H01790" },
+  { id: "next-first-xmas-boots-neutral", name: "Neutral My First Christmas Baby Pull On Boots (0-18mths)", category: "Baby", retailer: "Next", price: 10.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/SV285135/W15710" },
+  { id: "next-first-xmas-cardigan-red", name: "Red My First Christmas Knitted Baby Cardigan (0-18mths)", category: "Baby", retailer: "Next", price: 16.00, priceTo: 18.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/SV020274/V59234" },
+  { id: "next-xmas-sleepsuits-3pack", name: "Red/White Christmas Two Way Zip Baby Sleepsuit 3 Pack (0mths-3yrs)", category: "Baby", retailer: "Next", price: 19.00, priceTo: 21.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/SV069884/Y54318" },
+  { id: "next-first-xmas-sock-boots-red", name: "Red My First Christmas Baby Sock Top Boot Shoes (0-18mths)", category: "Baby", retailer: "Next", price: 9.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/SV260875/G95011" },
+  { id: "next-reindeer-cardigan", name: "Reindeer Funky Christmas Cardigan (3mths-7yrs)", category: "Girls", retailer: "Next", price: 20.00, priceTo: 24.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/SV025848/V61839" },
+  { id: "next-blue-spot-barrel-jeans", name: "Blue Spot Pullon Barrel Jeans (3mths-7yrs)", category: "Girls", retailer: "Next", price: 13.00, priceTo: 15.00, type: "bottom", affiliateUrl: "https://www.next.co.uk/style/SU758609/H52075" },
+  { id: "adidas-gazelle-indoor-pink", name: "Gazelle Indoor Comfort Closure Elastic Lace Shoes, Pink", category: "Girls", retailer: "adidas", price: 45.00, onSale: true, salePrice: 33.75, type: "foot", affiliateUrl: "https://www.adidas.co.uk/gazelle-indoor-comfort-closure-elastic-lace-shoes/KJ2304.html" },
+  { id: "next-santa-moped-tee", name: "Red Santa Moped Long Sleeve Christmas T-Shirt (3mths-7yrs)", category: "Boys", retailer: "Next", price: 5.50, priceTo: 7.50, type: "top", affiliateUrl: "https://www.next.co.uk/style/SV011961/G90591" },
+  { id: "next-checkerboard-trousers", name: "Black / White Checkerboard Pull On Wide Trousers (3mths-7yrs)", category: "Boys", retailer: "Next", price: 11.00, priceTo: 13.00, type: "bottom", affiliateUrl: "https://www.next.co.uk/style/SU367655/G77221" },
+  { id: "adidas-gazelle-indoor-green", name: "Gazelle Indoor Comfort Closure Elastic Lace Shoes, Green", category: "Boys", retailer: "adidas", price: 45.00, onSale: true, salePrice: 31.50, type: "foot", affiliateUrl: "https://www.adidas.co.uk/gazelle-indoor-comfort-closure-elastic-lace-shoes/IH9130.html" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.

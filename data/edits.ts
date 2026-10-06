@@ -31,6 +31,28 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "christmas-arch-merry-bright-26",
+    title: "The Christmas Arch: Merry and Bright",
+    searchTitle: "Bright Christmas outfits for babies and toddlers",
+    instagram: "Merry and bright 🎄 The first of my Christmas Arch edits, in reds, pinks and a bit of green.\n\nFour looks: a pink and red My First Christmas outfit for a baby girl, a red and cream one for a baby boy, a reindeer cardigan with polka dot jeans and pink Gazelles for a girl, and a Santa moped tee with checkerboard trousers and green Gazelles for a boy.\n\nBaby girl from £52, baby boy from £44, girl from £66.75 and boy from £48, with every piece linked and priced up on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#christmasoutfit #babychristmas #kidschristmas #myfirstchristmas #ukmum",
+    note: "The sleepsuits in the baby looks are sold as packs, four in the girl's look and three in the boy's, so the totals include the whole pack. The adidas shoes are on offer at the moment, so the price shown is the offer price.",
+    section: "outfits",
+    season: "Christmas 2026",
+    plannedFor: "Waiting for the final board",
+    draft: true,
+    palette: ["#B83A4B", "#F4C6CF", "#2F6B4F", "#F1E9D8"],
+    description:
+      "Four Christmas outfits for babies and toddlers in reds, pinks and a bit of green: My First Christmas knits and sleepsuits, a reindeer cardigan, a Santa moped tee and Gazelle trainers. Every piece linked and the whole outfit priced up.",
+    // Next and adidas prices were read by Gemma on 6 Oct. Both adidas pairs are on
+    // offer (green until 13 Oct): re-check them, the Girl and Boy totals move.
+    looks: [
+      { label: "Baby Girl", ages: "0–18 months", productIds: ["next-first-xmas-cardigan-pink", "next-berry-bow-sleepsuits-4pack", "next-first-xmas-boots-neutral"] },
+      { label: "Baby Boy", ages: "0–18 months", productIds: ["next-first-xmas-cardigan-red", "next-xmas-sleepsuits-3pack", "next-first-xmas-sock-boots-red"] },
+      { label: "Girl", ages: "1–3 years", productIds: ["next-reindeer-cardigan", "next-blue-spot-barrel-jeans", "adidas-gazelle-indoor-pink"] },
+      { label: "Boy", ages: "1–3 years", productIds: ["next-santa-moped-tee", "next-checkerboard-trousers", "adidas-gazelle-indoor-green"] },
+    ],
+  },
+  {
     slug: "stocking-fillers-26",
     title: "The Stocking Filler Edit",
     searchTitle: "Stocking fillers for babies and toddlers under £15",
