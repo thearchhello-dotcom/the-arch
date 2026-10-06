@@ -40,7 +40,7 @@ export const edits: Edit[] = [
     season: "Christmas 2026",
     published: "2026-10-06",
     updated: "2026-10-06",
-    boardImage: "/edits/christmas-arch-merry-bright-26-board.png",
+    boardImage: "/edits/christmas-arch-merry-bright-26-board-2.png",
     palette: ["#B83A4B", "#F4C6CF", "#2F6B4F", "#F1E9D8"],
     description:
       "Four Christmas outfits for babies and toddlers in reds, pinks and a bit of green: My First Christmas knits and sleepsuits, a reindeer cardigan, a Santa moped tee and Gazelle trainers. Every piece linked and the whole outfit priced up.",
