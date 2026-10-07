@@ -38,8 +38,9 @@ export const edits: Edit[] = [
     note: "The H&M pieces are at their normal prices here: H&M take 15% off for members, which brings the trousers and dress to £7.65 and the tights to £5.95. The tights come as a pack of two. The Next glitter boots are in the sale, so their price can change.",
     section: "outfits",
     season: "Christmas 2026",
-    plannedFor: "Waiting for the final board",
+    plannedFor: "Ready: board saved, waiting for Gemma to say go",
     draft: true,
+    boardImage: "/edits/christmas-arch-berry-christmas-26-board.png",
     palette: ["#7A1F35", "#E8D8CC", "#2F5A55", "#C9A87A"],
     description:
       "Four traditional Christmas outfits for babies and toddlers in berry red, plum and bottle green: a Santa jumper, a Jolly knit set, a tulle party dress, an embroidered Christmas tee and Converse. Every piece linked and the whole outfit priced up.",
