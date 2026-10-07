@@ -636,6 +636,7 @@ export const edits: Edit[] = [
     slug: "girl-power-26",
     title: "Girl Power",
     searchTitle: "90s girl group outfits for little girls",
+    instagram: "Girl power, but make it everyday clothes 💛\n\nFive looks, one for each of the group: Sporty in three stripes, Scary in leopard print, Baby in soft pastels, Ginger in red and union jack, and Posh in black and sleek. Nothing dressing-up-box about any of it, just nineties energy you'd actually put them in.\n\nEvery piece is linked and priced up on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#girlpower #90sfashion #kidsfashion #girlsoutfits #ukmum",
     season: "Autumn 2026",
     published: "2026-09-13",
     updated: "2026-09-13",
