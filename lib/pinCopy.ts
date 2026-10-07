@@ -15,6 +15,15 @@ import { adPin } from "@/lib/disclosure";
  * Pinterest is a search engine before it is a social network, so the title
  * front-loads what someone types: what it is, who it is for, what it costs.
  */
+const PIN_TITLE_MAX = 100;
+
+/** At most 100 characters, cut at a word rather than mid-word. */
+function fitTitle(t: string): string {
+  if (t.length <= PIN_TITLE_MAX) return t;
+  const cut = t.slice(0, PIN_TITLE_MAX - 1);
+  return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,—-]s*$/, "") + "…";
+}
+
 export function pinCopy(edit: Edit) {
   const url = `${site.domain}/edits/${edit.slug}`;
   const items = edit.looks.flatMap((l) => l.productIds.map(getProduct)).filter(Boolean);
@@ -34,9 +43,13 @@ export function pinCopy(edit: Edit) {
   // Pinterest is a search engine first, so the pin leads with what the edit is
   // for when there is a search title, and keeps the edit's own name after it.
   const lead = edit.searchTitle ?? `${edit.looks.length} for babies and children`;
-  const title = money
-    ? `${lead} — ${edit.title}, ${money}`
-    : `${lead} — ${edit.title}`;
+  // Pinterest cuts a title off at 100 characters, and the box will not take a
+  // longer one pasted in. Keep the long form when it fits; otherwise drop the
+  // edit's own name (the board already shows it), and as a last resort trim at
+  // a word.
+  const long = money ? `${lead} — ${edit.title}, ${money}` : `${lead} — ${edit.title}`;
+  const short = money ? `${lead}, ${money}` : lead;
+  const title = fitTitle(long.length <= PIN_TITLE_MAX ? long : short);
 
   const description = [
     edit.description,
