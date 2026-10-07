@@ -38,8 +38,8 @@ export const edits: Edit[] = [
     note: "The H&M pieces are at their normal prices here: H&M take 15% off for members, which brings the trousers and dress to £7.65 and the tights to £5.95. The tights come as a pack of two. The Next glitter boots are in the sale, so their price can change.",
     section: "outfits",
     season: "Christmas 2026",
-    plannedFor: "Ready: board saved, waiting for Gemma to say go",
-    draft: true,
+    published: "2026-10-07",
+    updated: "2026-10-07",
     boardImage: "/edits/christmas-arch-berry-christmas-26-board.png",
     palette: ["#7A1F35", "#E8D8CC", "#2F5A55", "#C9A87A"],
     description:
