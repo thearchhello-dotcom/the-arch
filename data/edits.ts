@@ -31,6 +31,28 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "christmas-arch-berry-christmas-26",
+    title: "The Christmas Arch: Berry Christmas",
+    searchTitle: "Traditional red Christmas outfits for babies and toddlers",
+    instagram: "Berry Christmas 🎄 The second of my Christmas Arch edits, in deeper berry, plum and bottle green.\n\nFour looks: a jolly cream jumper with red leggings and patent T-bar shoes for a baby girl, a Santa jumper with turquoise cords for a baby boy, a burgundy tulle dress with glitter boots for a girl, and an embroidered Christmas tee with striped trousers and white Converse for a boy.\n\nBaby girl £46, baby boy £40.99, girl from £26.48 and boy from £50.50, with every piece linked and priced up on the site. The glitter boots are in the sale, so that price can change.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#christmasoutfit #babychristmas #kidschristmas #christmasjumper #ukmum",
+    note: "The H&M pieces are at their normal prices here: H&M take 15% off for members, which brings the trousers and dress to £7.65 and the tights to £5.95. The tights come as a pack of two. The Next glitter boots are in the sale, so their price can change.",
+    section: "outfits",
+    season: "Christmas 2026",
+    plannedFor: "Waiting for the final board",
+    draft: true,
+    palette: ["#7A1F35", "#E8D8CC", "#2F5A55", "#C9A87A"],
+    description:
+      "Four traditional Christmas outfits for babies and toddlers in berry red, plum and bottle green: a Santa jumper, a Jolly knit set, a tulle party dress, an embroidered Christmas tee and Converse. Every piece linked and the whole outfit priced up.",
+    // Next, H&M and M&S prices were read by Gemma on 7 Oct. The glitter boots are in the
+    // Next sale: re-check them and the Girl total.
+    looks: [
+      { label: "Baby Girl", ages: "0–18 months", productIds: ["mp-christmas-wreath-set", "next-burgundy-t-bar-shoes"] },
+      { label: "Baby Boy", ages: "4–24 months", productIds: ["mp-christmas-santa-jumper", "hm-paper-bag-cord-trousers", "next-tan-touch-fastening-trainers"] },
+      { label: "Girl", ages: "1–4 years", productIds: ["hm-tulle-skirt-dress", "hm-2pack-tights-red-beige", "next-gold-glitter-chelsea-boots"] },
+      { label: "Boy", ages: "1–3 years", productIds: ["next-berry-embroidered-xmas-tee", "ms-ticking-stripe-trousers-brown", "next-converse-white-infant"] },
+    ],
+  },
+  {
     slug: "christmas-arch-merry-bright-26",
     title: "The Christmas Arch: Merry and Bright",
     searchTitle: "Bright Christmas outfits for babies and toddlers",

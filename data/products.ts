@@ -267,6 +267,22 @@ export const products: Product[] = [
   { id: "next-santa-moped-tee", name: "Red Santa Moped Long Sleeve Christmas T-Shirt (3mths-7yrs)", category: "Boys", retailer: "Next", price: 5.50, priceTo: 7.50, type: "top", affiliateUrl: "https://www.next.co.uk/style/SV011961/G90591" },
   { id: "next-checkerboard-trousers", name: "Black / White Checkerboard Pull On Wide Trousers (3mths-7yrs)", category: "Boys", retailer: "Next", price: 11.00, priceTo: 13.00, type: "bottom", affiliateUrl: "https://www.next.co.uk/style/SU367655/G77221" },
   { id: "adidas-gazelle-indoor-green", name: "Gazelle Indoor Comfort Closure Elastic Lace Shoes, Green", category: "Boys", retailer: "adidas", price: 45.00, onSale: true, salePrice: 31.50, type: "foot", affiliateUrl: "https://www.adidas.co.uk/gazelle-indoor-comfort-closure-elastic-lace-shoes/IH9130.html" },
+  // ---- The Christmas Arch: Berry Christmas (christmas-arch-berry-christmas-26) ----
+  // Prices read by Gemma off the shops' pages on 7 Oct 2026 (Next, H&M and M&S block
+  // automated reads); Mamas & Papas read from its own feed. The H&M 15% off is for
+  // members only, so the normal price is used and the member price is said on the page.
+  // The Next glitter boots are in the sale: re-check. Tights are a pack of two.
+  { id: "mp-christmas-wreath-set", name: "Christmas Wreath Top & Leggings Set", category: "Baby", retailer: "Mamas & Papas", price: 35.00, type: "top", affiliateUrl: "https://www.mamasandpapas.com/products/2pc-jolly-knit-set-up-to-1-month-s42ls3xb1", imageUrl: "https://cdn.shopify.com/s/files/1/0414/6023/6453/files/mamas-papas-2pc-set-christmas-wreath-top-leggings-set-1260275577.jpg?v=1791200233" },
+  { id: "next-burgundy-t-bar-shoes", name: "Burgundy Red Baby T-Bar Shoes (0-18mths)", category: "Baby", retailer: "Next", price: 11.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/SU962247/G63097" },
+  { id: "mp-christmas-santa-jumper", name: "Christmas Santa Knitted Jumper", category: "Baby", retailer: "Mamas & Papas", price: 25.00, type: "top", affiliateUrl: "https://www.mamasandpapas.com/products/santa-scene-jumper-0-3-s22ls3pb2", imageUrl: "https://cdn.shopify.com/s/files/1/0414/6023/6453/files/mamas-papas-jumpers-knitwear-christmas-santa-knitted-jumper-1260261947.jpg?v=1791190600" },
+  { id: "hm-paper-bag-cord-trousers", name: "Paper Bag Corduroy Trousers, Dark Turquoise", category: "Baby", retailer: "H&M", price: 8.99, type: "bottom", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1349245004.html" },
+  { id: "next-tan-touch-fastening-trainers", name: "Tan Brown Touch Fastening Baby Trainers", category: "Baby", retailer: "Next", price: 7.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/SU807131/N56399" },
+  { id: "hm-tulle-skirt-dress", name: "Tulle-Skirt Cotton Dress, Dark Red with Hearts", category: "Girls", retailer: "H&M", price: 8.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1342450006.html" },
+  { id: "hm-2pack-tights-red-beige", name: "2-Pack Tights, Dark Red and Light Beige", category: "Girls", retailer: "H&M", price: 6.99, type: "bottom", affiliateUrl: "https://www2.hm.com/en_gb/productpage.0493103096.html" },
+  { id: "next-gold-glitter-chelsea-boots", name: "Gold Glitter Standard Fit (F) Chelsea Zip Tassel Ankle Boots", category: "Girls", retailer: "Next", price: 10.50, priceTo: 12.50, onSale: true, salePrice: 10.50, type: "foot", affiliateUrl: "https://www.next.co.uk/style/SV152882/H42326" },
+  { id: "next-berry-embroidered-xmas-tee", name: "Berry Red All over Embroidered Long Sleeve Christmas T-Shirt (3mths-7yrs)", category: "Boys", retailer: "Next", price: 8.50, priceTo: 10.50, type: "top", affiliateUrl: "https://www.next.co.uk/style/SV011961/G90595" },
+  { id: "ms-ticking-stripe-trousers-brown", name: "Pure Cotton Ticking Stripe Trousers, Brown (0-5 Yrs)", category: "Boys", retailer: "M&S", price: 10.00, priceTo: 12.00, type: "bottom", affiliateUrl: "https://www.marksandspencer.com/pure-cotton-ticking-stripe-trousers-0-5-yrs-/p/clp61224919?color=Brown" },
+  { id: "next-converse-white-infant", name: "Converse White Lace Up Chuck Taylor All Star Infant Trainers", category: "Boys", retailer: "Next", price: 32.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/ST503078/946344" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.
