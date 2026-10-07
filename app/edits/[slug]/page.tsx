@@ -198,7 +198,11 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
         }}
       />
 
-      <section className="over-pattern px-5 pt-10 pb-8 sm:px-8 sm:pt-16 md:px-14 flex flex-col gap-4 sm:gap-5 max-w-2xl">
+      {/* On a wide screen the title and text sit on the left and the board(s) on the
+          right, so the top of the page is not half empty. On a phone there is no
+          room beside the text, so everything stacks in reading order as before. */}
+      <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,500px)] lg:gap-x-12 lg:pr-14 xl:gap-x-20">
+      <section className="over-pattern px-5 pt-10 pb-8 sm:px-8 sm:pt-16 md:px-14 flex flex-col gap-4 sm:gap-5 max-w-2xl lg:col-start-1 lg:row-start-1">
         {/* A real breadcrumb, matching the BreadcrumbList above: where this
             page sits, and a way back up for anyone who arrived from Pinterest
             straight onto an edit. */}
@@ -239,7 +243,7 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
 
       {/* Disclosure sits ABOVE the first affiliate link, not in the footer —
           UK CMA/ASA guidance is that it has to be seen before the click. */}
-      <section className="px-5 pb-10 sm:px-8 md:px-14">
+      <section className="px-5 pb-10 sm:px-8 md:px-14 lg:col-start-1 lg:row-start-2">
         <DisclosureNote className="max-w-2xl" />
         <p className="max-w-2xl mt-3 text-sm leading-relaxed text-ink-soft">
           <strong className="font-semibold text-ink">A note on ages:</strong> groups such as baby,
@@ -252,7 +256,7 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
           or four outfits) puts the later ones a long way down the page, and
           nobody should have to scroll to find out they exist. */}
       {edit.looks.length > 1 && (
-        <nav aria-label="Jump to a look" className="px-5 pb-8 sm:px-8 md:px-14 flex flex-wrap items-center gap-2.5">
+        <nav aria-label="Jump to a look" className="px-5 pb-8 sm:px-8 md:px-14 flex flex-wrap items-center gap-2.5 lg:col-start-1 lg:row-start-3 lg:self-start">
           <span className="font-body font-bold text-xs tracking-widest uppercase text-terracotta mr-1">
             Jump to
           </span>
@@ -274,7 +278,7 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
       {/* The board. A Canva mood board if one exists; otherwise the edit draws
           itself from its own palette — which is a finished look in its own
           right, not a placeholder waiting to be replaced. */}
-      <section className="px-5 pb-12 sm:px-8 sm:pb-14 md:px-14">
+      <section className="px-5 pb-12 sm:px-8 sm:pb-14 md:px-14 lg:col-start-2 lg:row-start-1 lg:row-span-4 lg:px-0 lg:pt-16">
         <span className="font-body font-bold text-xs tracking-widest uppercase text-terracotta block mb-4">
           The Board
         </span>
@@ -305,6 +309,7 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
         ))}
         </div>
       </section>
+      </div>
 
       {edit.looks.map((look) => {
         const items = look.productIds.map(getProduct).filter(Boolean) as NonNullable<
