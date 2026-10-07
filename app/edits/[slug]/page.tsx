@@ -241,6 +241,11 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
           UK CMA/ASA guidance is that it has to be seen before the click. */}
       <section className="px-5 pb-10 sm:px-8 md:px-14">
         <DisclosureNote className="max-w-2xl" />
+        <p className="max-w-2xl mt-3 text-sm leading-relaxed text-ink-soft">
+          <strong className="font-semibold text-ink">A note on ages:</strong> groups such as baby,
+          toddler, girl and boy are a guide to who a look is styled for. Many pieces come in a wider
+          range of sizes, so check the size guide on the shop&apos;s own page.
+        </p>
       </section>
 
       {/* Where each look is. An edit with two or more looks (baby and toddler,

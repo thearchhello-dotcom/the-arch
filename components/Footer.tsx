@@ -77,7 +77,9 @@ export default function Footer() {
             Read the disclosure
           </Link>
           . Prices are correct at the time of writing and change often; always check on the
-          retailer&apos;s site before buying.
+          retailer&apos;s site before buying. Groups such as baby, toddler, girl and boy are a guide to
+          who a look is styled for: many pieces come in a wider range of sizes, so check the size
+          guide on the shop&apos;s own page.
         </p>
         <p className="text-xs text-ink-faint">
           &copy; {new Date().getFullYear()} {site.name}. Written by {site.owner}.
