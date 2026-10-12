@@ -64,11 +64,11 @@ export const edits: Edit[] = [
     section: "outfits",
     season: "Christmas 2026",
     published: "2026-10-07",
-    updated: "2026-10-07",
+    updated: "2026-10-12",
     boardImage: "/edits/christmas-arch-berry-christmas-26-board.png",
     palette: ["#7A1F35", "#E8D8CC", "#2F5A55", "#C9A87A"],
     description:
-      "Four traditional Christmas outfits for babies and toddlers in berry red, plum and bottle green: a Santa jumper, a Jolly knit set, a tulle party dress, an embroidered Christmas tee and Converse. Every piece linked and the whole outfit priced up.",
+      "Four traditional Christmas outfits for babies and toddlers in berry red, plum and bottle green: a Santa jumper, a Jolly knit set, a tulle party dress, an embroidered Christmas tee and Converse. Styled from Next, H&M, Mamas & Papas and M&S, every piece linked and the whole outfit priced up.",
     // Next, H&M and M&S prices were read by Gemma on 7 Oct. The glitter boots are in the
     // Next sale: re-check them and the Girl total.
     looks: [
@@ -87,11 +87,11 @@ export const edits: Edit[] = [
     section: "outfits",
     season: "Christmas 2026",
     published: "2026-10-06",
-    updated: "2026-10-06",
+    updated: "2026-10-12",
     boardImage: "/edits/christmas-arch-merry-bright-26-board-2.png",
     palette: ["#B83A4B", "#F4C6CF", "#2F6B4F", "#F1E9D8"],
     description:
-      "Four Christmas outfits for babies and toddlers in reds, pinks and a bit of green: My First Christmas knits and sleepsuits, a reindeer cardigan, a Santa moped tee and Gazelle trainers. Every piece linked and the whole outfit priced up.",
+      "Four Christmas outfits for babies and toddlers in reds, pinks and a bit of green: My First Christmas knits and sleepsuits, a reindeer cardigan, a Santa moped tee and Gazelle trainers. Styled from Next and adidas, every piece linked and the whole outfit priced up.",
     // Next and adidas prices were read by Gemma on 6 Oct. Both adidas pairs are on
     // offer (green until 13 Oct): re-check them, the Girl and Boy totals move.
     looks: [
