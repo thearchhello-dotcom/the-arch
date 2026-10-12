@@ -283,6 +283,20 @@ export const products: Product[] = [
   { id: "next-berry-embroidered-xmas-tee", name: "Berry Red All over Embroidered Long Sleeve Christmas T-Shirt (3mths-7yrs)", category: "Boys", retailer: "Next", price: 8.50, priceTo: 10.50, type: "top", affiliateUrl: "https://www.next.co.uk/style/SV011961/G90595" },
   { id: "ms-ticking-stripe-trousers-brown", name: "Pure Cotton Ticking Stripe Trousers, Brown (0-5 Yrs)", category: "Boys", retailer: "M&S", price: 10.00, priceTo: 12.00, type: "bottom", affiliateUrl: "https://www.marksandspencer.com/pure-cotton-ticking-stripe-trousers-0-5-yrs-/p/clp61224919?color=Brown" },
   { id: "next-converse-white-infant", name: "Converse White Lace Up Chuck Taylor All Star Infant Trainers", category: "Boys", retailer: "Next", price: 32.00, type: "foot", affiliateUrl: "https://www.next.co.uk/style/ST503078/946344" },
+  // ---- The Christmas Arch: Traditions (christmas-arch-traditions-26) -----
+  // All sold by Mabel & Fox (some are other brands on their site), so every link
+  // earns through Gemma's UpPromote reference and the page can say one delivery.
+  // Prices read from Mabel & Fox's own product pages on 12 Oct 2026. Their
+  // photographs are on hold (IMAGES_ON_HOLD) until they confirm image use, and
+  // no pictures are stored here.
+  { id: "mf-red-gingham-stocking", name: "Personalised Red Gingham Stocking, Velvet Bow", category: "Nursery", retailer: "Mabel & Fox", price: 27.99, type: "gift", affiliateUrl: "https://www.mabelandfox.com/products/mabel-fox-personalised-red-gingham-stocking-velvet-bow" },
+  { id: "mf-green-gingham-gift-sack", name: "Personalised Green Gingham Gift Sack, Velvet Bow", category: "Nursery", retailer: "Mabel & Fox", price: 24.99, type: "gift", affiliateUrl: "https://www.mabelandfox.com/products/mabel-fox-personalised-green-gingham-gift-sack-velvet-bow" },
+  { id: "mf-gingham-ruffle-basket", name: "Personalised Gingham Ruffle Basket, Olive Green", category: "Nursery", retailer: "Mabel & Fox", price: 22.99, type: "nursery", affiliateUrl: "https://www.mabelandfox.com/products/mabel-fox-personalised-green-gingham-ruffle-basket-embroidered" },
+  { id: "mf-red-gingham-bow", name: "Personalised Gingham Bow, Red", category: "Nursery", retailer: "Mabel & Fox", price: 29.99, type: "gift", affiliateUrl: "https://www.mabelandfox.com/products/mabel-fox-personalised-red-gingham-bow-embroidered" },
+  { id: "mf-santa-treat-board", name: "Gainsborough Giftware Wooden Santa Treat Serving Board", category: "Nursery", retailer: "Mabel & Fox", price: 8.99, type: "gift", affiliateUrl: "https://www.mabelandfox.com/products/gainsborough-giftware-wooden-santa-treat-serving-board" },
+  { id: "mf-mp-christmas-eve-plate", name: "Mamas & Papas Christmas Eve Plate", category: "Nursery", retailer: "Mabel & Fox", price: 15.00, type: "gift", affiliateUrl: "https://www.mabelandfox.com/products/mamas-papas-christmas-eve-plate" },
+  { id: "mf-mp-first-christmas-bauble", name: "Mamas & Papas Glass Bauble, My First Christmas 2026, Neutral", category: "Baby", retailer: "Mabel & Fox", price: 15.00, type: "gift", affiliateUrl: "https://www.mabelandfox.com/products/mamas-papas-glass-christmas-bauble-my-first-christmas-2026-neutral" },
+  { id: "mf-little-dutch-rosa-decorations", name: "Little Dutch Christmas Tree Decorations, Rosa", category: "Baby", retailer: "Mabel & Fox", price: 29.99, type: "gift", affiliateUrl: "https://www.mabelandfox.com/products/little-dutch-christmas-tree-decorations-rosa" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.

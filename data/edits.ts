@@ -31,6 +31,31 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "christmas-arch-traditions-26",
+    title: "The Christmas Arch: Traditions",
+    searchTitle: "Personalised Christmas stockings, sacks and gifts from Mabel & Fox",
+    instagram: "The Christmas Arch: Traditions 🎄\n\nThe little things that make Christmas Eve feel like Christmas Eve, all from Mabel & Fox: a red gingham stocking, a green gingham sack, a ruffle basket and a big red bow, all of which can be personalised, plus a Christmas Eve plate, a Treats for Santa board, a My First Christmas bauble and Rosa and her festive friends for the tree.\n\nNobody needs all eight, so pick a few. From £8.99, with every piece linked on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#christmaseve #personalisedgifts #christmasdecor #stockingfillers #ukmum",
+    note: "The stocking, the gift sack, the ruffle basket and the bow can be personalised with a name. Everything here is sold by Mabel & Fox, so it comes in one delivery, although some of the pieces are made by other brands such as Mamas & Papas and Little Dutch.",
+    section: "gifts",
+    season: "Christmas 2026",
+    plannedFor: "Waiting for Mabel & Fox to confirm that The Arch may use their photographs, and for Gemma to say go",
+    draft: true,
+    palette: ["#7A1F35", "#6E7F5A", "#E8D8CC", "#C9A87A"],
+    description:
+      "Eight Christmas Eve touches, all from Mabel & Fox: a gingham stocking, sack, basket and bow that can be personalised, a Christmas Eve plate, a Treats for Santa board, a My First Christmas bauble and a set of tree decorations. Pick a few, with what each costs.",
+    looks: [
+      {
+        label: "Christmas Eve",
+        kind: "shortlist",
+        choose: "a few",
+        productIds: [
+          "mf-red-gingham-stocking", "mf-green-gingham-gift-sack", "mf-gingham-ruffle-basket", "mf-red-gingham-bow",
+          "mf-santa-treat-board", "mf-mp-christmas-eve-plate", "mf-mp-first-christmas-bauble", "mf-little-dutch-rosa-decorations",
+        ],
+      },
+    ],
+  },
+  {
     slug: "christmas-arch-berry-christmas-26",
     title: "The Christmas Arch: Berry Christmas",
     searchTitle: "Traditional red Christmas outfits for babies and toddlers",
