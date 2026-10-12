@@ -13,6 +13,7 @@ export type Retailer =
   | "George"
   | "H&M"
   | "M&S"
+  | "Mabel & Fox"
   | "My 1st Years"
   | "Matalan"
   | "Mamas & Papas"

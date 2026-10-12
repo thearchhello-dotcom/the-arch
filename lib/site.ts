@@ -78,5 +78,8 @@ export const site = {
    * the disclosure page — both Awin and Sovrn expect the disclosure to say who
    * you actually work with, not just that affiliate links exist.
    */
-  networks: [] as string[],
+  networks: [
+    "Awin: Mamas & Papas, Scandiborn and Momcozy",
+    "UpPromote: Mabel & Fox",
+  ] as string[],
 } as const;

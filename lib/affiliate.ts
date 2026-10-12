@@ -27,6 +27,20 @@ const AWIN_PUBLISHER_ID = "3098383";
 /** Advertiser ids, per retailer, for programmes that are approved and live.
  *  A retailer missing from here links out plainly — which is the correct
  *  behaviour for one that is pending, rejected, or handled by Skimlinks. */
+/** Gemma's UpPromote reference for Mabel & Fox, from the referral link in her
+ *  UpPromote dashboard (approved 9 Oct 2026). UpPromote works by adding this to
+ *  any page of the shop's own address, so there is no redirect: the link goes
+ *  straight to the product with the reference on the end. Not a secret, it
+ *  travels in every link a visitor clicks. */
+const UPPROMOTE_REFS: Partial<Record<Retailer, string>> = {
+  "Mabel & Fox": "12475520.uYCEmZwvV1Bu",
+};
+
+/** Shops whose links earn but whose photographs must NOT show yet, because the
+ *  shop has not confirmed that The Arch may use them. Take a shop off this list
+ *  the day they say yes. */
+const IMAGES_ON_HOLD: Retailer[] = ["Mabel & Fox"];
+
 const PROGRAMMES: Partial<Record<Retailer, { network: "awin"; merchantId: string }>> = {
   "Mamas & Papas": { network: "awin", merchantId: "6526" },
   Scandiborn: { network: "awin", merchantId: "85735" }, // approved 28 Sep 2026
@@ -44,6 +58,17 @@ const PROGRAMMES: Partial<Record<Retailer, { network: "awin"; merchantId: string
 export function affiliateHref(product: Product): string | undefined {
   const plain = product.affiliateUrl;
   if (!plain) return undefined;
+
+  const upRef = UPPROMOTE_REFS[product.retailer];
+  if (upRef) {
+    try {
+      const url = new URL(plain);
+      url.searchParams.set("sca_ref", upRef);
+      return url.toString();
+    } catch {
+      return plain;
+    }
+  }
 
   const programme = PROGRAMMES[product.retailer];
   if (!programme || !AWIN_PUBLISHER_ID) return plain;
@@ -63,7 +88,7 @@ export function affiliateHref(product: Product): string | undefined {
 /** Whether a retailer's links are currently tracked, for the disclosure page
  *  and for checking at a glance which programmes are actually wired up. */
 export function isTracked(retailer: Retailer): boolean {
-  return Boolean(AWIN_PUBLISHER_ID && PROGRAMMES[retailer]);
+  return Boolean((AWIN_PUBLISHER_ID && PROGRAMMES[retailer]) || UPPROMOTE_REFS[retailer]);
 }
 
 /**
@@ -100,7 +125,7 @@ export function isTracked(retailer: Retailer): boolean {
  * still has to be a laydown before its address is stored at all.
  */
 export function canShowImage(retailer: Retailer): boolean {
-  return isTracked(retailer);
+  return isTracked(retailer) && !IMAGES_ON_HOLD.includes(retailer);
 }
 
 /** Pieces that will show a photograph first, the rest after, each group keeping
