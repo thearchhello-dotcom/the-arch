@@ -8,9 +8,15 @@
  */
 export const POPS = ["bg-pop-sun", "bg-pop-leaf", "bg-pop-sky", "bg-pop-coral"] as const;
 
+/** Edits whose automatic colour clashes with their theme. */
+const OVERRIDES: Record<string, string> = {
+  "christmas-arch-traditions-26": "bg-pop-leaf",
+};
+
 /** Stable per-item colour: the same id always lands on the same pop, so the
  *  grid doesn't reshuffle its colours on every render or route change. */
 export function popFor(seed: string): string {
+  if (OVERRIDES[seed]) return OVERRIDES[seed];
   let h = 0;
   for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
   return POPS[h % POPS.length];
