@@ -35,6 +35,13 @@ export const edits: Edit[] = [
     title: "The Christmas Arch: Traditions",
     searchTitle: "Personalised Christmas stockings, sacks and gifts from Mabel & Fox",
     instagram: "The Christmas Arch: Traditions 🎄\n\nThe little things that make Christmas Eve feel like Christmas Eve, all from Mabel & Fox: a red gingham stocking, a green gingham sack, a ruffle basket and a big red bow, all of which can be personalised, plus a Christmas Eve plate, a Treats for Santa board, a My First Christmas bauble and Rosa and her festive friends for the tree.\n\nNobody needs all eight, so pick a few. From £8.99, with every piece linked on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#christmaseve #personalisedgifts #christmasdecor #stockingfillers #ukmum",
+    pieceCaptions: [
+      { label: "Gingham stocking", caption: "A red gingham stocking with a velvet bow, and your little one's name stitched on it. It's my favourite piece from the Mabel & Fox Christmas Arch. £27.99, with the link in my bio.\n\nStyled by me in Cumbria\n\n#personalisedstocking #christmaseve #christmasdecor #stockingfillers #ukmum" },
+      { label: "Treats for Santa board", caption: "For the plate Santa leaves empty on Christmas Eve. A wooden Treats for Santa board, and at £8.99 it's the easiest thing on the whole edit to add to your basket. Link in bio.\n\nStyled by me in Cumbria\n\n#christmaseve #treatsforsanta #christmastraditions #christmasdecor #ukmum" },
+      { label: "Green gingham gift sack", caption: "The sack that sits under the tree. Green gingham with a brown velvet bow, and their name along the ribbon. £24.99, with the link in my bio.\n\nStyled by me in Cumbria\n\n#personalisedgifts #christmaseve #giftsack #christmasdecor #ukmum" },
+      { label: "Gingham bow", caption: "A big red gingham bow for the door, the tree or the stair rail, with a name embroidered on the tail. £29.99, with the link in my bio.\n\nStyled by me in Cumbria\n\n#christmasbow #personalisedgifts #christmasdecor #christmastraditions #ukmum" },
+      { label: "Gingham ruffle basket", caption: "A gingham ruffle basket in olive green, with a name embroidered on the front. Fill it with Christmas Eve bits, or leave it by the tree for the toys. £22.99, with the link in my bio.\n\nStyled by me in Cumbria\n\n#personalisedgifts #christmaseve #christmasdecor #nurserydecor #ukmum" },
+    ],
     note: "The stocking, the gift sack, the ruffle basket and the bow can be personalised with a name. Everything here is sold by Mabel & Fox, so it comes in one delivery, although some of the pieces are made by other brands such as Mamas & Papas and Little Dutch.",
     section: "gifts",
     season: "Christmas 2026",

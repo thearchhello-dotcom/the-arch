@@ -138,6 +138,25 @@ export default function StudioPage() {
                 </details>
               )}
 
+              {edit.pieceCaptions && edit.pieceCaptions.length > 0 && (
+                <details className="border-t border-line pt-3.5">
+                  <summary className="cursor-pointer font-body font-semibold text-sm text-ink-soft hover:text-terracotta transition-colors">
+                    Single piece captions ({edit.pieceCaptions.length})
+                  </summary>
+                  <div className="flex flex-col gap-5 pt-4">
+                    {edit.pieceCaptions.map((pc) => (
+                      <div key={pc.label} className="flex flex-col gap-2.5 border-l-2 border-line pl-4">
+                        <p className="text-xs font-bold tracking-widest uppercase text-terracotta">{pc.label}</p>
+                        <p className="text-sm text-ink-soft leading-relaxed whitespace-pre-line">{adCaption(pc.caption)}</p>
+                        <div>
+                          <CopyButton text={adCaption(pc.caption)} label="Copy caption" />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </details>
+              )}
+
               {edit.tiktok && (
                 <details className="border-t border-line pt-3.5">
                   <summary className="cursor-pointer font-body font-semibold text-sm text-ink-soft hover:text-terracotta transition-colors">
