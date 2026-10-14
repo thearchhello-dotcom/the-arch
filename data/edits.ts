@@ -38,8 +38,10 @@ export const edits: Edit[] = [
     note: "The stocking, the gift sack, the ruffle basket and the bow can be personalised with a name. Everything here is sold by Mabel & Fox, so it comes in one delivery, although some of the pieces are made by other brands such as Mamas & Papas and Little Dutch.",
     section: "gifts",
     season: "Christmas 2026",
-    plannedFor: "Waiting for Mabel & Fox to confirm that The Arch may use their photographs, and for Gemma to say go",
-    draft: true,
+    plannedFor: "Live without photographs while Mabel & Fox confirm that The Arch may use theirs (followed up by email 14 Oct 2026)",
+    draft: false,
+    published: "2026-10-14",
+    boardImage: "/edits/christmas-arch-traditions-26-board.png",
     palette: ["#7A1F35", "#6E7F5A", "#E8D8CC", "#C9A87A"],
     description:
       "Eight Christmas Eve touches, all from Mabel & Fox: a gingham stocking, sack, basket and bow that can be personalised, a Christmas Eve plate, a Treats for Santa board, a My First Christmas bauble and a set of tree decorations. Pick a few, with what each costs.",
