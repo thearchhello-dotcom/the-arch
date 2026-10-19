@@ -144,6 +144,53 @@ export function pinCopyForLook(edit: Edit, look: Edit["looks"][number]) {
   return { title, description: adDescription, tags, url, full: `${title}\n\n${adDescription}\n\n${tags}\n\n${url}` };
 }
 
+/**
+ * A pin for one single piece.
+ *
+ * Pinterest shows shops' own product pins under every pin, so a pin that is only
+ * "a stocking, £27.99" gives the shop the click. These lead with the piece (it is
+ * what people search for) but the reason to click is the site: the whole edit,
+ * every piece priced up in one place. Says nothing about the product beyond its
+ * name and price, so no claims.
+ */
+export function pinCopyForPiece(edit: Edit, product: NonNullable<ReturnType<typeof getProduct>>) {
+  const url = `${site.domain}/edits/${edit.slug}`;
+  const now = product.onSale && product.salePrice ? product.salePrice : product.price;
+  const sized = product.priceTo && product.priceTo > now;
+  const fmt = (n: number) => `£${Number.isInteger(n) ? n.toFixed(0) : n.toFixed(2)}`;
+  const money = sized ? `from ${fmt(now)}` : fmt(now);
+  const count = new Set(edit.looks.flatMap((l) => l.productIds)).size;
+
+  const title = fitTitle(`${product.name}, ${money}`);
+  const description = adPin(
+    [
+      `${product.name}, ${money}.`,
+      count > 1
+        ? `One of ${count} pieces in ${edit.title}, every one priced up in one place.`
+        : `Priced up in ${edit.title}.`,
+      "See the whole edit at thearchedits.co.uk",
+    ].join(" ")
+  );
+
+  const about = `${edit.title} ${edit.searchTitle ?? ""}`.toLowerCase();
+  const seasonal = about.includes("halloween")
+    ? "#halloweenkids"
+    : about.includes("christmas")
+      ? "#christmasgifts"
+      : edit.season?.toLowerCase().includes("autumn")
+        ? "#autumnoutfits"
+        : "#kidsoutfits";
+  const tags = [...new Set([seasonal, "#kidsfashion", "#kidsstyle", "#babyclothes", "#ukmum"])].slice(0, 5).join(" ");
+
+  return { title, description, tags, url, full: `${title}
+
+${description}
+
+${tags}
+
+${url}` };
+}
+
 /** "a, b and c" — Pinterest descriptions read as prose, not as a list. */
 function listOf(xs: string[]): string {
   if (xs.length <= 1) return xs[0] ?? "";

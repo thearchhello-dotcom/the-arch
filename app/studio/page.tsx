@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { edits } from "@/data/edits";
 import { getProduct } from "@/data/products";
-import { pinCopy, pinCopyForLook } from "@/lib/pinCopy";
+import { pinCopy, pinCopyForLook, pinCopyForPiece } from "@/lib/pinCopy";
 import CopyButton from "@/components/CopyButton";
 import { adCaption, adPin } from "@/lib/disclosure";
 
@@ -222,6 +222,39 @@ export default function StudioPage() {
                   </div>
                 </details>
               )}
+
+              {/* One pin for every single piece, generated, so there are plenty
+                  to post. Each points people at the whole edit on the site. */}
+              {(() => {
+                const ids = [...new Set(edit.looks.flatMap((l) => l.productIds))];
+                const pieces = ids.map((id) => getProduct(id)).filter(Boolean) as NonNullable<ReturnType<typeof getProduct>>[];
+                if (pieces.length < 2) return null;
+                return (
+                  <details className="border-t border-line pt-3.5">
+                    <summary className="cursor-pointer font-body font-semibold text-sm text-ink-soft hover:text-terracotta transition-colors">
+                      One pin per piece ({pieces.length})
+                    </summary>
+                    <div className="flex flex-col gap-5 pt-4">
+                      {pieces.map((p) => {
+                        const pp = pinCopyForPiece(edit, p);
+                        return (
+                          <div key={p.id} className="flex flex-col gap-2.5 border-l-2 border-line pl-4">
+                            <p className="text-sm font-semibold text-ink leading-snug">{pp.title}</p>
+                            <p className="text-sm text-ink-soft leading-relaxed">{pp.description}</p>
+                            <p className="text-sm text-ink-faint">{pp.tags}</p>
+                            <div className="flex flex-wrap gap-2.5">
+                              <CopyButton text={pp.title} label="Copy title" />
+                              <CopyButton text={pp.description} label="Copy description" />
+                              <CopyButton text={pp.url} label="Copy link" />
+                              <CopyButton text={pp.full} label="Copy the lot" />
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </details>
+                );
+              })()}
 
               {!edit.pins && edit.looks.some((l) => l.productIds.length > 0) && (
                 <details className="border-t border-line pt-3.5">
