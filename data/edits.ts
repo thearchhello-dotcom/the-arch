@@ -34,7 +34,7 @@ export const edits: Edit[] = [
     slug: "christmas-arch-traditions-26",
     title: "The Christmas Arch: Traditions",
     searchTitle: "Personalised Christmas stockings, sacks and gifts from Mabel & Fox",
-    instagram: "The Christmas Arch: Traditions 🎄\n\nThe little things that make Christmas Eve feel like Christmas Eve, all from Mabel & Fox: a red gingham stocking, a green gingham sack, a ruffle basket and a big red bow, all of which can be personalised, plus a Christmas Eve plate, a Treats for Santa board, a My First Christmas bauble and Rosa and her festive friends for the tree.\n\nFrom £8.99, with every piece linked on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#christmaseve #personalisedgifts #christmasdecor #stockingfillers #ukmum",
+    instagram: "The Christmas Arch: Traditions 🎄\n\nThe little things that make Christmas Eve feel like Christmas Eve, all from Mabel & Fox: a red gingham stocking, a green gingham sack, a ruffle basket and a big red bow, all of which can be personalised, plus a Christmas Eve plate, a Treats for Santa board, a My First Christmas bauble and Rosa and her festive friends for the tree.\n\nFrom £8.99, with every piece linked on the site.\n\nUse code THEARCH at the Mabel & Fox checkout for 5% off orders over £30 (one use per customer, not on sale items or furniture).\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#christmaseve #personalisedgifts #christmasdecor #stockingfillers #ukmum",
     pins: [
       { label: "The whole edit", title: "Personalised Christmas Eve traditions: stocking, sack, plate and more from £8.99", description: "Eight Christmas Eve touches to build your family traditions, from £8.99. A red gingham stocking, green gingham gift sack, ruffle basket and bow that can all be personalised with a name, plus a Christmas Eve plate, a Treats for Santa board, a My First Christmas 2026 bauble and Little Dutch tree decorations. Everything is from Mabel & Fox, so it arrives in one delivery. Every piece is linked at thearchedits.co.uk", tags: "#christmaseve #personalisedgifts #christmastraditions #christmasdecor #ukmum" },
       { label: "Gingham stocking", title: "Personalised red gingham Christmas stocking with velvet bow, £27.99", description: "A personalised Christmas stocking in red gingham with a velvet bow and a name stitched on it, £27.99. A pretty, traditional stocking for hanging on the mantel or the end of the bed on Christmas Eve. From Mabel & Fox, linked at thearchedits.co.uk", tags: "#personalisedstocking #christmasstocking #christmaseve #stockingfillers #ukmum" },
@@ -53,12 +53,13 @@ export const edits: Edit[] = [
       { label: "Gingham bow", caption: "A big red gingham bow for the door, the tree or the stair rail, with a name embroidered on the tail. £29.99, with the link in my bio.\n\nStyled by me in Cumbria\n\n#christmasbow #personalisedgifts #christmasdecor #christmastraditions #ukmum" },
       { label: "Gingham ruffle basket", caption: "A gingham ruffle basket in olive green, with a name embroidered on the front. Fill it with Christmas Eve bits, or leave it by the tree for the toys. £22.99, with the link in my bio.\n\nStyled by me in Cumbria\n\n#personalisedgifts #christmaseve #christmasdecor #nurserydecor #ukmum" },
     ],
-    note: "The stocking, the gift sack, the ruffle basket and the bow can be personalised with a name. Everything here is sold by Mabel & Fox, so it comes in one delivery, although some of the pieces are made by other brands such as Mamas & Papas and Little Dutch.",
+    note: "The stocking, the gift sack, the ruffle basket and the bow can be personalised with a name. Everything here is sold by Mabel & Fox, so it comes in one delivery, although some of the pieces are made by other brands such as Mamas & Papas and Little Dutch. Use code THEARCH at the Mabel & Fox checkout for 5% off orders over £30. It is one use per customer and does not apply to sale items or to furniture, Banwood and Scoot N Ride.",
     section: "gifts",
     season: "Christmas 2026",
     plannedFor: "Live without photographs while Mabel & Fox confirm that The Arch may use theirs (followed up by email 14 Oct 2026)",
     draft: false,
     published: "2026-10-14",
+    updated: "2026-10-19",
     boardImage: "/edits/christmas-arch-traditions-26-board.png",
     palette: ["#7A1F35", "#6E7F5A", "#E8D8CC", "#C9A87A"],
     description:
