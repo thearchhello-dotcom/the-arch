@@ -224,6 +224,11 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
           <p className="-mt-2 font-display text-lg sm:text-xl font-semibold text-ink-soft">{edit.searchTitle}</p>
         )}
         <p className="text-ink-soft leading-relaxed">{edit.description}</p>
+        {edit.offer && (
+          <p className="rounded-2xl bg-pop-sun/80 px-5 py-3.5 text-[15px] leading-snug font-semibold text-ink">
+            {edit.offer}
+          </p>
+        )}
         {publishedOn && (
           <p className="text-sm text-ink-faint">
             Styled by {site.owner} in Cumbria &middot; {publishedOn}

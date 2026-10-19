@@ -55,6 +55,7 @@ export const edits: Edit[] = [
     ],
     note: "The stocking, the gift sack, the ruffle basket and the bow can be personalised with a name. Everything here is sold by Mabel & Fox, so it comes in one delivery, although some of the pieces are made by other brands such as Mamas & Papas and Little Dutch. Use code THEARCH at the Mabel & Fox checkout for 5% off orders over £30. It is one use per customer and does not apply to sale items or to furniture, Banwood and Scoot N Ride.",
     section: "gifts",
+    offer: "5% off at Mabel & Fox with code THEARCH. On orders over £30, one use per customer, not on sale items or furniture.",
     season: "Christmas 2026",
     plannedFor: "Live without photographs while Mabel & Fox confirm that The Arch may use theirs (followed up by email 14 Oct 2026)",
     draft: false,

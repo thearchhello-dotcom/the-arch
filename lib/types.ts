@@ -177,6 +177,11 @@ export interface Edit {
    *  first board alone would mislead. Opaque, 1200 x 630, every board side by
    *  side. Falls back to boardImage. */
   shareImage?: string;
+  /** A discount or offer worth saying right under the title, such as a code from
+   *  the shop. Shown in a highlighted strip. Say the rules plainly, never "up to"
+   *  or "everything", and keep it true: it is an affiliate code, so the page's
+   *  affiliate note above it already covers that. */
+  offer?: string;
 
   /** True while an edit is still being built. Drafts are hidden from the live
    *  site — off /edits, out of the sitemap, 404 in production — but ARE
