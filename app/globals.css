@@ -34,6 +34,10 @@
   --color-pop-sun: #ffc233;
   --color-pop-leaf: #4fbe86;
   --color-pop-coral: #ff6a45;
+  /* Christmas edits: a deep berry red and a holly green for the frame round the
+     board. Only images sit on these, never text. */
+  --color-pop-berry: #9b2a3f;
+  --color-pop-holly: #2f6b4f;
 
   --font-display: var(--font-fredoka), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-karla), ui-sans-serif, system-ui, sans-serif;

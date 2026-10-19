@@ -8,9 +8,17 @@
  */
 export const POPS = ["bg-pop-sun", "bg-pop-leaf", "bg-pop-sky", "bg-pop-coral"] as const;
 
-/** Edits whose automatic colour clashes with their theme. */
+/** Christmas edits take a Christmas colour, berry red and holly green taking
+ *  turns, whatever the automatic pick would have been (it landed on yellow and
+ *  sky blue for some). Add each new Christmas edit here. */
 const OVERRIDES: Record<string, string> = {
-  "christmas-arch-traditions-26": "bg-pop-leaf",
+  "christmas-arch-merry-bright-26": "bg-pop-berry",
+  "christmas-arch-berry-christmas-26": "bg-pop-holly",
+  "christmas-arch-traditions-26": "bg-pop-holly",
+  "christmas-arch-countdown-26": "bg-pop-berry",
+  "stocking-fillers-26": "bg-pop-berry",
+  "big-christmas-presents-26": "bg-pop-holly",
+  "little-christmas-presents-26": "bg-pop-berry",
 };
 
 /** Stable per-item colour: the same id always lands on the same pop, so the
