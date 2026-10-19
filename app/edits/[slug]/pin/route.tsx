@@ -141,6 +141,55 @@ export async function GET(req: Request, { params }: { params: Promise<{ slug: st
   // this (2 Oct 2026).
   const edge = key === "grid" && border ? 44 : 0;
 
+  // The Christmas frame, for the festive edits: berry red, a thin gold rounded
+  // outline round the board, and gold sparkles and dots in the margin, matching
+  // Gemma's Christmas carousels. Chosen with ?border=christmas.
+  const christmasFrame = key === "grid" && new URL(req.url).searchParams.get("border") === "christmas";
+  if (board && christmasFrame) {
+    const m = 54;
+    const GOLD = "#E3A83B";
+    const star = (x: number, y: number, r: number) => (
+      <svg key={`s${x}-${y}`} width={r * 2} height={r * 2} viewBox="-10 -10 20 20" style={{ position: "absolute", left: x - r, top: y - r }}>
+        <path d="M0 -10 Q1.2 -1.2 10 0 Q1.2 1.2 0 10 Q-1.2 1.2 -10 0 Q-1.2 -1.2 0 -10Z" fill={GOLD} />
+      </svg>
+    );
+    const dot = (x: number, y: number, r: number) => (
+      <div key={`d${x}-${y}`} style={{ position: "absolute", left: x - r, top: y - r, width: r * 2, height: r * 2, borderRadius: r, background: GOLD, opacity: 0.9 }} />
+    );
+    return new ImageResponse(
+      (
+        <div style={{ width: W, height: H, background: "#8E2438", display: "flex", position: "relative" }}>
+          {[
+            star(150, 28, 17), star(540, 24, 13), star(930, 30, 18), star(26, 360, 13), star(1054, 700, 15), star(28, 1040, 17),
+            star(300, 1414, 14), star(760, 1412, 17), star(1052, 1100, 12), star(1050, 300, 13),
+            dot(340, 26, 5), dot(740, 28, 6), dot(1040, 20, 5), dot(24, 180, 6), dot(1056, 480, 5), dot(24, 700, 5),
+            dot(30, 1240, 6), dot(1050, 1300, 6), dot(520, 1416, 6), dot(160, 1410, 5), dot(920, 1418, 5), dot(1040, 900, 5),
+          ]}
+          <div
+            style={{
+              position: "absolute",
+              left: m,
+              top: m,
+              width: W - m * 2,
+              height: H - m * 2,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: CREAM,
+              border: `5px solid ${GOLD}`,
+              borderRadius: 38,
+              overflow: "hidden",
+            }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={board} alt="" style={{ width: W - m * 2 - 10, height: H - m * 2 - 10, objectFit: "contain" }} />
+          </div>
+        </div>
+      ),
+      { width: W, height: H }
+    );
+  }
+
   // A finished board already carries the wordmark, the title, every outfit
   // total and the web address. Reframe it, add nothing.
   if (board) {

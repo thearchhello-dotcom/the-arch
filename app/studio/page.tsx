@@ -93,6 +93,16 @@ export default function StudioPage() {
                   </a>
                   ))
                 )}
+                {edit.season?.toLowerCase().includes("christmas") && (
+                  <a
+                    href={`/edits/${edit.slug}/pin?format=grid&border=christmas`}
+                    target="_blank"
+                    rel="noopener"
+                    className="font-body font-semibold text-sm px-4 py-2.5 rounded-pill bg-cream border border-line text-ink hover:border-terracotta hover:text-terracotta transition-colors"
+                  >
+                    Instagram 3:4 Christmas <span className="text-ink-faint font-normal">1080 × 1440</span>
+                  </a>
+                )}
                 <Link
                   href={`/edits/${edit.slug}`}
                   className="font-body font-semibold text-sm px-4 py-2.5 rounded-pill text-ink-soft hover:text-terracotta transition-colors"
