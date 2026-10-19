@@ -38,8 +38,14 @@ const UPPROMOTE_REFS: Partial<Record<Retailer, string>> = {
 
 /** Shops whose links earn but whose photographs must NOT show yet, because the
  *  shop has not confirmed that The Arch may use them. Take a shop off this list
- *  the day they say yes. */
-const IMAGES_ON_HOLD: Retailer[] = ["Mabel & Fox"];
+ *  the day they say yes.
+ *
+ *  Mabel & Fox came off this list on 19 Oct 2026. Jess Davis (Head of Brand and
+ *  Growth) wrote on 16 Oct: "Yes you're able to use our website image for your
+ *  boards." That is wording about boards, and Gemma decided to show their
+ *  product photographs as tiles on the pages too. If they ever object, add
+ *  "Mabel & Fox" back here and every one of their photographs goes off at once. */
+const IMAGES_ON_HOLD: Retailer[] = [];
 
 const PROGRAMMES: Partial<Record<Retailer, { network: "awin"; merchantId: string }>> = {
   "Mamas & Papas": { network: "awin", merchantId: "6526" },
