@@ -117,7 +117,7 @@ export function pinCopyForLook(edit: Edit, look: Edit["looks"][number]) {
 
   const description = [
     shortlist
-      ? `${look.label}${ages}, choose ${look.choose ?? "one"}: ${listOf(pieces)}.`
+      ? `${look.label}${ages}${look.choose === "" ? "" : `, choose ${look.choose ?? "one"}`}: ${listOf(pieces)}.`
       : `${look.label}${ages}: ${listOf(pieces)}.`,
     money &&
       (shortlist

@@ -64,12 +64,12 @@ export const edits: Edit[] = [
     boardImage: "/edits/christmas-arch-traditions-26-board.png",
     palette: ["#7A1F35", "#6E7F5A", "#E8D8CC", "#C9A87A"],
     description:
-      "Eight Christmas Eve touches, all from Mabel & Fox: a gingham stocking, sack, basket and bow that can be personalised, a Christmas Eve plate, a Treats for Santa board, a My First Christmas bauble and a set of tree decorations. Pick a few, with what each costs.",
+      "Eight Christmas Eve touches, all from Mabel & Fox: a gingham stocking, sack, basket and bow that can be personalised, a Christmas Eve plate, a Treats for Santa board, a My First Christmas bauble and a set of tree decorations, with what each costs.",
     looks: [
       {
         label: "Christmas Eve",
         kind: "shortlist",
-        choose: "a few",
+        choose: "",
         productIds: [
           "mf-red-gingham-stocking", "mf-green-gingham-gift-sack", "mf-gingham-ruffle-basket", "mf-red-gingham-bow",
           "mf-santa-treat-board", "mf-mp-christmas-eve-plate", "mf-mp-first-christmas-bauble", "mf-little-dutch-rosa-decorations",
@@ -127,24 +127,24 @@ export const edits: Edit[] = [
     slug: "stocking-fillers-26",
     title: "The Stocking Filler Edit",
     searchTitle: "Stocking fillers for babies and toddlers under £15",
-    instagram: "Stocking fillers for babies and toddlers, all under £15 🎄\n\nSixteen little things for the stocking, in two groups. For babies: a wiggly worm, rattles, a giraffe teether, a penguin handbell that can be personalised, board books and an activity cube. For toddlers: finger paints, a pull back plane, a hammer bench, stacking animals, a mini doll, a Paddington puzzle that can be personalised, a Gruffalo book set and a bath time crab.\n\nNobody needs all of them, so pick a few. Baby pieces from £3.95 and toddler pieces from £4.50, with every piece linked on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#stockingfillers #babygifts #toddlergifts #christmasgifts #ukmum",
+    instagram: "Stocking fillers for babies and toddlers, all under £15 🎄\n\nSixteen little things for the stocking, in two groups. For babies: a wiggly worm, rattles, a giraffe teether, a penguin handbell that can be personalised, board books and an activity cube. For toddlers: finger paints, a pull back plane, a hammer bench, stacking animals, a mini doll, a Paddington puzzle that can be personalised, a Gruffalo book set and a bath time crab.\n\nBaby pieces from £3.95 and toddler pieces from £4.50, with every piece linked on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#stockingfillers #babygifts #toddlergifts #christmasgifts #ukmum",
     pins: [
       {
             "label": "The whole edit",
             "title": "Stocking fillers for babies and toddlers under £15: 16 ideas",
-            "description": "Sixteen stocking fillers for babies and toddlers, every one under £15: rattles, a teether and soft books for babies, finger paints, a hammer bench and a pull back plane for toddlers. Pick a few. From Scandiborn, Mamas & Papas, My 1st Years and John Lewis, every piece linked at thearchedits.co.uk",
+            "description": "Sixteen stocking fillers for babies and toddlers, every one under £15: rattles, a teether and soft books for babies, finger paints, a hammer bench and a pull back plane for toddlers. From Scandiborn, Mamas & Papas, My 1st Years and John Lewis, every piece linked at thearchedits.co.uk",
             "tags": "#stockingfillers #christmasgifts #babygifts #toddlergifts #ukmum"
       },
       {
             "label": "Baby board",
             "title": "Baby stocking fillers under £15: 8 ideas for 0 to 12 months",
-            "description": "Eight stocking fillers for a baby, all under £15: a wiggly worm, a rain rattle, a flower rattle, a giraffe teether, a soft Grateful Garden book, a mini activity cube, a Peter Rabbit board book set and a personalised penguin handbell. Pick a few. Every piece linked at thearchedits.co.uk",
+            "description": "Eight stocking fillers for a baby, all under £15: a wiggly worm, a rain rattle, a flower rattle, a giraffe teether, a soft Grateful Garden book, a mini activity cube, a Peter Rabbit board book set and a personalised penguin handbell. Every piece linked at thearchedits.co.uk",
             "tags": "#stockingfillers #christmasgifts #babygifts #firstchristmas #ukmum"
       },
       {
             "label": "Toddler board",
             "title": "Toddler stocking fillers under £15: 8 ideas for 1 to 3 years",
-            "description": "Eight stocking fillers for a toddler, all under £15: finger paints, a pull back plane, a hammer bench, wooden stacking animals, a mini doll, a personalised Paddington puzzle, a Gruffalo book set and a bath time crab. Pick a few. Every piece linked at thearchedits.co.uk",
+            "description": "Eight stocking fillers for a toddler, all under £15: finger paints, a pull back plane, a hammer bench, wooden stacking animals, a mini doll, a personalised Paddington puzzle, a Gruffalo book set and a bath time crab. Every piece linked at thearchedits.co.uk",
             "tags": "#stockingfillers #christmasgifts #toddlergifts #toddlertoys #ukmum"
       },
       {
@@ -189,7 +189,7 @@ export const edits: Edit[] = [
     shareImage: "/edits/stocking-fillers-26-share.png",
     palette: ["#F4EFE6", "#E8C4C0", "#B9C7B0", "#B7C9D9"],
     description:
-      "Sixteen stocking fillers for babies and toddlers, every one under £15: rattles, a teether and soft books for babies, finger paints, a hammer bench and a pull back plane for toddlers. Choose a few, with what each costs.",
+      "Sixteen stocking fillers for babies and toddlers, every one under £15: rattles, a teether and soft books for babies, finger paints, a hammer bench and a pull back plane for toddlers, with what each costs.",
     // Two Mamas & Papas pieces are on offer (book, activity cube): re-check
     // about a week after publishing. John Lewis crab is reduced to clear.
     looks: [
@@ -197,7 +197,7 @@ export const edits: Edit[] = [
         label: "Baby",
         ages: "0–12 months",
         kind: "shortlist",
-        choose: "a few",
+        choose: "",
         productIds: [
           "sb-wiggly-worm-rainbow", "my1y-peter-rabbit-library", "sb-flower-rattle-fairy-garden", "sb-rain-rattle-forest-friends",
           "mp-gigi-giraffe-teether", "mp-grateful-garden-book", "mp-mini-activity-cube", "my1y-penguin-handbell",
@@ -207,7 +207,7 @@ export const edits: Edit[] = [
         label: "Toddler",
         ages: "1–3 years",
         kind: "shortlist",
-        choose: "a few",
+        choose: "",
         productIds: [
           "sb-pull-back-plane", "my1y-paddington-puzzle", "sb-finger-paints-safari", "sb-mini-doll-rosa",
           "my1y-gruffalo-library", "sb-woodland-stacking-animals", "sb-hammer-bench-forest-friends", "jl-bath-time-crab",

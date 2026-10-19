@@ -71,7 +71,7 @@ export interface EditLook {
    *  range instead. Three coats aren't an outfit and adding them up would be
    *  a number nobody is ever going to pay. */
   kind?: "outfit" | "shortlist";
-  /** What a shortlist asks for: "one" by default, "a few" for stocking fillers. */
+  /** What a shortlist asks for: "one" by default, "" for none (the banner says "The range"). */
   choose?: string;
 
   /** What this look IS, for the line above its total — "outfit" by default,
