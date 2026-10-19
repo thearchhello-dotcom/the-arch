@@ -31,6 +31,34 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "christmas-arch-countdown-26",
+    title: "The Christmas Arch: The Countdown",
+    searchTitle: "Advent calendars for babies, toddlers and children from £22",
+    instagram: "The Christmas Arch: The Countdown 🎄\n\nSeven advent calendars for the little ones, from £22 to £62: a green gingham hanging one, a calico one, a gingerbread house, a wooden house with 24 drawers, a velvet tree, a dinosaur one and a Mimi & Lula one with 24 hair accessories behind the doors.\n\nSeveral can be personalised with a name. With the two Mabel & Fox calendars, my code THEARCH takes 5% off orders over £30 (one use per customer, not on sale items or furniture).\n\nEvery piece is linked on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#adventcalendar #christmascountdown #personalisedgifts #christmasgifts #ukmum",
+    offer: "5% off the two Mabel & Fox calendars with code THEARCH. On orders over £30, one use per customer, not on sale items or furniture.",
+    note: "The green gingham, dinosaur, tree and wooden house calendars can be personalised with a name. Most come with empty pockets or drawers for you to fill, while the Mimi & Lula one comes with its 24 hair accessories. The green gingham calendar from Mabel & Fox is out of stock at the moment and due back on Friday 23 October.",
+    section: "gifts",
+    season: "Christmas 2026",
+    published: "2026-10-19",
+    updated: "2026-10-19",
+    boardImage: "/edits/christmas-arch-countdown-26-board.png",
+    palette: ["#2F5A45", "#7A1F35", "#E8D8CC", "#C9A87A"],
+    description:
+      "Seven advent calendars for babies, toddlers and children, from £22 to £62: fabric, wooden and gingerbread house styles, a velvet tree, a dinosaur one and a hair accessory one, with several that can be personalised. Every one linked, with what each costs.",
+    looks: [
+      {
+        label: "Advent calendars",
+        kind: "shortlist",
+        choose: "",
+        productIds: [
+          "jjmb-gingerbread-house-advent", "mp-calico-advent-calendar", "mf-mimi-lula-advent", "mf-green-gingham-advent",
+          "my1y-fabric-tree-advent", "my1y-dinosaur-advent", "my1y-gingerbread-advent-house",
+        ],
+      },
+    ],
+  },
+
+  {
     slug: "christmas-arch-traditions-26",
     title: "The Christmas Arch: Traditions",
     searchTitle: "Personalised Christmas stockings, sacks and gifts from Mabel & Fox",

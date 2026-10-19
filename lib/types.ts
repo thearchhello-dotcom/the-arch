@@ -22,6 +22,7 @@ export type Retailer =
   | "Mountain Warehouse"
   | "Next"
   | "John Lewis"
+  | "JoJo Maman Bébé"
   | "Scandiborn"
   | "schuh"
   | "Tu"
