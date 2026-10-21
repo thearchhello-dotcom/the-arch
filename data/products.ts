@@ -309,6 +309,15 @@ export const products: Product[] = [
   { id: "my1y-fabric-tree-advent", name: "Personalised Fabric Christmas Tree Hanging Advent Calendar", category: "Nursery", retailer: "My 1st Years", price: 46.00, type: "gift", affiliateUrl: "https://www.my1styears.com/products/personalised-fabric-christmas-tree-hanging-advent-calendar" },
   { id: "my1y-dinosaur-advent", name: "Personalised Meri Meri Dinosaur Advent Calendar", category: "Boys", retailer: "My 1st Years", price: 50.00, type: "gift", affiliateUrl: "https://www.my1styears.com/products/personalised-meri-meri-dinosaur-advent-calendar" },
   { id: "my1y-gingerbread-advent-house", name: "Personalised Gingerbread Advent House", category: "Nursery", retailer: "My 1st Years", price: 62.00, type: "gift", affiliateUrl: "https://www.my1styears.com/products/personalised-gingerbread-advent-house" },
+  // ---- The Christmas Arch: Matching PJs at Next (christmas-arch-matching-pjs-26) ----
+  // One print, ecru stamps, for the whole family. Prices read by Gemma off Next on
+  // 21 Oct 2026 (Next blocks automated reads). Next is not an affiliate programme, so
+  // these links are plain and show no photographs. No comfort or safety claims.
+  { id: "next-stamps-pyjamas-womens", name: "Ecru Stamps Matching Family Christmas Cosy Long Sleeve Pyjamas (Women's)", category: "Nursery", retailer: "Next", price: 26.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/sv051775/v70966" },
+  { id: "next-stamps-pyjamas-mens", name: "Ecru Stamps Matching Family Christmas Cosy Long Sleeve Pyjamas (Men's)", category: "Nursery", retailer: "Next", price: 28.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/sv024260/g95466" },
+  { id: "next-stamps-pyjamas-children", name: "Ecru Family Christmas Matching Pyjamas Set (9mths-16yrs)", category: "Girls", retailer: "Next", price: 13.00, priceTo: 21.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/sv042078/v67719" },
+  { id: "next-stamps-sleepsuit-baby", name: "Ecru Stamps Christmas Two Way Zip Baby Sleepsuit (0mths-2yrs)", category: "Baby", retailer: "Next", price: 9.00, priceTo: 10.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/sv356001/v77061" },
+  { id: "next-stamps-pyjamas-pet", name: "Ecru Stamps Matching Family Christmas Pet Pyjamas", category: "Nursery", retailer: "Next", price: 14.00, type: "gift", affiliateUrl: "https://www.next.co.uk/style/sv054015/h08928" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.

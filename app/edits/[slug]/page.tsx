@@ -446,7 +446,7 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
                       reader to wonder whether it is a hedge. */}
                   {!shortlist && cost.to !== cost.from && (
                     <span className="text-sm opacity-80">
-                      Shoes and knitwear priced by size &middot; up to £{cost.to.toFixed(2)}
+                      {look.perPiece ? "Children's and baby sizes are priced by size" : "Shoes and knitwear priced by size"} &middot; up to £{cost.to.toFixed(2)}
                     </span>
                   )}
                   {oneShop && (

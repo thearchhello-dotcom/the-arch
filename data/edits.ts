@@ -31,6 +31,30 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "christmas-arch-matching-pjs-26",
+    title: "The Christmas Arch: Matching PJs at Next",
+    searchTitle: "Matching family Christmas pyjamas from Next, with pet pyjamas",
+    instagram: "Matching family Christmas pyjamas 🎄 The Christmas Arch: Matching PJs at Next\n\nEcru stamps pyjamas for all the family, not forgetting the dog: women's, men's, children's from 9 months to 16 years, a baby sleepsuit and pet pyjamas.\n\nEach piece is from £9 to £28, and the whole family comes to £90 to £99, depending on sizes. Every piece is linked on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#matchingpyjamas #familypyjamas #christmaspyjamas #christmaseve #ukmum",
+    note: "All five pieces are the same ecru stamps print from Next, so the whole family, and the dog, can match. The children's set and the baby sleepsuit are priced by size, which is why some prices show a range.",
+    section: "outfits",
+    season: "Christmas 2026",
+    plannedFor: "Waiting for Gemma's corrected board (the price pill still shows the placeholder) and her go-ahead",
+    draft: true,
+    palette: ["#F1E9D8", "#C0392B", "#2F6B4F", "#E3A83B"],
+    description:
+      "Matching Christmas pyjamas for the whole family from Next, all in the same ecru stamps print: women's, men's, children's from 9 months to 16 years, a baby sleepsuit and pet pyjamas. Every piece linked, with what each costs and what the whole family comes to.",
+    looks: [
+      {
+        label: "The whole family",
+        kind: "outfit",
+        noun: "family set",
+        perPiece: true,
+        productIds: ["next-stamps-pyjamas-womens", "next-stamps-pyjamas-mens", "next-stamps-pyjamas-children", "next-stamps-sleepsuit-baby", "next-stamps-pyjamas-pet"],
+      },
+    ],
+  },
+
+  {
     slug: "christmas-arch-countdown-26",
     title: "The Christmas Arch: The Countdown",
     searchTitle: "Advent calendars for babies, toddlers and children from £22",
