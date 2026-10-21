@@ -81,6 +81,12 @@ export interface EditLook {
    *  "The whole outfit" over a cot and a mobile reads as a mistake. */
   noun?: string;
 
+  /** For a set of pieces that are bought together but worn by different people
+   *  (matching family pyjamas): the banner shows "6 pieces · each from £X to £Y"
+   *  as well as the total, so a parent sees what one set costs and what the whole
+   *  family costs. Use with kind "outfit" and noun "family set". */
+  perPiece?: boolean;
+
   productIds: string[];
 }
 
