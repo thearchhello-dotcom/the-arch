@@ -38,8 +38,9 @@ export const edits: Edit[] = [
     note: "All five pieces are the same ecru stamps print from Next, so the whole family, and the dog, can match. The children's set and the baby sleepsuit are priced by size, which is why some prices show a range.",
     section: "outfits",
     season: "Christmas 2026",
-    plannedFor: "Waiting for Gemma's corrected board (the price pill still shows the placeholder) and her go-ahead",
-    draft: true,
+    published: "2026-10-21",
+    updated: "2026-10-21",
+    boardImage: "/edits/christmas-arch-matching-pjs-26-board.png",
     palette: ["#F1E9D8", "#C0392B", "#2F6B4F", "#E3A83B"],
     description:
       "Matching Christmas pyjamas for the whole family from Next, all in the same ecru stamps print: women's, men's, children's from 9 months to 16 years, a baby sleepsuit and pet pyjamas. Every piece linked, with what each costs and what the whole family comes to.",
