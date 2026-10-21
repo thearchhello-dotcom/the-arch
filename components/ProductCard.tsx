@@ -48,6 +48,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <h3 className="font-display text-[17px] font-semibold text-ink flex-1">{product.name}</h3>
         <span className="text-[15px] font-bold text-ink">
           £{price.toFixed(2)}
+          {product.priceTo && product.priceTo > price ? ` – £${product.priceTo.toFixed(2)}` : null}
           {product.onSale && product.salePrice && (
             <span className="ml-2 text-sm font-medium text-ink-faint line-through">
               £{product.price.toFixed(2)}

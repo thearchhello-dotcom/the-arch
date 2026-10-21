@@ -415,6 +415,7 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
                       claim is that the figure is real. */}
                   <span className="text-sm font-bold text-ink">
                     £{priceOf(item).toFixed(2)}
+                    {item.priceTo && item.priceTo > priceOf(item) ? ` – £${item.priceTo.toFixed(2)}` : null}
                     {item.onSale && item.salePrice && (
                       <span className="ml-1.5 text-xs font-medium text-ink-faint line-through">
                         £{item.price.toFixed(2)}
