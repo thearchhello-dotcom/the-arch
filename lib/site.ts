@@ -79,7 +79,7 @@ export const site = {
    * you actually work with, not just that affiliate links exist.
    */
   networks: [
-    "Awin: Mamas & Papas, Scandiborn and Momcozy",
+    "Awin: Mamas & Papas, Scandiborn, Momcozy and Silver Cross",
     "UpPromote: Mabel & Fox",
   ] as string[],
 } as const;

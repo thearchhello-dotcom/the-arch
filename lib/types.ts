@@ -24,6 +24,7 @@ export type Retailer =
   | "John Lewis"
   | "JoJo Maman Bébé"
   | "Scandiborn"
+  | "Silver Cross"
   | "schuh"
   | "Tu"
   | "Zara";

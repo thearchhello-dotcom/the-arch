@@ -51,6 +51,7 @@ const PROGRAMMES: Partial<Record<Retailer, { network: "awin"; merchantId: string
   "Mamas & Papas": { network: "awin", merchantId: "6526" },
   Scandiborn: { network: "awin", merchantId: "85735" }, // approved 28 Sep 2026
   Momcozy: { network: "awin", merchantId: "82545" }, // approved 29 Sep 2026
+  "Silver Cross": { network: "awin", merchantId: "117735" }, // approved 27 Oct 2026
   // M&S, adidas and Debenhams go here as they are approved. schuh declined.
 };
 
