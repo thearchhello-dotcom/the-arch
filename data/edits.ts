@@ -31,6 +31,71 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "tried-and-loved-26",
+    title: "Tried & Loved",
+    searchTitle: "Baby essentials we actually used with two children: pushchairs, bedside crib and more",
+    instagram: "Tried & Loved 🤍 What products we actually used with our two boys\n\nPushchairs, a bedside crib, a highchair, a sound machine, a Grobag and a blanket I'll keep forever. I've written a few words on each one on the site, from £14.\n\nIt's what we used in our own home, not advice. For anything to do with sleep, always follow the manufacturer's instructions and the Lullaby Trust's safer sleep guidance.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#babyessentials #pushchair #babygear #nursery #ukmum",
+    tiktokHook: "What we actually used with our two boys",
+    tiktok: "Pushchairs, a bedside crib, a highchair, a Grobag and a blanket I'll keep forever. A few words on each one at thearchedits.co.uk, from £14. It's what we used in our own home, not advice: for sleep products, always follow the manufacturer's instructions and the Lullaby Trust's safer sleep guidance.\n\n#babyessentials #newbornessentials #nursery #mumof2 #ukmum",
+    pieceCaptions: [
+      {
+            "label": "Lunar bedside crib",
+            "caption": "Lunar Bedside Crib in Oatmeal from Silver Cross, £175. I used this from the day we came home from hospital until it was time to put our youngest in his own room. It's gorgeous, very easy to fold down, and comes with a travel bag.\n\nStyled by me in Cumbria\n\n#bedsidecrib #babyessentials #newborn #nursery #ukmum"
+      },
+      {
+            "label": "Pop 2 stroller",
+            "caption": "Pop 2 Cobble Stroller from Silver Cross, £195. I love this one and have been using it since my eldest was a year old. It's been on multiple holidays with us and will be used when our youngest gets a little older. The colour is just fab.\n\nStyled by me in Cumbria\n\n#stroller #babyessentials #travelwithbaby #pushchair #ukmum"
+      },
+      {
+            "label": "Ocarro 2 pushchair bundle",
+            "caption": "Ocarro 2 Essential Pushchair Bundle in Crema from Mamas & Papas, £999. I had the original Ocarro, in grey and silver, and I used it for both my children. This is the new version, and I'd choose this lovely colour now. The bundle includes the car seat adaptors, which were a godsend.\n\nStyled by me in Cumbria\n\n#pushchair #babyessentials #mamasandpapas #nursery #ukmum"
+      },
+      {
+            "label": "Sound machine",
+            "caption": "Smart Baby Sound Machine with app remote control from Momcozy, £42.99. Used this for both children, every night and for naps. Love that it can be controlled through an app on my phone.\n\nStyled by me in Cumbria\n\n#babyessentials #nursery #newborn #momcozy #ukmum"
+      },
+      {
+            "label": "Nova highchair",
+            "caption": "Nova Birth to 12 Years Complete Highchair Package in Grey/Oak from Tutti Bambini, £249. Bought for my second, and it's been great so far. The newborn attachment was great when they were so little, and we all wanted to sit round and have dinner as a family.\n\nStyled by me in Cumbria\n\n#highchair #babyessentials #weaning #nursery #ukmum"
+      },
+      {
+            "label": "Chenille blanket",
+            "caption": "Chenille Blanket in Mustard Moon/Star from Mamas & Papas, £14.40 in the sale, and £6.50 extra to personalise. I absolutely love this blanket. I find it so cosy. I have it in blue and mustard, and I had it personalised, so I'll keep it forever as a keepsake.\n\nStyled by me in Cumbria\n\n#babyblanket #keepsake #babyessentials #nursery #ukmum"
+      },
+      {
+            "label": "Grobag",
+            "caption": "The Original Grobag Swaddlebag from Tommee Tippee, from £19.99. I used the Grobag in the 0 to 3 months and 3 to 6 months sizes, in both 1.0 tog and 2.5 tog. For sleep products, always follow the manufacturer's instructions and the Lullaby Trust's safer sleep guidance.\n\nStyled by me in Cumbria\n\n#grobag #babyessentials #newborn #nursery #ukmum"
+      }
+    ],
+    pieceNotes: {
+      "sc-lunar-bedside-crib": "I used this from the day we came home from hospital until it was time to put our youngest in his own room. It's gorgeous, very easy to fold down, and comes with a travel bag.",
+      "sc-pop-2-cobble": "I love this one and have been using it since my eldest was a year old. It's been on multiple holidays with us and will be used when our youngest gets a little older. The colour is just fab.",
+      "mc-baby-sound-machine": "Used this for both children, every night and for naps. Love that it can be controlled through an app on my phone.",
+      "mp-ocarro2-essential-crema": "I had the original Ocarro, in grey and silver, and I used it for both my children. This is the new version, and I'd choose this lovely colour now. The bundle includes the car seat adaptors, which were a godsend.",
+      "tb-nova-highchair-package": "Bought for my second, and it's been great so far. The newborn attachment was great when they were so little, and we all wanted to sit round and have dinner as a family.",
+      "mp-chenille-blanket-moon-star": "I absolutely love this blanket. I find it so cosy. I have it in blue and mustard, and I had it personalised, so I'll keep it forever as a keepsake.",
+      "tt-original-grobag-swaddlebag": "I used the Grobag in the 0 to 3 months and 3 to 6 months sizes, in both 1.0 tog and 2.5 tog."
+    },
+    note: "Everything here is what we used with our two boys, in our own home. It is not advice. For sleep products especially, always follow the manufacturer's instructions and the Lullaby Trust's safer sleep guidance. The Ocarro 2 is the newer version of the Ocarro I had. Several of these are in sales at the moment, so the price shown may change, and the Grobag price depends on the size and tog. The blanket can be personalised for an extra £6.50.",
+    section: "nursery",
+    season: "Winter 2026",
+    published: "2026-10-29",
+    updated: "2026-10-29",
+    boardImage: "/edits/tried-and-loved-26-board.png",
+    palette: ["#E7DCC4", "#8B6F55", "#7E97A8", "#C9A24B"],
+    description:
+      "What we actually used with our two boys: a bedside crib, two pushchairs, a highchair, a sound machine, a Grobag and a blanket, with a few words from me on each one and what it costs.",
+    looks: [
+      {
+        label: "What we used",
+        kind: "shortlist",
+        perPiece: true,
+        choose: "",
+        productIds: ["mp-chenille-blanket-moon-star", "tt-original-grobag-swaddlebag", "mc-baby-sound-machine", "sc-lunar-bedside-crib", "sc-pop-2-cobble", "tb-nova-highchair-package", "mp-ocarro2-essential-crema"],
+      },
+    ],
+  },
+  {
     slug: "christmas-arch-matching-pjs-26",
     title: "The Christmas Arch: Matching PJs at Next",
     searchTitle: "Matching family Christmas pyjamas from Next, with pet pyjamas",

@@ -318,6 +318,18 @@ export const products: Product[] = [
   { id: "next-stamps-pyjamas-children", name: "Ecru Family Christmas Matching Pyjamas Set (9mths-16yrs)", category: "Girls", retailer: "Next", price: 13.00, priceTo: 21.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/sv042078/v67719" },
   { id: "next-stamps-sleepsuit-baby", name: "Ecru Stamps Christmas Two Way Zip Baby Sleepsuit (0mths-2yrs)", category: "Baby", retailer: "Next", price: 9.00, priceTo: 10.00, type: "top", affiliateUrl: "https://www.next.co.uk/style/sv356001/v77061" },
   { id: "next-stamps-pyjamas-pet", name: "Ecru Stamps Matching Family Christmas Pet Pyjamas", category: "Nursery", retailer: "Next", price: 14.00, type: "gift", affiliateUrl: "https://www.next.co.uk/style/sv054015/h08928" },
+  // ---- Tried & Loved (tried-and-loved-26) --------------------------------
+  // What Gemma actually used with her two boys. Prices read 28-29 Oct 2026 from the
+  // shops' own pages. Several are on sale ahead of Black Friday: re-check them.
+  // Tommee Tippee is not an approved programme yet, so that link is plain. No tile
+  // photographs: the board carries the pictures.
+  { id: "sc-lunar-bedside-crib", name: "Lunar Bedside Crib, Oatmeal", category: "Nursery", retailer: "Silver Cross", price: 175.00, type: "nursery", affiliateUrl: "https://www.silvercrossbaby.com/products/lunar-bedside-crib" },
+  { id: "sc-pop-2-cobble", name: "Pop 2 Cobble Stroller", category: "Nursery", retailer: "Silver Cross", price: 195.00, type: "nursery", affiliateUrl: "https://www.silvercrossbaby.com/products/pop-cobble" },
+  { id: "mc-baby-sound-machine", name: "Smart Baby Sound Machine, App Remote Control", category: "Nursery", retailer: "Momcozy", price: 42.99, type: "nursery", affiliateUrl: "https://uk.momcozy.com/products/momcozy-baby-sound-machine-app-remote-control" },
+  { id: "mp-ocarro2-essential-crema", name: "Ocarro 2 Essential Pushchair Bundle (7 Pieces), Crema", category: "Nursery", retailer: "Mamas & Papas", price: 999.00, type: "nursery", affiliateUrl: "https://www.mamasandpapas.com/products/ocarro2-crema-ess-kit-stand-67082cr03" },
+  { id: "tb-nova-highchair-package", name: "Nova Birth to 12 Years Complete Highchair Package, Grey/Oak", category: "Nursery", retailer: "Tutti Bambini", price: 249.00, type: "nursery", affiliateUrl: "https://www.tuttibambini.com/products/nova-birth-to-12-years-complete-highchair-package-grey-oak" },
+  { id: "mp-chenille-blanket-moon-star", name: "Chenille Blanket, Mustard Moon/Star", category: "Baby", retailer: "Mamas & Papas", price: 18.00, onSale: true, salePrice: 14.40, type: "nursery", affiliateUrl: "https://www.mamasandpapas.com/products/chenille-blanket-honey-moon-star-7883kj300" },
+  { id: "tt-original-grobag-swaddlebag", name: "The Original Grobag Swaddlebag, Navy Spec", category: "Baby", retailer: "Tommee Tippee", price: 19.99, type: "nursery", affiliateUrl: "https://www.tommeetippee.com/en-gb/products/the-original-grobag-navy-spec-swaddlebag" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.

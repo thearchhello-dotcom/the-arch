@@ -438,7 +438,9 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
                   </span>
                   <span className="text-sm opacity-80">
                     {shortlist
-                      ? `${look.label} · ${items.length} to choose from`
+                      ? look.perPiece
+                        ? `${look.label} · ${items.length} pieces`
+                        : `${look.label} · ${items.length} to choose from`
                       : look.perPiece
                         ? `${items.length} pieces · each from £${Math.min(...items.map((p) => priceOf(p))).toFixed(2)} to £${Math.max(...items.map((p) => p.priceTo ?? priceOf(p))).toFixed(2)}`
                         : `${look.label} · everything above, nothing missing`}

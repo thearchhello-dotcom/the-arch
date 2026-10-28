@@ -25,6 +25,7 @@ export type Retailer =
   | "JoJo Maman Bébé"
   | "Scandiborn"
   | "Silver Cross"
+  | "Tommee Tippee"
   | "Tutti Bambini"
   | "schuh"
   | "Tu"
