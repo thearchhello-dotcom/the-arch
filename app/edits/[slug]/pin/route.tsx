@@ -3,7 +3,9 @@ import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { site } from "@/lib/site";
 import { getEdit } from "@/data/edits";
-import { getProduct } from "@/data/products";
+import { getProduct, priceOf } from "@/data/products";
+import { codeLineFor } from "@/lib/discounts";
+import type { Edit } from "@/lib/types";
 
 /**
  * Ready-to-post social images for every edit — one design, three sizes.
@@ -85,10 +87,94 @@ function asDataUri(publicPath: string): string {
   }
 }
 
+/**
+ * One pin picture for one piece: ?piece=<product id>.
+ *
+ * The shop's own photograph on a white card, the name, the price in the dark pill
+ * (and what it was, if it is on offer), the maker's age line where we have one, and
+ * the discount code only when it applies to that piece. No shop name on it. Only for
+ * a piece that is in this edit and has a stored picture, and the studio only offers
+ * it for shops Gemma is approved with.
+ */
+async function pieceImage(edit: Edit, pieceId: string) {
+  const product = getProduct(pieceId);
+  if (!product || !product.imageUrl || !edit.looks.some((l) => l.productIds.includes(pieceId))) {
+    return new Response("Not found", { status: 404 });
+  }
+  const christmas = (edit.season ?? "").toLowerCase().includes("christmas");
+  const frame = asDataUri(christmas ? "/pin-frames/christmas.png" : "/pin-frames/ecru.png");
+  const fonts = await loadFonts();
+
+  let photo = "";
+  try {
+    const r = await fetch(product.imageUrl);
+    const type = r.headers.get("content-type") ?? "image/jpeg";
+    photo = `data:${type};base64,${Buffer.from(await r.arrayBuffer()).toString("base64")}`;
+  } catch {
+    /* no photograph: the card stays white */
+  }
+
+  const money = (n: number) => `£${Number.isInteger(n) ? n.toFixed(0) : n.toFixed(2)}`;
+  const now = priceOf(product);
+  const price = product.priceTo && product.priceTo > now ? `from ${money(now)}` : money(now);
+  const was = product.onSale && product.salePrice ? `was ${money(product.price)}` : null;
+  const [main, ...rest] = product.name.split(", ");
+  const heading = (edit.title.split(": ").pop() ?? edit.title).toUpperCase();
+  const notes = [product.ageNote, product.onSale ? "On offer at the moment" : undefined].filter(Boolean) as string[];
+  const code = codeLineFor(product);
+
+  const BROWN = "#9A8573";
+  const text = { fontFamily: "Fredoka", display: "flex", justifyContent: "center", textAlign: "center" as const };
+
+  return new ImageResponse(
+    (
+      <div style={{ width: 1200, height: 1800, display: "flex", position: "relative", background: "#FBF6EA" }}>
+        {frame ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={frame} alt="" width={1200} height={1800} style={{ position: "absolute", left: 0, top: 0 }} />
+        ) : null}
+        <div style={{ ...text, position: "absolute", left: 0, top: 330, width: 1200, fontSize: 36, color: BROWN }}>{heading}</div>
+        <div
+          style={{
+            position: "absolute", left: 210, top: 395, width: 780, height: 780, display: "flex",
+            alignItems: "center", justifyContent: "center", background: "#fff", borderRadius: 36, border: "4px solid #E2D4B8",
+          }}
+        >
+          {photo ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={photo} alt="" width={720} height={720} style={{ objectFit: "contain" }} />
+          ) : null}
+        </div>
+        <div
+          style={{
+            position: "absolute", left: 0, top: 1195, width: 1080, display: "flex", flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <div style={{ ...text, fontSize: 52, lineHeight: 1.1, color: "#684858", maxWidth: 940 }}>{main}</div>
+          {rest.length > 0 ? <div style={{ ...text, fontSize: 32, color: BROWN, marginTop: 8 }}>{rest.join(", ")}</div> : null}
+          <div style={{ display: "flex", alignItems: "center", marginTop: 22 }}>
+            <div style={{ ...text, background: "#262420", color: "#fff", fontSize: 52, padding: "6px 40px", borderRadius: 999 }}>{price}</div>
+            {was ? <div style={{ ...text, fontSize: 34, color: BROWN, marginLeft: 22 }}>{was}</div> : null}
+          </div>
+          {notes.map((n) => (
+            <div key={n} style={{ ...text, fontSize: 30, color: BROWN, marginTop: 14, maxWidth: 700 }}>{n}</div>
+          ))}
+          {code ? <div style={{ ...text, fontSize: 29, color: "#B3303F", marginTop: 14, maxWidth: 680 }}>{code}</div> : null}
+        </div>
+      </div>
+    ),
+    { width: 1200, height: 1800, fonts: fonts.length ? fonts : undefined }
+  );
+}
+
 export async function GET(req: Request, { params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const edit = getEdit(slug);
   if (!edit) return new Response("Not found", { status: 404 });
+
+  const piece = new URL(req.url).searchParams.get("piece");
+  if (piece) return pieceImage(edit, piece);
 
   const key = new URL(req.url).searchParams.get("format") ?? "pin";
   const { w: W, h: H } = FORMATS[key as keyof typeof FORMATS] ?? FORMATS.pin;

@@ -7,6 +7,8 @@ import { getProduct } from "@/data/products";
 import { pinCopy, pinCopyForLook, pinCopyForPiece } from "@/lib/pinCopy";
 import CopyButton from "@/components/CopyButton";
 import { adCaption, adPin } from "@/lib/disclosure";
+import { canShowImage } from "@/lib/affiliate";
+import { site } from "@/lib/site";
 
 /**
  * Your own back room. Every edit, with its three ready-made social images one
@@ -247,6 +249,16 @@ export default function StudioPage() {
                               <CopyButton text={pp.description} label="Copy description" />
                               <CopyButton text={pp.url} label="Copy link" />
                               <CopyButton text={pp.full} label="Copy the lot" />
+                              {site.showProductImages && canShowImage(p.retailer) && p.imageUrl && (
+                                <a
+                                  href={`/edits/${edit.slug}/pin?piece=${p.id}`}
+                                  target="_blank"
+                                  rel="noopener"
+                                  className="font-body font-semibold text-sm px-4 py-2.5 rounded-pill bg-cream border border-line text-ink hover:border-terracotta hover:text-terracotta transition-colors"
+                                >
+                                  Pin picture <span className="text-ink-faint font-normal">1200 \u00d7 1800</span>
+                                </a>
+                              )}
                             </div>
                           </div>
                         );

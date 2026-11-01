@@ -37,6 +37,10 @@ export type Retailer =
 export type ItemType = "top" | "bottom" | "foot" | "head" | "toy" | "gift" | "nursery";
 
 export interface Product {
+  /** A short factual line about the maker's recommended age, shown on the pin picture
+   *  for that piece, for example "Recommended age from 10 months". Only what the
+   *  maker says, never our own judgement of suitability. */
+  ageNote?: string;
   id: string;
   name: string;
   category: Category;
