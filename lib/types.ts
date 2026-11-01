@@ -196,6 +196,10 @@ export interface Edit {
    *  or "everything", and keep it true: it is an affiliate code, so the page's
    *  affiliate note above it already covers that. */
   offer?: string;
+  /** A short introduction in Gemma's voice, shown under the description. Gives the page
+   *  a few plain sentences that say what it is for, in the words a parent would search,
+   *  without claims about the products. */
+  intro?: string;
 
   /** True while an edit is still being built. Drafts are hidden from the live
    *  site — off /edits, out of the sitemap, 404 in production — but ARE
