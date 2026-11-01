@@ -228,8 +228,9 @@ export async function GET(req: Request, { params }: { params: Promise<{ slug: st
   const edge = key === "grid" && border ? 44 : 0;
 
   // A board with a gingham border: gingham in the side bars too, no other border.
-  if (board && key === "grid" && edit.ginghamSides) {
-    const bg = asDataUri(`/pin-frames/grid-gingham-${edit.ginghamSides}.png`);
+  if (board && (key === "grid" || key === "post" || key === "story") && edit.ginghamSides) {
+    const bg = asDataUri(`/pin-frames/${key}-gingham-${edit.ginghamSides}.png`);
+    const fit = Math.min(W / 1200, H / 1800);
     return new ImageResponse(
       (
         <div style={{ width: W, height: H, display: "flex", alignItems: "center", justifyContent: "center", position: "relative", background: CREAM }}>
@@ -238,7 +239,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ slug: st
             <img src={bg} alt="" width={W} height={H} style={{ position: "absolute", left: 0, top: 0 }} />
           ) : null}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={board} alt="" style={{ width: Math.round((H * 2) / 3), height: H }} />
+          <img src={board} alt="" style={{ width: Math.round(1200 * fit), height: Math.round(1800 * fit) }} />
         </div>
       ),
       { width: W, height: H }

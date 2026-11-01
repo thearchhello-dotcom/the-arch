@@ -35,6 +35,8 @@ export const edits: Edit[] = [
     title: "The Christmas Arch: Baby's First Christmas",
     searchTitle: "Baby's first Christmas gift ideas, from £9",
     instagram: "The Christmas Arch: Baby's First Christmas 🎄\n\nNine gift ideas for a baby's first Christmas, from £9: an activity cube, a rocking horse, a ball pit, a pull-along train that can be personalised, the winter edition of Guess How Much I Love You, a newborn gift box, a pull-along puppy, a spiral tower and an activity walker.\n\nI've put each maker's recommended age on the page, so check it before you buy. Every piece is linked on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#babysfirstchristmas #christmasgifts #babygifts #firstchristmas #ukmum",
+    tiktokHook: "Baby's first Christmas gift ideas, from £9",
+    tiktok: "Nine gift ideas for a baby's first Christmas, from £9: a rocking horse, a ball pit, an activity walker, a pull-along puppy and more. Prices, and the maker's recommended age where there is one, on every piece at thearchedits.co.uk (link in my Instagram bio).\n\n#babysfirstchristmas #christmasgifts #babygifts #firstchristmas #ukmum",
     pieceNotes: {
       "sb-activity-cube-safari": "Every side of this one has something to turn, slide or spot, and I love the soft safari colours.",
       "sb-rocking-horse-mila": "That pink stripe is so pretty. A cotton canvas rocking horse with a soft saddle and a little cotton tail.",
