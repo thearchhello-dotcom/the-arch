@@ -227,23 +227,18 @@ export async function GET(req: Request, { params }: { params: Promise<{ slug: st
   // this (2 Oct 2026).
   const edge = key === "grid" && border ? 44 : 0;
 
-  // A board with a gingham border: gingham in the side bars too, no other border.
-  if (board && (key === "grid" || key === "post" || key === "story") && edit.ginghamSides) {
-    const bg = asDataUri(`/pin-frames/${key}-gingham-${edit.ginghamSides}.png`);
-    const fit = Math.min(W / 1200, H / 1800);
-    return new ImageResponse(
-      (
-        <div style={{ width: W, height: H, display: "flex", alignItems: "center", justifyContent: "center", position: "relative", background: CREAM }}>
-          {bg ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={bg} alt="" width={W} height={H} style={{ position: "absolute", left: 0, top: 0 }} />
-          ) : null}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={board} alt="" style={{ width: Math.round(1200 * fit), height: Math.round(1800 * fit) }} />
-        </div>
-      ),
-      { width: W, height: H }
-    );
+  // A board with a gingham border: the side bars are that board's own gingham carried sideways,
+  // with its rainbow carried across, made ahead of time (public/pin-frames/gram-<slug>-<size>.png).
+  // Remake them when the board changes.
+  if (board && (key === "grid" || key === "post") && edit.ginghamSides) {
+    try {
+      const finished = readFileSync(join(process.cwd(), "public", "pin-frames", `gram-${slug}-${key}.png`));
+      return new Response(new Uint8Array(finished), {
+        headers: { "content-type": "image/png", "cache-control": "public, max-age=60" },
+      });
+    } catch {
+      /* none made yet: fall through to the plain version */
+    }
   }
 
   // The Christmas frame, for the festive edits: berry red, a thin gold rounded
