@@ -83,7 +83,7 @@ export default function StudioPage() {
 
               <div className="flex flex-wrap gap-2.5">
                 {[edit.boardImage, ...(edit.moreBoards ?? [])].flatMap((_, bi) =>
-                  SIZES.map((s) => (
+                  SIZES.filter((s) => !(edit.ginghamSides && s.q.startsWith("?format=grid"))).map((s) => (
                   <a
                     key={`${bi}-${s.label}`}
                     href={`/edits/${edit.slug}/pin${bi > 0 ? (s.q ? `${s.q}&board=${bi + 1}` : `?board=${bi + 1}`) : s.q}`}
@@ -95,7 +95,17 @@ export default function StudioPage() {
                   </a>
                   ))
                 )}
-                {edit.season?.toLowerCase().includes("christmas") && (
+                {edit.ginghamSides && (
+                  <a
+                    href={`/edits/${edit.slug}/pin?format=grid`}
+                    target="_blank"
+                    rel="noopener"
+                    className="font-body font-semibold text-sm px-4 py-2.5 rounded-pill bg-cream border border-line text-ink hover:border-terracotta hover:text-terracotta transition-colors"
+                  >
+                    Instagram 3:4 gingham <span className="text-ink-faint font-normal">1080 × 1440</span>
+                  </a>
+                )}
+                {!edit.ginghamSides && edit.season?.toLowerCase().includes("christmas") && (
                   <a
                     href={`/edits/${edit.slug}/pin?format=grid&border=christmas`}
                     target="_blank"

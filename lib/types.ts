@@ -200,6 +200,9 @@ export interface Edit {
    *  a few plain sentences that say what it is for, in the words a parent would search,
    *  without claims about the products. */
   intro?: string;
+  /** The board has a gingham border: the Instagram 3:4 picture fills its side bars with
+   *  the same gingham instead of cream, so the board runs into the edge. */
+  ginghamSides?: "red" | "ecru";
 
   /** True while an edit is still being built. Drafts are hidden from the live
    *  site — off /edits, out of the sitemap, 404 in production — but ARE

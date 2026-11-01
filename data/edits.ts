@@ -53,6 +53,7 @@ export const edits: Edit[] = [
     updated: "2026-11-04",
     boardImage: "/edits/christmas-arch-first-christmas-26-board.png",
     palette: ["#B83A4B", "#8FA383", "#E3A83B", "#F1E9D8"],
+    ginghamSides: "red",
     intro: "A baby's first Christmas is a big one, and it's lovely to have something small to unwrap. I've pulled together nine gift ideas for a first Christmas, from a book at £8.99 to a rocking horse at £109.95, with every price on the page. Where the maker gives a recommended age I've put it alongside the piece, so you can choose for the age of your baby.",
     description:
       "Nine gift ideas for a baby's first Christmas, from £9: an activity cube, a rocking horse, a ball pit, a pull-along train, a winter edition of Guess How Much I Love You, a newborn gift box, a pull-along puppy, a spiral tower and an activity walker. Every piece linked, with what each costs.",
@@ -119,6 +120,7 @@ export const edits: Edit[] = [
     updated: "2026-10-29",
     boardImage: "/edits/tried-and-loved-26-board.png",
     palette: ["#E7DCC4", "#8B6F55", "#7E97A8", "#C9A24B"],
+    ginghamSides: "ecru",
     description:
       "What we actually used with our two boys: a bedside crib, two pushchairs, a highchair, a sound machine, a Grobag and a blanket, with a few words from me on each one and what it costs.",
     looks: [

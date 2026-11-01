@@ -227,6 +227,24 @@ export async function GET(req: Request, { params }: { params: Promise<{ slug: st
   // this (2 Oct 2026).
   const edge = key === "grid" && border ? 44 : 0;
 
+  // A board with a gingham border: gingham in the side bars too, no other border.
+  if (board && key === "grid" && edit.ginghamSides) {
+    const bg = asDataUri(`/pin-frames/grid-gingham-${edit.ginghamSides}.png`);
+    return new ImageResponse(
+      (
+        <div style={{ width: W, height: H, display: "flex", alignItems: "center", justifyContent: "center", position: "relative", background: CREAM }}>
+          {bg ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={bg} alt="" width={W} height={H} style={{ position: "absolute", left: 0, top: 0 }} />
+          ) : null}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={board} alt="" style={{ width: Math.round((H * 2) / 3), height: H }} />
+        </div>
+      ),
+      { width: W, height: H }
+    );
+  }
+
   // The Christmas frame, for the festive edits: berry red, a thin gold rounded
   // outline round the board, and gold sparkles and dots in the margin, matching
   // Gemma's Christmas carousels. Chosen with ?border=christmas.
