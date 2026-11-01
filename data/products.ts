@@ -330,6 +330,20 @@ export const products: Product[] = [
   { id: "tb-nova-highchair-package", name: "Nova Birth to 12 Years Complete Highchair Package, Grey/Oak", category: "Nursery", retailer: "Tutti Bambini", price: 249.00, type: "nursery", affiliateUrl: "https://www.tuttibambini.com/products/nova-birth-to-12-years-complete-highchair-package-grey-oak" },
   { id: "mp-chenille-blanket-moon-star", name: "Chenille Blanket, Mustard Moon/Star", category: "Baby", retailer: "Mamas & Papas", price: 18.00, onSale: true, salePrice: 14.40, type: "nursery", affiliateUrl: "https://www.mamasandpapas.com/products/chenille-blanket-honey-moon-star-7883kj300" },
   { id: "tt-original-grobag-swaddlebag", name: "The Original Grobag Swaddlebag, Navy Spec", category: "Baby", retailer: "Tommee Tippee", price: 19.99, type: "nursery", affiliateUrl: "https://www.tommeetippee.com/en-gb/products/the-original-grobag-navy-spec-swaddlebag" },
+  // ---- The Christmas Arch: Baby's First Christmas (christmas-arch-first-christmas-26) ----
+  // Prices read from each shop's own page on 3 Nov 2026 (ball pit and train are on sale).
+  // Scandiborn, Mamas & Papas and Mabel & Fox earn; My 1st Years is still pending. The
+  // pull-along dog is listed by Mabel & Fox for ages 3 and over: the page says so.
+  // No tile photographs: the board carries the pictures.
+  { id: "sb-activity-cube-safari", name: "Little Dutch Wooden Activity Cube, Safari Friends", category: "Baby", retailer: "Scandiborn", price: 39.95, type: "toy", affiliateUrl: "https://www.scandiborn.co.uk/products/little-dutch-wooden-activity-cube-hexagon-safari-friends" },
+  { id: "sb-rocking-horse-mila", name: "Kids Concept Rocking Horse Mila, Pink Stripe", category: "Baby", retailer: "Scandiborn", price: 109.95, type: "toy", affiliateUrl: "https://www.scandiborn.co.uk/products/kids-concept-rocking-horse-mila" },
+  { id: "sb-cuddleco-ball-pit-tuscany", name: "CuddleCo Soft Play Ball Pit with Balls, Tuscany", category: "Baby", retailer: "Scandiborn", price: 89.99, onSale: true, salePrice: 71.99, type: "toy", affiliateUrl: "https://www.scandiborn.co.uk/products/cuddleco-soft-play-ball-pit-with-balls-tuscany" },
+  { id: "my1y-blue-pull-along-train", name: "Personalised Wooden Blue Pull Along Train", category: "Baby", retailer: "My 1st Years", price: 38.00, onSale: true, salePrice: 19.00, type: "toy", affiliateUrl: "https://www.my1styears.com/products/personalised-wooden-blue-pull-along-train-fscr" },
+  { id: "mp-guess-how-much-winter", name: "Guess How Much I Love You In The Winter Book", category: "Baby", retailer: "Mamas & Papas", price: 8.99, type: "toy", affiliateUrl: "https://www.mamasandpapas.com/products/book-ghmily-in-the-winter-791809432" },
+  { id: "mp-taf-newborn-gift-box", name: "Taf Toys Newborn Gift Box", category: "Baby", retailer: "Mamas & Papas", price: 32.99, type: "gift", affiliateUrl: "https://www.mamasandpapas.com/products/taf-newborn-kit-12915-001754000" },
+  { id: "mf-dudley-pull-along-dog", name: "Tender Leaf Dudley Pull Along Dog", category: "Baby", retailer: "Mabel & Fox", price: 35.00, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/tender-leaf-dudley-pull-along-dog" },
+  { id: "sb-spiral-tower-pink", name: "Little Dutch Spiral Tower, Pink", category: "Baby", retailer: "Scandiborn", price: 24.95, type: "toy", affiliateUrl: "https://www.scandiborn.co.uk/products/little-dutch-spiral-tower-pink" },
+  { id: "sb-multi-activity-walker-farm", name: "Little Dutch Multi Activity Walker, Little Farm", category: "Baby", retailer: "Scandiborn", price: 74.95, type: "toy", affiliateUrl: "https://www.scandiborn.co.uk/products/little-dutch-multi-activity-walker-little-farm" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.

@@ -20,6 +20,7 @@ const OVERRIDES: Record<string, string> = {
   "big-christmas-presents-26": "bg-pop-holly",
   "little-christmas-presents-26": "bg-pop-berry",
   "christmas-arch-matching-pjs-26": "bg-pop-berry",
+  "christmas-arch-first-christmas-26": "bg-pop-holly",
 };
 
 /** Stable per-item colour: the same id always lands on the same pop, so the

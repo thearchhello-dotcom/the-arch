@@ -31,6 +31,41 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "christmas-arch-first-christmas-26",
+    title: "The Christmas Arch: Baby's First Christmas",
+    searchTitle: "Baby's first Christmas gift ideas, from £9",
+    instagram: "The Christmas Arch: Baby's First Christmas 🎄\n\nNine gift ideas for a baby's first Christmas, from £9: an activity cube, a rocking horse, a ball pit, a pull-along train that can be personalised, the winter edition of Guess How Much I Love You, a newborn gift box, a pull-along puppy, a spiral tower and an activity walker.\n\nI've put each maker's recommended age on the page, so check it before you buy. Every piece is linked on the site.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#babysfirstchristmas #christmasgifts #babygifts #firstchristmas #ukmum",
+    pieceNotes: {
+      "sb-activity-cube-safari": "Every side of this one has something to turn, slide or spot, and I love the soft safari colours.",
+      "sb-rocking-horse-mila": "That pink stripe is so pretty. A cotton canvas rocking horse with a soft saddle and a little cotton tail.",
+      "sb-cuddleco-ball-pit-tuscany": "A soft ball pit in a blush shade, balls included, and it's on offer at the moment. It ships directly from the brand, so it may arrive separately.",
+      "my1y-blue-pull-along-train": "A wooden train with a name on it, which makes it feel extra special. The maker lists it from 12 months.",
+      "mp-guess-how-much-winter": "The winter edition of Guess How Much I Love You, and a sweet one to pop in a stocking.",
+      "mp-taf-newborn-gift-box": "A gift box with 12 newborn toys inside, wrapped and ready to give.",
+      "mf-dudley-pull-along-dog": "I couldn't leave this one out. A soft pull-along puppy with wooden wheels and a little lead. The maker lists it for ages 3 and over.",
+      "sb-spiral-tower-pink": "Pink, sage and mustard together is so pretty. Three balls roll down the tiers. Recommended age from 10 months.",
+      "sb-multi-activity-walker-farm": "A wooden walker with a little farm scene on the front, in soft sage and wood tones. Recommended age from 12 months, and an adult needs to assemble it."
+    },
+    note: "Age guidance varies from piece to piece, so check each maker's recommended age on the shop's page before you buy. The pull-along dog is listed by Mabel & Fox for ages 3 and over. The ball pit and the train are on offer at the moment, so the prices may change, and the ball pit ships directly from the brand, so it may arrive separately. The train comes personalised with a name.",
+    section: "gifts",
+    season: "Christmas 2026",
+    published: "2026-11-03",
+    updated: "2026-11-03",
+    boardImage: "/edits/christmas-arch-first-christmas-26-board.png",
+    palette: ["#B83A4B", "#8FA383", "#E3A83B", "#F1E9D8"],
+    description:
+      "Nine gift ideas for a baby's first Christmas, from £9: an activity cube, a rocking horse, a ball pit, a pull-along train, a winter edition of Guess How Much I Love You, a newborn gift box, a pull-along puppy, a spiral tower and an activity walker. Every piece linked, with what each costs.",
+    looks: [
+      {
+        label: "Gift ideas",
+        kind: "shortlist",
+        perPiece: true,
+        choose: "",
+        productIds: ["mp-guess-how-much-winter", "my1y-blue-pull-along-train", "sb-spiral-tower-pink", "mp-taf-newborn-gift-box", "mf-dudley-pull-along-dog", "sb-activity-cube-safari", "sb-cuddleco-ball-pit-tuscany", "sb-multi-activity-walker-farm", "sb-rocking-horse-mila"],
+      },
+    ],
+  },
+  {
     slug: "tried-and-loved-26",
     title: "Tried & Loved",
     searchTitle: "Baby essentials we actually used with two children: pushchairs, bedside crib and more",
