@@ -40,7 +40,7 @@ export const edits: Edit[] = [
     note: "Both pairs of pyjamas are on offer at the moment, so those prices may change. The Mamas & Papas Christmas Eve Plate can be personalised on Mabel & Fox's page, and the maker lists the gingerbread puzzle from 12 months.",
     section: "gifts",
     season: "Christmas 2026",
-    draft: true,
+    published: "2026-11-02",
     boardImage: "/edits/christmas-arch-eve-box-26-board.png",
     palette: ["#2F6B4F", "#8DB39D", "#B83A4B", "#E3A83B"],
     description:
