@@ -31,6 +31,31 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "christmas-arch-eve-box-26",
+    title: "The Christmas Arch: Christmas Eve Box",
+    searchTitle: "Christmas Eve box ideas for babies and toddlers",
+    instagram: "The Christmas Arch: Christmas Eve Box 🎄\n\nEight things for a baby or toddler's Christmas Eve box, from £7.20: a treat plate for Santa and Rudolph, matching-style pyjamas in red stripe or gingham, a Christmas book, a letter to hang on the tree, a Santa cam decoration, a gingerbread puzzle and the box to keep it all in.\n\nBoth pairs of pyjamas are on offer at the moment, and every price is on the page.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#christmaseve #christmaseveboxideas #christmasevebox #toddlerchristmas #ukmum",
+    tiktokHook: "Christmas Eve box ideas for babies and toddlers, from £7.20",
+    tiktok: "Eight things for a baby or toddler's Christmas Eve box, from £7.20: pyjamas, a book, a treat plate for Santa and more. Every price on thearchedits.co.uk (link in my Instagram bio).\n\n#christmaseve #christmasevebox #toddlerchristmas #christmasgifts #ukmum",
+    note: "Both pairs of pyjamas are on offer at the moment, so those prices may change. The Mamas & Papas Christmas Eve Plate can be personalised on Mabel & Fox's page, and the maker lists the gingerbread puzzle from 12 months.",
+    section: "gifts",
+    season: "Christmas 2026",
+    draft: true,
+    boardImage: "/edits/christmas-arch-eve-box-26-board.png",
+    palette: ["#2F6B4F", "#8DB39D", "#B83A4B", "#E3A83B"],
+    description:
+      "Eight ideas for a baby or toddler's Christmas Eve box, from £7.20: a treat plate for Santa, two pairs of Christmas pyjamas, a Christmas book, a plush letter, a Santa cam decoration, a gingerbread puzzle and a box to keep it in. Every piece linked, with what each costs.",
+    looks: [
+      {
+        label: "Eve box ideas",
+        kind: "shortlist",
+        perPiece: true,
+        choose: "",
+        productIds: ["mf-mp-christmas-eve-plate", "mf-brown-bear-twelve-days", "mp-red-stripe-jersey-pyjamas", "mp-collared-gingham-pyjamas", "mp-xmas-eve-box-2026", "mf-cottonhead-father-christmas-cam", "my1y-gingerbread-puzzle", "mp-plush-letter-decoration"],
+      },
+    ],
+  },
+  {
     slug: "christmas-arch-first-christmas-26",
     title: "The Christmas Arch: Baby's First Christmas",
     searchTitle: "Baby's first Christmas gift ideas, from £9",
