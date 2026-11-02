@@ -9,7 +9,7 @@ import type { Category } from "@/lib/types";
 export const metadata: Metadata = {
   title: "Shop the catalogue",
   description:
-    "Every piece featured in an edit, filterable by who it's for and which shop it's from.",
+    "Every piece featured in an edit, filterable by who it's for, what it is and which shop it's from.",
 };
 
 const VALID_CATEGORIES: Category[] = ["Baby", "Girls", "Boys", "Nursery"];
@@ -30,7 +30,7 @@ export default async function ShopPage({
       <section className="over-pattern px-5 pt-10 pb-2 sm:px-8 sm:pt-14 md:px-14 flex flex-col gap-3">
         <h1 className="font-display text-[30px] sm:text-4xl font-semibold text-ink">Shop the catalogue</h1>
         <p className="text-ink-soft">
-          Every piece, from the shops you already trust &mdash; search by name or price, or filter by who it&apos;s for and where it&apos;s from.
+          Every piece, from the shops you already trust &mdash; search by name or price, or filter by who it&apos;s for, what it is and where it&apos;s from.
         </p>
       </section>
       <section className="px-5 pt-6 pb-8 sm:px-8 md:px-14">

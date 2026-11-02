@@ -8,6 +8,15 @@ import { site } from "@/lib/site";
 import type { Category, Retailer } from "@/lib/types";
 import ProductCard from "./ProductCard";
 
+/* What a piece is, so gifts can be found without knowing who they are for. Toys
+   sit with gifts, as that is how people shop for them. */
+const KINDS = [
+  { label: "All", types: null },
+  { label: "Clothes", types: ["top", "bottom", "foot", "head"] },
+  { label: "Gifts & toys", types: ["gift", "toy"] },
+  { label: "Nursery", types: ["nursery"] },
+] as const;
+
 const CATEGORIES: (Category | "All")[] = ["All", "Baby", "Girls", "Boys", "Nursery"];
 /* Derived from the products themselves rather than hardcoded, so adding a new
    shop to data/products.ts makes its chip appear, and a shop with nothing in it
@@ -44,6 +53,7 @@ function Chip({
 export default function ShopFilters({ initialCategory }: { initialCategory?: Category | "All" }) {
   const [category, setCategory] = useState<Category | "All">(initialCategory ?? "All");
   const [retailer, setRetailer] = useState<Retailer | "All">("All");
+  const [kind, setKind] = useState<string>("All");
   const [query, setQuery] = useState("");
 
   // /shop?q=pramsuit, from "See all in the shop" on the edits page.
@@ -69,10 +79,12 @@ export default function ShopFilters({ initialCategory }: { initialCategory?: Cat
     () =>
       picturedFirst(products, site.showProductImages).filter((p) => {
         if (!((category === "All" || p.category === category) && (retailer === "All" || p.retailer === retailer))) return false;
+        const k = KINDS.find((x) => x.label === kind);
+        if (k?.types && !(k.types as readonly string[]).includes(p.type)) return false;
         if (parsed.words.length === 0 && parsed.maxPrice === null) return true;
         return pieceMatches(parsed, searchable.get(p.id) ?? [], p.onSale && p.salePrice ? p.salePrice : p.price);
       }),
-    [category, retailer, parsed, searchable]
+    [category, retailer, kind, parsed, searchable]
   );
 
   return (
@@ -95,6 +107,11 @@ export default function ShopFilters({ initialCategory }: { initialCategory?: Cat
         <div className="flex gap-2.5 flex-wrap">
           {CATEGORIES.map((c) => (
             <Chip key={c} label={c} active={c === category} onClick={() => setCategory(c)} variant="category" />
+          ))}
+        </div>
+        <div className="flex gap-2.5 flex-wrap">
+          {KINDS.map((k) => (
+            <Chip key={k.label} label={k.label} active={k.label === kind} onClick={() => setKind(k.label)} variant="category" />
           ))}
         </div>
         <div className="flex gap-2.5 flex-wrap">
