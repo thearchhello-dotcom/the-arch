@@ -40,7 +40,7 @@ export const edits: Edit[] = [
     note: "The boots in the last look on the first board are on offer at the moment, so that price may change. H&M also shows a lower price to members on some pieces; I've used the normal price. The tights and hair clips are sold in packs of two, so the price is for the pair.",
     section: "outfits",
     season: "Christmas 2026",
-    draft: true,
+    published: "2026-11-04",
     boardImage: "/edits/christmas-at-hm-26-board-1.png",
     moreBoards: ["/edits/christmas-at-hm-26-board-2.png"],
     palette: ["#701C30", "#C98C99", "#F1E9D8", "#E3A83B"],
