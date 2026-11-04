@@ -31,6 +31,36 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "christmas-at-hm-26",
+    title: "Christmas at H&M",
+    searchTitle: "H&M Christmas clothes for babies and toddlers: velvet, tartan and knits",
+    instagram: "Christmas at H&M 🎄\n\nTwo boards of Christmas outfits for babies and toddlers from H&M, from £6.99: velvet and velour for the party, tartan with tan boots, a tulle dress, a tree jumper with cords, bear pyjamas, snowman knits and a gingham dress with a velvet bow.\n\nEvery piece and its price is on the site, and where something is in the sale I've said so.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#christmasoutfit #babychristmas #toddlerchristmas #hmkids #ukmum",
+    tiktokHook: "Christmas outfits for babies and toddlers at H&M, from £6.99",
+    tiktok: "Christmas outfits for babies and toddlers from H&M, from £6.99: velvet and velour, tartan, a tree jumper, bear pyjamas and more. Every piece and price on thearchedits.co.uk (link in my Instagram bio).\n\n#christmasoutfit #babychristmas #toddlerchristmas #hmkids #ukmum",
+    note: "The boots in the last look on the first board are on offer at the moment, so that price may change. H&M also shows a lower price to members on some pieces; I've used the normal price. The tights and hair clips are sold in packs of two, so the price is for the pair.",
+    section: "outfits",
+    season: "Christmas 2026",
+    draft: true,
+    boardImage: "/edits/christmas-at-hm-26-board-1.png",
+    moreBoards: ["/edits/christmas-at-hm-26-board-2.png"],
+    palette: ["#701C30", "#C98C99", "#F1E9D8", "#E3A83B"],
+    description:
+      "Christmas outfits for babies and toddlers from H&M, from £6.99: a velvet and velour party look, tartan with tan boots, a tulle dress, a tree jumper with cords, bear pyjamas, snowman knits and a gingham dress with a velvet bow. Every piece linked, with what each costs.",
+    looks: [
+      { label: "Velvet and velour", productIds: ["hm-velour-set-red", "hm-white-tights-2pack", "hm-red-barefoot-mary-janes"] },
+      { label: "My first holiday", productIds: ["hm-my-first-holiday-set", "hm-wool-knit-bootees-red"] },
+      { label: "Tartan and tan boots", productIds: ["hm-red-check-bodysuit-set", "hm-beige-moccasins"] },
+      { label: "Tulle party dress", productIds: ["hm-tulle-hearts-dress", "hm-red-ballet-flats", "hm-burgundy-tights-2pack"] },
+      { label: "Tree jumper and cords", productIds: ["hm-fir-tree-jumper", "hm-cord-joggers-dark-red", "hm-brown-waterproof-boots"] },
+      { label: "Red print and bear slippers", productIds: ["hm-red-christmas-bodysuit-set", "hm-fluffy-slippers-beige"] },
+      { label: "Bow top and leggings", productIds: ["hm-red-bows-blouse-set"] },
+      { label: "Navy bear pyjamas", productIds: ["hm-navy-christmas-pyjamas", "hm-soft-slippers-light-beige"] },
+      { label: "Snowman knits", productIds: ["hm-snowman-knit-set"] },
+      { label: "Gingham dress and velvet bow", productIds: ["hm-gingham-muslin-dress", "hm-velvet-bow-clips-2pack"] },
+      { label: "Red collared sleepsuit", productIds: ["hm-red-collared-sleepsuit"] },
+    ],
+  },
+  {
     slug: "christmas-arch-eve-box-26",
     title: "The Christmas Arch: Christmas Eve Box",
     searchTitle: "Christmas Eve box ideas for babies and toddlers",

@@ -353,6 +353,31 @@ export const products: Product[] = [
   { id: "mf-cottonhead-father-christmas-cam", name: "Cottonhead Monkeys Wooden Tree Decoration, Father Christmas Cam", category: "Nursery", retailer: "Mabel & Fox", price: 11.99, type: "gift", affiliateUrl: "https://www.mabelandfox.com/products/cottonhead-monkeys-wooden-tree-decoration-father-christmas-cam", imageUrl: "https://cdn.shopify.com/s/files/1/1582/6239/files/cottonhead-monkeys-wooden-tree-decoration-father-christmas-cam-tree-decoration-cottonhead-monkeys-35319015112931.jpg" },
   { id: "my1y-gingerbread-puzzle", name: "Gingerbread Wooden Puzzle", category: "Baby", retailer: "My 1st Years", price: 8.00, onSale: true, salePrice: 7.20, type: "toy", affiliateUrl: "https://www.my1styears.com/products/gingerbread-wooden-puzzle-fsc%C2%AE-12-months", ageNote: "Maker lists it from 12 months" },
   { id: "mp-plush-letter-decoration", name: "Plush Letter Christmas Decoration", category: "Nursery", retailer: "Mamas & Papas", price: 10.00, type: "gift", affiliateUrl: "https://www.mamasandpapas.com/products/hanging-dec-plush-letter-48062xs00", imageUrl: "https://cdn.shopify.com/s/files/1/0414/6023/6453/files/mamas-papas-keepsake-gifts-hanging-dec-plush-letter-1259881508.jpg" },
+  // ---- Christmas at H&M (christmas-at-hm-26) ----
+  // Prices read from H&M's own product pages on 4 Nov 2026: the normal price, not the member price.
+  // Plain links: no tracked links and no photos until H&M approves Gemma on a programme.
+  { id: "hm-velour-set-red", name: "Red 2-Piece Velour Set", category: "Baby", retailer: "H&M", price: 14.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1360938001.html" },
+  { id: "hm-white-tights-2pack", name: "White 2-Pack Tights", category: "Baby", retailer: "H&M", price: 6.99, type: "foot", affiliateUrl: "https://www2.hm.com/en_gb/productpage.0493103070.html" },
+  { id: "hm-red-barefoot-mary-janes", name: "Red Barefoot Mary Janes", category: "Baby", retailer: "H&M", price: 12.99, type: "foot", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1349784003.html" },
+  { id: "hm-my-first-holiday-set", name: "Red 3-Piece Cotton Jersey Set, My First Holiday", category: "Baby", retailer: "H&M", price: 9.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.0979605130.html" },
+  { id: "hm-wool-knit-bootees-red", name: "Dark Red Wool-Knit Bootees", category: "Baby", retailer: "H&M", price: 14.99, type: "foot", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1293609002.html" },
+  { id: "hm-red-check-bodysuit-set", name: "Red Checked 2-Piece Bodysuit and Trousers Set", category: "Baby", retailer: "H&M", price: 14.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1305673001.html" },
+  { id: "hm-beige-moccasins", name: "Beige Soft-Sole Moccasins", category: "Baby", retailer: "H&M", price: 39.99, type: "foot", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1267153001.html" },
+  { id: "hm-tulle-hearts-dress", name: "Cream Tulle-Skirt Cotton Dress", category: "Baby", retailer: "H&M", price: 8.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1342450004.html" },
+  { id: "hm-red-ballet-flats", name: "Red Soft-Sole Ballet Flats", category: "Baby", retailer: "H&M", price: 9.99, type: "foot", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1375550001.html" },
+  { id: "hm-burgundy-tights-2pack", name: "Dark Red and Light Beige 2-Pack Tights", category: "Baby", retailer: "H&M", price: 6.99, type: "foot", affiliateUrl: "https://www2.hm.com/en_gb/productpage.0493103096.html" },
+  { id: "hm-fir-tree-jumper", name: "Light Beige Fir Tree Jacquard-Knit Jumper", category: "Baby", retailer: "H&M", price: 14.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1305428002.html" },
+  { id: "hm-cord-joggers-dark-red", name: "Dark Red Cotton Corduroy Joggers", category: "Baby", retailer: "H&M", price: 8.99, type: "bottom", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1349595004.html" },
+  { id: "hm-brown-waterproof-boots", name: "Brown Waterproof Boots", category: "Baby", retailer: "H&M", price: 29.99, onSale: true, salePrice: 22.00, type: "foot", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1232305003.html" },
+  { id: "hm-red-christmas-bodysuit-set", name: "Red Christmas 2-Piece Bodysuit and Leggings Set", category: "Baby", retailer: "H&M", price: 7.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1344331009.html" },
+  { id: "hm-fluffy-slippers-beige", name: "Beige Fluffy Slippers", category: "Baby", retailer: "H&M", price: 9.99, type: "foot", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1368120003.html" },
+  { id: "hm-red-bows-blouse-set", name: "Red Bows 2-Piece Blouse and Leggings Set", category: "Baby", retailer: "H&M", price: 14.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1238885015.html" },
+  { id: "hm-navy-christmas-pyjamas", name: "Navy Christmas Printed Cotton Pyjamas", category: "Baby", retailer: "H&M", price: 7.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1346643002.html" },
+  { id: "hm-soft-slippers-light-beige", name: "Light Beige Soft Slippers", category: "Baby", retailer: "H&M", price: 8.99, type: "foot", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1232313008.html" },
+  { id: "hm-snowman-knit-set", name: "Light Beige Christmas 2-Piece Cotton-Knit Set", category: "Baby", retailer: "H&M", price: 18.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1362486001.html" },
+  { id: "hm-gingham-muslin-dress", name: "Dark Red Checked Cotton Muslin Bodysuit Dress", category: "Baby", retailer: "H&M", price: 17.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1343096003.html" },
+  { id: "hm-velvet-bow-clips-2pack", name: "Dark Red and Black 2-Pack Velvet-Bow Hair Clips", category: "Baby", retailer: "H&M", price: 8.99, type: "head", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1304047001.html" },
+  { id: "hm-red-collared-sleepsuit", name: "Red Collared Cotton Sleepsuit", category: "Baby", retailer: "H&M", price: 9.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1346273004.html" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.

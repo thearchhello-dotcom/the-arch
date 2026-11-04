@@ -22,6 +22,7 @@ const OVERRIDES: Record<string, string> = {
   "christmas-arch-matching-pjs-26": "bg-pop-berry",
   "christmas-arch-first-christmas-26": "bg-pop-berry",
   "christmas-arch-eve-box-26": "bg-pop-holly",
+  "christmas-at-hm-26": "bg-pop-berry",
 };
 
 /** Stable per-item colour: the same id always lands on the same pop, so the
