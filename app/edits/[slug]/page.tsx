@@ -444,7 +444,9 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
                         : `${look.label} · ${items.length} to choose from`
                       : look.perPiece
                         ? `${items.length} pieces · each from £${Math.min(...items.map((p) => priceOf(p))).toFixed(2)} to £${Math.max(...items.map((p) => p.priceTo ?? priceOf(p))).toFixed(2)}`
-                        : `${look.label} · everything above, nothing missing`}
+                        : items.length === 1
+                          ? look.label
+                          : `${look.label} · ${items.length} pieces`}
                   </span>
                   {/* Says why the number is a "from" rather than leaving a
                       reader to wonder whether it is a hedge. */}
