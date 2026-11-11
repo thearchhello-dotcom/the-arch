@@ -43,6 +43,8 @@ export const edits: Edit[] = [
     published: "2026-11-11",
     boardImage: "/edits/christmas-at-ff-26-board-1.png",
     moreBoards: ["/edits/christmas-at-ff-26-board-2.png"],
+    cardImage: "/edits/christmas-at-ff-26-card.png",
+    shareImage: "/edits/christmas-at-ff-26-share.png",
     palette: ["#B9855F", "#701C30", "#F1E9D8", "#E3A83B"],
     description:
       "Baby Christmas clothes from F&F, from £6: cardigan and bodysuit sets, cord trousers, a fleece jacket, booties, pudding print pyjamas, a Santa dress, an elf sleepsuit and reindeer dungarees. Every piece linked, with what each costs.",
@@ -64,6 +66,8 @@ export const edits: Edit[] = [
     published: "2026-11-04",
     boardImage: "/edits/christmas-at-hm-26-board-1.png",
     moreBoards: ["/edits/christmas-at-hm-26-board-2.png"],
+    cardImage: "/edits/christmas-at-hm-26-card.png",
+    shareImage: "/edits/christmas-at-hm-26-share.png",
     palette: ["#701C30", "#C98C99", "#F1E9D8", "#E3A83B"],
     description:
       "Christmas outfits for babies and toddlers from H&M, from £6.99: a velvet and velour party look, tartan with tan boots, a tulle dress, a tree jumper with cords, bear pyjamas, snowman knits and a gingham dress with a velvet bow. Every piece linked, with what each costs.",
@@ -296,6 +300,8 @@ export const edits: Edit[] = [
     updated: "2026-11-06",
     boardImage: "/edits/christmas-arch-traditions-26-board.png",
     moreBoards: ["/edits/christmas-arch-traditions-26-stockings-board.png"],
+    cardImage: "/edits/christmas-arch-traditions-26-card.png",
+    shareImage: "/edits/christmas-arch-traditions-26-share.png",
     palette: ["#7A1F35", "#6E7F5A", "#E8D8CC", "#C9A87A"],
     description:
       "Christmas Eve touches from Mabel & Fox: gingham stockings in green, beige, pink and blue, a ruffle basket and a bow that can all be personalised, a Christmas Eve plate, a My First Christmas bauble and a set of tree decorations, with what each costs.",
