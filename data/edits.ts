@@ -31,6 +31,27 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "christmas-at-ff-26",
+    title: "Christmas at F&F",
+    searchTitle: "F&F baby Christmas clothes: cardigans, pyjamas and festive sets from £6",
+    instagram: "Christmas at F&F 🎄\n\nTwo boards of Christmas pieces for babies from F&F, from £6: cardigan and bodysuit sets, cord trousers, a fleece jacket and booties on the first, then pudding print pyjamas, a Santa dress, an elf sleepsuit and reindeer dungarees on the second.\n\nEvery piece and its price is on the site. Some sizes were already selling out when I checked, so it's worth looking at your size first.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#christmasoutfit #babychristmas #ffclothing #firstchristmas #ukmum",
+    tiktokHook: "Baby Christmas clothes from F&F, from £6",
+    tiktok: "Christmas pieces for babies from F&F, from £6: cardigan sets, pudding pyjamas, a Santa dress, an elf sleepsuit and more. Every piece and price on thearchedits.co.uk (link in my Instagram bio).\n\n#christmasoutfit #babychristmas #ffclothing #firstchristmas #ukmum",
+    note: "F&F is Tesco's clothing range. Some sizes had already sold out when I checked on 11 November, so check your size on Tesco's page before you buy.",
+    section: "outfits",
+    season: "Christmas 2026",
+    published: "2026-11-11",
+    boardImage: "/edits/christmas-at-ff-26-board-1.png",
+    moreBoards: ["/edits/christmas-at-ff-26-board-2.png"],
+    palette: ["#B9855F", "#701C30", "#F1E9D8", "#E3A83B"],
+    description:
+      "Baby Christmas clothes from F&F, from £6: cardigan and bodysuit sets, cord trousers, a fleece jacket, booties, pudding print pyjamas, a Santa dress, an elf sleepsuit and reindeer dungarees. Every piece linked, with what each costs.",
+    looks: [
+      { label: "Christmas at F&F", kind: "shortlist", perPiece: true, choose: "", hideTotal: true, productIds: ["ff-gingham-bodysuit-cardigan-tights", "ff-burgundy-cardigan-bodysuit-tights", "ff-jumper-cord-trousers-brown", "ff-bodysuit-dungarees-brown", "ff-fleece-print-jacket-white", "ff-festive-friends-sweatshirt-joggers", "ff-reindeer-booties", "ff-first-christmas-booties"] },
+      { label: "Festive fun at F&F", kind: "shortlist", perPiece: true, choose: "", hideTotal: true, productIds: ["ff-bodysuit-leggings-socks-ecru", "ff-festive-treat-sleepsuit", "ff-happy-holidays-sweatshirt-leggings", "ff-elf-sleepsuit-hat", "ff-santa-dress-tights", "ff-revere-pyjamas-comforter", "ff-borg-reindeer-dungarees-set"] },
+    ],
+  },
+  {
     slug: "christmas-at-hm-26",
     title: "Christmas at H&M",
     searchTitle: "H&M Christmas clothes for babies and toddlers: velvet, tartan and knits",

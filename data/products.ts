@@ -382,6 +382,24 @@ export const products: Product[] = [
   { id: "hm-gingham-muslin-dress", name: "Dark Red Checked Cotton Muslin Bodysuit Dress", category: "Baby", retailer: "H&M", price: 17.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1343096003.html" },
   { id: "hm-velvet-bow-clips-2pack", name: "Dark Red and Black 2-Pack Velvet-Bow Hair Clips", category: "Baby", retailer: "H&M", price: 8.99, type: "head", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1304047001.html" },
   { id: "hm-red-collared-sleepsuit", name: "Red Collared Cotton Sleepsuit", category: "Baby", retailer: "H&M", price: 9.99, type: "top", affiliateUrl: "https://www2.hm.com/en_gb/productpage.1346273004.html" },
+  // ---- Christmas at F&F (christmas-at-ff-26) ----
+  // F&F is Tesco's clothing range. Prices read from Tesco's own product pages on 11 Nov 2026.
+  // Plain links: Gemma is not on a programme for Tesco, so no tracking and no photographs.
+  { id: "ff-gingham-bodysuit-cardigan-tights", name: "F&F Baby Christmas Gingham Bodysuit, Cardigan and Tights Set, Neutral", category: "Baby", retailer: "F&F", price: 16.00, type: "top", affiliateUrl: "https://www.tesco.com/shop/en-GB/clothing/products/349912960" },
+  { id: "ff-burgundy-cardigan-bodysuit-tights", name: "F&F Baby Cotton Rich Cardigan, Bodysuit and Tights Set, Burgundy", category: "Baby", retailer: "F&F", price: 16.00, type: "top", affiliateUrl: "https://www.tesco.com/shop/en-GB/clothing/products/349868516" },
+  { id: "ff-jumper-cord-trousers-brown", name: "F&F Baby Jumper and Corduroy Trousers Set, Brown", category: "Baby", retailer: "F&F", price: 14.00, type: "top", affiliateUrl: "https://www.tesco.com/shop/en-GB/clothing/products/349880397" },
+  { id: "ff-bodysuit-dungarees-brown", name: "F&F Baby Cotton Rich Christmas Bodysuit and Dungarees Set, Brown", category: "Baby", retailer: "F&F", price: 12.50, type: "top", affiliateUrl: "https://www.tesco.com/shop/en-GB/clothing/products/349847271" },
+  { id: "ff-fleece-print-jacket-white", name: "F&F Christmas Baby Fleece Print Jacket, White", category: "Baby", retailer: "F&F", price: 14.00, type: "top", affiliateUrl: "https://www.tesco.com/shop/en-GB/clothing/products/349961428" },
+  { id: "ff-festive-friends-sweatshirt-joggers", name: "F&F Christmas Baby Festive Friends Sweatshirt and Joggers Set, Neutral", category: "Baby", retailer: "F&F", price: 12.50, type: "top", affiliateUrl: "https://www.tesco.com/shop/en-GB/clothing/products/349920506" },
+  { id: "ff-reindeer-booties", name: "F&F Christmas Baby Reindeer Booties, Brown", category: "Baby", retailer: "F&F", price: 6.00, type: "foot", affiliateUrl: "https://www.tesco.com/shop/en-GB/clothing/products/349861380" },
+  { id: "ff-first-christmas-booties", name: "F&F Christmas Baby My First Christmas Booties, Multi", category: "Baby", retailer: "F&F", price: 6.00, type: "foot", affiliateUrl: "https://www.tesco.com/shop/en-GB/clothing/products/349861247" },
+  { id: "ff-bodysuit-leggings-socks-ecru", name: "F&F Christmas Baby Bodysuit, Leggings and Socks Set, Ecru", category: "Baby", retailer: "F&F", price: 8.00, type: "top", affiliateUrl: "https://www.tesco.com/shop/en-GB/clothing/products/349948831" },
+  { id: "ff-festive-treat-sleepsuit", name: "F&F Christmas Baby Cotton Rich Festive Treat Sleepsuit, White", category: "Baby", retailer: "F&F", price: 6.00, type: "top", affiliateUrl: "https://www.tesco.com/shop/en-GB/clothing/products/349948891" },
+  { id: "ff-happy-holidays-sweatshirt-leggings", name: "F&F Christmas Baby Happy Holidays Sweatshirt and Leggings Set, Tan", category: "Baby", retailer: "F&F", price: 12.50, type: "top", affiliateUrl: "https://www.tesco.com/shop/en-GB/clothing/products/349901881" },
+  { id: "ff-elf-sleepsuit-hat", name: "F&F Christmas Baby Elf Sleepsuit and Hat Set, Green", category: "Baby", retailer: "F&F", price: 12.50, type: "top", affiliateUrl: "https://www.tesco.com/shop/en-GB/clothing/products/349962053" },
+  { id: "ff-santa-dress-tights", name: "F&F Christmas Baby Santa Dress and Tights Set, Red", category: "Baby", retailer: "F&F", price: 12.50, type: "top", affiliateUrl: "https://www.tesco.com/shop/en-GB/clothing/products/349961987" },
+  { id: "ff-revere-pyjamas-comforter", name: "F&F Christmas Baby Pure Cotton Printed Revere Pyjama Set with Comforter, White", category: "Baby", retailer: "F&F", price: 10.00, type: "top", affiliateUrl: "https://www.tesco.com/shop/en-GB/clothing/products/299488552" },
+  { id: "ff-borg-reindeer-dungarees-set", name: "F&F Christmas Baby Borg Reindeer Dungarees and Striped Bodysuit Set, Brown", category: "Baby", retailer: "F&F", price: 12.50, type: "top", affiliateUrl: "https://www.tesco.com/shop/en-GB/clothing/products/349962289" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.

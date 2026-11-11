@@ -431,7 +431,7 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
 
             {/* The outfit total — the thing no competitor shows, so it gets to
                 be a headline rather than a caption. */}
-            {items.length > 0 && (
+            {items.length > 0 && !look.hideTotal && (
               <div className="mt-5 bg-ink text-card rounded-[22px] px-7 py-5 flex items-center justify-between flex-wrap gap-3">
                 <div className="flex flex-col">
                   <span className="font-body font-bold text-[11px] tracking-widest uppercase opacity-70">

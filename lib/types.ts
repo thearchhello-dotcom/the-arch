@@ -10,6 +10,7 @@ export type Retailer =
   | "adidas"
   | "Argos"
   | "Debenhams"
+  | "F&F"
   | "George"
   | "H&M"
   | "M&S"
@@ -71,6 +72,8 @@ export interface EditLook {
    *  sixteen. Keep it broad: a range survives a piece selling out in one size.
    *  Optional — the outfit just doesn't show a range if it's missing. */
   ages?: string;
+  /** Leave out the total strip under this look, for a board where adding the pieces up means nothing. */
+  hideTotal?: boolean;
 
   /** What these pieces are to each other.
    *
