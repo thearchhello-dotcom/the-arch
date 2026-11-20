@@ -56,12 +56,12 @@ export default async function AdminHome() {
   }
 
   let rows: CmsRow[] = [];
-  let failed = false;
+  let failed: string | null = null;
   try {
     rows = await fetchAllRows();
   } catch (err) {
     console.error(err);
-    failed = true;
+    failed = err instanceof Error ? err.message.slice(0, 300) : "Unknown error";
   }
   const live = rows.filter((r) => r.status === "published");
   const drafts = rows.filter((r) => r.status === "draft");
@@ -85,6 +85,7 @@ export default async function AdminHome() {
       {failed && (
         <p role="alert" className="rounded-2xl bg-ink px-4 py-3 text-sm text-card mb-6">
           Couldn&apos;t load your edits. Check the Supabase settings in Vercel, or try again.
+          <span className="mt-2 block break-words text-xs opacity-80">Reason: {failed}</span>
         </p>
       )}
 
