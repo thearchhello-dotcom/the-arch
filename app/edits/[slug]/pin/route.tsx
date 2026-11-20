@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { site } from "@/lib/site";
 import { getEdit } from "@/data/edits";
-import { getProduct, priceOf } from "@/data/products";
+import { costOf, getProduct, priceOf } from "@/data/products";
 import { codeLineFor } from "@/lib/discounts";
 import type { Edit } from "@/lib/types";
 
@@ -193,7 +193,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ slug: st
 
   // The hook comes from the real data, so it can never drift from the site.
   const totals = edit.looks
-    .map((l) => l.productIds.reduce((s, id) => s + (getProduct(id)?.price ?? 0), 0))
+    .map((l) => costOf(l).from)
     .filter((t) => t > 0);
   const low = totals.length ? Math.min(...totals) : 0;
   const outfits = edit.looks.length;

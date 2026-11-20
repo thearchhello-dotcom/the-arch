@@ -3,7 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { edits } from "@/data/edits";
-import { getProduct } from "@/data/products";
+import { costOf, getProduct } from "@/data/products";
 import { pinCopy, pinCopyForLook, pinCopyForPiece } from "@/lib/pinCopy";
 import CopyButton from "@/components/CopyButton";
 import { adCaption, adPin } from "@/lib/disclosure";
@@ -60,8 +60,11 @@ export default function StudioPage() {
           .sort((a, b) => Number(a.draft ?? false) - Number(b.draft ?? false))
           .map((edit) => {
             const pin = pinCopy(edit);
+          // costOf is the same rule the edit page uses: an outfit adds up (sale prices
+          // included), a shortlist is its cheapest piece. Adding every piece of a
+          // shortlist together gave a figure nobody would ever pay.
           const totals = edit.looks
-            .map((l) => l.productIds.reduce((s, id) => s + (getProduct(id)?.price ?? 0), 0))
+            .map((l) => costOf(l).from)
             .filter((t) => t > 0);
           const low = totals.length ? Math.min(...totals) : 0;
 
