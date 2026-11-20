@@ -36,6 +36,14 @@ create table if not exists public.admin_attempts (
 );
 alter table public.admin_attempts enable row level security;
 
+-- Newer Supabase projects don't give the server's role access to new tables
+-- automatically, so say so. (Browsers still can't touch them: RLS is on and
+-- there are no policies for the public roles.)
+grant usage on schema public to service_role;
+grant all on public.cms_edits to service_role;
+grant all on public.admin_attempts to service_role;
+grant usage, select on sequence public.admin_attempts_id_seq to service_role;
+
 -- 3. Where uploaded boards live. Public to read (they are shown on the site),
 -- PNG only (the social image maker can't read anything else), 8 MB at most. Only the server can add to it.
 insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
