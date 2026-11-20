@@ -31,6 +31,34 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "christmas-gifts-26",
+    title: "Christmas Gifts",
+    searchTitle: "Christmas gift ideas for kids and toddlers from Mabel & Fox: toys, play and little extras",
+    // DRAFT: the last two groups (A little sparkle, Little extras) and the Little Dutch
+    // fox gift set are still to come, then the captions. Do not publish before then.
+    draft: true,
+    plannedFor: "Late November",
+    section: "gifts",
+    season: "Christmas 2026",
+    boardImage: "/edits/christmas-gifts-26-board-1.png",
+    moreBoards: [
+      "/edits/christmas-gifts-26-board-2.png",
+      "/edits/christmas-gifts-26-board-3.png",
+      "/edits/christmas-gifts-26-board-4.png",
+      "/edits/christmas-gifts-26-board-5.png",
+      "/edits/christmas-gifts-26-board-6.png",
+    ],
+    palette: ["#8B1A3A", "#E3A83B", "#F1E9D8", "#8FA383"],
+    description:
+      "Christmas gift ideas for kids and toddlers from Mabel & Fox: pretend play, gifts for babies, music and play, presents for bigger kids, a little sparkle and small extras. Every piece linked, with what each costs.",
+    looks: [
+      { label: "Pretend play", kind: "shortlist", perPiece: true, choose: "", hideTotal: true, productIds: ["mf-gifts-bread-box", "mf-gifts-coffee-maker", "mf-gifts-hair-salon", "mf-gifts-noa-pram", "mf-gifts-walking-cat", "mf-gifts-take-care-bunny"] },
+      { label: "For babies", kind: "shortlist", perPiece: true, choose: "", hideTotal: true, productIds: ["mf-gifts-ring-stacker", "mf-gifts-wobble-fox", "mf-gifts-baby-gym", "mf-gifts-pop-up-music"] },
+      { label: "Music & play", kind: "shortlist", perPiece: true, choose: "", hideTotal: true, productIds: ["mf-gifts-xylo-bench", "mf-gifts-drum", "mf-gifts-piano", "mf-gifts-wooden-farm", "mf-gifts-ramp-racer"] },
+      { label: "For bigger kids", kind: "shortlist", perPiece: true, choose: "", hideTotal: true, productIds: ["mf-gifts-instant-camera", "mf-gifts-unicorn-walkie", "mf-gifts-toniebox2-teal", "mf-gifts-art-caddy", "mf-gifts-sepp-table"] },
+    ],
+  },
+  {
     slug: "christmas-at-ff-26",
     title: "Christmas at F&F",
     searchTitle: "F&F baby Christmas clothes: cardigans, pyjamas and festive sets from £6",
