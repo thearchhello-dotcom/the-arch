@@ -34,8 +34,12 @@ export const edits: Edit[] = [
     slug: "christmas-gifts-26",
     title: "Christmas Gifts",
     searchTitle: "Christmas gift ideas for kids and toddlers from Mabel & Fox: toys, play and little extras",
-    // DRAFT: the last two groups (A little sparkle, Little extras) and the Little Dutch
-    // fox gift set are still to come, then the captions. Do not publish before then.
+    // DRAFT until Gemma says publish; then set `published` and delete `draft`.
+    // Prices and links are as she sent them on 20 Nov, not checked against the shop.
+    instagram: "Christmas Gifts from Mabel & Fox 🎁\n\n31 gift ideas for babies, toddlers and bigger kids, from £3.95, over six boards: pretend play, gifts for babies, music and play, presents for bigger kids, a little sparkle and little extras.\n\nEvery piece and its price is on the site, and the Little Dutch gift box set is in the sale at the moment, so I've said so.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#christmasgifts #giftsforkids #toddlergifts #christmasgiftideas #ukmum",
+    tiktokHook: "31 Christmas gift ideas for kids and toddlers, from £3.95",
+    tiktok: "31 Christmas gift ideas for babies, toddlers and bigger kids from Mabel & Fox, from £3.95: pretend play, music, sparkle and little extras. Every piece and price on thearchedits.co.uk (link in my Instagram bio).\n\n#christmasgifts #giftsforkids #toddlergifts #christmasgiftideas #ukmum",
+    note: "The Little Dutch gift box set is in the sale at Mabel & Fox at the moment, so that price may change.",
     draft: true,
     plannedFor: "Late November",
     section: "gifts",
@@ -50,12 +54,14 @@ export const edits: Edit[] = [
     ],
     palette: ["#8B1A3A", "#E3A83B", "#F1E9D8", "#8FA383"],
     description:
-      "Christmas gift ideas for kids and toddlers from Mabel & Fox: pretend play, gifts for babies, music and play, presents for bigger kids, a little sparkle and small extras. Every piece linked, with what each costs.",
+      "31 Christmas gift ideas for kids and toddlers from Mabel & Fox, from £3.95: pretend play, gifts for babies, music and play, presents for bigger kids, a little sparkle and small extras. Every piece linked, with what each costs.",
     looks: [
       { label: "Pretend play", kind: "shortlist", perPiece: true, choose: "", hideTotal: true, productIds: ["mf-gifts-bread-box", "mf-gifts-coffee-maker", "mf-gifts-hair-salon", "mf-gifts-noa-pram", "mf-gifts-walking-cat", "mf-gifts-take-care-bunny"] },
-      { label: "For babies", kind: "shortlist", perPiece: true, choose: "", hideTotal: true, productIds: ["mf-gifts-ring-stacker", "mf-gifts-wobble-fox", "mf-gifts-baby-gym", "mf-gifts-pop-up-music"] },
+      { label: "For babies", kind: "shortlist", perPiece: true, choose: "", hideTotal: true, productIds: ["mf-gifts-ring-stacker", "mf-gifts-wobble-fox", "mf-gifts-baby-gym", "mf-gifts-fox-gift-set", "mf-gifts-pop-up-music"] },
       { label: "Music & play", kind: "shortlist", perPiece: true, choose: "", hideTotal: true, productIds: ["mf-gifts-xylo-bench", "mf-gifts-drum", "mf-gifts-piano", "mf-gifts-wooden-farm", "mf-gifts-ramp-racer"] },
       { label: "For bigger kids", kind: "shortlist", perPiece: true, choose: "", hideTotal: true, productIds: ["mf-gifts-instant-camera", "mf-gifts-unicorn-walkie", "mf-gifts-toniebox2-teal", "mf-gifts-art-caddy", "mf-gifts-sepp-table"] },
+      { label: "A little sparkle", kind: "shortlist", perPiece: true, choose: "", hideTotal: true, productIds: ["mf-gifts-cups", "mf-gifts-sequin-bag", "mf-gifts-fairy-wings", "mf-gifts-fairy-wand", "mf-gifts-mushroom-house"] },
+      { label: "Little extras", kind: "shortlist", perPiece: true, choose: "", hideTotal: true, productIds: ["mf-gifts-skydiver", "mf-gifts-bath-book", "mf-gifts-christmas-mice", "mf-gifts-campervan", "mf-gifts-scooter"] },
     ],
   },
   {

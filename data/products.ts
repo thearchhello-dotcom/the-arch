@@ -403,6 +403,7 @@ export const products: Product[] = [
   // ---- Christmas Gifts (christmas-gifts-26) ----
   // Mabel & Fox. Links and prices as sent by Gemma on 20 Nov 2026; not yet checked
   // against the shop's own pages (the build environment could not reach the site).
+  // The fox gift set is in the sale: price is the full price, salePrice what it costs now.
   { id: "mf-gifts-bread-box", name: "Maileg Bread Box w. Utensils Miniature", category: "Nursery", retailer: "Mabel & Fox", price: 23.25, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/maileg-bread-box-w-utensils-miniature" },
   { id: "mf-gifts-coffee-maker", name: "Little Dutch Coffee Maker", category: "Nursery", retailer: "Mabel & Fox", price: 29.95, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/little-dutch-coffee-maker" },
   { id: "mf-gifts-hair-salon", name: "Konges Sløjd Hair Styling Doll Violet Hair Salon", category: "Nursery", retailer: "Mabel & Fox", price: 69.90, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/konges-slojd-hair-styling-doll-violet-hair-salon" },
@@ -412,6 +413,7 @@ export const products: Product[] = [
   { id: "mf-gifts-ring-stacker", name: "Little Dutch Soft Rocking Ring Stacker Forest Friends", category: "Baby", retailer: "Mabel & Fox", price: 21.95, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/little-dutch-soft-rocking-ring-stacker-forest-friends" },
   { id: "mf-gifts-wobble-fox", name: "Little Dutch Wobble Animal Fox Forest Friends", category: "Baby", retailer: "Mabel & Fox", price: 10.95, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/little-dutch-wobble-animal-fox-forest-friends" },
   { id: "mf-gifts-baby-gym", name: "Little Dutch Baby Gym Wooden Safari Friends", category: "Baby", retailer: "Mabel & Fox", price: 43.96, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/little-dutch-baby-gym-wooden-safari-friends" },
+  { id: "mf-gifts-fox-gift-set", name: "Little Dutch Gift Box Set Forest Friends", category: "Baby", retailer: "Mabel & Fox", price: 26.95, onSale: true, salePrice: 22.91, type: "gift", affiliateUrl: "https://www.mabelandfox.com/products/little-dutch-gift-box-set-forest-friends" },
   { id: "mf-gifts-pop-up-music", name: "Konges Sløjd Pop Up Music Board", category: "Baby", retailer: "Mabel & Fox", price: 41.95, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/konges-slojd-pop-up-music-board" },
   { id: "mf-gifts-xylo-bench", name: "Speedy Monkey Xylo Bench", category: "Nursery", retailer: "Mabel & Fox", price: 25.99, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/speedy-monkey-xylo-bench" },
   { id: "mf-gifts-drum", name: "Speedy Monkey Drum", category: "Nursery", retailer: "Mabel & Fox", price: 21.99, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/speedy-monkey-drum" },
@@ -423,6 +425,16 @@ export const products: Product[] = [
   { id: "mf-gifts-toniebox2-teal", name: "Tonies Toniebox 2 Tropical Teal Starter Set with Creative Rubie", category: "Nursery", retailer: "Mabel & Fox", price: 109.99, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/tonies-toniebox-2-tropical-teal-starter-set-with-creative-rubie" },
   { id: "mf-gifts-art-caddy", name: "Konges Sløjd Creative Art Caddy Tiger", category: "Nursery", retailer: "Mabel & Fox", price: 47.45, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/konges-slojd-creative-art-caddy-tiger" },
   { id: "mf-gifts-sepp-table", name: "Liewood Sepp Activity Table Blue Multi Mix", category: "Nursery", retailer: "Mabel & Fox", price: 158.99, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/liewood-sepp-activity-table-blue-multi-mix" },
+  { id: "mf-gifts-cups", name: "Konges Sløjd x Tivoli Glitter Cups Mellow Rose", category: "Nursery", retailer: "Mabel & Fox", price: 23.95, type: "gift", affiliateUrl: "https://www.mabelandfox.com/products/konges-slojd-x-tivoli-glitter-cups-mellow-rose" },
+  { id: "mf-gifts-sequin-bag", name: "Rockahula Pretty in Pink Sequin Bag", category: "Nursery", retailer: "Mabel & Fox", price: 15.99, type: "gift", affiliateUrl: "https://www.mabelandfox.com/products/rockahula-pretty-in-pink-sequin-bag" },
+  { id: "mf-gifts-fairy-wings", name: "Rex London Fairy Wings Fairies in the Garden", category: "Nursery", retailer: "Mabel & Fox", price: 8.95, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/rex-london-fairy-wings-fairies-in-the-garden" },
+  { id: "mf-gifts-fairy-wand", name: "Rex London Fairy Wand Fairies in the Garden", category: "Nursery", retailer: "Mabel & Fox", price: 6.95, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/rex-london-fairy-wand-fairies-in-the-garden" },
+  { id: "mf-gifts-mushroom-house", name: "Rex London Rattan Mushroom House", category: "Nursery", retailer: "Mabel & Fox", price: 19.95, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/rex-london-rattan-mushroom-house-wonders-of-nature" },
+  { id: "mf-gifts-skydiver", name: "Rex London Traditional Skydiver", category: "Nursery", retailer: "Mabel & Fox", price: 3.95, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/rex-london-traditional-skydiver-toy" },
+  { id: "mf-gifts-bath-book", name: "Rex London Colour Changing Bath Book Mermaids", category: "Nursery", retailer: "Mabel & Fox", price: 4.95, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/rex-london-colour-changing-bath-book-mermaids" },
+  { id: "mf-gifts-christmas-mice", name: "Maileg Christmas Twin Mice Little Sister & Brother in Book", category: "Nursery", retailer: "Mabel & Fox", price: 47.75, type: "gift", affiliateUrl: "https://www.mabelandfox.com/products/maileg-christmas-twin-mice-little-sister-and-brother-in-book" },
+  { id: "mf-gifts-campervan", name: "Little Dutch Vintage Campervan", category: "Nursery", retailer: "Mabel & Fox", price: 22.91, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/little-dutch-vintage-campervan-fsc" },
+  { id: "mf-gifts-scooter", name: "Little Dutch Scooter Blue", category: "Nursery", retailer: "Mabel & Fox", price: 47.96, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/little-dutch-scooter-blue" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.
