@@ -3,6 +3,7 @@ import { Fredoka, Karla } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import CookieBanner from "@/components/CookieBanner";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import PublicOnly from "@/components/PublicOnly";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -102,13 +103,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en-GB" className={`${fredoka.variable} ${karla.variable}`}>
       <body className="font-body bg-cream">
         {children}
-        <CookieBanner />
+        <PublicOnly>
+          <CookieBanner />
+        </PublicOnly>
         {/* Counts page views. Cookieless and it stores nothing about the
             visitor, so it sits outside the consent banner — there's nothing
             for anyone to consent to. Needs Web Analytics switched on in the
             Vercel dashboard before it records anything. */}
-        <Analytics />
-        <GoogleAnalytics />
+        <PublicOnly>
+          <Analytics />
+          <GoogleAnalytics />
+        </PublicOnly>
         {/* Skimlinks is switched off. Gemma's application was declined on
             18 September 2026, so the script earned nothing while still loading
             a third party's code on every page for every visitor. Their

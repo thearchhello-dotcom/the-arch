@@ -440,6 +440,15 @@ export function costOf(look: { kind?: "outfit" | "shortlist"; productIds: string
   return { kind: "outfit" as const, total, from: total, to };
 }
 
+/** Pieces from edits made in /admin. They live in Supabase, not in the list
+ *  above, and are added here each time the edits are loaded (see lib/cms/edits.ts)
+ *  so getProduct() and costOf() work the same for old and new edits. Their ids
+ *  are built from the edit's address, so the same piece always gets the same id. */
+const cmsProducts = new Map<string, Product>();
+export function registerProducts(list: Product[]) {
+  for (const p of list) cmsProducts.set(p.id, p);
+}
+
 export function getProduct(id: string): Product | undefined {
-  return products.find((p) => p.id === id);
+  return products.find((p) => p.id === id) ?? cmsProducts.get(id);
 }

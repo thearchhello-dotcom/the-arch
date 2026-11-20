@@ -18,7 +18,7 @@ export default function robots(): MetadataRoute.Robots {
   // room, and the board template is an image generator. Neither should spend
   // crawl time, and neither is ever a page someone should land on.
   return {
-    rules: { userAgent: "*", allow: "/", disallow: ["/studio", "/board-template"] },
+    rules: { userAgent: "*", allow: "/", disallow: ["/studio", "/board-template", "/admin"] },
     sitemap: `${site.domain}/sitemap.xml`,
   };
 }

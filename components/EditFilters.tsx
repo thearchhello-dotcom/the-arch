@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { matches, normalise, parseQuery, pieceMatches } from "@/lib/editSearch";
-import { products } from "@/data/products";
+import { products as codeProducts } from "@/data/products";
+import type { Product } from "@/lib/types";
 import ProductCard from "./ProductCard";
 import { picturedFirst } from "@/lib/affiliate";
 import { site } from "@/lib/site";
@@ -67,7 +68,9 @@ function money(n: number) {
  *  are added. */
 const SUGGESTIONS = ["Halloween", "Coats", "Pramsuits", "Wellies", "Knitwear", "Newborn", "2 year old", "Next", "M&S"];
 
-export default function EditFilters({ edits }: { edits: EditSummary[] }) {
+export default function EditFilters({ edits, extraProducts = [] }: { edits: EditSummary[]; extraProducts?: Product[] }) {
+  // Pieces from edits made in /admin come in as a prop; the rest are in code.
+  const products = useMemo(() => [...codeProducts, ...extraProducts], [extraProducts]);
   const [band, setBand] = useState<string>("all");
   const [section, setSection] = useState<string>("all");
   const [query, setQuery] = useState("");
@@ -110,7 +113,7 @@ export default function EditFilters({ edits }: { edits: EditSummary[] }) {
       new Map(
         products.map((p) => [p.id, normalise(`${p.name} ${p.retailer} ${p.category} ${p.type}`).split(" ")])
       ),
-    []
+    [products]
   );
   const pieceHits = useMemo(
     () =>
@@ -122,7 +125,7 @@ export default function EditFilters({ edits }: { edits: EditSummary[] }) {
             ),
             site.showProductImages
           ),
-    [parsed, pieceWords]
+    [parsed, pieceWords, products]
   );
 
   const shown = useMemo(() => {

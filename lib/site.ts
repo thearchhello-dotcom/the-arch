@@ -21,6 +21,10 @@ export const site = {
   /** Registered 8 Sep 2026 with 123-reg, two years, auto-renewing. */
   domain: "https://thearchedits.co.uk",
 
+  /** The IndexNow key, which is also the name of the .txt file in public/. It is
+   *  public by design. The admin area uses it to tell Bing about a new edit. */
+  indexNowKey: "cde3b62a13ffd170022710ae8296619d",
+
   /** The address printed on mood boards and social images. */
   displayDomain: "thearchedits.co.uk",
 

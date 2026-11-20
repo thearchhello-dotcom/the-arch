@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { publishedEdits } from "@/data/edits";
+import { getPublishedEdits } from "@/lib/cms/edits";
 import { site } from "@/lib/site";
 
-const COLUMNS: { heading: string; links: { href: string; label: string }[] }[] = [
+const columns = (latest: string): { heading: string; links: { href: string; label: string }[] }[] => [
   {
     heading: "Browse",
     links: [
       { href: "/shop", label: "Shop" },
       { href: "/edits", label: "All edits" },
-      { href: `/edits/${publishedEdits[0]?.slug ?? ""}`, label: "Latest edit" },
+      { href: `/edits/${latest}`, label: "Latest edit" },
     ],
   },
   {
@@ -30,7 +30,8 @@ const COLUMNS: { heading: string; links: { href: string; label: string }[] }[] =
   },
 ];
 
-export default function Footer() {
+export default async function Footer() {
+  const COLUMNS = columns((await getPublishedEdits())[0]?.slug ?? "");
   return (
     <footer className="px-5 pt-12 pb-10 sm:px-8 sm:pt-14 bg-footer border-t border-line md:px-14">
       <div className="flex flex-wrap gap-12 justify-between mb-12">

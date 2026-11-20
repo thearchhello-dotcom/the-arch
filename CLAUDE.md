@@ -36,6 +36,15 @@ priced item, a sale) is said out loud rather than smoothed over.
   `npx next start -p <port>`) before pushing. Vercel previews sit behind
   Gemma's login, so they can't be used for checking.
 
+## The admin area (/admin)
+
+Gemma can publish edits from her phone at `/admin`, with no code. They are stored
+in Supabase and merged in among `data/edits.ts` (which stays as it is). Read
+`docs/admin-setup.md` before touching it. Short version: `lib/cms/` holds the
+database, login and mapping code; `app/admin/` holds the screens; the public
+pages call `getPublishedEdits()` from `lib/cms/edits.ts` rather than importing
+`publishedEdits`. Every admin page and action must call `requireAdmin()`.
+
 ## Rules
 
 - British English. No emoji in files, commits or page copy. Plain voice.

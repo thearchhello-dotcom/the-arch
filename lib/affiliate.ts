@@ -93,6 +93,32 @@ export function affiliateHref(product: Product): string | undefined {
   return plain;
 }
 
+/** Shops whose links are converted to tracked links, for the admin's shop list.
+ *  Read from the same two tables that do the converting, so the two can't drift. */
+export function trackedRetailers(): Retailer[] {
+  return [
+    ...(AWIN_PUBLISHER_ID ? (Object.keys(PROGRAMMES) as Retailer[]) : []),
+    ...(Object.keys(UPPROMOTE_REFS) as Retailer[]),
+  ];
+}
+
+/** Undo an Awin link someone pasted, giving back the shop's own address.
+ *  affiliateHref() wraps the plain address at display time, so a link that was
+ *  already wrapped would be wrapped twice and earn nothing. Anything that is
+ *  not an Awin link is returned unchanged. */
+export function plainShopUrl(raw: string): string {
+  try {
+    const u = new URL(raw);
+    if (/(^|\.)awin1\.com$/i.test(u.hostname)) {
+      const inner = u.searchParams.get("ued");
+      if (inner) return new URL(inner).toString();
+    }
+  } catch {
+    /* not a URL: the caller validates */
+  }
+  return raw;
+}
+
 /** Whether a retailer's links are currently tracked, for the disclosure page
  *  and for checking at a glance which programmes are actually wired up. */
 export function isTracked(retailer: Retailer): boolean {

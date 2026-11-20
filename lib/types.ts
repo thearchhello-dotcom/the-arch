@@ -109,6 +109,8 @@ export interface EditLook {
 export type EditSection = "outfits" | "nursery" | "gifts";
 
 export interface Edit {
+  /** True for an edit made in /admin and stored in Supabase rather than in data/edits.ts. */
+  cms?: boolean;
   slug: string;
   title: string;
 

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import ShopFilters from "@/components/ShopFilters";
 import DisclosureNote from "@/components/DisclosureNote";
 import type { Category } from "@/lib/types";
+import { getCmsProducts } from "@/lib/cms/edits";
 
 export const metadata: Metadata = {
   title: "Shop the catalogue",
@@ -23,6 +24,8 @@ export default async function ShopPage({
   const requested = resolvedParams.category as Category | undefined;
   const initialCategory = requested && VALID_CATEGORIES.includes(requested) ? requested : "All";
 
+  const extraProducts = await getCmsProducts();
+
   return (
     <>
       <Header />
@@ -37,7 +40,7 @@ export default async function ShopPage({
         <DisclosureNote className="max-w-2xl" />
       </section>
       <section className="px-5 pb-16 sm:px-8 sm:pb-24 md:px-14">
-        <ShopFilters initialCategory={initialCategory} />
+        <ShopFilters initialCategory={initialCategory} extraProducts={extraProducts} />
         <p className="text-xs text-ink-faint mt-10">
           Pictures show for shops that have approved The Arch on their affiliate programme; every
           other piece shows an icon. Prices are correct at the time of writing and change often.

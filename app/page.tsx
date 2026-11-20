@@ -7,12 +7,13 @@ import Newsletter from "@/components/Newsletter";
 import PaletteArt from "@/components/PaletteArt";
 import RainbowRule from "@/components/RainbowRule";
 import Marquee from "@/components/Marquee";
-import { publishedEdits } from "@/data/edits";
+import { getPublishedEdits } from "@/lib/cms/edits";
+import type { Edit } from "@/lib/types";
 import { costOf } from "@/data/products";
 
 /** What the site does that the editorial kids'-style sites don't: a real,
  *  complete number. Worked out from the actual data rather than written in. */
-function cheapestOutfitTotal(): number | null {
+function cheapestOutfitTotal(publishedEdits: Edit[]): number | null {
   const totals = publishedEdits
     .flatMap((e) => e.looks)
     .map((look) => costOf(look).from)
@@ -23,10 +24,11 @@ function cheapestOutfitTotal(): number | null {
 /** Colour behind each previous board, cycled so no two neighbours match. */
 const PADS = ["bg-pop-sun", "bg-pop-leaf", "bg-pop-coral", "bg-pop-sky"];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const publishedEdits = await getPublishedEdits();
   const featured = publishedEdits[0];
   const rest = publishedEdits.slice(1, 5);
-  const fromTotal = cheapestOutfitTotal();
+  const fromTotal = cheapestOutfitTotal(publishedEdits);
   const editNo = String(publishedEdits.length).padStart(2, "0");
 
   return (

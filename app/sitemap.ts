@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { publishedEdits } from "@/data/edits";
+import { getPublishedEdits } from "@/lib/cms/edits";
 import { site } from "@/lib/site";
 
 /**
@@ -16,7 +16,8 @@ import { site } from "@/lib/site";
  * should be sent to from a search, so they don't belong in the list of pages
  * put forward for ranking.
  */
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const publishedEdits = await getPublishedEdits();
   const dates = publishedEdits
     .map((e) => e.updated ?? e.published)
     .filter((d): d is string => Boolean(d))

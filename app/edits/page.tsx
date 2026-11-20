@@ -5,7 +5,8 @@ import PatternBand from "@/components/PatternBand";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import EditFilters, { type EditSummary } from "@/components/EditFilters";
-import { publishedEdits } from "@/data/edits";
+import { getPublishedEdits } from "@/lib/cms/edits";
+import { getCmsProducts } from "@/lib/cms/edits";
 import { costOf, getProduct } from "@/data/products";
 import type { Edit } from "@/lib/types";
 
@@ -71,8 +72,9 @@ function summarise(edit: Edit): EditSummary {
   };
 }
 
-export default function EditsIndexPage() {
-  const summaries = publishedEdits.map(summarise);
+export default async function EditsIndexPage() {
+  const summaries = (await getPublishedEdits()).map(summarise);
+  const extraProducts = await getCmsProducts();
 
   return (
     <>
@@ -102,7 +104,7 @@ export default function EditsIndexPage() {
             <p className="text-sm text-ink-soft">Check back soon.</p>
           </div>
         ) : (
-          <EditFilters edits={summaries} />
+          <EditFilters edits={summaries} extraProducts={extraProducts} />
         )}
       </section>
 

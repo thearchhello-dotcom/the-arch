@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { products } from "@/data/products";
+import { products as codeProducts } from "@/data/products";
+import type { Product } from "@/lib/types";
 import { normalise, parseQuery, pieceMatches } from "@/lib/editSearch";
 import { picturedFirst } from "@/lib/affiliate";
 import { site } from "@/lib/site";
@@ -21,10 +22,6 @@ const CATEGORIES: (Category | "All")[] = ["All", "Baby", "Girls", "Boys", "Nurse
 /* Derived from the products themselves rather than hardcoded, so adding a new
    shop to data/products.ts makes its chip appear, and a shop with nothing in it
    never shows a chip that returns an empty grid. */
-const RETAILERS: (Retailer | "All")[] = [
-  "All",
-  ...([...new Set(products.map((p) => p.retailer))].sort() as Retailer[]),
-];
 
 function Chip({
   label,
@@ -50,7 +47,19 @@ function Chip({
   );
 }
 
-export default function ShopFilters({ initialCategory }: { initialCategory?: Category | "All" }) {
+export default function ShopFilters({
+  initialCategory,
+  extraProducts = [],
+}: {
+  initialCategory?: Category | "All";
+  /** Pieces from edits made in /admin; the rest come from data/products.ts. */
+  extraProducts?: Product[];
+}) {
+  const products = useMemo(() => [...codeProducts, ...extraProducts], [extraProducts]);
+  const RETAILERS: (Retailer | "All")[] = useMemo(
+    () => ["All", ...([...new Set(products.map((p) => p.retailer))].sort() as Retailer[])],
+    [products]
+  );
   const [category, setCategory] = useState<Category | "All">(initialCategory ?? "All");
   const [retailer, setRetailer] = useState<Retailer | "All">("All");
   const [kind, setKind] = useState<string>("All");
@@ -72,7 +81,7 @@ export default function ShopFilters({ initialCategory }: { initialCategory?: Cat
       new Map(
         products.map((p) => [p.id, normalise(`${p.name} ${p.retailer} ${p.category} ${p.type}`).split(" ")])
       ),
-    []
+    [products]
   );
 
   const filtered = useMemo(
@@ -84,7 +93,7 @@ export default function ShopFilters({ initialCategory }: { initialCategory?: Cat
         if (parsed.words.length === 0 && parsed.maxPrice === null) return true;
         return pieceMatches(parsed, searchable.get(p.id) ?? [], p.onSale && p.salePrice ? p.salePrice : p.price);
       }),
-    [category, retailer, kind, parsed, searchable]
+    [category, retailer, kind, parsed, searchable, products]
   );
 
   return (
