@@ -35,9 +35,9 @@ export const edits: Edit[] = [
     title: "Christmas Gifts",
     searchTitle: "Christmas gift ideas for kids and toddlers from Mabel & Fox: toys, play and little extras",
     // Prices and links as Gemma sent them on 20 Nov 2026; she checked the links after publishing.
-    instagram: "Christmas Gifts from Mabel & Fox 🎁\n\n31 gift ideas for babies, toddlers and bigger kids, from £3.95, over six boards: pretend play, gifts for babies, music and play, presents for bigger kids, a little sparkle and little extras.\n\nEvery piece and its price is on the site, and the Little Dutch gift box set is in the sale at the moment, so I've said so.\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#christmasgifts #giftsforkids #toddlergifts #christmasgiftideas #ukmum",
+    instagram: "Christmas Gifts from Mabel & Fox 🎁\n\n31 gift ideas for babies, toddlers and bigger kids, from £3.95, over six boards: pretend play, gifts for babies, music and play, presents for bigger kids, a little sparkle and little extras.\n\nEvery piece and its price is on the site, and the Little Dutch gift box set is in the sale at the moment, so I've said so.\n\nMy code THEARCH takes 5% off at Mabel & Fox on orders over £30 (one use per customer, not on sale items).\n\nStyled by me in Cumbria 🌈\nLink in bio to shop\n\n#christmasgifts #giftsforkids #toddlergifts #christmasgiftideas #ukmum",
     tiktokHook: "31 Christmas gift ideas for kids and toddlers, from £3.95",
-    tiktok: "31 Christmas gift ideas for babies, toddlers and bigger kids from Mabel & Fox, from £3.95: pretend play, music, sparkle and little extras. Every piece and price on thearchedits.co.uk (link in my Instagram bio).\n\n#christmasgifts #giftsforkids #toddlergifts #christmasgiftideas #ukmum",
+    tiktok: "31 Christmas gift ideas for babies, toddlers and bigger kids from Mabel & Fox, from £3.95: pretend play, music, sparkle and little extras. Every piece and price on thearchedits.co.uk (link in my Instagram bio). Code THEARCH: 5% off at Mabel & Fox, orders over £30, one use per customer, not on sale items.\n\n#christmasgifts #giftsforkids #toddlergifts #christmasgiftideas #ukmum",
     note: "The Little Dutch gift box set is in the sale at Mabel & Fox at the moment, so that price may change.",
     published: "2026-11-20",
     section: "gifts",

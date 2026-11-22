@@ -2,6 +2,7 @@ import type { Edit } from "@/lib/types";
 import { costOf, getProduct } from "@/data/products";
 import { site } from "@/lib/site";
 import { adPin } from "@/lib/disclosure";
+import { codeLineFor, codeLineForPieces } from "@/lib/discounts";
 
 /**
  * Pinterest copy for an edit, worked out from the edit itself.
@@ -58,6 +59,7 @@ export function pinCopy(edit: Edit) {
         ? `Prices from £${low.toFixed(2)}, every piece linked.`
         : `The whole thing, added up — ${money}.`),
     shops.length && `From ${shopList}.`,
+    codeLineForPieces(items),
     "Shop every piece at thearchedits.co.uk",
   ]
     .filter(Boolean)
@@ -128,6 +130,7 @@ export function pinCopyForLook(edit: Edit, look: Edit["looks"][number]) {
         ? `All from ${shops[0]}.`
         : `All from ${shops[0]} — one delivery.`
       : `From ${listOf(shops)}.`,
+    codeLineForPieces(items),
     `Part of ${edit.title}. Every piece linked at thearchedits.co.uk`,
   ]
     .filter(Boolean)
@@ -168,8 +171,11 @@ export function pinCopyForPiece(edit: Edit, product: NonNullable<ReturnType<type
       count > 1
         ? `One of ${count} pieces in ${edit.title}, every one priced up in one place.`
         : `Priced up in ${edit.title}.`,
+      codeLineFor(product),
       "See the whole edit at thearchedits.co.uk",
-    ].join(" ")
+    ]
+      .filter(Boolean)
+      .join(" ")
   );
 
   const about = `${edit.title} ${edit.searchTitle ?? ""}`.toLowerCase();

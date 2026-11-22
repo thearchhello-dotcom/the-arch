@@ -26,3 +26,14 @@ export function codeLineFor(product: Product): string | undefined {
   if (priceOf(product) < c.minSpend) return undefined;
   return c.line;
 }
+
+/** The line for a set of pieces (an edit, or one look): printed once, and only
+ *  when at least one piece in it qualifies. The rules sit in the line itself,
+ *  so a caption never says more than the shop's terms allow. */
+export function codeLineForPieces(products: (Product | undefined)[]): string | undefined {
+  for (const p of products) {
+    const line = p && codeLineFor(p);
+    if (line) return line;
+  }
+  return undefined;
+}
