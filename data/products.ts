@@ -435,6 +435,12 @@ export const products: Product[] = [
   { id: "mf-gifts-christmas-mice", name: "Maileg Christmas Twin Mice Little Sister & Brother in Book", category: "Nursery", retailer: "Mabel & Fox", price: 47.75, type: "gift", affiliateUrl: "https://www.mabelandfox.com/products/maileg-christmas-twin-mice-little-sister-and-brother-in-book" },
   { id: "mf-gifts-campervan", name: "Little Dutch Vintage Campervan", category: "Nursery", retailer: "Mabel & Fox", price: 22.91, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/little-dutch-vintage-campervan-fsc" },
   { id: "mf-gifts-scooter", name: "Little Dutch Scooter Blue", category: "Nursery", retailer: "Mabel & Fox", price: 47.96, type: "toy", affiliateUrl: "https://www.mabelandfox.com/products/little-dutch-scooter-blue" },
+  // ---- Matching Christmas PJs, the Grinch edit (matching-grinch-pjs-26) ----
+  // Neither shop is on an affiliate programme, so plain links and no photographs.
+  // Prices as Gemma sent them on 25 Nov 2026 (both reduced); recheck before publishing.
+  // The George link is still to come: without affiliateUrl the button stays inert.
+  { id: "george-grinch-pyjamas-baby", name: "Christmas The Grinch Green Long Sleeve Shirt Pyjamas", category: "Baby", retailer: "George", price: 10.00, onSale: true, salePrice: 8.00, type: "top" },
+  { id: "matalan-grinch-family-pyjamas", name: "The Grinch Green Matching Family Christmas Pyjamas", category: "Nursery", retailer: "Matalan", price: 22.00, onSale: true, salePrice: 16.50, type: "top", affiliateUrl: "https://www.matalan.co.uk/p/clothing/the-grinch-green-matching-family-christmas-pyjamas/17868187/" },
 ];
 
 /** What a piece actually costs today — the sale price when there is one.
