@@ -31,6 +31,38 @@ import type { Edit } from "@/lib/types";
 
 export const edits: Edit[] = [
   {
+    slug: "matching-grinch-pjs-26",
+    title: "Matching Christmas PJs",
+    // Subtitle from Gemma: "The Grinch Edit · two sets, two different shops". There is no
+    // subtitle field on an edit yet, so it is not shown anywhere.
+    searchTitle: "Matching Grinch Christmas Pyjamas for Baby & Grown-Ups",
+    instagram: "Struggling to find matching Christmas PJs in stock for the whole family? 🎄 Same here, so I went to two shops for ours 🙌\n\nThe baby Grinch set is from George (£8, first size up to 24 months) and the grown-ups' unisex Grinch set is from Matalan (£16.50). Not an official matching set, but they go together perfectly for Christmas Eve photos 💚❤️\n\nEvery piece is linked on the site 🤍\n\nStyled by me in Cumbria ✨\n\n#christmaspyjamas #matchingpyjamas #familypyjamas #grinch #christmaseve",
+    pieceNotes: {
+      "george-grinch-pyjamas-baby": "Baby: first size to 24 months. The 2 to 3 years size has sold out.",
+      "matalan-grinch-family-pyjamas": "Grown-ups: unisex, sizes M to 2XL.",
+    },
+    note: "Both sets are reduced at the moment, so the prices may change. The 2 to 3 years size of the George set had sold out when I checked on 25 November.",
+    // DRAFT: the George link and the board are still to come. Prices and stock were
+    // checked by Gemma on 25 Nov 2026; recheck before publishing, then set `published`
+    // and delete `draft`.
+    draft: true,
+    plannedFor: "Before Christmas Eve",
+    section: "outfits",
+    season: "Christmas 2026",
+    palette: ["#4F8A4B", "#B83A4B", "#F1E9D8", "#E3A83B"],
+    description: "Can't find matching Christmas pyjamas in stock for the whole family? Mix and match — a baby Grinch set from George and a unisex grown-ups' Grinch set from Matalan.",
+    intro: "Struggling to find matching Christmas PJs in stock for the whole family? Same here, so I went to two shops for ours. The baby Grinch set is from George and the grown-ups' unisex Grinch set is from Matalan. Not an official matching set, but they go together perfectly for Christmas Eve photos.",
+    looks: [
+      {
+        label: "Matching Grinch pyjamas",
+        kind: "outfit",
+        noun: "family set",
+        perPiece: true,
+        productIds: ["george-grinch-pyjamas-baby", "matalan-grinch-family-pyjamas"],
+      },
+    ],
+  },
+  {
     slug: "christmas-gifts-26",
     title: "Christmas Gifts",
     searchTitle: "Christmas gift ideas for kids and toddlers from Mabel & Fox: toys, play and little extras",
