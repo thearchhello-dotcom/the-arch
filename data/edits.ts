@@ -42,11 +42,9 @@ export const edits: Edit[] = [
       "matalan-grinch-family-pyjamas": "Grown-ups: unisex, sizes M to 2XL.",
     },
     note: "Both sets are reduced at the moment, so the prices may change. The 2 to 3 years size of the George set had sold out when I checked on 25 November.",
-    // DRAFT until Gemma says publish. Prices and stock were checked by her on 25 Nov
-    // 2026; recheck before publishing, then set `published` and delete `draft`.
-    // The board says "first size to 2-3 years" but her notes say 2 to 3 years has
-    // sold out: reconcile before publishing.
-    draft: true,
+    // Prices and stock as Gemma checked them on 25 Nov 2026. The board says "first size to
+    // 2-3 years" while the page says that size has sold out: the board may need re-exporting.
+    published: "2026-11-26",
     plannedFor: "Before Christmas Eve",
     section: "outfits",
     boardImage: "/edits/matching-grinch-pjs-26-board.png",
