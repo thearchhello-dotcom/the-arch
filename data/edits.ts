@@ -36,15 +36,16 @@ export const edits: Edit[] = [
     // Subtitle from Gemma: "The Grinch Edit · two sets, two different shops". There is no
     // subtitle field on an edit yet, so it is not shown anywhere.
     searchTitle: "Matching Grinch Christmas Pyjamas for Baby & Grown-Ups",
-    instagram: "Struggling to find matching Christmas PJs in stock for the whole family? 🎄 Same here, so I went to two shops for ours 🙌\n\nThe baby Grinch set is from George (£8, first size up to 24 months) and the grown-ups' unisex Grinch set is from Matalan (£16.50). Not an official matching set, but they go together perfectly for Christmas Eve photos 💚❤️\n\nEvery piece is linked on the site 🤍\n\nStyled by me in Cumbria ✨\n\n#christmaspyjamas #matchingpyjamas #familypyjamas #grinch #christmaseve",
+    instagram: "Struggling to find matching Christmas PJs in stock for the whole family? 🎄 Same here, so I went to two shops for ours 🙌\n\nThe baby Grinch set is from George (£8, first size up to 24 months) and the grown-ups' unisex Grinch set is from Matalan (£16.50). Not an official matching set, but they go together perfectly for Christmas Eve photos 💚❤️\n\nBoth sets are on sale at the moment, and I've said so on the site 🏷️\n\nEvery piece is linked on the site 🤍\n\nStyled by me in Cumbria ✨\n\n#christmaspyjamas #matchingpyjamas #familypyjamas #grinch #christmaseve",
     pieceNotes: {
       "george-grinch-pyjamas-baby": "Baby: first size to 24 months. The 2 to 3 years size has sold out.",
       "matalan-grinch-family-pyjamas": "Grown-ups: unisex, sizes M to 2XL.",
     },
-    note: "Both sets are reduced at the moment, so the prices may change. The 2 to 3 years size of the George set had sold out when I checked on 25 November.",
+    note: "Both sets are on sale at the moment, so the prices may change. The 2 to 3 years size of the George set had sold out when I checked on 25 November.",
     // Prices and stock as Gemma checked them on 25 Nov 2026. The board says "first size to
     // 2-3 years" while the page says that size has sold out: the board may need re-exporting.
     published: "2026-11-26",
+    updated: "2026-11-26",
     plannedFor: "Before Christmas Eve",
     section: "outfits",
     boardImage: "/edits/matching-grinch-pjs-26-board.png",
