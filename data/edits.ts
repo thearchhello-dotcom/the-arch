@@ -42,12 +42,14 @@ export const edits: Edit[] = [
       "matalan-grinch-family-pyjamas": "Grown-ups: unisex, sizes M to 2XL.",
     },
     note: "Both sets are reduced at the moment, so the prices may change. The 2 to 3 years size of the George set had sold out when I checked on 25 November.",
-    // DRAFT: the George link and the board are still to come. Prices and stock were
-    // checked by Gemma on 25 Nov 2026; recheck before publishing, then set `published`
-    // and delete `draft`.
+    // DRAFT until Gemma says publish. Prices and stock were checked by her on 25 Nov
+    // 2026; recheck before publishing, then set `published` and delete `draft`.
+    // The board says "first size to 2-3 years" but her notes say 2 to 3 years has
+    // sold out: reconcile before publishing.
     draft: true,
     plannedFor: "Before Christmas Eve",
     section: "outfits",
+    boardImage: "/edits/matching-grinch-pjs-26-board.png",
     season: "Christmas 2026",
     palette: ["#4F8A4B", "#B83A4B", "#F1E9D8", "#E3A83B"],
     description: "Can't find matching Christmas pyjamas in stock for the whole family? Mix and match — a baby Grinch set from George and a unisex grown-ups' Grinch set from Matalan.",
