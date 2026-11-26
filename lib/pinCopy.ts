@@ -18,6 +18,31 @@ import { codeLineFor, codeLineForPieces } from "@/lib/discounts";
  */
 const PIN_TITLE_MAX = 100;
 
+/** Pinterest cuts a description off at 500 characters. */
+const PIN_DESC_MAX = 500;
+
+/** Says so when pieces are in the sale, because a sale is said out loud
+ *  everywhere on this site. Worked out from the same onSale flags that put the
+ *  reduced price on the page, so it cannot disagree with the price in the pin. */
+function saleLine(items: ({ onSale?: boolean } | undefined)[]): string | undefined {
+  const real = items.filter(Boolean);
+  const onSale = real.filter((p) => p!.onSale).length;
+  if (!onSale) return undefined;
+  if (real.length === 1) return "On sale at the moment.";
+  return onSale === real.length ? "All on sale at the moment." : "Some pieces are on sale at the moment.";
+}
+
+/** Adds the sale line just before the closing sentence, but only when the
+ *  result still fits: a pin that is cut off mid-sentence is worse than one that
+ *  says nothing about the sale. */
+function withSale(parts: (string | number | false | undefined)[], sale: string | undefined): string {
+  const base = parts.filter(Boolean) as string[]; // drops "", false, undefined and the 0 that `shops.length && …` gives
+  if (!sale) return base.join(" ");
+  const last = base.length - 1;
+  const withIt = [...base.slice(0, last), sale, base[last]].join(" ");
+  return withIt.length + "Ad: ".length <= PIN_DESC_MAX ? withIt : base.join(" ");
+}
+
 /** At most 100 characters, cut at a word rather than mid-word. */
 function fitTitle(t: string): string {
   if (t.length <= PIN_TITLE_MAX) return t;
@@ -52,18 +77,19 @@ export function pinCopy(edit: Edit) {
   const short = money ? `${lead}, ${money}` : lead;
   const title = fitTitle(long.length <= PIN_TITLE_MAX ? long : short);
 
-  const description = [
-    edit.description,
-    money &&
-      (edit.looks.some((l) => l.kind === "shortlist")
-        ? `Prices from £${low.toFixed(2)}, every piece linked.`
-        : `The whole thing, added up — ${money}.`),
-    shops.length && `From ${shopList}.`,
-    codeLineForPieces(items),
-    "Shop every piece at thearchedits.co.uk",
-  ]
-    .filter(Boolean)
-    .join(" ");
+  const description = withSale(
+    [
+      edit.description,
+      money &&
+        (edit.looks.some((l) => l.kind === "shortlist")
+          ? `Prices from £${low.toFixed(2)}, every piece linked.`
+          : `The whole thing, added up — ${money}.`),
+      shops.length && `From ${shopList}.`,
+      codeLineForPieces(items),
+      "Shop every piece at thearchedits.co.uk",
+    ],
+    saleLine(items)
+  );
   const adDescription = adPin(description);
 
   const about = `${edit.title} ${edit.searchTitle ?? ""}`.toLowerCase();
@@ -117,7 +143,8 @@ export function pinCopyForLook(edit: Edit, look: Edit["looks"][number]) {
       ? `${look.label} — ${items.length} to choose from, from £${cost.from.toFixed(2)}`
       : `${look.label} — the whole ${look.noun ?? "outfit"}, ${money}`;
 
-  const description = [
+  const description = withSale(
+    [
     shortlist
       ? `${look.label}${ages}${look.choose === "" ? "" : `, choose ${look.choose ?? "one"}`}: ${listOf(pieces)}.`
       : `${look.label}${ages}: ${listOf(pieces)}.`,
@@ -132,9 +159,9 @@ export function pinCopyForLook(edit: Edit, look: Edit["looks"][number]) {
       : `From ${listOf(shops)}.`,
     codeLineForPieces(items),
     `Part of ${edit.title}. Every piece linked at thearchedits.co.uk`,
-  ]
-    .filter(Boolean)
-    .join(" ");
+    ],
+    saleLine(items)
+  );
   const adDescription = adPin(description);
 
   const tags = [
@@ -171,6 +198,7 @@ export function pinCopyForPiece(edit: Edit, product: NonNullable<ReturnType<type
       count > 1
         ? `One of ${count} pieces in ${edit.title}, every one priced up in one place.`
         : `Priced up in ${edit.title}.`,
+      product.onSale && product.salePrice ? `On sale at the moment, was ${fmt(product.price)}.` : false,
       codeLineFor(product),
       "See the whole edit at thearchedits.co.uk",
     ]
