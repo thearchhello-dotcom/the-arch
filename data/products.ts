@@ -438,8 +438,7 @@ export const products: Product[] = [
   // ---- Matching Christmas PJs, the Grinch edit (matching-grinch-pjs-26) ----
   // Neither shop is on an affiliate programme, so plain links and no photographs.
   // Prices as Gemma sent them on 25 Nov 2026 (both reduced); recheck before publishing.
-  // The George link is still to come: without affiliateUrl the button stays inert.
-  { id: "george-grinch-pyjamas-baby", name: "Christmas The Grinch Green Long Sleeve Shirt Pyjamas", category: "Baby", retailer: "George", price: 10.00, onSale: true, salePrice: 8.00, type: "top" },
+  { id: "george-grinch-pyjamas-baby", name: "Christmas The Grinch Green Long Sleeve Shirt Pyjamas", category: "Baby", retailer: "George", price: 10.00, onSale: true, salePrice: 8.00, type: "top", affiliateUrl: "https://direct.asda.com/george/baby/sleepsuits-pyjamas/christmas-the-grinch-green-long-sleeve-shirt-pyjamas/G002511888,default,pd.html" },
   { id: "matalan-grinch-family-pyjamas", name: "The Grinch Green Matching Family Christmas Pyjamas", category: "Nursery", retailer: "Matalan", price: 22.00, onSale: true, salePrice: 16.50, type: "top", affiliateUrl: "https://www.matalan.co.uk/p/clothing/the-grinch-green-matching-family-christmas-pyjamas/17868187/" },
 ];
 
